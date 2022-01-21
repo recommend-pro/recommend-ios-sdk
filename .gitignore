@@ -1,0 +1,12 @@
+# Ignore Mac DS_Store files
+.DS_Store
+**/.DS_Store
+
+# Standard .gitignore from "swift package init"
+/.build
+/Packages
+/*.xcodeproj
+xcuserdata/
+DerivedData/
+.swiftpm/xcode/package.xcworkspace/contents.xcworkspacedata
+
