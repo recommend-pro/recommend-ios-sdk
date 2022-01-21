@@ -10,4 +10,13 @@ import Foundation
 
 public final class Recommend: NSObject {
     
+    // MARK: Init
+    
+    init(appName: String,
+         appId: String,
+         apiHost: String = kRECDefaultAPIHost) {
+        let config = RECConfig(appName: appName,
+                               appId: appId,
+                               apiHost: apiHost)
+    }
 }
