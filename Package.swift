@@ -18,5 +18,6 @@ let package = Package(
             name: "Recommend",
             dependencies: [],
             path: "Recommend/Sources"),
-    ]
+    ],
+    swiftLanguageVersions: [.v5]
 )
