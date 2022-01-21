@@ -10,11 +10,13 @@ import Foundation
 import UIKit
 
 public let kRECDefaultAPIHost = "api.recommend.pro"
+private let kRECURLSessionIdentifier = ""
 
 public final class RECConfig {
     public let appName: String
     public let appId: String
     public let apiHost: String
+    public let urlSession: URLSession
     private let userDefaults: RECConfigUserDefaults
     
     private var identifierForVendorUUIDString: String? {
@@ -39,6 +41,7 @@ public final class RECConfig {
         self.appName = appName
         self.appId = appId
         self.apiHost = apiHost
+        self.urlSession = URLSession.shared
         self.userDefaults = RECConfigUserDefaults()
     }
 }

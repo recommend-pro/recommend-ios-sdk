@@ -1,5 +1,5 @@
 //
-//  RECCore.swift
+//  RECAPIClient.swift
 //  Recommend
 //
 //  Created by Dmytrii Golovanov on 07.12.2021.
@@ -8,14 +8,15 @@
 
 import Foundation
 
-public final class RECCore: NSObject {
-    public let config: RECConfig
-    private let apiClient: RECAPIClient
+final class RECAPIClient: NSObject {
+    private let config: RECConfig
+    private var urlSession: URLSession {
+        return config.urlSession
+    }
     
     // MARK: Init
     
     init(config: RECConfig) {
         self.config = config
-        self.apiClient = RECAPIClient(config: config)
     }
 }
