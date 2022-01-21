@@ -5,6 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "Recommend",
+    platforms: [.iOS(.v11)],
     products: [
         .library(
             name: "Recommend",

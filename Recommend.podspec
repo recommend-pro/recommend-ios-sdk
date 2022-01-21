@@ -12,6 +12,7 @@ Pod::Spec.new do |s|
     :git => 'https://github.com/recommend-pro/recommend-ios-sdk.git',
     :tag => 'v' + s.version.to_s
   }
+  s.ios.deployment_target = "11.0"
   s.source_files  = [
     "Recommend/Sources/**/*",
   ]

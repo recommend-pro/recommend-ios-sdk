@@ -1,5 +1,9 @@
 # Recommend iOS SDK
 
+## Requirements
+
+* **iOS 11.0+**
+
 ## License
 
 The contents of this repository are licensed under the
