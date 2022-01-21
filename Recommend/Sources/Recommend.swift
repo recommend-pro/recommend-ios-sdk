@@ -9,6 +9,7 @@
 import Foundation
 
 public final class Recommend: NSObject {
+    private let core: RECCore
     
     // MARK: Init
     
@@ -18,5 +19,6 @@ public final class Recommend: NSObject {
         let config = RECConfig(appName: appName,
                                appId: appId,
                                apiHost: apiHost)
+        self.core = RECCore(config: config)
     }
 }
