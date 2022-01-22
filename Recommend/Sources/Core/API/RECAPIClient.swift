@@ -19,4 +19,31 @@ final class RECAPIClient: NSObject {
     init(config: RECConfig) {
         self.config = config
     }
+    
+    // MARK: Prepare methods
+    
+    private func buildURLRequest(for request: RECAPIRequest) -> URLRequest? {
+        request.buildURLRequest(host: config.apiHost)
+    }
+    
+    // MARK: Execute
+    
+    func execute(request: RECAPIRequest, completion: @escaping () -> Void) {
+        guard let urlRequest = buildURLRequest(for: request) else {
+            completion()
+            return
+        }
+        let dataTask = self.dataTask(urlRequest: urlRequest, completion: completion)
+        dataTask.resume()
+    }
+}
+
+// MARK: - API DataTask
+
+extension RECAPIClient {
+    func dataTask(urlRequest: URLRequest, completion: @escaping () -> Void) -> RECAPIDataTask {
+        return RECAPIDataTask(urlRequest: urlRequest,
+                              urlSession: self.urlSession,
+                              completion: completion)
+    }
 }
