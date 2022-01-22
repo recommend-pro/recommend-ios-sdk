@@ -22,19 +22,21 @@ final class RECAPIClient: NSObject {
     
     // MARK: Prepare methods
     
-    private func buildURLRequest(for request: RECAPIRequest) -> URLRequest? {
-        request.buildURLRequest(host: config.apiHost)
+    private func buildURLRequest(for request: RECAPIRequest) throws -> URLRequest {
+        return try request.buildURLRequest(host: self.config.apiHost)
     }
     
     // MARK: Execute
     
     func execute(request: RECAPIRequest, completion: @escaping () -> Void) {
-        guard let urlRequest = buildURLRequest(for: request) else {
+        do {
+            let urlRequest = try self.buildURLRequest(for: request)
+            let dataTask = self.dataTask(urlRequest: urlRequest, completion: completion)
+            dataTask.resume()
+        } catch {
+            print(error)
             completion()
-            return
         }
-        let dataTask = self.dataTask(urlRequest: urlRequest, completion: completion)
-        dataTask.resume()
     }
 }
 

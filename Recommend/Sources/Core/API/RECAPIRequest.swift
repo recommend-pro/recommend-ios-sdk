@@ -25,19 +25,22 @@ public final class RECAPIRequest: NSObject {
     
     // MARK: URLRequest
     
-    private func buildURL(host: String) -> URL? {
+    private func buildURL(host: String) throws -> URL {
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
         urlComponents.host = host
         urlComponents.path = endpoint.path
         urlComponents.queryItems = queryItems
-        return urlComponents.url
+        
+        guard let url = urlComponents.url else {
+            throw RECAPIError.nilURL(urlComponents)
+        }
+        return url
     }
     
-    func buildURLRequest(host: String) -> URLRequest? {
-        guard let url = buildURL(host: host) else {
-            return nil
-        }
+    func buildURLRequest(host: String) throws -> URLRequest {
+        let url = try buildURL(host: host)
+        
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = endpoint.httpMethod
         urlRequest.allHTTPHeaderFields = headers
