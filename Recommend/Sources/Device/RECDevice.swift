@@ -18,4 +18,10 @@ final class RECDevice {
         self.core = core
         self.apiService = RECDeviceAPIService(core: core)
     }
+    
+    // MARK: Track Device Activity
+    
+    func trackDeviceActivity(_ deviceActivity: RECDeviceActivity, completion: @escaping (Error?) -> Void) {
+        apiService.trackDeviceActivity(deviceActivity, completion: completion)
+    }
 }

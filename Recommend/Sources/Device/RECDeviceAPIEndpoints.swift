@@ -9,5 +9,9 @@
 import Foundation
 
 struct RECDeviceAPIEndpoints {
-    
+    static func deviceActivity(config: RECConfig) -> RECAPIEndpoint {
+        let path = "/v3/\(config.appId)/device/\(config.deviceId)/activity"
+        return RECAPIEndpoint(path: path,
+                              httpMethod: "POST")
+    }
 }
