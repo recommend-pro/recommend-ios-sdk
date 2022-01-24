@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class RECRecommendation {
+public final class RECRecommendation {
     private typealias APIService = RECRecommendationAPIService
     typealias PanelsFetchModel = RECRecommendationPanelsFetchModel
     typealias Panel = RECRecommendationPanel
@@ -25,7 +25,7 @@ final class RECRecommendation {
     
     // MARK: Fetch Panels
     
-    func fetchPanels(with model: PanelsFetchModel, completion: @escaping (Result<[Panel], Error>) -> Void) {
+    public func fetchPanels(with model: PanelsFetchModel, completion: @escaping (Result<[Panel], Error>) -> Void) {
         apiService.fetchPanels(model: model, completion: completion)
     }
 }
