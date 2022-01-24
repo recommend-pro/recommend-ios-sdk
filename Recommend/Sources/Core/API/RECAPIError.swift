@@ -11,7 +11,13 @@ import Foundation
 private let RECAPIErrorDomain = "RECAPIErrorDomain"
 
 public enum RECAPIError: Error {
+    public typealias ErrorCode = RECAPIErrorResponseCode
+    
     case nilURL(URLComponents)
+    case invalidURLResponse(URLResponse?)
+    case nilData
+    case errorResponse(errorCode: ErrorCode, errorMessage: String)
+    case serverError(_ statusCode: Int)
 }
 
 extension RECAPIError: CustomNSError {
@@ -27,6 +33,19 @@ extension RECAPIError: CustomNSError {
             userInfo["host"] = urlComponents.host
             userInfo["path"] = urlComponents.path
             userInfo["query"] = urlComponents.query
+            
+        case .invalidURLResponse(let urlResponse):
+            userInfo["urlResponse"] = urlResponse
+            
+        case .errorResponse(let errorCode, let errorMessage):
+            userInfo["errorCode"] = errorCode
+            userInfo["errorMessage"] = errorMessage
+            
+        case .serverError(let statusCode):
+            userInfo["statusCode"] = statusCode
+            
+        default:
+            break
         }
         
         return userInfo

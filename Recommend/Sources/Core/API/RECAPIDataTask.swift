@@ -11,7 +11,7 @@ import Foundation
 final class RECAPIDataTask {
     private let urlRequest: URLRequest
     private let urlSession: URLSession
-    private let completion: () -> Void
+    private let completion: (Result<Data, Error>) -> Void
     
     private lazy var dataTask: URLSessionDataTask = {
         return urlSession.dataTask(with: urlRequest) { data, urlResponse, error in
@@ -25,7 +25,7 @@ final class RECAPIDataTask {
     
     init(urlRequest: URLRequest,
          urlSession: URLSession,
-         completion: @escaping () -> Void) {
+         completion: @escaping (Result<Data, Error>) -> Void) {
         self.urlRequest = urlRequest
         self.urlSession = urlSession
         self.completion = completion
@@ -34,7 +34,41 @@ final class RECAPIDataTask {
     // MARK: Completion
     
     private func handleCompletion(data: Data?, urlResponse: URLResponse?, error: Error?) {
-        completion()
+        do {
+            if let error = error {
+                throw error
+            }
+            
+            guard
+                let urlResponse = urlResponse,
+                let httpURLResponse = urlResponse as? HTTPURLResponse
+            else {
+                throw RECAPIError.invalidURLResponse(urlResponse)
+            }
+            
+            let statusCode = httpURLResponse.statusCode
+            
+            switch statusCode {
+            case 200:
+                guard let data = data else {
+                    throw RECAPIError.nilData
+                }
+                completion(.success(data))
+                
+            case 400, 401, 404:
+                guard let data = data else {
+                    throw RECAPIError.nilData
+                }
+                let errorResponse = try JSONDecoder().decode(RECAPIErrorResponse.self, from: data)
+                throw RECAPIError.errorResponse(errorCode: errorResponse.errorCode,
+                                                errorMessage: errorResponse.errorMessage)
+                
+            default:
+                throw RECAPIError.serverError(statusCode)
+            }
+        } catch {
+            completion(.failure(error))
+        }
     }
     
     // MARK: URLSessionDataTask
