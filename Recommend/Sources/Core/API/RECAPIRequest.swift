@@ -15,6 +15,10 @@ public final class RECAPIRequest: NSObject {
     public var headers: [String: String]?
     public var httpBody: Data?
     
+    // queue
+    public let isQueueRequired: Bool
+    
+    // multi-attempt
     public let attemptsLimit: Int
     public private(set) var attempt: Int = 0
     public var isAttemptsLimitExceeded: Bool {
@@ -24,8 +28,10 @@ public final class RECAPIRequest: NSObject {
     // MARK: Init
     
     public init(endpoint: RECAPIEndpoint,
+                isQueueRequired: Bool = true,
                 attemptsLimit: Int = kRECAPIRequestDefaultAttemptsLimit) {
         self.endpoint = endpoint
+        self.isQueueRequired = isQueueRequired
         self.attemptsLimit = attemptsLimit
     }
     

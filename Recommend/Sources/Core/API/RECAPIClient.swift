@@ -13,11 +13,13 @@ final class RECAPIClient: NSObject {
     private var urlSession: URLSession {
         return config.urlSession
     }
+    private let queue: RECAPIQueue
     
     // MARK: Init
     
     init(config: RECConfig) {
         self.config = config
+        self.queue = RECAPIQueue()
     }
     
     // MARK: Prepare methods
@@ -26,7 +28,56 @@ final class RECAPIClient: NSObject {
         return try request.buildURLRequest(host: self.config.apiHost)
     }
     
-    // MARK: Execute
+    // MARK: DataTask
+    
+    private func execute(task: RECAPIDataTask) {
+        task.resume()
+    }
+    
+    // MARK: Queue
+    
+    private func addToQueue(_ task: RECAPIDataTask) {
+        queue.add(task)
+        if queue.count == 1 {
+            executeNextTask()
+        }
+    }
+    
+    @discardableResult
+    private func executeNextTask() -> RECAPIDataTask? {
+        guard let task = queue.next() else {
+            return nil
+        }
+        execute(task: task)
+        return task
+    }
+    
+    private func process(request: RECAPIRequest, completion: @escaping (Result<Data, Error>) -> Void) {
+        do {
+            let urlRequest = try self.buildURLRequest(for: request)
+            
+            let waypointCompletion: (Result<Data, Error>) -> Void = { result in
+                if case .success = result, request.isAttemptsLimitExceeded == false {
+                    self.process(request: request, completion: completion)
+                    return
+                }
+                
+                completion(result)
+            }
+            
+            let task = self.dataTask(urlRequest: urlRequest, completion: waypointCompletion)
+            
+            if request.isQueueRequired {
+                addToQueue(task)
+            } else {
+                execute(task: task)
+            }
+        } catch {
+            completion(.failure(error))
+        }
+    }
+    
+    // MARK: Execute Request
     
     func execute(request: RECAPIRequest, completion: @escaping (Error?) -> Void) {
         let waypointCompletion: (Result<Data, Error>) -> Void = { result in
@@ -44,7 +95,7 @@ final class RECAPIClient: NSObject {
             }
         }
         
-        executeDataTask(with: request, completion: waypointCompletion)
+        process(request: request, completion: waypointCompletion)
     }
     
     func execute<T>(request: RECAPIRequest, completion: @escaping (Result<T, Error>) -> Void) where T : Decodable {
@@ -63,34 +114,13 @@ final class RECAPIClient: NSObject {
             }
         }
         
-        executeDataTask(with: request, completion: waypointCompletion)
-    }
-    
-    private func executeDataTask(with request: RECAPIRequest, completion: @escaping (Result<Data, Error>) -> Void) {
-        do {
-            let urlRequest = try self.buildURLRequest(for: request)
-            
-            let waypointCompletion: (Result<Data, Error>) -> Void = { result in
-                if case .success = result, request.isAttemptsLimitExceeded == false {
-                    self.executeDataTask(with: request, completion: completion)
-                    return
-                }
-                
-                completion(result)
-            }
-            
-            request.nextAttempt()
-            let dataTask = self.dataTask(urlRequest: urlRequest, completion: waypointCompletion)
-            dataTask.resume()
-        } catch {
-            completion(.failure(error))
-        }
+        process(request: request, completion: waypointCompletion)
     }
 }
 
 // MARK: - API DataTask
 
-extension RECAPIClient {
+private extension RECAPIClient {
     func dataTask(urlRequest: URLRequest, completion: @escaping (Result<Data, Error>) -> Void) -> RECAPIDataTask {
         return RECAPIDataTask(urlRequest: urlRequest,
                               urlSession: self.urlSession,
