@@ -32,6 +32,9 @@ public enum RECActivity: Encodable {
     // List
     case listView(_ data: RECActivityListViewData)
     case elasticList(_ data: RECActivityElasticListData)
+    
+    // Checkout
+    case checkout(_ data: RECActivityCheckoutData)
 
     // MARK: Coding Keys
     
@@ -97,6 +100,10 @@ public enum RECActivity: Encodable {
         case .elasticList(let activityData):
             type = .elasticList
             data = try JSONEncoder().encode(activityData)
+            
+        case .checkout(let activityData):
+            type = .checkout
+            data = try JSONEncoder().encode(activityData)
         }
         
         var container = encoder.container(keyedBy: CodingKeys.self)
@@ -131,4 +138,7 @@ private enum RECActivityType: String, Encodable {
     // List
     case listView = "list_view"
     case elasticList = "elastic_list"
+    
+    // Checkout
+    case checkout
 }
