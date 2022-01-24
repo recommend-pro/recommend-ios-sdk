@@ -23,6 +23,7 @@ public struct RECDeviceActivity: Encodable {
     /// Timestamp of event in seconds
     public let eventTime: Int?
     public let metrics: RECMetrics?
+    public let activity: [RECActivity]
     
     // MARK: Coding
     
@@ -35,5 +36,6 @@ public struct RECDeviceActivity: Encodable {
         case deviceTime = "device_time"
         case eventTime = "event_time"
         case metrics
+        case activity
     }
 }
