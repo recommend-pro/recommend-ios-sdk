@@ -41,6 +41,11 @@ public enum RECActivity: Encodable {
     
     // Subscribe
     case subscribe(_ data: RECActivitySubscribeData)
+    
+    // Customer
+    case login
+    case logout
+    case customerRegistration(_ data: RECActivityCustomerRegistationData)
 
     // MARK: Coding Keys
     
@@ -118,6 +123,16 @@ public enum RECActivity: Encodable {
         case .subscribe(let activityData):
             type = .subscribe
             data = try JSONEncoder().encode(activityData)
+            
+        case .login:
+            type = .login
+            
+        case .logout:
+            type = .logout
+            
+        case .customerRegistration(let activityData):
+            type = .customerRegistration
+            data = try JSONEncoder().encode(activityData)
         }
         
         var container = encoder.container(keyedBy: CodingKeys.self)
@@ -161,4 +176,9 @@ private enum RECActivityType: String, Encodable {
     
     // Subscribe
     case subscribe
+    
+    // Customer
+    case login
+    case logout
+    case customerRegistration = "customer_registration"
 }
