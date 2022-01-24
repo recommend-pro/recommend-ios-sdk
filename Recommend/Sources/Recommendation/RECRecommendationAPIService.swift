@@ -10,6 +10,8 @@ import Foundation
 
 final class RECRecommendationAPIService {
     private typealias APIEndpoints = RECRecommendationAPIEndpoints
+    typealias FetchPanelsModel = RECRecommendationFetchPanelsModel
+    typealias Panel = RECRecommendationPanel
     
     private let core: RECCore
     private var config: RECConfig {
@@ -20,6 +22,22 @@ final class RECRecommendationAPIService {
     
     init(core: RECCore) {
         self.core = core
+    }
+    
+    // MARK: Fetch Panels
+    
+    func fetchPanels(model: FetchPanelsModel, completion: @escaping (Result<[Panel], Error>) -> Void) {
+        do {
+            let endpoint = APIEndpoints.fetchRecommendationPanels(accountId: config.appId)
+            let data = try JSONEncoder().encode(model)
+            let request = RECAPIRequest(endpoint: endpoint,
+                                        isQueueRequired: true)
+            request.httpBody = data
+            
+            core.execute(apiRequest: request, completion: completion)
+        } catch {
+            completion(.failure(error))
+        }
     }
 }
 

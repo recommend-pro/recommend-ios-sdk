@@ -9,5 +9,9 @@
 import Foundation
 
 struct RECRecommendationAPIEndpoints {
-    
+    static func fetchRecommendationPanels(accountId: String) -> RECAPIEndpoint {
+        let path = "/v3/\(accountId)/recommendation/panel"
+        return RECAPIEndpoint(path: path,
+                              httpMethod: "POST")
+    }
 }
