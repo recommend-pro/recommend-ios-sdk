@@ -51,6 +51,9 @@ public enum RECActivity: Encodable {
     case login
     case logout
     case customerRegistration(_ data: RECActivityCustomerRegistationData)
+    
+    // Custom
+    case customEvent(_ data: RECActivityCustomEventData)
 
     // MARK: Coding Keys
     
@@ -146,6 +149,10 @@ public enum RECActivity: Encodable {
         case .customerRegistration(let activityData):
             type = .customerRegistration
             data = try JSONEncoder().encode(activityData)
+            
+        case .customEvent(let activityData):
+            type = .customEvent
+            data = try JSONEncoder().encode(activityData)
         }
         
         var container = encoder.container(keyedBy: CodingKeys.self)
@@ -200,4 +207,7 @@ private enum RECActivityType: String, Encodable {
     case login
     case logout
     case customerRegistration = "customer_registration"
+    
+    // Custom
+    case customEvent = "custom_event"
 }
