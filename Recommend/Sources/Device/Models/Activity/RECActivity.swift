@@ -38,6 +38,9 @@ public enum RECActivity: Encodable {
     
     // Sale
     case sale(_ data: RECActivitySaleData)
+    
+    // Subscribe
+    case subscribe(_ data: RECActivitySubscribeData)
 
     // MARK: Coding Keys
     
@@ -111,6 +114,10 @@ public enum RECActivity: Encodable {
         case .sale(let activityData):
             type = .sale
             data = try JSONEncoder().encode(activityData)
+            
+        case .subscribe(let activityData):
+            type = .subscribe
+            data = try JSONEncoder().encode(activityData)
         }
         
         var container = encoder.container(keyedBy: CodingKeys.self)
@@ -151,4 +158,7 @@ private enum RECActivityType: String, Encodable {
     
     // Sale
     case sale
+    
+    // Subscribe
+    case subscribe
 }
