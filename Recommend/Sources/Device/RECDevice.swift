@@ -21,7 +21,7 @@ final class RECDevice {
     
     // MARK: Track Device Activity
     
-    func trackDeviceActivity(_ deviceActivity: RECDeviceActivity, completion: @escaping (Error?) -> Void) {
+    func trackActivity(_ deviceActivity: RECDeviceActivity, completion: @escaping (Error?) -> Void) {
         apiService.trackDeviceActivity(deviceActivity, completion: completion)
     }
 }
