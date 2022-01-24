@@ -35,6 +35,9 @@ public enum RECActivity: Encodable {
     
     // Checkout
     case checkout(_ data: RECActivityCheckoutData)
+    
+    // Sale
+    case sale(_ data: RECActivitySaleData)
 
     // MARK: Coding Keys
     
@@ -104,6 +107,10 @@ public enum RECActivity: Encodable {
         case .checkout(let activityData):
             type = .checkout
             data = try JSONEncoder().encode(activityData)
+            
+        case .sale(let activityData):
+            type = .sale
+            data = try JSONEncoder().encode(activityData)
         }
         
         var container = encoder.container(keyedBy: CodingKeys.self)
@@ -141,4 +148,7 @@ private enum RECActivityType: String, Encodable {
     
     // Checkout
     case checkout
+    
+    // Sale
+    case sale
 }
