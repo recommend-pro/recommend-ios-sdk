@@ -10,6 +10,7 @@ import Foundation
 
 public final class Recommend: NSObject {
     private let core: RECCore
+    public let device: RECDevice
     
     // MARK: Init
     
@@ -20,5 +21,6 @@ public final class Recommend: NSObject {
                                appId: appId,
                                apiHost: apiHost)
         self.core = RECCore(config: config)
+        self.device = RECDevice(core: core)
     }
 }
