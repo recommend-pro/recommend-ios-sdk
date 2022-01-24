@@ -9,6 +9,7 @@
 import Foundation
 
 public enum RECActivity: Encodable {
+    case openApp
 
     // MARK: Coding Keys
     
@@ -24,7 +25,8 @@ public enum RECActivity: Encodable {
         var data: Data?
         
         switch self {
-            
+        case .openApp:
+            type = .openApp
         }
         
         var container = encoder.container(keyedBy: CodingKeys.self)
@@ -36,5 +38,5 @@ public enum RECActivity: Encodable {
 // MARK: - Activity Type
 
 private enum RECActivityType: String, Encodable {
-    
+    case openApp = "open_app"
 }
