@@ -10,6 +10,11 @@ import Foundation
 
 public enum RECActivity: Encodable {
     case openApp
+    
+    // Wishlist
+    case wishlistUpdate(_ data: RECActivityWishlistUpdateData)
+    case addToWishlist(_ data: RECActivityAddToWishlistData)
+    case removeFromWishlist(_ data: RECActivityAddToWishlistData)
 
     // MARK: Coding Keys
     
@@ -27,6 +32,19 @@ public enum RECActivity: Encodable {
         switch self {
         case .openApp:
             type = .openApp
+            
+        case .wishlistUpdate(let activityData):
+            type = .wishlistUpdate
+            data = try JSONEncoder().encode(activityData)
+            
+        case .addToWishlist(let activityData):
+            type = .addToWishlist
+            data = try JSONEncoder().encode(activityData)
+            
+        case .removeFromWishlist(let activityData)
+            type = .removeFromWishlist
+            data = try JSONEncoder().encode(activityData)
+            
         }
         
         var container = encoder.container(keyedBy: CodingKeys.self)
@@ -39,4 +57,9 @@ public enum RECActivity: Encodable {
 
 private enum RECActivityType: String, Encodable {
     case openApp = "open_app"
+    
+    // Wishlist
+    case wishlistUpdate = "wishlist_update"
+    case addToWishlist = "add_to_wishlist"
+    case removeFromWishlist = "remove_from_wishlist"
 }
