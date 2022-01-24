@@ -1,5 +1,5 @@
 //
-//  RECDevice.swift
+//  RECDeviceAPIService.swift
 //  Recommend
 //
 //  Created by Dmytrii Golovanov on 07.12.2021.
@@ -8,14 +8,15 @@
 
 import Foundation
 
-final class RECDevice {
+final class RECDeviceAPIService {
     private let core: RECCore
-    private let apiService: RECDeviceAPIService
+    private var config: RECConfig {
+        return core.config
+    }
     
-    // MARK: Int
+    // MARK: Init
     
     init(core: RECCore) {
         self.core = core
-        self.apiService = RECDeviceAPIService(core: core)
     }
 }
