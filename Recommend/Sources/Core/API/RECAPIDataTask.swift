@@ -54,17 +54,15 @@ final class RECAPIDataTask {
                     throw RECAPIError.nilData
                 }
                 completion(.success(data))
-                
-            case 400, 401, 404:
+            
+            default:
                 guard let data = data else {
-                    throw RECAPIError.nilData
+                    throw RECAPIError.serverError(statusCode)
                 }
+                
                 let errorResponse = try JSONDecoder().decode(RECAPIErrorResponse.self, from: data)
                 throw RECAPIError.errorResponse(errorCode: errorResponse.errorCode,
                                                 errorMessage: errorResponse.errorMessage)
-                
-            default:
-                throw RECAPIError.serverError(statusCode)
             }
         } catch {
             completion(.failure(error))

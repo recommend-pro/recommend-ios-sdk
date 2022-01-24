@@ -11,7 +11,7 @@ import Foundation
 public let kRECAPIRequestDefaultAttemptsLimit: Int = 1
 
 public final class RECAPIRequest: NSObject {
-    public var endpoint: RECAPIEndpoint
+    public let endpoint: RECAPIEndpoint
     public var headers: [String: String]?
     public var httpBody: Data?
     
