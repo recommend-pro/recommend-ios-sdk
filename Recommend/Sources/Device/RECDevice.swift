@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 public final class RECDevice {
     private let core: RECCore
@@ -25,7 +26,7 @@ public final class RECDevice {
     
     // MARK: Track Device Activity
     
-    public func trackActivity(_ deviceActivity: RECDeviceActivity, completion: @escaping (Error?) -> Void) {
+    private func trackActivity(_ deviceActivity: RECDeviceActivity, completion: @escaping (Error?) -> Void) {
         apiService.trackDeviceActivity(deviceActivity, completion: completion)
     }
     
@@ -42,5 +43,17 @@ public final class RECDevice {
                                                metrics: parameters.metrics,
                                                activity: activity)
         self.trackActivity(deviceActivity, completion: completion)
+    }
+    
+    // MARK: Update Device
+    
+    public func updateDevice() {
+        let activityData: RECActivityUpdateDeviceData = .default(firstLaunch: false)
+        let activity: RECActivity = .updateDevice(activityData)
+        trackActivity(activity: [activity], eventTime: Date()) { error in
+            if let error = error {
+                debugPrint(error)
+            }
+        }
     }
 }

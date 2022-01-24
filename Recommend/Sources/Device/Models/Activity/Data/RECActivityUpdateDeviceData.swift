@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import UIKit
+import CoreLocation
 
 public struct RECActivityUpdateDeviceData: Encodable {
     public typealias SystemName = RECDeviceSystemName
@@ -31,6 +33,8 @@ public struct RECActivityUpdateDeviceData: Encodable {
     /// Location of device
     public let location: Location?
     
+    // MARK: Coding Keys
+    
     enum CodingKeys: String, CodingKey {
         case model
         case name
@@ -41,5 +45,23 @@ public struct RECActivityUpdateDeviceData: Encodable {
         case deviceLanguage = "device_language"
         case deviceCountry = "device_country"
         case location
+    }
+}
+
+extension RECActivityUpdateDeviceData {
+    static func `default`(firstLaunch: Bool? = nil) -> RECActivityUpdateDeviceData {
+        let device = UIDevice.current
+        let bundle = Bundle.main
+        let locale = Locale.current
+        
+        return .init(model: device.model,
+                     name: device.name,
+                     firstLaunch: firstLaunch?.intValue,
+                     systemName: .iOS,
+                     systemVersion: device.systemVersion,
+                     appVersion: bundle.bundleShortVersionString,
+                     deviceLanguage: locale.languageCode,
+                     deviceCountry: locale.regionCode,
+                     location: Location.default())
     }
 }

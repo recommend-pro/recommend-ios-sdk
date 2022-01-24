@@ -23,3 +23,27 @@ public struct RECDeviceLocation: Encodable {
                   longtitude: location.coordinate.longitude)
     }
 }
+
+extension RECDeviceLocation {
+    static func `default`() -> RECDeviceLocation? {
+        let manager = CLLocationManager()
+        
+        var authorizationStatus: CLAuthorizationStatus!
+        if #available(iOS 14.0, *) {
+            authorizationStatus = manager.authorizationStatus
+        } else {
+            authorizationStatus = CLLocationManager.authorizationStatus()
+        }
+
+        switch authorizationStatus {
+        case .authorizedAlways, .authorizedWhenInUse:
+            guard let location = manager.location else {
+                return nil
+            }
+            return Self(location: location)
+
+        default:
+            return nil
+        }
+    }
+}
