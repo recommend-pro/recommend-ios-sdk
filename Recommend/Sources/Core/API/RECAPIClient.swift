@@ -29,7 +29,7 @@ final class RECAPIClient: NSObject {
     // MARK: Execute
     
     func execute(request: RECAPIRequest, completion: @escaping (Error?) -> Void) {
-        let taskCompletion: (Result<Data, Error>) -> Void = { result in
+        let waypointCompletion: (Result<Data, Error>) -> Void = { result in
             do {
                 switch result {
                 case .success(let data):
@@ -44,11 +44,11 @@ final class RECAPIClient: NSObject {
             }
         }
         
-        executeDataTask(with: request, completion: taskCompletion)
+        executeDataTask(with: request, completion: waypointCompletion)
     }
     
     func execute<T>(request: RECAPIRequest, completion: @escaping (Result<T, Error>) -> Void) where T : Decodable {
-        let taskCompletion: (Result<Data, Error>) -> Void = { result in
+        let waypointCompletion: (Result<Data, Error>) -> Void = { result in
             do {
                 switch result {
                 case .success(let data):
@@ -63,13 +63,24 @@ final class RECAPIClient: NSObject {
             }
         }
         
-        executeDataTask(with: request, completion: taskCompletion)
+        executeDataTask(with: request, completion: waypointCompletion)
     }
     
     private func executeDataTask(with request: RECAPIRequest, completion: @escaping (Result<Data, Error>) -> Void) {
         do {
             let urlRequest = try self.buildURLRequest(for: request)
-            let dataTask = self.dataTask(urlRequest: urlRequest, completion: completion)
+            
+            let waypointCompletion: (Result<Data, Error>) -> Void = { result in
+                if case .success = result, request.isAttemptsLimitExceeded == false {
+                    self.executeDataTask(with: request, completion: completion)
+                    return
+                }
+                
+                completion(result)
+            }
+            
+            request.nextAttempt()
+            let dataTask = self.dataTask(urlRequest: urlRequest, completion: waypointCompletion)
             dataTask.resume()
         } catch {
             completion(.failure(error))

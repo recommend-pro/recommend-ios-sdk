@@ -8,17 +8,34 @@
 
 import Foundation
 
+public let kRECAPIRequestDefaultAttemptsLimit: Int = 1
+
 public final class RECAPIRequest: NSObject {
     public var endpoint: RECAPIEndpoint
     public var headers: [String: String]?
     public var httpBody: Data?
     
+    public let attemptsLimit: Int
+    public private(set) var attempt: Int = 0
+    public var isAttemptsLimitExceeded: Bool {
+        return attempt < attemptsLimit
+    }
+    
     // MARK: Init
     
     public init(endpoint: RECAPIEndpoint,
+                attemptsLimit: Int = kRECAPIRequestDefaultAttemptsLimit) {
         self.endpoint = endpoint
+        self.attemptsLimit = attemptsLimit
     }
     
+    // MARK: Attempt
+    
+    @discardableResult
+    func nextAttempt() -> Bool {
+        attempt += 1
+        return isAttemptsLimitExceeded
+    }
     
     // MARK: URLRequest
     
