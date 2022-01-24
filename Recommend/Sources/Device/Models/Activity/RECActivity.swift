@@ -25,6 +25,9 @@ public enum RECActivity: Encodable {
     case productView(_ data: RECActivityProductViewData)
     case productRated(_ data: RECActivityProductRatedData)
     case productClick(_ data: RECActivityProductClickData)
+    
+    // Search
+    case searchView(_ data: RECActivitySearchViewData)
 
     // MARK: Coding Keys
     
@@ -78,6 +81,10 @@ public enum RECActivity: Encodable {
         case .productClick(let activityData):
             type = .productClick
             data = try JSONEncoder().encode(activityData)
+            
+        case .searchView(let activityData):
+            type = .productClick
+            data = try JSONEncoder().encode(activityData)
         }
         
         var container = encoder.container(keyedBy: CodingKeys.self)
@@ -105,4 +112,7 @@ private enum RECActivityType: String, Encodable {
     case productView = "product_view"
     case productRated = "product_rated"
     case productClick = "product_click"
+    
+    // Search
+    case searchView = "search_view"
 }
