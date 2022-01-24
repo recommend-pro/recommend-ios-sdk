@@ -26,12 +26,14 @@ public enum RECActivity: Encodable {
     case productRated(_ data: RECActivityProductRatedData)
     case productClick(_ data: RECActivityProductClickData)
     
-    // Search
-    case searchView(_ data: RECActivitySearchViewData)
-    
     // List
     case listView(_ data: RECActivityListViewData)
     case elasticList(_ data: RECActivityElasticListData)
+    
+    case panelView(_ data: RECActivityPanelViewData)
+    
+    // Search
+    case searchView(_ data: RECActivitySearchViewData)
     
     // Checkout
     case checkout(_ data: RECActivityCheckoutData)
@@ -100,16 +102,20 @@ public enum RECActivity: Encodable {
             type = .productClick
             data = try JSONEncoder().encode(activityData)
             
-        case .searchView(let activityData):
-            type = .productClick
-            data = try JSONEncoder().encode(activityData)
-            
         case .listView(let activityData):
             type = .listView
             data = try JSONEncoder().encode(activityData)
             
         case .elasticList(let activityData):
             type = .elasticList
+            data = try JSONEncoder().encode(activityData)
+            
+        case .panelView(let activityData):
+            type = .panelView
+            data = try JSONEncoder().encode(activityData)
+            
+        case .searchView(let activityData):
+            type = .productClick
             data = try JSONEncoder().encode(activityData)
             
         case .checkout(let activityData):
@@ -161,12 +167,15 @@ private enum RECActivityType: String, Encodable {
     case productRated = "product_rated"
     case productClick = "product_click"
     
-    // Search
-    case searchView = "search_view"
-    
     // List
     case listView = "list_view"
     case elasticList = "elastic_list"
+    
+    // Panel
+    case panelView = "panel_view"
+    
+    // Search
+    case searchView = "search_view"
     
     // Checkout
     case checkout
