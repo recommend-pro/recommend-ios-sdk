@@ -9,6 +9,8 @@
 import Foundation
 
 final class RECRecommendationAPIService {
+    private typealias APIEndpoints = RECRecommendationAPIEndpoints
+    
     private let core: RECCore
     private var config: RECConfig {
         return core.config
