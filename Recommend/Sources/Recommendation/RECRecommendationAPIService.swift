@@ -10,7 +10,7 @@ import Foundation
 
 final class RECRecommendationAPIService {
     private typealias APIEndpoints = RECRecommendationAPIEndpoints
-    typealias FetchPanelsModel = RECRecommendationFetchPanelsModel
+    typealias FetchPanelsModel = RECRecommendationPanelsFetchModel
     typealias Panel = RECRecommendationPanel
     
     private let core: RECCore

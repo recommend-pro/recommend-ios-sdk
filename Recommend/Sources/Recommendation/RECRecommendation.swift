@@ -10,7 +10,7 @@ import Foundation
 
 final class RECRecommendation {
     private typealias APIService = RECRecommendationAPIService
-    typealias FetchPanelsModel = RECRecommendationFetchPanelsModel
+    typealias PanelsFetchModel = RECRecommendationPanelsFetchModel
     typealias Panel = RECRecommendationPanel
     
     private let core: RECCore
@@ -25,7 +25,7 @@ final class RECRecommendation {
     
     // MARK: Fetch Panels
     
-    func fetchPanels(with model: FetchPanelsModel, completion: @escaping (Result<[Panel], Error>) -> Void) {
+    func fetchPanels(with model: PanelsFetchModel, completion: @escaping (Result<[Panel], Error>) -> Void) {
         apiService.fetchPanels(model: model, completion: completion)
     }
 }
