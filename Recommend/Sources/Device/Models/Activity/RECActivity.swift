@@ -15,6 +15,11 @@ public enum RECActivity: Encodable {
     case wishlistUpdate(_ data: RECActivityWishlistUpdateData)
     case addToWishlist(_ data: RECActivityAddToWishlistData)
     case removeFromWishlist(_ data: RECActivityAddToWishlistData)
+    
+    // Cart
+    case cartUpdate(_ data: RECActivityCartUpdateData)
+    case addToCart(_ data: RECActivityAddToCartData)
+    case removeFromCart(_ data: RECActivityAddToCartData)
 
     // MARK: Coding Keys
     
@@ -41,10 +46,21 @@ public enum RECActivity: Encodable {
             type = .addToWishlist
             data = try JSONEncoder().encode(activityData)
             
-        case .removeFromWishlist(let activityData)
+        case .removeFromWishlist(let activityData):
             type = .removeFromWishlist
             data = try JSONEncoder().encode(activityData)
             
+        case .cartUpdate(let activityData):
+            type = .cartUpdate
+            data = try JSONEncoder().encode(activityData)
+            
+        case .addToCart(let activityData):
+            type = .addToCart
+            data = try JSONEncoder().encode(activityData)
+            
+        case .removeFromCart(let activityData):
+            type = .removeFromCart
+            data = try JSONEncoder().encode(activityData)
         }
         
         var container = encoder.container(keyedBy: CodingKeys.self)
@@ -62,4 +78,9 @@ private enum RECActivityType: String, Encodable {
     case wishlistUpdate = "wishlist_update"
     case addToWishlist = "add_to_wishlist"
     case removeFromWishlist = "remove_from_wishlist"
+    
+    // Cart
+    case cartUpdate = "cart_update"
+    case addToCart = "add_to_cart"
+    case removeFromCart = "remove_from_cart"
 }
