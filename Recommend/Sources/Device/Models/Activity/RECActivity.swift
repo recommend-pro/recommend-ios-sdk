@@ -28,6 +28,10 @@ public enum RECActivity: Encodable {
     
     // Search
     case searchView(_ data: RECActivitySearchViewData)
+    
+    // List
+    case listView(_ data: RECActivityListViewData)
+    case elasticList(_ data: RECActivityElasticListData)
 
     // MARK: Coding Keys
     
@@ -85,6 +89,14 @@ public enum RECActivity: Encodable {
         case .searchView(let activityData):
             type = .productClick
             data = try JSONEncoder().encode(activityData)
+            
+        case .listView(let activityData):
+            type = .listView
+            data = try JSONEncoder().encode(activityData)
+            
+        case .elasticList(let activityData):
+            type = .elasticList
+            data = try JSONEncoder().encode(activityData)
         }
         
         var container = encoder.container(keyedBy: CodingKeys.self)
@@ -115,4 +127,8 @@ private enum RECActivityType: String, Encodable {
     
     // Search
     case searchView = "search_view"
+    
+    // List
+    case listView = "list_view"
+    case elasticList = "elastic_list"
 }
