@@ -10,7 +10,7 @@ import Foundation
 
 public final class Recommend: NSObject {
     private let core: RECCore
-    private let device: RECDevice
+    public let device: RECDevice
     
     // MARK: Init
     
@@ -22,11 +22,5 @@ public final class Recommend: NSObject {
                                apiHost: apiHost)
         self.core = RECCore(config: config)
         self.device = RECDevice(core: core)
-    }
-    
-    // MARK: Device
-    
-    public func trackDeviceActivity(_ deviceActivity: RECDeviceActivity, completion: @escaping (Error?) -> Void) {
-        device.trackActivity(deviceActivity, completion: completion)
     }
 }

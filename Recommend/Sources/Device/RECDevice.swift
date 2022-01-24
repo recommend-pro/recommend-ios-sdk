@@ -8,9 +8,13 @@
 
 import Foundation
 
-final class RECDevice {
+public final class RECDevice {
     private let core: RECCore
     private let apiService: RECDeviceAPIService
+    
+    private var parameters: RECParameters {
+        return core.parameters
+    }
     
     // MARK: Int
     
@@ -21,7 +25,22 @@ final class RECDevice {
     
     // MARK: Track Device Activity
     
-    func trackActivity(_ deviceActivity: RECDeviceActivity, completion: @escaping (Error?) -> Void) {
+    public func trackActivity(_ deviceActivity: RECDeviceActivity, completion: @escaping (Error?) -> Void) {
         apiService.trackDeviceActivity(deviceActivity, completion: completion)
+    }
+    
+    public func trackActivity(activity: [RECActivity],
+                              eventTime: Date = Date(),
+                              completion: @escaping (Error?) -> Void) {
+        let eventTime = Int(eventTime.timeIntervalSince1970)
+        let deviceActivity = RECDeviceActivity(customerIdHash: parameters.customerIdHash,
+                                               store: parameters.store,
+                                               currency: parameters.currency,
+                                               environment: parameters.environment,
+                                               priceList: parameters.priceList,
+                                               eventTime: eventTime,
+                                               metrics: parameters.metrics,
+                                               activity: activity)
+        self.trackActivity(deviceActivity, completion: completion)
     }
 }
