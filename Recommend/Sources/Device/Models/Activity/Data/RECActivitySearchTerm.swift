@@ -11,7 +11,7 @@ import Foundation
 public struct RECActivitySearchTerm: Encodable {
     public typealias TermType = RECActivitySearchTermType
     
-    public let type: SearchTermType
+    public let type: TermType
     public let value: String
 }
 
