@@ -6,7 +6,6 @@
 //  Copyright © 2022 Recommend OÜ. All rights reserved.
 //
 
-
 import Foundation
 
 public enum RECActivity: Encodable {
@@ -21,15 +20,21 @@ public enum RECActivity: Encodable {
     // MARK: Encodable
     
     public func encode(to encoder: Encoder) throws {
-        let type: String!
+        var type: RECActivityType
         var data: Data?
         
-        //switch self {
-        //
-        //}
+        switch self {
+            
+        }
         
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(type, forKey: .type)
         try container.encodeIfPresent(data, forKey: .data)
     }
+}
+
+// MARK: - Activity Type
+
+private enum RECActivityType: String, Encodable {
+    
 }
