@@ -9,7 +9,9 @@
 import Foundation
 
 public enum RECActivity: Encodable {
+    // Application
     case openApp
+    case updateDevice(_ data: RECActivityUpdateDeviceData)
     
     // Wishlist
     case wishlistUpdate(_ data: RECActivityWishlistUpdateData)
@@ -71,6 +73,10 @@ public enum RECActivity: Encodable {
         switch self {
         case .openApp:
             type = .openApp
+            
+        case .updateDevice(let activityData):
+            type = .updateDevice
+            data = try JSONEncoder().encode(activityData)
             
         case .wishlistUpdate(let activityData):
             type = .wishlistUpdate
@@ -164,7 +170,9 @@ public enum RECActivity: Encodable {
 // MARK: - Activity Type
 
 private enum RECActivityType: String, Encodable {
+    // Application
     case openApp = "open_app"
+    case updateDevice = "update_device"
     
     // Wishlist
     case wishlistUpdate = "wishlist_update"
