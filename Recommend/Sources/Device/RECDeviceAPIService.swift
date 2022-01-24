@@ -9,6 +9,8 @@
 import Foundation
 
 final class RECDeviceAPIService {
+    private typealias APIEndpoints = RECDeviceAPIEndpoints
+    
     private let core: RECCore
     private var config: RECConfig {
         return core.config
