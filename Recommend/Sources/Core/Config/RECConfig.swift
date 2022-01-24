@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 
 public let kRECDefaultAPIHost = "api.recommend.pro"
-private let kRECURLSessionIdentifier = ""
 
 public final class RECConfig {
     public let appName: String
@@ -23,14 +22,24 @@ public final class RECConfig {
         return UIDevice.current.identifierForVendor?.uuidString
     }
     
-    public var deviceId: String? {
-        if let storedDeviceId = userDefaults.deviceId, storedDeviceId != "" {
-            return storedDeviceId
-        } else {
-            let deviceId = self.identifierForVendorUUIDString
-            self.userDefaults.deviceId = deviceId
-            return deviceId
+    public func deviceId() throws -> String {
+        if let storedDeviceId = userDefaults.deviceId {
+            if storedDeviceId.isEmpty == false {
+                return storedDeviceId
+            } else {
+                userDefaults.deviceId = nil
+            }
         }
+        
+        guard
+            let deviceId = self.identifierForVendorUUIDString,
+            deviceId.isEmpty == false
+        else {
+            throw RECConfigError.nilDeviceId
+        }
+        
+        self.userDefaults.deviceId = deviceId
+        return deviceId
     }
     
     // MARK: Init
