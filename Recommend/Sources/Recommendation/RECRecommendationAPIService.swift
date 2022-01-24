@@ -1,5 +1,5 @@
 //
-//  RECRecommendation.swift
+//  RECRecommendationAPIService.swift
 //  Recommend
 //
 //  Created by Dmytrii Golovanov on 08.12.2021.
@@ -8,16 +8,16 @@
 
 import Foundation
 
-final class RECRecommendation {
-    private typealias APIService = RECRecommendationAPIService
-    
+final class RECRecommendationAPIService {
     private let core: RECCore
-    private let apiService: APIService
+    private var config: RECConfig {
+        return core.config
+    }
     
     // MARK: Init
     
     init(core: RECCore) {
         self.core = core
-        self.apiService = APIService(core: core)
     }
 }
+
