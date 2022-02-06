@@ -11,13 +11,12 @@ import Foundation
 struct RECRecommendationPanelsFetchModelPanel: Encodable {
     typealias Context = RECRecommendationPanelsFetchModelPanelContext
     typealias Filter = RECRecommendationPanelsFetchModelPanelFilter
-    typealias AttributesKeys = RECRecommendationPanelsFetchModelPanelAttributesKeys
     typealias Variations = RECRecommendationPanelsFetchModelPanelVariations
     
     let id: String
     let context: Context?
     let filters: [Filter]?
-    let attrsToInclude: [AttributesKeys]?
+    let attrsToInclude: [String]?
     let variations: Variations?
     
     // MARK: Coding Keys

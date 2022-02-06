@@ -9,10 +9,8 @@
 import Foundation
 
 struct RECRecommendationPanelsFetchModelPanelVariations: Encodable {
-    typealias AttributesKeys = RECRecommendationPanelsFetchModelPanelAttributesKeys
-    
     let include: Bool
-    let attrsToInclude: [AttributesKeys]?
+    let attrsToInclude: [String]?
     
     // MARK: Coding Keys
     

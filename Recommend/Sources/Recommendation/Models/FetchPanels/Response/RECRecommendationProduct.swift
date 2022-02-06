@@ -9,8 +9,6 @@
 import Foundation
 
 struct RECRecommendationProduct: Decodable {
-    typealias AdditionalAttributes = RECRecommendationAdditionalAttributes
-    
     let name: String
     let trimedName: String?
     let sku: String
@@ -20,7 +18,7 @@ struct RECRecommendationProduct: Decodable {
     let originalPrice: Double
     let image: String
     let url: String
-    let attrs: AdditionalAttributes?
+    let attrs: [String: RECAttribute]?
     
     // MARK: Coding Keys
     
