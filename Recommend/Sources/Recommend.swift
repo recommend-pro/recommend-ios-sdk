@@ -25,4 +25,11 @@ public final class Recommend: NSObject {
         self.device = RECDevice(core: core)
         self.recommendation = RECRecommendation(core: core)
     }
+    
+    // MARK: Recommendation
+    
+    public func fetchPanels(model: RECRecommendationPanelsFetchModel,
+                            completion: @escaping (Result<[RECRecommendationPanel], Error>) -> Void) {
+        recommendation.fetchPanels(with: model, completion: completion)
+    }
 }
