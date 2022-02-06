@@ -23,7 +23,7 @@ public enum RECAttribute: Decodable {
     
     // MARK: Date Formatter
     
-    private static lazy var dateFormatter: ISO8601DateFormatter = {
+    private static var dateFormatter: ISO8601DateFormatter = {
         let formatter = ISO8601DateFormatter()
         formatter.formatOptions = [.withFullDate,
                                    .withDashSeparatorInDate,
@@ -86,7 +86,7 @@ public enum RECAttribute: Decodable {
     // MARK: Date List
     
     private static func dateList(from stringList: [String]) -> [Date]? {
-        let dateList: [Date] = stringList.map({ Self.dateFormatter.date(from: $0) })
+        let dateList: [Date] = stringList.compactMap({ Self.dateFormatter.date(from: $0) })
         guard dateList.count == stringList.count else {
             return nil
         }
@@ -95,8 +95,8 @@ public enum RECAttribute: Decodable {
     
     // MARK: Image (URL) List
     
-    private static func imageList(from stringList: [String]) -> [Date]? {
-        let imageList: [URL] = stringList.map({ URL(string: $0) })
+    private static func imageList(from stringList: [String]) -> [URL]? {
+        let imageList: [URL] = stringList.compactMap({ URL(string: $0) })
         guard imageList.count == stringList.count else {
             return nil
         }
