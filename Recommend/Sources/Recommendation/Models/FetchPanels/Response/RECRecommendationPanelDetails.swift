@@ -8,11 +8,11 @@
 
 import Foundation
 
-struct RECRecommendationPanelDetails: Decodable {
-    let locale: String
-    let panelId: String?
-    let products: [RECRecommendationProduct]
-    let requestCountry: String?
+public struct RECRecommendationPanelDetails: Decodable {
+    public let locale: String
+    public let panelId: String?
+    public let products: [RECRecommendationProduct]
+    public let requestCountry: String?
     
     // MARK: Coding Keys
     

@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum RECRecommendationContentType: String, Encodable {
+public enum RECRecommendationContentType: String, Encodable {
     case json
     case html
 }

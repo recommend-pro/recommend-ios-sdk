@@ -8,16 +8,16 @@
 
 import Foundation
 
-struct RECRecommendationPanelsFetchModelPanel: Encodable {
-    typealias Context = RECRecommendationPanelsFetchModelPanelContext
-    typealias Filter = RECRecommendationPanelsFetchModelPanelFilter
-    typealias Variations = RECRecommendationPanelsFetchModelPanelVariations
+public struct RECRecommendationPanelsFetchModelPanel: Encodable {
+    public typealias Context = RECRecommendationPanelsFetchModelPanelContext
+    public typealias Filter = RECRecommendationPanelsFetchModelPanelFilter
+    public typealias Variations = RECRecommendationPanelsFetchModelPanelVariations
     
-    let id: String
-    let context: Context?
-    let filters: [Filter]?
-    let attrsToInclude: [String]?
-    let variations: Variations?
+    public let id: String
+    public let context: Context?
+    public let filters: [Filter]?
+    public let attrsToInclude: [String]?
+    public let variations: Variations?
     
     // MARK: Coding Keys
     

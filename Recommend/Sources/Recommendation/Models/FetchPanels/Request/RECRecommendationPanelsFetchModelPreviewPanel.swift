@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct RECRecommendationPanelsFetchModelPreviewPanel: Encodable {
-    let global: Bool
-    let ids: [String]
+public struct RECRecommendationPanelsFetchModelPreviewPanel: Encodable {
+    public let global: Bool
+    public let ids: [String]
 }

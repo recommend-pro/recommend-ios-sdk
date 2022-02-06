@@ -8,13 +8,13 @@
 
 import Foundation
 
-struct RECRecommendationPanelsFetchModelPanelContext: Encodable {
-    typealias CurrentContext = RECRecommendationPanelsFetchModelPanelCurrentContext
+public struct RECRecommendationPanelsFetchModelPanelContext: Encodable {
+    public typealias CurrentContext = RECRecommendationPanelsFetchModelPanelCurrentContext
     
-    let searchTerm: String
-    let current: CurrentContext
-    let skus: [String]
-    let listIds: [String]
+    public let searchTerm: String
+    public let current: CurrentContext
+    public let skus: [String]
+    public let listIds: [String]
     
     // MARK: Coding Keys
     

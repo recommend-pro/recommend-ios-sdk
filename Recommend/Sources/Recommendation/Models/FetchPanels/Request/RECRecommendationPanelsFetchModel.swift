@@ -8,23 +8,23 @@
 
 import Foundation
 
-struct RECRecommendationPanelsFetchModel: Encodable {
-    typealias PriceList = RECRecommendationPriceList
-    typealias ContentType = RECRecommendationContentType
-    typealias Panel = RECRecommendationPanelsFetchModelPanel
-    typealias PreviewPanel = RECRecommendationPanelsFetchModelPreviewPanel
+public struct RECRecommendationPanelsFetchModel: Encodable {
+    public typealias PriceList = RECRecommendationPriceList
+    public typealias ContentType = RECRecommendationContentType
+    public typealias Panel = RECRecommendationPanelsFetchModelPanel
+    public typealias PreviewPanel = RECRecommendationPanelsFetchModelPreviewPanel
     
-    let deviceId: String
-    let customerIdHash: String?
-    let storeCode: String
-    let currencyCode: String
-    let environmentCode: String?
-    let priceList: PriceList
-    let metrics: RECMetrics?
-    let pageType: String?
-    let contentType: ContentType
-    let panels: [Panel]?
-    let previewPanel: PreviewPanel?
+    public let deviceId: String
+    public let customerIdHash: String?
+    public let storeCode: String
+    public let currencyCode: String
+    public let environmentCode: String?
+    public let priceList: PriceList
+    public let metrics: RECMetrics?
+    public let pageType: String?
+    public let contentType: ContentType
+    public let panels: [Panel]?
+    public let previewPanel: PreviewPanel?
     
     // MARK: Coding Keys
     

@@ -8,13 +8,13 @@
 
 import Foundation
 
-struct RECRecommendationPanel: Decodable {
-    typealias Details = RECRecommendationPanelDetails
+public struct RECRecommendationPanel: Decodable {
+    public typealias Details = RECRecommendationPanelDetails
     
-    let panelId: String
-    let slotId: String?
-    let html: String?
-    let data: Details?
+    public let panelId: String
+    public let slotId: String?
+    public let html: String?
+    public let data: Details?
     
     // MARK: Coding Keys
     

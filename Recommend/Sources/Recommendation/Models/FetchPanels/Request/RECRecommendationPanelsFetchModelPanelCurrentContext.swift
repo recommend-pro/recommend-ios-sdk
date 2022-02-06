@@ -8,9 +8,9 @@
 
 import Foundation
 
-struct RECRecommendationPanelsFetchModelPanelCurrentContext: Encodable {
-    let sku: String
-    let listId: String
+public struct RECRecommendationPanelsFetchModelPanelCurrentContext: Encodable {
+    public let sku: String
+    public let listId: String
     
     // MARK: Coding Keys
     

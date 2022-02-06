@@ -8,17 +8,17 @@
 
 import Foundation
 
-struct RECRecommendationProduct: Decodable {
-    let name: String
-    let trimedName: String?
-    let sku: String
-    let status: Bool
-    let lists: [String]
-    let price: Double
-    let originalPrice: Double
-    let image: String
-    let url: String
-    let attrs: [String: RECAttribute]?
+public struct RECRecommendationProduct: Decodable {
+    public let name: String
+    public let trimedName: String?
+    public let sku: String
+    public let status: Bool
+    public let lists: [String]
+    public let price: Double
+    public let originalPrice: Double
+    public let image: String
+    public let url: String
+    public let attrs: [String: RECAttribute]?
     
     // MARK: Coding Keys
     

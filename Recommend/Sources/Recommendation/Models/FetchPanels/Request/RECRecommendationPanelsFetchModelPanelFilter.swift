@@ -8,11 +8,11 @@
 
 import Foundation
 
-struct RECRecommendationPanelsFetchModelPanelFilter: Encodable {
-    let type: FilterType?
-    let code: String
-    let `operator`: Operator
-    let value: String
+public struct RECRecommendationPanelsFetchModelPanelFilter: Encodable {
+    public let type: FilterType?
+    public let code: String
+    public let `operator`: Operator
+    public let value: String
     
     enum CodingKeys: String, CodingKey {
         case type
@@ -23,13 +23,13 @@ struct RECRecommendationPanelsFetchModelPanelFilter: Encodable {
     
     // MARK: Filter Type
     
-    enum FilterType: String, Encodable {
+    public enum FilterType: String, Encodable {
         case product
     }
     
     // MARK: Operator
     
-    enum Operator: String, Encodable {
+    public enum Operator: String, Encodable {
         case eq
         case `in`
         case ne

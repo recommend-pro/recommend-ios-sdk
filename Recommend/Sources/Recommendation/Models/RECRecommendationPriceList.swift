@@ -8,10 +8,10 @@
 
 import Foundation
 
-struct RECRecommendationPriceList: Encodable {
-    let code: String
-    let fallbackMode: FallbackMode?
-    let alternatives: [String]?
+public struct RECRecommendationPriceList: Encodable {
+    public let code: String
+    public let fallbackMode: FallbackMode?
+    public let alternatives: [String]?
     
     // MARK: Coding Keys
     
@@ -23,7 +23,7 @@ struct RECRecommendationPriceList: Encodable {
     
     // MARK: Fallback Mode
     
-    enum FallbackMode: String, Encodable {
+    public enum FallbackMode: String, Encodable {
         case none
         case `default`
         case alternative
