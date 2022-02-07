@@ -26,6 +26,16 @@ public final class Recommend: NSObject {
         self.recommendation = RECRecommendation(core: core)
     }
     
+    // MARK: Device
+    
+    public func trackDeviceActivity(activity: [RECActivity],
+                                    eventTime: Date = Date(),
+                                    completion: @escaping (Error?) -> Void) {
+        device.trackActivity(activity: activity,
+                             eventTime: eventTime,
+                             completion: completion)
+    }
+    
     // MARK: Recommendation
     
     public func fetchPanels(model: RECRecommendationPanelsFetchModel,
