@@ -9,5 +9,22 @@
 import Foundation
 
 public final class Recommend: NSObject {
+    private let core: RECCore
     
+    // MARK: Init
+    
+    public init(appName: String,
+                appId: String,
+                apiHost: String = kRECDefaultAPIHost) {
+        let config = RECConfig(appName: appName,
+                               appId: appId,
+                               apiHost: apiHost)
+        self.core = RECCore(config: config)
+    }
+    
+    // MARK: Device Id
+    
+    public func deviceId() throws -> String {
+        return try core.config.deviceId()
+    }
 }

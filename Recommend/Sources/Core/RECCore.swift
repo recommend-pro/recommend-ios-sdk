@@ -9,5 +9,11 @@
 import Foundation
 
 public final class RECCore: NSObject {
+    public let config: RECConfig
     
+    // MARK: Init
+    
+    init(config: RECConfig) {
+        self.config = config
+    }
 }
