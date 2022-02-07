@@ -10,10 +10,12 @@ import Foundation
 
 public final class RECCore: NSObject {
     public let config: RECConfig
+    public let environment: RECEnvironment
     
     // MARK: Init
     
     init(config: RECConfig) {
         self.config = config
+        self.environment = RECEnvironment()
     }
 }
