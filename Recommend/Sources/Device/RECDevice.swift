@@ -13,8 +13,8 @@ public final class RECDevice {
     private let core: RECCore
     private let apiService: RECDeviceAPIService
     
-    private var parameters: RECParameters {
-        return core.parameters
+    private var environment: RECEnvironment {
+        return core.environment
     }
     
     // MARK: Int
@@ -34,13 +34,13 @@ public final class RECDevice {
                               eventTime: Date = Date(),
                               completion: @escaping (Error?) -> Void) {
         let eventTime = Int(eventTime.timeIntervalSince1970)
-        let deviceActivity = RECDeviceActivity(customerIdHash: parameters.customerIdHash,
-                                               store: parameters.store,
-                                               currency: parameters.currency,
-                                               environment: parameters.environment,
-                                               priceList: parameters.priceList?.code,
+        let deviceActivity = RECDeviceActivity(customerIdHash: environment.customerIdHash,
+                                               store: environment.store,
+                                               currency: environment.currency,
+                                               environment: environment.environment,
+                                               priceList: environment.priceList?.code,
                                                eventTime: eventTime,
-                                               metrics: parameters.metrics,
+                                               metrics: environment.metrics,
                                                activity: activity)
         self.trackActivity(deviceActivity, completion: completion)
     }
