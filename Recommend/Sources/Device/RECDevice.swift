@@ -32,7 +32,7 @@ public final class RECDevice {
     
     public func trackActivity(activity: [RECActivity],
                               eventTime: Date = Date(),
-                              completion: @escaping (Error?) -> Void) {
+                              completion: ((Error?) -> Void)? = nil) {
         let eventTime = Int(eventTime.timeIntervalSince1970)
         let deviceActivity = RECDeviceActivity(customerIdHash: environment.customerIdHash,
                                                store: environment.store,
@@ -42,18 +42,18 @@ public final class RECDevice {
                                                eventTime: eventTime,
                                                metrics: environment.metrics,
                                                activity: activity)
-        self.trackActivity(deviceActivity, completion: completion)
+        self.trackActivity(deviceActivity) { error in
+            completion?(error)
+        }
     }
     
     // MARK: Update Device
     
-    public func updateDevice() {
+    public func updateDevice(completion: ((Error?) -> Void)? = nil) {
         let activityData: RECActivityUpdateDeviceData = .default(firstLaunch: false)
         let activity: RECActivity = .updateDevice(activityData)
-        trackActivity(activity: [activity], eventTime: Date()) { error in
-            if let error = error {
-                debugPrint(error)
-            }
-        }
+        trackActivity(activity: [activity],
+                      eventTime: Date(),
+                      completion: completion)
     }
 }
