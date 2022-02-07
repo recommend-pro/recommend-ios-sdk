@@ -38,7 +38,7 @@ public final class RECDevice {
                                                store: parameters.store,
                                                currency: parameters.currency,
                                                environment: parameters.environment,
-                                               priceList: parameters.priceList,
+                                               priceList: parameters.priceList?.code,
                                                eventTime: eventTime,
                                                metrics: parameters.metrics,
                                                activity: activity)

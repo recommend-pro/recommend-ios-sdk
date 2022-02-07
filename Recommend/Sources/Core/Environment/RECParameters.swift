@@ -13,6 +13,6 @@ public class RECParameters {
     public var store: String?
     public var currency: String?
     public var environment: String?
-    public var priceList: String?
+    public var priceList: RECPriceList?
     public var metrics: RECMetrics?
 }
