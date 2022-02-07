@@ -44,8 +44,13 @@ public final class Recommend: NSObject {
     
     // MARK: Recommendation
     
-    public func fetchPanels(model: RECRecommendationPanelsFetchModel,
+    public func fetchPanels(pageType: String? = nil,
+                            panels: [RECRecommendationPanelsFetchModel.Panel]? = nil,
+                            previewPanel: RECRecommendationPanelsFetchModel.PreviewPanel? = nil,
                             completion: @escaping (Result<[RECRecommendationPanel], Error>) -> Void) {
-        recommendation.fetchPanels(with: model, completion: completion)
+        recommendation.fetchPanels(pageType: pageType,
+                                   panels: panels,
+                                   previewPanel: previewPanel,
+                                   completion: completion)
     }
 }
