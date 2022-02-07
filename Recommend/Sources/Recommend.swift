@@ -26,6 +26,12 @@ public final class Recommend: NSObject {
         self.recommendation = RECRecommendation(core: core)
     }
     
+    // MARK: Device ID
+    
+    public func deviceId() throws -> String {
+        return try core.config.deviceId()
+    }
+    
     // MARK: Device
     
     public func trackDeviceActivity(activity: [RECActivity],
