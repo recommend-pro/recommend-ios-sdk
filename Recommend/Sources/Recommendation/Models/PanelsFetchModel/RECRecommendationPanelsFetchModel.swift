@@ -9,7 +9,7 @@
 import Foundation
 
 public struct RECRecommendationPanelsFetchModel: Encodable {
-    public typealias PriceList = RECRecommendationPriceList
+    public typealias PriceList = RECPriceList
     public typealias ContentType = RECRecommendationContentType
     public typealias Panel = RECRecommendationPanelsFetchModelPanel
     public typealias PreviewPanel = RECRecommendationPanelsFetchModelPreviewPanel

@@ -1,5 +1,5 @@
 //
-//  RECParameters.swift
+//  RECEnvironment.swift
 //  Recommend
 //
 //  Created by Dmytrii Golovanov on 07.12.2021.
@@ -8,11 +8,16 @@
 
 import Foundation
 
-public class RECParameters {
+public class RECEnvironment {
+    /// Hash of identifier of customer
     public var customerIdHash: String?
+    /// Store code
     public var store: String?
+    /// Currency code
     public var currency: String?
+    /// Environment code
     public var environment: String?
-    public var priceList: String?
+    /// Price list
+    public var priceList: RECPriceList?
     public var metrics: RECMetrics?
 }

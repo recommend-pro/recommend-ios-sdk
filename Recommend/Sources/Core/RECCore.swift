@@ -12,14 +12,14 @@ public final class RECCore: NSObject {
     public let config: RECConfig
     private let apiClient: RECAPIClient
     
-    public let parameters: RECParameters
+    public let environment: RECEnvironment
     
     // MARK: Init
     
     init(config: RECConfig) {
         self.config = config
         self.apiClient = RECAPIClient(config: config)
-        self.parameters = RECParameters()
+        self.environment = RECEnvironment()
     }
     
     // MARK: API

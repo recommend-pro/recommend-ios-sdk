@@ -1,5 +1,5 @@
 //
-//  RECRecommendationPriceList.swift
+//  RECPriceList.swift
 //  Recommend
 //
 //  Created by Dmytrii Golovanov on 08.12.2021.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct RECRecommendationPriceList: Encodable {
+public struct RECPriceList: Encodable {
     public let code: String
     public let fallbackMode: FallbackMode?
     public let alternatives: [String]?
