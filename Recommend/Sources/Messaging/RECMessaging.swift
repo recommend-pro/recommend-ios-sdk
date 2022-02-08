@@ -37,14 +37,14 @@ public final class RECMessaging: NSObject {
     
     // MARK: Unsubscribe From Push Notifications
     
-    func unsubscribeFromPushNotifications(completion: @escaping (Error?) -> Void) {
+    private func unsubscribeFromPushNotifications(completion: @escaping (Error?) -> Void) {
         apiService.unsubscribeFromPushNotifications(completion: completion)
     }
     
     // MARK: Track Push Notification Event
     
-    func trackPushNotificationEvent(model: RECMessagingPushNotificationEvent,
-                                    completion: @escaping (Error?) -> Void) {
+    private func trackPushNotificationEvent(model: RECMessagingPushNotificationEvent,
+                                            completion: @escaping (Error?) -> Void) {
         apiService.trackPushNotificationEvent(model: model, completion: completion)
     }
 }
