@@ -25,17 +25,18 @@ public final class Recommend: NSObject {
     public private(set) static var shared: Recommend!
     
     /// Initialize `shared` instance.
+    @discardableResult
     public static func initialize(
         appName: String,
         appId: String,
         apiHost: String = kRECDefaultAPIHost
-    ) {
-        guard self.shared == nil else {
-            return
+    ) -> Recommend! {
+        if self.shared == nil  {
+            self.shared = Self.init(appName: appName,
+                                    appId: appId,
+                                    apiHost: apiHost)
         }
-        self.shared = Self.init(appName: appName,
-                                appId: appId,
-                                apiHost: apiHost)
+        return shared
     }
     
     // MARK: Init
