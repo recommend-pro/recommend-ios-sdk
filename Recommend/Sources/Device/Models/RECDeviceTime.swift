@@ -15,7 +15,10 @@ public struct RECDeviceTime: Encodable {
     
     // MARK: Init
     
-    init(timezone: RECTimeZone, date: Date) {
+    init(
+        timezone: RECTimeZone,
+        date: Date
+    ) {
         self.timezone = timezone
         
         let formatter = ISO8601DateFormatter()

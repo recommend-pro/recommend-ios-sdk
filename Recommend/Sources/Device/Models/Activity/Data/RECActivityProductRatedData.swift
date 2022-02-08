@@ -19,9 +19,11 @@ public struct RECActivityProductRatedData: Encodable {
         case variationSKU = "variation_sku"
     }
     
-    init(sku: String,
-         rate: Int,
-         variationSKU: String?) {
+    init(
+        sku: String,
+        rate: Int,
+        variationSKU: String?
+    ) {
         self.sku = sku
         if rate < 0 {
             self.rate = 0
