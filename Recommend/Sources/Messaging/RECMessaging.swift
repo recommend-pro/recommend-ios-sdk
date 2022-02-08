@@ -11,19 +11,34 @@ import UserNotifications
 
 public final class RECMessaging: NSObject {
     private typealias APIService = RECMessagingAPIService
+    private typealias Storage = RECMessagingStorage
     private typealias Token = RECMessagingToken
     private typealias PushNotificationEvent = RECMessagingPushNotificationEvent
     
     private let core: RECCore
     private let userNotificationCenter: UNUserNotificationCenter
     private let apiService: APIService
+    private let storage: Storage
     
     private var applicationName: String {
         return core.config.appName
     }
-    private var firstSubscribedDate: Int?
-    private var subscriptionStatusChangeDate: Int?
-    private var lastSubscriptionStatus: RECMessagingSubscriptionStatus?
+    private var firstSubscribedDate: Int? {
+        get {
+            storage.firstSubscribedDate
+        }
+        set {
+            storage.firstSubscribedDate = newValue
+        }
+    }
+    private var lastSubscriptionStatus: RECMessagingSubscriptionStatus? {
+        get {
+            storage.lastSubscriptionStatus
+        }
+        set {
+            storage.lastSubscriptionStatus = newValue
+        }
+    }
     
     // MARK: Init
     
@@ -31,9 +46,10 @@ public final class RECMessaging: NSObject {
         self.core = core
         self.userNotificationCenter = userNotificationCenter
         self.apiService = APIService(core: core)
+        self.storage = Storage()
     }
     
-    // MARK: Info
+    // MARK: User Info
     
     public func isRecommendNotification(_ userInfo: [AnyHashable: Any]) -> Bool {
         return RECMessagingUserInfo(from: userInfo)?.isRecommendPushNotification ?? false
@@ -56,15 +72,20 @@ public final class RECMessaging: NSObject {
         if subscriptionStatus == .subscribed, firstSubscribedDate == nil {
             firstSubscribedDate = Int(Date().timeIntervalSince1970)
         }
+        
+        var subscriptionStatusChangeDate: Int?
+        var targetSubscriptionStatus: RECMessagingSubscriptionStatus?
+        
         if let subscriptionStatus = subscriptionStatus, subscriptionStatus != lastSubscriptionStatus {
             subscriptionStatusChangeDate = Int(Date().timeIntervalSince1970)
+            targetSubscriptionStatus = subscriptionStatus
         }
         lastSubscriptionStatus = subscriptionStatus
-        
+
         let token = RECMessagingToken(deviceToken: deviceToken)
         let model = RECMessagingSubscriptionUpdateModel(token: token,
                                                         applicationId: applicationName,
-                                                        subscriptionStatus: subscriptionStatus,
+                                                        subscriptionStatus: targetSubscriptionStatus,
                                                         subscriptionStatusChangeDate: subscriptionStatusChangeDate,
                                                         firstSubscribedDate: firstSubscribedDate)
         updatePushNotificationsSubscription(model: model)
