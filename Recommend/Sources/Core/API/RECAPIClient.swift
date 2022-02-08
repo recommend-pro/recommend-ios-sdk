@@ -52,7 +52,10 @@ final class RECAPIClient: NSObject {
         return task
     }
     
-    private func process(request: RECAPIRequest, completion: @escaping (Result<Data, Error>) -> Void) {
+    private func process(
+        request: RECAPIRequest,
+        completion: @escaping (Result<Data, Error>) -> Void
+    ) {
         do {
             let urlRequest = try self.buildURLRequest(for: request)
             
@@ -79,7 +82,10 @@ final class RECAPIClient: NSObject {
     
     // MARK: Execute Request
     
-    func execute(request: RECAPIRequest, completion: @escaping (Error?) -> Void) {
+    func execute(
+        request: RECAPIRequest,
+        completion: @escaping (Error?) -> Void
+    ) {
         let waypointCompletion: (Result<Data, Error>) -> Void = { result in
             do {
                 switch result {
@@ -98,7 +104,10 @@ final class RECAPIClient: NSObject {
         process(request: request, completion: waypointCompletion)
     }
     
-    func execute<T>(request: RECAPIRequest, completion: @escaping (Result<T, Error>) -> Void) where T : Decodable {
+    func execute<T>(
+        request: RECAPIRequest,
+        completion: @escaping (Result<T, Error>) -> Void
+    ) where T : Decodable {
         let waypointCompletion: (Result<Data, Error>) -> Void = { result in
             do {
                 switch result {
@@ -121,7 +130,10 @@ final class RECAPIClient: NSObject {
 // MARK: - API DataTask
 
 private extension RECAPIClient {
-    func dataTask(urlRequest: URLRequest, completion: @escaping (Result<Data, Error>) -> Void) -> RECAPIDataTask {
+    func dataTask(
+        urlRequest: URLRequest,
+        completion: @escaping (Result<Data, Error>) -> Void
+    ) -> RECAPIDataTask {
         return RECAPIDataTask(urlRequest: urlRequest,
                               urlSession: self.urlSession,
                               completion: completion)

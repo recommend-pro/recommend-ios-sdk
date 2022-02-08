@@ -56,9 +56,11 @@ public final class RECConfig {
     
     // MARK: Init
     
-    init(appName: String,
-         appId: String,
-         apiHost: String = kRECDefaultAPIHost) {
+    init(
+        appName: String,
+        appId: String,
+        apiHost: String = kRECDefaultAPIHost
+    ) {
         self.appName = appName
         self.appId = appId
         self.apiHost = apiHost
