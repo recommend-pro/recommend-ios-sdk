@@ -11,6 +11,7 @@ import UserNotifications
 
 public final class RECMessaging: NSObject {
     private typealias APIService = RECMessagingAPIService
+    private typealias PushNotificationEvent = RECMessagingPushNotificationEvent
     
     private let core: RECCore
     private let userNotificationCenter: UNUserNotificationCenter
@@ -53,25 +54,24 @@ public final class RECMessaging: NSObject {
     
     // MARK: Track Push Notification Event
     
-    private func trackPushNotificationEvent(model: RECMessagingPushNotificationEvent,
-                                            completion: @escaping (Error?) -> Void) {
-        apiService.trackPushNotificationEvent(model: model, completion: completion)
+    private func trackPushNotificationEvent(_ event: PushNotificationEvent) {
+        apiService.trackPushNotificationEvent(model: event)  { _ in
+            // log error
+        }
     }
     
     private func trackPushNotificationEvent(userInfo: [AnyHashable: Any],
                                             clicked: Bool?,
                                             eventDate: Date?) {
         guard
-            let event = RECMessagingPushNotificationEvent(userInfo: userInfo,
-                                                          clicked: clicked,
-                                                          eventDate: eventDate)
+            let event = PushNotificationEvent(userInfo: userInfo,
+                                              clicked: clicked,
+                                              eventDate: eventDate)
         else {
             return
         }
         
-        trackPushNotificationEvent(model: event) { _ in
-            // log error
-        }
+        trackPushNotificationEvent(event)
     }
     
     private func trackPushNotificationEvent(notification: UNNotification,
