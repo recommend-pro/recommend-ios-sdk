@@ -122,7 +122,7 @@ public final class RECMessaging: NSObject {
     }
     
     private func trackPushNotificationEvent(userInfo: [AnyHashable: Any],
-                                            clicked: Bool?,
+                                            clicked: Bool? = nil,
                                             eventDate: Date?) {
         guard
             let event = PushNotificationEvent(userInfo: userInfo,
@@ -136,7 +136,7 @@ public final class RECMessaging: NSObject {
     }
     
     private func trackPushNotificationEvent(notification: UNNotification,
-                                            clicked: Bool?) {
+                                            clicked: Bool? = nil) {
         trackPushNotificationEvent(userInfo: notification.request.content.userInfo,
                                    clicked: clicked,
                                    eventDate: notification.date)
@@ -144,14 +144,8 @@ public final class RECMessaging: NSObject {
     
     // MARK: Remote Notifications
     
-    public func applicationDidRegisterForRemoteNotifications(withDeviceToken deviceToken: Data) {
-        updatePushNotificationsSubscription(deviceToken: deviceToken)
-    }
-    
-    public func didReceivePushNotification(_ userInfo: [AnyHashable: Any],
-                                           clicked: Bool) {
+    public func applicationDidReceiveRemoteNotification(_ userInfo: [AnyHashable: Any]) {
         self.trackPushNotificationEvent(userInfo: userInfo,
-                                        clicked: clicked,
                                         eventDate: Date())
     }
     
