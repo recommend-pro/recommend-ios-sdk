@@ -7,9 +7,11 @@
 //
 
 import Foundation
+import UIKit
 
 public final class Recommend: NSObject {
     private let core: RECCore
+    public let device: RECDevice
     public let recommendation: RECRecommendation
     public let messaging: RECMessaging
     
@@ -22,6 +24,7 @@ public final class Recommend: NSObject {
                                appId: appId,
                                apiHost: apiHost)
         self.core = RECCore(config: config)
+        self.device = RECDevice(core: core)
         self.recommendation = RECRecommendation(core: core)
         self.messaging = RECMessaging(core: core)
     }
@@ -30,5 +33,17 @@ public final class Recommend: NSObject {
     
     public func deviceId() throws -> String {
         return try core.config.deviceId()
+    }
+    
+    // MARK: Application
+    
+    public func application(_ application: UIApplication,
+                            didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
+        let isRemoteNotification = launchOptions?[.remoteNotification] as? [AnyHashable: Any] != nil
+
+        if !(application.applicationState == .background && isRemoteNotification) {
+            self.device.updateDevice()
+            self.device.trackDeviceActivity(activity: [.openApp])
+        }
     }
 }
