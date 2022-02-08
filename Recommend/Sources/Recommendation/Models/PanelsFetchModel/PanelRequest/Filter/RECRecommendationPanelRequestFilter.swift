@@ -9,6 +9,9 @@
 import Foundation
 
 public struct RECRecommendationPanelRequestFilter: Encodable {
+    public typealias FilterType = RECRecommendationPanelRequestFilterType
+    public typealias Operator = RECRecommendationPanelRequestFilterOperator
+    
     public let type: FilterType?
     public let code: String
     public let `operator`: Operator
@@ -21,19 +24,17 @@ public struct RECRecommendationPanelRequestFilter: Encodable {
         case value
     }
     
-    // MARK: Filter Type
+    // MARK: Init
     
-    public enum FilterType: String, Encodable {
-        case product
-    }
-    
-    // MARK: Operator
-    
-    public enum Operator: String, Encodable {
-        case eq
-        case `in`
-        case ne
-        case nin
-        case range
+    public init(
+        type: FilterType?,
+        code: String,
+        `operator`: Operator,
+        value: String
+    ) {
+        self.type = type
+        self.code = code
+        self.operator = `operator`
+        self.value = value
     }
 }

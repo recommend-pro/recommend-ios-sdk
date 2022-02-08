@@ -59,9 +59,9 @@ public final class RECRecommendation {
             
             let model = PanelsFetchModel(deviceId: deviceId,
                                          customerIdHash: environment.customerIdHash,
-                                         storeCode: store,
-                                         currencyCode: currency,
-                                         environmentCode: environment.environment,
+                                         store: store,
+                                         currency: currency,
+                                         environment: environment.environment,
                                          priceList: priceList,
                                          metrics: environment.metrics,
                                          pageType: pageType,

@@ -17,5 +17,15 @@ public struct RECRecommendationPanelRequestVariations: Encodable {
     enum CodingKeys: String, CodingKey {
         case include
         case attrsToInclude = "attrs_to_include"
-    }  
+    }
+    
+    // MARK: Init
+    
+    public init(
+        include: Bool,
+        attrsToInclude: [String]?
+    ) {
+        self.include = include
+        self.attrsToInclude = attrsToInclude
+    }
 }

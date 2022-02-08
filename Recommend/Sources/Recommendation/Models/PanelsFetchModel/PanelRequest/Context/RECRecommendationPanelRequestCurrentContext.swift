@@ -18,4 +18,14 @@ public struct RECRecommendationPanelRequestCurrentContext: Encodable {
         case sku
         case listId = "list_id"
     }
+    
+    // MARK: Init
+    
+    public init(
+        sku: String,
+        listId: String
+    ) {
+        self.sku = sku
+        self.listId = listId
+    }
 }

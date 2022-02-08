@@ -28,4 +28,20 @@ public struct RECRecommendationPanelRequest: Encodable {
         case attrsToInclude = "attrs_to_include"
         case variations
     }
+    
+    // MARK: Init
+    
+    public init(
+        id: String,
+        context: Context?,
+        filters: [Filter]?,
+        attrsToInclude: [String]?,
+        variations: Variations?
+    ) {
+        self.id = id
+        self.context = context
+        self.filters = filters
+        self.attrsToInclude = attrsToInclude
+        self.variations = variations
+    }
 }

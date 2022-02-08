@@ -24,4 +24,18 @@ public struct RECRecommendationPanelRequestContext: Encodable {
         case skus
         case listIds = "list_ids"
     }
+    
+    // MARK: Init
+    
+    public init(
+        searchTerm: String,
+        current: CurrentContext,
+        skus: [String],
+        listIds: [String]
+    ) {
+        self.searchTerm = searchTerm
+        self.current = current
+        self.skus = skus
+        self.listIds = listIds
+    }
 }
