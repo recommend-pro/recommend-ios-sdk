@@ -28,6 +28,16 @@ public final class RECMessaging: NSObject {
         self.apiService = APIService(core: core)
     }
     
+    // MARK: Info
+    
+    public func isRecommendNotification(_ userInfo: [AnyHashable: Any]) -> Bool {
+        return RECMessagingUserInfo(from: userInfo)?.isRecommendPushNotification ?? false
+    }
+    
+    public func remoteNotificationOpenURL(_ userInfo: [AnyHashable: Any]) -> URL? {
+        return RECMessagingUserInfo(from: userInfo)?.data?.openURL
+    }
+    
     // MARK: Update Push Notifications Subscription
     
     private func updatePushNotificationsSubscription(model: RECMessagingSubscriptionUpdateModel,
