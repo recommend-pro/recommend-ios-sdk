@@ -11,6 +11,7 @@ import UserNotifications
 
 public final class RECMessaging: NSObject {
     private typealias APIService = RECMessagingAPIService
+    private typealias Token = RECMessagingToken
     private typealias PushNotificationEvent = RECMessagingPushNotificationEvent
     
     private let core: RECCore
@@ -81,7 +82,28 @@ public final class RECMessaging: NSObject {
                                    eventDate: notification.date)
     }
     
-    // MARK: UNUserNotificationCenter
+    // MARK: Remote Notifications
+    
+    public func applicationDidRegisterForRemoteNotifications(withDeviceToken deviceToken: Data) {
+        let token = Token(deviceToken: deviceToken)
+        
+        userNotificationCenter.getNotificationSettings(completionHandler: { (settings) in
+            if settings.authorizationStatus == .denied {
+                // unsubscribe from push notifications
+            } else {
+                // update push notifications subscription
+            }
+        })
+    }
+    
+    public func didReceivePushNotification(_ userInfo: [AnyHashable: Any],
+                                           clicked: Bool) {
+        self.trackPushNotificationEvent(userInfo: userInfo,
+                                        clicked: clicked,
+                                        eventDate: Date())
+    }
+    
+    // MARK: User Notifications
     
     public func userNotificationCenter(_ center: UNUserNotificationCenter,
                                        didReceive response: UNNotificationResponse) {
