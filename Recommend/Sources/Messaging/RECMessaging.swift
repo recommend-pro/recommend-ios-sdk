@@ -144,10 +144,6 @@ public final class RECMessaging: NSObject {
     
     // MARK: Remote Notifications
     
-    public func applicationDidRegisterForRemoteNotifications(withDeviceToken deviceToken: Data) {
-        updatePushNotificationsSubscription(deviceToken: deviceToken)
-    }
-    
     public func didReceivePushNotification(_ userInfo: [AnyHashable: Any],
                                            clicked: Bool) {
         self.trackPushNotificationEvent(userInfo: userInfo,
