@@ -25,4 +25,29 @@ public final class RECDevice {
         self.core = core
         self.apiService = APIService(core: core)
     }
+    
+    // MARK: Track Device Activity
+    
+    private func trackDeviceActivity(_ deviceActivity: RECDeviceActivity,
+                                     completion: ((Error?) -> Void)? = nil) {
+        apiService.trackDeviceActivity(deviceActivity) { error in
+            completion?(error)
+        }
+    }
+    
+    public func trackDeviceActivity(activity: [RECActivity],
+                                    eventTime: Date = Date(),
+                                    completion: ((Error?) -> Void)? = nil) {
+        let eventTime = Int(eventTime.timeIntervalSince1970)
+        let deviceActivity = RECDeviceActivity(customerIdHash: environment.customerIdHash,
+                                               store: environment.store,
+                                               currency: environment.currency,
+                                               environment: environment.environment,
+                                               priceList: environment.priceList?.code,
+                                               eventTime: eventTime,
+                                               metrics: environment.metrics,
+                                               activity: activity)
+        self.trackDeviceActivity(deviceActivity,
+                                 completion: completion)
+    }
 }

@@ -22,4 +22,23 @@ final class RECDeviceAPIService {
     init(core: RECCore) {
         self.core = core
     }
+    
+    // MARK: Track Device Activity
+    
+    func trackDeviceActivity(_ deviceActivity: RECDeviceActivity,
+                             completion: @escaping (Error?) -> Void) {
+        do {
+            let deviceId = try config.deviceId()
+            let endpoint = APIEndpoints.trackDeviceActivity(accountId: config.appId,
+                                                            deviceId: deviceId)
+            let data = try JSONEncoder().encode(deviceActivity)
+            let request = RECAPIRequest(endpoint: endpoint,
+                                        isQueueRequired: true)
+            request.httpBody = data
+            
+            core.execute(apiRequest: request, completion: completion)
+        } catch {
+            completion(error)
+        }
+    }
 }
