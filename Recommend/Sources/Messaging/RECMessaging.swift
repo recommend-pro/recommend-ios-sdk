@@ -10,8 +10,11 @@ import Foundation
 import UserNotifications
 
 public final class RECMessaging: NSObject {
+    private typealias APIService = RECMessagingAPIService
+    
     private let core: RECCore
     private let userNotificationCenter: UNUserNotificationCenter
+    private let apiService: APIService
     
     private var applicationName: String {
         return core.config.appName
@@ -22,5 +25,6 @@ public final class RECMessaging: NSObject {
     init(core: RECCore, userNotificationCenter: UNUserNotificationCenter = .current()) {
         self.core = core
         self.userNotificationCenter = userNotificationCenter
+        self.apiService = APIService(core: core)
     }
 }
