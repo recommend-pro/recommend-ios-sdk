@@ -15,6 +15,10 @@ public final class Recommend: NSObject {
     public let recommendation: RECRecommendation
     public let messaging: RECMessaging
     
+    public var environment: RECEnvironment {
+        return core.environment
+    }
+    
     // MARK: Shared singleton
     
     /// Shared instance. Call `initialize` before using.
