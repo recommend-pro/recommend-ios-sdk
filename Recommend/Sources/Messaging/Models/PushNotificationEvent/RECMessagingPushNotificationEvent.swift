@@ -16,7 +16,11 @@ struct RECMessagingPushNotificationEvent {
 }
 
 extension RECMessagingPushNotificationEvent {
-    init?(userInfo: RECMessagingUserInfo, clicked: Bool?, eventDate: Date?) {
+    init?(
+        userInfo: RECMessagingUserInfo,
+        clicked: Bool?,
+        eventDate: Date?
+    ) {
         guard let pushId = userInfo.data?.id else {
             return nil
         }
@@ -25,7 +29,7 @@ extension RECMessagingPushNotificationEvent {
         if let eventDate = eventDate {
             eventTime = Int(eventDate.timeIntervalSince1970)
         }
-    
+        
         self.pushId = pushId
         self.data = RECMessagingPushNotificationEventData(received: true,
                                                           clicked: clicked,
@@ -33,7 +37,11 @@ extension RECMessagingPushNotificationEvent {
                                                           eventTime: eventTime)
     }
     
-    init?(userInfo: [AnyHashable: Any], clicked: Bool?, eventDate: Date?) {
+    init?(
+        userInfo: [AnyHashable: Any],
+        clicked: Bool?,
+        eventDate: Date?
+    ) {
         guard let userInfo = RECMessagingUserInfo(from: userInfo) else {
             return nil
         }

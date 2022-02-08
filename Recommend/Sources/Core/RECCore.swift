@@ -24,13 +24,17 @@ public final class RECCore: NSObject {
     
     // MARK: API
     
-    public func execute(apiRequest: RECAPIRequest,
-                        completion: @escaping (Error?) -> Void) {
+    public func execute(
+        apiRequest: RECAPIRequest,
+        completion: @escaping (Error?) -> Void
+    ) {
         apiClient.execute(request: apiRequest, completion: completion)
     }
     
-    public func execute<T>(apiRequest: RECAPIRequest,
-                           completion: @escaping (Result<T, Error>) -> Void) where T : Decodable {
+    public func execute<T>(
+        apiRequest: RECAPIRequest,
+        completion: @escaping (Result<T, Error>) -> Void
+    ) where T : Decodable {
         apiClient.execute(request: apiRequest, completion: completion)
     }
 }

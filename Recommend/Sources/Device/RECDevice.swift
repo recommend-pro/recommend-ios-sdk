@@ -31,16 +31,20 @@ public final class RECDevice {
     
     // MARK: Track Device Activity
     
-    private func trackDeviceActivity(_ deviceActivity: RECDeviceActivity,
-                                     completion: ((Error?) -> Void)? = nil) {
+    private func trackDeviceActivity(
+        _ deviceActivity: RECDeviceActivity,
+        completion: ((Error?) -> Void)? = nil
+    ) {
         apiService.trackDeviceActivity(deviceActivity) { error in
             completion?(error)
         }
     }
     
-    public func trackDeviceActivity(activity: [RECActivity],
-                                    eventTime: Date = Date(),
-                                    completion: ((Error?) -> Void)? = nil) {
+    public func trackDeviceActivity(
+        activity: [RECActivity],
+        eventTime: Date = Date(),
+        completion: ((Error?) -> Void)? = nil
+    ) {
         let eventTime = Int(eventTime.timeIntervalSince1970)
         let deviceActivity = RECDeviceActivity(customerIdHash: environment.customerIdHash,
                                                store: environment.store,

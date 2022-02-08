@@ -21,12 +21,18 @@ public struct RECMetrics: Encodable {
     
     // MARK: Init
     
-    public init(nonInteractive: Bool = false, data: [RECMetric]) {
+    public init(
+        nonInteractive: Bool = false,
+        data: [RECMetric]
+    ) {
         self.nonInteractive = nonInteractive
         self.data = data
     }
     
-    public init(nonInteractive: Bool = false, data: [String: String]) {
+    public init(
+        nonInteractive: Bool = false,
+        data: [String: String]
+    ) {
         let data = data.map({ RECMetric(code: $0.key, value: $0.value) })
         self.init(nonInteractive: nonInteractive, data: data)
     }

@@ -29,15 +29,19 @@ public final class RECRecommendation {
     
     // MARK: Fetch Recommendation Panels
     
-    private func fetchPanels(with model: PanelsFetchModel,
-                            completion: @escaping (Result<[Panel], Error>) -> Void) {
+    private func fetchPanels(
+        with model: PanelsFetchModel,
+        completion: @escaping (Result<[Panel], Error>) -> Void
+    ) {
         apiService.fetchPanels(model: model, completion: completion)
     }
     
-    public func fetchPanels(pageType: String? = nil,
-                            panels: [PanelsFetchModel.Panel]? = nil,
-                            previewPanel: PanelsFetchModel.PreviewPanel? = nil,
-                            completion: @escaping (Result<[Panel], Error>) -> Void) {
+    public func fetchPanels(
+        pageType: String? = nil,
+        panels: [PanelsFetchModel.Panel]? = nil,
+        previewPanel: PanelsFetchModel.PreviewPanel? = nil,
+        completion: @escaping (Result<[Panel], Error>) -> Void
+    ) {
         do {
             let deviceId = try core.config.deviceId()
             

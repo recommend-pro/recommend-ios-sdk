@@ -27,9 +27,11 @@ public final class RECAPIRequest: NSObject {
     
     // MARK: Init
     
-    public init(endpoint: RECAPIEndpoint,
-                isQueueRequired: Bool = true,
-                attemptsLimit: Int = kRECAPIRequestDefaultAttemptsLimit) {
+    public init(
+        endpoint: RECAPIEndpoint,
+        isQueueRequired: Bool = true,
+        attemptsLimit: Int = kRECAPIRequestDefaultAttemptsLimit
+    ) {
         self.endpoint = endpoint
         self.isQueueRequired = isQueueRequired
         self.attemptsLimit = attemptsLimit

@@ -21,9 +21,11 @@ public final class Recommend: NSObject {
     public private(set) static var shared: Recommend!
     
     /// Initialize `shared` instance.
-    public static func initialize(appName: String,
-                                  appId: String,
-                                  apiHost: String = kRECDefaultAPIHost) {
+    public static func initialize(
+        appName: String,
+        appId: String,
+        apiHost: String = kRECDefaultAPIHost
+    ) {
         guard self.shared == nil else {
             return
         }
@@ -34,9 +36,11 @@ public final class Recommend: NSObject {
     
     // MARK: Init
     
-    public init(appName: String,
-                appId: String,
-                apiHost: String = kRECDefaultAPIHost) {
+    public init(
+        appName: String,
+        appId: String,
+        apiHost: String = kRECDefaultAPIHost
+    ) {
         let config = RECConfig(appName: appName,
                                appId: appId,
                                apiHost: apiHost)
@@ -54,10 +58,12 @@ public final class Recommend: NSObject {
     
     // MARK: Application
     
-    public func application(_ application: UIApplication,
-                            didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
+    public func application(
+        _ application: UIApplication,
+        didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
+    ) {
         let isRemoteNotification = launchOptions?[.remoteNotification] as? [AnyHashable: Any] != nil
-
+        
         if !(application.applicationState == .background && isRemoteNotification) {
             self.device.updateDevice()
             self.device.trackDeviceActivity(activity: [.openApp])

@@ -13,7 +13,10 @@ public struct RECDeviceLocation: Encodable {
     public let latitude: Double
     public let longtitude: Double
     
-    init(latitude: Double, longtitude: Double) {
+    init(
+        latitude: Double,
+        longtitude: Double
+    ) {
         self.latitude = latitude
         self.longtitude = longtitude
     }
@@ -34,14 +37,14 @@ extension RECDeviceLocation {
         } else {
             authorizationStatus = CLLocationManager.authorizationStatus()
         }
-
+        
         switch authorizationStatus {
         case .authorizedAlways, .authorizedWhenInUse:
             guard let location = manager.location else {
                 return nil
             }
             return Self(location: location)
-
+            
         default:
             return nil
         }

@@ -15,9 +15,11 @@ public struct RECAPIEndpoint {
     
     // MARK: Init
     
-    public init(path: String,
-                queryItems: [URLQueryItem]? = nil,
-                httpMethod: String) {
+    public init(
+        path: String,
+        queryItems: [URLQueryItem]? = nil,
+        httpMethod: String
+    ) {
         self.path = path
         self.httpMethod = httpMethod
     }

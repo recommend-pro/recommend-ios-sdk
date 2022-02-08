@@ -10,9 +10,8 @@ import Foundation
 
 @propertyWrapper
 public struct RECNullEncodable<T>: Encodable where T: Encodable {
-    
     public var wrappedValue: T?
-
+    
     public init(wrappedValue: T?) {
         self.wrappedValue = wrappedValue
     }

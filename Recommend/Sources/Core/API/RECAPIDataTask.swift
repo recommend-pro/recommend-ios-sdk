@@ -23,9 +23,11 @@ final class RECAPIDataTask {
     
     // MARK: Init
     
-    init(urlRequest: URLRequest,
-         urlSession: URLSession,
-         completion: @escaping (Result<Data, Error>) -> Void) {
+    init(
+        urlRequest: URLRequest,
+        urlSession: URLSession,
+        completion: @escaping (Result<Data, Error>) -> Void
+    ) {
         self.urlRequest = urlRequest
         self.urlSession = urlSession
         self.completion = completion
@@ -33,7 +35,11 @@ final class RECAPIDataTask {
     
     // MARK: Completion
     
-    private func handleCompletion(data: Data?, urlResponse: URLResponse?, error: Error?) {
+    private func handleCompletion(
+        data: Data?,
+        urlResponse: URLResponse?,
+        error: Error?
+    ) {
         do {
             if let error = error {
                 throw error
@@ -54,7 +60,7 @@ final class RECAPIDataTask {
                     throw RECAPIError.nilData
                 }
                 completion(.success(data))
-            
+                
             default:
                 guard let data = data else {
                     throw RECAPIError.serverError(statusCode)

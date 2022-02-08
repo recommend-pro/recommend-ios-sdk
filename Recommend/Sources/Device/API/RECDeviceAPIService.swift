@@ -25,8 +25,10 @@ final class RECDeviceAPIService {
     
     // MARK: Track Device Activity
     
-    func trackDeviceActivity(_ deviceActivity: RECDeviceActivity,
-                             completion: @escaping (Error?) -> Void) {
+    func trackDeviceActivity(
+        _ deviceActivity: RECDeviceActivity,
+        completion: @escaping (Error?) -> Void
+    ) {
         do {
             let deviceId = try config.deviceId()
             let endpoint = APIEndpoints.trackDeviceActivity(accountId: config.appId,
