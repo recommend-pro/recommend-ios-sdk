@@ -26,7 +26,10 @@ final class RECRecommendationAPIService {
     
     // MARK: Fetch Recommendation Panels
     
-    func fetchPanels(model: FetchPanelsModel, completion: @escaping (Result<[Panel], Error>) -> Void) {
+    func fetchPanels(
+        model: FetchPanelsModel,
+        completion: @escaping (Result<[Panel], Error>) -> Void
+    ) {
         do {
             let endpoint = APIEndpoints.fetchRecommendationPanels(accountId: config.appId)
             let data = try JSONEncoder().encode(model)
