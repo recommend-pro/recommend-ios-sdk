@@ -18,6 +18,18 @@ public final class RECConfig {
     public let urlSession: URLSession
     private let userDefaults: RECConfigUserDefaults
     
+    public var isFirstLaunch: Bool? {
+        get {
+            return userDefaults.isFirstLaunch
+        }
+        set {
+            if (userDefaults.isFirstLaunch == nil && newValue == true) ||
+                (userDefaults.isFirstLaunch != nil && newValue == false) {
+                userDefaults.isFirstLaunch = newValue
+            }
+        }
+    }
+    
     private var identifierForVendorUUIDString: String? {
         return UIDevice.current.identifierForVendor?.uuidString
     }

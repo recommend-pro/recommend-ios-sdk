@@ -18,6 +18,7 @@ private struct RECConfigUserDefaultsKeys {
     }
     
     static let deviceId = suiteName + ".device_id"
+    static let isFirstLaunch = suiteName + ".is_first_launch"
 }
 
 // MARK: RECConfigUserDefaults
@@ -35,6 +36,16 @@ final class RECConfigUserDefaults: NSObject {
         }
         set {
             userDefaults?.set(newValue, forKey: Keys.deviceId)
+            userDefaults?.synchronize()
+        }
+    }
+    
+    var isFirstLaunch: Bool? {
+        get {
+            return userDefaults?.value(forKey: Keys.isFirstLaunch) as? Bool
+        }
+        set {
+            userDefaults?.set(newValue, forKey: Keys.isFirstLaunch)
             userDefaults?.synchronize()
         }
     }
