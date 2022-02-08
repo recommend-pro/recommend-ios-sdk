@@ -10,7 +10,10 @@ import Foundation
 import UIKit
 
 public final class RECDevice {
+    private typealias APIService = RECDeviceAPIService
+    
     private let core: RECCore
+    private let apiService: APIService
     
     private var environment: RECEnvironment {
         return core.environment
@@ -20,5 +23,6 @@ public final class RECDevice {
     
     init(core: RECCore) {
         self.core = core
+        self.apiService = APIService(core: core)
     }
 }
