@@ -1,5 +1,5 @@
 //
-//  RECRecommendationPanelsFetchModelPanelCurrentContext.swift
+//  RECRecommendationPanelRequestCurrentContext.swift
 //  Recommend
 //
 //  Created by Dmytrii Golovanov on 08.12.2021.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct RECRecommendationPanelsFetchModelPanelCurrentContext: Encodable {
+public struct RECRecommendationPanelRequestCurrentContext: Encodable {
     public let sku: String
     public let listId: String
     
@@ -17,5 +17,15 @@ public struct RECRecommendationPanelsFetchModelPanelCurrentContext: Encodable {
     enum CodingKeys: String, CodingKey {
         case sku
         case listId = "list_id"
+    }
+    
+    // MARK: Init
+    
+    public init(
+        sku: String,
+        listId: String
+    ) {
+        self.sku = sku
+        self.listId = listId
     }
 }

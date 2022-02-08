@@ -9,17 +9,16 @@
 import Foundation
 
 public struct RECRecommendationPanelsFetchModel: Encodable {
-    public typealias PriceList = RECPriceList
-    public typealias ContentType = RECRecommendationContentType
-    public typealias Panel = RECRecommendationPanelsFetchModelPanel
-    public typealias PreviewPanel = RECRecommendationPanelsFetchModelPreviewPanel
+    public typealias ContentType = RECRecommendationPanelsFetchContentType
+    public typealias Panel = RECRecommendationPanelRequest
+    public typealias PreviewPanel = RECRecommendationPanelsFetchPreviewPanel
     
     public let deviceId: String
     public let customerIdHash: String?
-    public let storeCode: String
-    public let currencyCode: String
-    public let environmentCode: String?
-    public let priceList: PriceList
+    public let store: String
+    public let currency: String
+    public let environment: String?
+    public let priceList: RECPriceList
     public let metrics: RECMetrics?
     public let pageType: String?
     public let contentType: ContentType
@@ -31,9 +30,9 @@ public struct RECRecommendationPanelsFetchModel: Encodable {
     enum CodingKeys: String, CodingKey {
         case deviceId = "device_id"
         case customerIdHash = "customer_id_hash"
-        case storeCode = "store_code"
-        case currencyCode = "currency_code"
-        case environmentCode = "environment_code"
+        case store = "store_code"
+        case currency = "currency_code"
+        case environment = "environment_code"
         case priceList = "price_list"
         case metrics
         case pageType = "page_type"
