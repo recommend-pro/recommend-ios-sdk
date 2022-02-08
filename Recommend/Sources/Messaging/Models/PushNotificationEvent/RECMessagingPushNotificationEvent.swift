@@ -29,7 +29,7 @@ extension RECMessagingPushNotificationEvent {
         if let eventDate = eventDate {
             eventTime = Int(eventDate.timeIntervalSince1970)
         }
-    
+        
         self.pushId = pushId
         self.data = RECMessagingPushNotificationEventData(received: true,
                                                           clicked: clicked,

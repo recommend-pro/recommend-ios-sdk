@@ -56,7 +56,7 @@ public enum RECActivity: Encodable {
     
     // Custom
     case customEvent(_ data: RECActivityCustomEventData)
-
+    
     // MARK: Coding Keys
     
     enum CodingKeys: String, CodingKey {

@@ -10,7 +10,7 @@ import Foundation
 
 public struct RECActivityCustomerRegistationData: Encodable {
     @RECNullEncodable public private(set) var requestId: String?
-
+    
     // MARK: Coding
     
     enum CodingKeys: String, CodingKey {

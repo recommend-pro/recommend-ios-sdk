@@ -37,14 +37,14 @@ extension RECDeviceLocation {
         } else {
             authorizationStatus = CLLocationManager.authorizationStatus()
         }
-
+        
         switch authorizationStatus {
         case .authorizedAlways, .authorizedWhenInUse:
             guard let location = manager.location else {
                 return nil
             }
             return Self(location: location)
-
+            
         default:
             return nil
         }

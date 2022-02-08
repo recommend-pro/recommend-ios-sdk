@@ -60,7 +60,7 @@ final class RECAPIDataTask {
                     throw RECAPIError.nilData
                 }
                 completion(.success(data))
-            
+                
             default:
                 guard let data = data else {
                     throw RECAPIError.serverError(statusCode)

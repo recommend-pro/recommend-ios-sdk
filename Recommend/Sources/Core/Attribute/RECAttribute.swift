@@ -37,7 +37,7 @@ public enum RECAttribute: Decodable {
             
         } else if let value = try? container.decode(Float.self, forKey: .val) {
             self = .float(value)
-
+            
         } else if let value = try? container.decode(Bool.self, forKey: .val) {
             self = .boolean(value)
             

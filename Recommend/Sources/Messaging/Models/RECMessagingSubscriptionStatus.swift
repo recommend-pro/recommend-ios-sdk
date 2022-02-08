@@ -24,8 +24,8 @@ extension RECMessagingSubscriptionStatus {
             self = .nonSubscribed
             
         case .authorized,
-             .provisional,
-             .ephemeral:
+                .provisional,
+                .ephemeral:
             self = .subscribed
             
         case .denied:

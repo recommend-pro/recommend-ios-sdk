@@ -86,7 +86,7 @@ public final class RECMessaging: NSObject {
             targetSubscriptionStatus = subscriptionStatus
         }
         lastSubscriptionStatus = subscriptionStatus
-
+        
         let token = RECMessagingToken(deviceToken: deviceToken)
         let model = RECMessagingSubscriptionUpdateModel(token: token,
                                                         applicationId: applicationName,
