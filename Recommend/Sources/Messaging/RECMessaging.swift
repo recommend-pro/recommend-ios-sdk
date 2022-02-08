@@ -34,4 +34,10 @@ public final class RECMessaging: NSObject {
                                                      completion: @escaping (Error?) -> Void) {
         apiService.updatePushNotificationsSubscription(model: model, completion: completion)
     }
+    
+    // MARK: Unsubscribe From Push Notifications
+    
+    func unsubscribeFromPushNotifications(completion: @escaping (Error?) -> Void) {
+        apiService.unsubscribeFromPushNotifications(completion: completion)
+    }
 }

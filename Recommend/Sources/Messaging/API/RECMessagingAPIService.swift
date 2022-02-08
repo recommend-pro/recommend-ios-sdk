@@ -39,4 +39,19 @@ final class RECMessagingAPIService {
             completion(error)
         }
     }
+    
+    // MARK: Unsubscribe From Push Notifications
+    
+    func unsubscribeFromPushNotifications(completion: @escaping (Error?) -> Void) {
+        do {
+            let deviceId = try config.deviceId()
+            let endpoint = APIEndpoints.unsubscribeFromPushNotifications(accountId: config.appId,
+                                                                         deviceId: deviceId)
+            let request = RECAPIRequest(endpoint: endpoint, isQueueRequired: true)
+            
+            self.core.execute(apiRequest: request, completion: completion)
+        } catch {
+            completion(error)
+        }
+    }
 }
