@@ -15,6 +15,23 @@ public final class Recommend: NSObject {
     public let recommendation: RECRecommendation
     public let messaging: RECMessaging
     
+    // MARK: Shared singleton
+    
+    /// Shared instance. Call `initialize` before using.
+    public private(set) static var shared: Recommend!
+    
+    /// Initialize `shared` instance.
+    public static func initialize(appName: String,
+                                  appId: String,
+                                  apiHost: String = kRECDefaultAPIHost) {
+        guard self.shared == nil else {
+            return
+        }
+        self.shared = Self.init(appName: appName,
+                                appId: appId,
+                                apiHost: apiHost)
+    }
+    
     // MARK: Init
     
     public init(appName: String,
