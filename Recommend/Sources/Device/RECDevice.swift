@@ -15,6 +15,9 @@ public final class RECDevice {
     private let core: RECCore
     private let apiService: APIService
     
+    private var config: RECConfig {
+        return core.config
+    }
     private var environment: RECEnvironment {
         return core.environment
     }
@@ -49,5 +52,17 @@ public final class RECDevice {
                                                activity: activity)
         self.trackDeviceActivity(deviceActivity,
                                  completion: completion)
+    }
+    
+    // MARK: Update Device
+    
+    public func updateDevice(completion: ((Error?) -> Void)? = nil) {
+        let isFirstLaunch: Bool = config.isFirstLaunch ?? true
+        let activityData: RECActivityUpdateDeviceData = .default(firstLaunch: isFirstLaunch)
+        let activity: RECActivity = .updateDevice(activityData)
+        
+        trackDeviceActivity(activity: [activity],
+                            eventTime: Date(),
+                            completion: completion)
     }
 }
