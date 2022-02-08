@@ -27,4 +27,11 @@ public final class RECMessaging: NSObject {
         self.userNotificationCenter = userNotificationCenter
         self.apiService = APIService(core: core)
     }
+    
+    // MARK: Update Push Notifications Subscription
+    
+    private func updatePushNotificationsSubscription(model: RECMessagingSubscriptionUpdateModel,
+                                                     completion: @escaping (Error?) -> Void) {
+        apiService.updatePushNotificationsSubscription(model: model, completion: completion)
+    }
 }

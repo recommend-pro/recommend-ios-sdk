@@ -21,4 +21,22 @@ final class RECMessagingAPIService {
     init(core: RECCore) {
         self.core = core
     }
+    
+    // MARK: Update Push Notifications Subscription
+    
+    func updatePushNotificationsSubscription(model: RECMessagingSubscriptionUpdateModel,
+                                             completion: @escaping (Error?) -> Void) {
+        do {
+            let deviceId = try config.deviceId()
+            let endpoint = APIEndpoints.updatePushNotificationsSubscription(accountId: config.appId,
+                                                                            deviceId: deviceId)
+            let data = try JSONEncoder().encode(model)
+            let request = RECAPIRequest(endpoint: endpoint, isQueueRequired: true)
+            request.httpBody = data
+            
+            self.core.execute(apiRequest: request, completion: completion)
+        } catch {
+            completion(error)
+        }
+    }
 }
