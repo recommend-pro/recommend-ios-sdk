@@ -9,7 +9,10 @@
 import Foundation
 
 public final class RECRecommendation {
+    private typealias APIService = RECRecommendationAPIService
+    
     private let core: RECCore
+    private let apiService: APIService
     
     private var environment: RECEnvironment {
         return core.environment
@@ -19,5 +22,6 @@ public final class RECRecommendation {
     
     init(core: RECCore) {
         self.core = core
+        self.apiService = APIService(core: core)
     }
 }
