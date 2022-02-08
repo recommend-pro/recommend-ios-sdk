@@ -7,9 +7,31 @@
 //
 
 import Foundation
+import UserNotifications
 
 enum RECMessagingSubscriptionStatus: String, Encodable {
     case subscribed
     case unsubscribed
     case nonSubscribed = "non_subscribed"
+}
+
+// MARK: - UNAuthorizationStatus mapping
+
+extension RECMessagingSubscriptionStatus {
+    init(from authorizationStatus: UNAuthorizationStatus) {
+        switch authorizationStatus {
+        case .notDetermined:
+            self = .nonSubscribed
+            
+        case .authorized,
+             .provisional,
+             .ephemeral:
+            self = .subscribed
+            
+        case .denied:
+            self = .unsubscribed
+        @unknown default:
+            self = .nonSubscribed
+        }
+    }
 }

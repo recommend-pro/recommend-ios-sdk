@@ -21,6 +21,9 @@ public final class RECMessaging: NSObject {
     private var applicationName: String {
         return core.config.appName
     }
+    private var firstSubscribedDate: Int?
+    private var subscriptionStatusChangeDate: Int?
+    private var lastSubscriptionStatus: RECMessagingSubscriptionStatus?
     
     // MARK: Init
     
@@ -42,15 +45,51 @@ public final class RECMessaging: NSObject {
     
     // MARK: Update Push Notifications Subscription
     
-    private func updatePushNotificationsSubscription(model: RECMessagingSubscriptionUpdateModel,
-                                                     completion: @escaping (Error?) -> Void) {
-        apiService.updatePushNotificationsSubscription(model: model, completion: completion)
+    private func updatePushNotificationsSubscription(model: RECMessagingSubscriptionUpdateModel) {
+        apiService.updatePushNotificationsSubscription(model: model) { _ in
+            // log error
+        }
+    }
+    
+    private func updatePushNotificationsSubscription(deviceToken: Data,
+                                                     subscriptionStatus: RECMessagingSubscriptionStatus?) {
+        if subscriptionStatus == .subscribed, firstSubscribedDate == nil {
+            firstSubscribedDate = Int(Date().timeIntervalSince1970)
+        }
+        if let subscriptionStatus = subscriptionStatus, subscriptionStatus != lastSubscriptionStatus {
+            subscriptionStatusChangeDate = Int(Date().timeIntervalSince1970)
+        }
+        lastSubscriptionStatus = subscriptionStatus
+        
+        let token = RECMessagingToken(deviceToken: deviceToken)
+        let model = RECMessagingSubscriptionUpdateModel(token: token,
+                                                        applicationId: applicationName,
+                                                        subscriptionStatus: subscriptionStatus,
+                                                        subscriptionStatusChangeDate: subscriptionStatusChangeDate,
+                                                        firstSubscribedDate: firstSubscribedDate)
+        updatePushNotificationsSubscription(model: model)
+    }
+    
+    private func updatePushNotificationsSubscription(deviceToken: Data,
+                                                     authorizationStatus: UNAuthorizationStatus) {
+        let subscriptionStatus = RECMessagingSubscriptionStatus(from: authorizationStatus)
+        updatePushNotificationsSubscription(deviceToken: deviceToken,
+                                            subscriptionStatus: subscriptionStatus)
+    }
+    
+    public func updatePushNotificationsSubscription(deviceToken: Data) {
+        userNotificationCenter.getNotificationSettings { (settings) in
+            self.updatePushNotificationsSubscription(deviceToken: deviceToken,
+                                                     authorizationStatus: settings.authorizationStatus)
+        }
     }
     
     // MARK: Unsubscribe From Push Notifications
     
-    private func unsubscribeFromPushNotifications(completion: @escaping (Error?) -> Void) {
-        apiService.unsubscribeFromPushNotifications(completion: completion)
+    public func unsubscribeFromPushNotifications() {
+        apiService.unsubscribeFromPushNotifications { _ in
+            // log error
+        }
     }
     
     // MARK: Track Push Notification Event
@@ -85,15 +124,7 @@ public final class RECMessaging: NSObject {
     // MARK: Remote Notifications
     
     public func applicationDidRegisterForRemoteNotifications(withDeviceToken deviceToken: Data) {
-        let token = Token(deviceToken: deviceToken)
-        
-        userNotificationCenter.getNotificationSettings(completionHandler: { (settings) in
-            if settings.authorizationStatus == .denied {
-                // unsubscribe from push notifications
-            } else {
-                // update push notifications subscription
-            }
-        })
+        updatePushNotificationsSubscription(deviceToken: deviceToken)
     }
     
     public func didReceivePushNotification(_ userInfo: [AnyHashable: Any],
