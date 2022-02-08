@@ -1,5 +1,5 @@
 //
-//  RECRecommendationPanelsFetchModelPanelContext.swift
+//  RECRecommendationPanelRequestContext.swift
 //  Recommend
 //
 //  Created by Dmytrii Golovanov on 08.12.2021.
@@ -8,8 +8,8 @@
 
 import Foundation
 
-public struct RECRecommendationPanelsFetchModelPanelContext: Encodable {
-    public typealias CurrentContext = RECRecommendationPanelsFetchModelPanelCurrentContext
+public struct RECRecommendationPanelRequestContext: Encodable {
+    public typealias CurrentContext = RECRecommendationPanelRequestCurrentContext
     
     public let searchTerm: String
     public let current: CurrentContext

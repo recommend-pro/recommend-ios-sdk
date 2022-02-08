@@ -1,5 +1,5 @@
 //
-//  RECRecommendationPanelsFetchModelPanelFilter.swift
+//  RECRecommendationPanelRequestFilter.swift
 //  Recommend
 //
 //  Created by Dmytrii Golovanov on 08.12.2021.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct RECRecommendationPanelsFetchModelPanelFilter: Encodable {
+public struct RECRecommendationPanelRequestFilter: Encodable {
     public let type: FilterType?
     public let code: String
     public let `operator`: Operator

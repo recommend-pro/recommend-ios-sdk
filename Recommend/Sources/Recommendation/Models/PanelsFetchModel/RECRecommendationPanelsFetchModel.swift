@@ -11,8 +11,8 @@ import Foundation
 public struct RECRecommendationPanelsFetchModel: Encodable {
     public typealias PriceList = RECPriceList
     public typealias ContentType = RECRecommendationContentType
-    public typealias Panel = RECRecommendationPanelsFetchModelPanel
-    public typealias PreviewPanel = RECRecommendationPanelsFetchModelPreviewPanel
+    public typealias Panel = RECRecommendationPanelRequest
+    public typealias PreviewPanel = RECRecommendationPreviewPanelRequest
     
     public let deviceId: String
     public let customerIdHash: String?

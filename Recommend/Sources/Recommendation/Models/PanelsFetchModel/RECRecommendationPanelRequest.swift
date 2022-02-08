@@ -1,5 +1,5 @@
 //
-//  RECRecommendationPanelsFetchModelPanel.swift
+//  RECRecommendationPanelRequest.swift
 //  Recommend
 //
 //  Created by Dmytrii Golovanov on 08.12.2021.
@@ -8,10 +8,10 @@
 
 import Foundation
 
-public struct RECRecommendationPanelsFetchModelPanel: Encodable {
-    public typealias Context = RECRecommendationPanelsFetchModelPanelContext
-    public typealias Filter = RECRecommendationPanelsFetchModelPanelFilter
-    public typealias Variations = RECRecommendationPanelsFetchModelPanelVariations
+public struct RECRecommendationPanelRequest: Encodable {
+    public typealias Context = RECRecommendationPanelRequestContext
+    public typealias Filter = RECRecommendationPanelRequestFilter
+    public typealias Variations = RECRecommendationPanelRequestVariations
     
     public let id: String
     public let context: Context?

@@ -1,5 +1,5 @@
 //
-//  RECRecommendationPanelsFetchModelPanelVariations.swift
+//  RECRecommendationPanelRequestVariations.swift
 //  Recommend
 //
 //  Created by Dmytrii Golovanov on 24.01.2022.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct RECRecommendationPanelsFetchModelPanelVariations: Encodable {
+public struct RECRecommendationPanelRequestVariations: Encodable {
     public let include: Bool
     public let attrsToInclude: [String]?
     
