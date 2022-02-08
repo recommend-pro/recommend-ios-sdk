@@ -47,4 +47,27 @@ public final class RECMessaging: NSObject {
                                             completion: @escaping (Error?) -> Void) {
         apiService.trackPushNotificationEvent(model: model, completion: completion)
     }
+    
+    private func trackPushNotificationEvent(userInfo: [AnyHashable: Any],
+                                            clicked: Bool?,
+                                            eventDate: Date?) {
+        guard
+            let event = RECMessagingPushNotificationEvent(userInfo: userInfo,
+                                                          clicked: clicked,
+                                                          eventDate: eventDate)
+        else {
+            return
+        }
+        
+        trackPushNotificationEvent(model: event) { _ in
+            // log error
+        }
+    }
+    
+    private func trackPushNotificationEvent(notification: UNNotification,
+                                            clicked: Bool?) {
+        trackPushNotificationEvent(userInfo: notification.request.content.userInfo,
+                                   clicked: clicked,
+                                   eventDate: notification.date)
+    }
 }
