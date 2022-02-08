@@ -13,6 +13,7 @@ public final class Recommend: NSObject {
     private let core: RECCore
     public let device: RECDevice
     public let recommendation: RECRecommendation
+    public let messaging: RECMessaging
     
     // MARK: Init
     
@@ -25,6 +26,7 @@ public final class Recommend: NSObject {
         self.core = RECCore(config: config)
         self.device = RECDevice(core: core)
         self.recommendation = RECRecommendation(core: core)
+        self.messaging = RECMessaging(core: core)
     }
     
     // MARK: Device Id
