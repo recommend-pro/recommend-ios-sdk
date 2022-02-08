@@ -70,4 +70,32 @@ public final class RECMessaging: NSObject {
                                    clicked: clicked,
                                    eventDate: notification.date)
     }
+    
+    // MARK: UNUserNotificationCenter
+    
+    public func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                       didReceive response: UNNotificationResponse) {
+        guard center == userNotificationCenter else {
+            return
+        }
+        trackPushNotificationEvent(notification: response.notification,
+                                   clicked: true)
+    }
+}
+
+// MARK: - UNUserNotificationCenterDelegate
+
+extension RECMessaging: UNUserNotificationCenterDelegate {
+    public func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                       willPresent notification: UNNotification,
+                                       withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert, .sound, .badge])
+    }
+    
+    public func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                       didReceive response: UNNotificationResponse,
+                                       withCompletionHandler completionHandler: @escaping () -> Void) {
+        userNotificationCenter(center, didReceive: response)
+        completionHandler()
+    }
 }
