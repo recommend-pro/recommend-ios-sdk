@@ -24,8 +24,10 @@ final class RECMessagingAPIService {
     
     // MARK: Update Push Notifications Subscription
     
-    func updatePushNotificationsSubscription(model: RECMessagingSubscriptionUpdateModel,
-                                             completion: @escaping (Error?) -> Void) {
+    func updatePushNotificationsSubscription(
+        model: RECMessagingSubscriptionUpdateModel,
+        completion: @escaping (Error?) -> Void
+    ) {
         do {
             let deviceId = try config.deviceId()
             let endpoint = APIEndpoints.updatePushNotificationsSubscription(accountId: config.appId,
@@ -57,8 +59,10 @@ final class RECMessagingAPIService {
     
     // MARK: Track Push Notification Event
     
-    func trackPushNotificationEvent(model: RECMessagingPushNotificationEvent,
-                                    completion: @escaping (Error?) -> Void) {
+    func trackPushNotificationEvent(
+        model: RECMessagingPushNotificationEvent,
+        completion: @escaping (Error?) -> Void
+    ) {
         do {
             let endpoint = APIEndpoints.trackPushNotificationsEvent(accountId: config.appId,
                                                                     pushId: model.pushId)

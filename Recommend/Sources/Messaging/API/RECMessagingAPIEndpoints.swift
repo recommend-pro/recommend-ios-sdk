@@ -9,19 +9,28 @@
 import Foundation
 
 struct RECMessagingAPIEndpoints {
-    static func updatePushNotificationsSubscription(accountId: String, deviceId: String) -> RECAPIEndpoint {
+    static func updatePushNotificationsSubscription(
+        accountId: String,
+        deviceId: String
+    ) -> RECAPIEndpoint {
         let path = "/v3/\(accountId)/messaging/channel/push/ios/subscription/\(deviceId)"
         return RECAPIEndpoint(path: path,
                               httpMethod: "POST")
     }
     
-    static func unsubscribeFromPushNotifications(accountId: String, deviceId: String) -> RECAPIEndpoint {
+    static func unsubscribeFromPushNotifications(
+        accountId: String,
+        deviceId: String
+    ) -> RECAPIEndpoint {
         let path = "/v3/\(accountId)/messaging/channel/push/ios/subscription/\(deviceId)"
         return RECAPIEndpoint(path: path,
                               httpMethod: "DELETE")
     }
     
-    static func trackPushNotificationsEvent(accountId: String, pushId: String) -> RECAPIEndpoint {
+    static func trackPushNotificationsEvent(
+        accountId: String,
+        pushId: String
+    ) -> RECAPIEndpoint {
         let path = "/v3/\(accountId)/messaging/channel/push/\(pushId)/event"
         return RECAPIEndpoint(path: path,
                               httpMethod: "POST")
