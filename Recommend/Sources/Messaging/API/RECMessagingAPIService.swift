@@ -54,4 +54,21 @@ final class RECMessagingAPIService {
             completion(error)
         }
     }
+    
+    // MARK: Track Push Notification Event
+    
+    func trackPushNotificationEvent(model: RECMessagingPushNotificationEvent,
+                                    completion: @escaping (Error?) -> Void) {
+        do {
+            let endpoint = APIEndpoints.trackPushNotificationsEvent(accountId: config.appId,
+                                                                    pushId: model.pushId)
+            let data = try JSONEncoder().encode(model.data)
+            let request = RECAPIRequest(endpoint: endpoint, isQueueRequired: true)
+            request.httpBody = data
+            
+            self.core.execute(apiRequest: request, completion: completion)
+        } catch {
+            completion(error)
+        }
+    }
 }
