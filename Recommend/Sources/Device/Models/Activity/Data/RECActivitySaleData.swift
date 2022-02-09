@@ -12,8 +12,20 @@ public struct RECActivitySaleData: Encodable {
     public let orderIdHash: String
     @RECNullEncodable public private(set) var requestId: String?
     
+    // MARK: Coding Keys
+    
     enum CodingKeys: String, CodingKey {
         case orderIdHash = "order_id_hash"
         case requestId = "request_id"
+    }
+    
+    // MARK: Init
+    
+    init(
+        orderIdHash: String,
+        requestId: String? = nil
+    ) {
+        self.orderIdHash = orderIdHash
+        self.requestId = requestId
     }
 }

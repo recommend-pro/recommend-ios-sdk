@@ -14,6 +14,18 @@ public struct RECActivityProductClickData: Encodable {
     public let sku: String
     public let products: [RECActivityProduct]?
     public let source: Source?
+    
+    // MARK: Init
+    
+    public init(
+        sku: String,
+        products: [RECActivityProduct]?,
+        source: Source?
+    ) {
+        self.sku = sku
+        self.products = products
+        self.source = source
+    }
 }
 
 // MARK: - Product Click Source
@@ -27,10 +39,14 @@ public enum RECActivityProductClickSource: Encodable {
     case list(listId: String)
     case search(type: RECActivitySearchTermType, value: String)
     
+    // MARK: Coding Keys
+    
     enum CodingKeys: String, CodingKey {
         case type
         case data
     }
+    
+    // MARK: Encode
     
     public func encode(to encoder: Encoder) throws {
         let type: String!
@@ -65,6 +81,8 @@ public enum RECActivityProductClickSource: Encodable {
 private struct RECActivityProductClickPanelSource: Encodable {
     let panelId: String
     
+    // MARK: Coding Keys
+    
     enum CodingKeys: String, CodingKey {
         case panelId = "panel_id"
     }
@@ -75,6 +93,8 @@ private struct RECActivityProductClickPanelSource: Encodable {
 private struct RECActivityProductClickListSource: Encodable {
     let listId: String
     
+    // MARK: Coding Keys
+    
     enum CodingKeys: String, CodingKey {
         case listId = "list_id"
     }
@@ -84,6 +104,8 @@ private struct RECActivityProductClickListSource: Encodable {
 
 private struct RECActivityProductClickSearchSource: Encodable {
     let term: RECActivitySearchTerm
+    
+    // MARK: Coding Keys
     
     enum CodingKeys: String, CodingKey {
         case term
