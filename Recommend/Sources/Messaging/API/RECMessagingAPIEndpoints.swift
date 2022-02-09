@@ -14,8 +14,12 @@ struct RECMessagingAPIEndpoints {
         deviceId: String
     ) -> RECAPIEndpoint {
         let path = "/v3/\(accountId)/messaging/channel/push/ios/subscription/\(deviceId)"
-        return RECAPIEndpoint(path: path,
-                              httpMethod: "POST")
+        let headers: [String: String] = ["Accept": "application/json",
+                                         "Content-Type": "application/json"]
+        return RECAPIEndpoint(
+            path: path,
+            httpMethod: "POST",
+            headers: headers)
     }
     
     static func unsubscribeFromPushNotifications(
@@ -23,8 +27,11 @@ struct RECMessagingAPIEndpoints {
         deviceId: String
     ) -> RECAPIEndpoint {
         let path = "/v3/\(accountId)/messaging/channel/push/ios/subscription/\(deviceId)"
-        return RECAPIEndpoint(path: path,
-                              httpMethod: "DELETE")
+        let headers: [String: String] = ["Accept": "application/json"]
+        return RECAPIEndpoint(
+            path: path,
+            httpMethod: "DELETE",
+            headers: headers)
     }
     
     static func trackPushNotificationsEvent(
@@ -32,7 +39,11 @@ struct RECMessagingAPIEndpoints {
         pushId: String
     ) -> RECAPIEndpoint {
         let path = "/v3/\(accountId)/messaging/channel/push/\(pushId)/event"
-        return RECAPIEndpoint(path: path,
-                              httpMethod: "POST")
+        let headers: [String: String] = ["Accept": "application/json",
+                                         "Content-Type": "application/json"]
+        return RECAPIEndpoint(
+            path: path,
+            httpMethod: "POST",
+            headers: headers)
     }
 }
