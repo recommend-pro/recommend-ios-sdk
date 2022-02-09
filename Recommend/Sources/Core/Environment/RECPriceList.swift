@@ -21,6 +21,18 @@ public struct RECPriceList: Encodable {
         case alternatives
     }
     
+    // MARK: Init
+    
+    public init(
+        code: String,
+        fallbackMode: FallbackMode?,
+        alternatives: [String]?
+    ) {
+        self.code = code
+        self.fallbackMode = fallbackMode
+        self.alternatives = alternatives
+    }
+    
     // MARK: Fallback Mode
     
     public enum FallbackMode: String, Encodable {
