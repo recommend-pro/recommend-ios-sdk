@@ -13,11 +13,15 @@ public struct RECActivityProductRatedData: Encodable {
     public let rate: Int
     public let variationSKU: String?
     
+    // MARK: Coding Keys
+    
     enum CodingKeys: String, CodingKey {
         case sku
         case rate
         case variationSKU = "variation_sku"
     }
+    
+    // MARK: Init
     
     init(
         sku: String,

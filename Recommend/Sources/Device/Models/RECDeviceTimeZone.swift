@@ -13,6 +13,8 @@ public struct RECTimeZone: Encodable {
     /// The difference, in seconds, between a date in the UTC time zone, and the same date in the local time zone
     public let offset: Int
     
+    // MARK: Init
+    
     public init(code: String, offset: Int) {
         self.code = code
         self.offset = offset
@@ -26,7 +28,7 @@ public struct RECTimeZone: Encodable {
                   offset: timeZone.secondsFromGMT())
     }
     
-    // MARK: - Current
+    // MARK: Current
     
     public static var current: RECTimeZone? {
         return RECTimeZone(timeZone: .current)
