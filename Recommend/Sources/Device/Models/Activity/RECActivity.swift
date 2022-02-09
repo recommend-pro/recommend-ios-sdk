@@ -57,6 +57,9 @@ public enum RECActivity: Encodable {
     // Custom
     case customEvent(_ data: RECActivityCustomEventData)
     
+    // Link
+    case linkDevice(_ data: RECActivityLinkDeviceData)
+    
     // MARK: Coding Keys
     
     enum CodingKeys: String, CodingKey {
@@ -159,6 +162,10 @@ public enum RECActivity: Encodable {
         case .customEvent(let activityData):
             type = .customEvent
             data = try JSONEncoder().encode(activityData)
+            
+        case .linkDevice(let activityData):
+            type = .linkDevice
+            data = try JSONEncoder().encode(activityData)
         }
         
         var container = encoder.container(keyedBy: CodingKeys.self)
@@ -218,4 +225,7 @@ private enum RECActivityType: String, Encodable {
     
     // Custom
     case customEvent = "custom_event"
+    
+    // Link
+    case linkDevice = "link_device"
 }
