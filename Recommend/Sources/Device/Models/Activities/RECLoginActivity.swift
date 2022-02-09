@@ -1,5 +1,5 @@
 //
-//  RECLoginActivity.swift
+//  RECLogoutActivity.swift
 //  Recommend
 //
 //  Created by Dmytrii Golovanov on 09.02.2022.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public final class RECLoginActivity: RECActivity {
+public final class RECLogoutActivity: RECActivity {
     public init() {
         super.init(type: .login)
     }
