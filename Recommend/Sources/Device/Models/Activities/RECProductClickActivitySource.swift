@@ -8,83 +8,78 @@
 
 import Foundation
 
-public class RECProductClickActivitySource: Encodable {
-    public let type: String
+public enum RECProductClickActivitySource: Encodable {
+    private typealias PanelSourceData = RECProductClickActivityPanelSourceData
+    private typealias ListSourceData = RECProductClickActivityListSourceData
+    private typealias SearchSourceData = RECProductClicActivitykSearchSourceData
     
-    // MARK: Init
+    case panel(panelId: String)
+    case list(listId: String)
+    case search(term: RECActivitySearchTerm)
     
-    init(type: String) {
-        self.type = type
-    }
-}
-
-extension RECProductClickActivitySource {
-    public static func panel(panelId: String) -> RECProductClickActivitySource {
-        return RECProductClickActivityPanelSource(panelId: panelId)
-    }
+    // MARK: Coding Keys
     
-    public static func list(listId: String) -> RECProductClickActivitySource {
-        return RECProductClickActivityListSource(listId: listId)
+    enum CodingKeys: String, CodingKey {
+        case type
+        case data
     }
     
-    public static func search(term: RECActivitySearchTerm) -> RECProductClickActivitySource {
-        return RECProductClicActivitykSearchSource(term: term)
+    // MARK: Encode
+    
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        
+        switch self {
+        case .panel(let panelId):
+            let data = PanelSourceData(panelId: panelId)
+            try container.encode("panel", forKey: .type)
+            try container.encode(data, forKey: .data)
+            
+        case .list(let listId):
+            let data = ListSourceData(listId: listId)
+            try container.encode("list", forKey: .type)
+            try container.encode(data, forKey: .data)
+            
+        case .search(let term):
+            let data = SearchSourceData(term: term)
+            try container.encode("search", forKey: .type)
+            try container.encode(data, forKey: .data)
+        }
     }
 }
 
 // MARK: - Panel Source
 
-public final class RECProductClickActivityPanelSource: RECProductClickActivitySource {
-    public let panelId: String
+private struct RECProductClickActivityPanelSourceData: Encodable {
+    let panelId: String
     
     // MARK: Coding Keys
     
     enum CodingKeys: String, CodingKey {
         case panelId = "panel_id"
     }
-    
-    // MARK: Init
-    
-    init(panelId: String) {
-        self.panelId = panelId
-        super.init(type: "panel")
-    }
 }
 
 // MARK: - List Source
 
-public final class RECProductClickActivityListSource: RECProductClickActivitySource {
-    public let listId: String
+private struct RECProductClickActivityListSourceData: Encodable {
+    let listId: String
     
     // MARK: Coding Keys
     
     enum CodingKeys: String, CodingKey {
         case listId = "list_id"
     }
-    
-    // MARK: Init
-    
-    init(listId: String) {
-        self.listId = listId
-        super.init(type: "list")
-    }
 }
 
 // MARK: - Search Source
 
-public final class RECProductClicActivitykSearchSource: RECProductClickActivitySource {
-    public let term: RECActivitySearchTerm
+private struct RECProductClicActivitykSearchSourceData: Encodable {
+    let term: RECActivitySearchTerm
     
     // MARK: Coding Keys
     
     enum CodingKeys: String, CodingKey {
         case term
-    }
-    
-    // MARK: Init
-    
-    init(term: RECActivitySearchTerm) {
-        self.term = term
-        super.init(type: "search")
     }
 }
