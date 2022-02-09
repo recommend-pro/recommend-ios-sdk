@@ -9,23 +9,13 @@
 import Foundation
 
 public struct RECActivitySubscribeData: Encodable {
-    public let emailHash: String
     @RECNullEncodable public private(set) var requestId: String?
+    public let emailHash: String
     
-    // MARK: Coding Keys
+    // MARK: Coding
     
     enum CodingKeys: String, CodingKey {
-        case emailHash = "email_hash"
         case requestId = "request_id"
-    }
-    
-    // MARK: Init
-    
-    init(
-        emailHash: String,
-        requestId: String? = nil
-    ) {
-        self.requestId = requestId
-        self.emailHash = emailHash
+        case emailHash = "email_hash"
     }
 }

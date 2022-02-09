@@ -10,12 +10,4 @@ import Foundation
 
 public struct RECActivityCustomEventData: Encodable {
     public let event: String
-    
-    // MARK: Init
-    
-    public init(
-        event: String
-    ) {
-        self.event = event
-    }
 }

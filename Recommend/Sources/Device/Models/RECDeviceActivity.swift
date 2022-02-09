@@ -19,13 +19,13 @@ public struct RECDeviceActivity: Encodable {
     public let environment: String?
     /// Price list code
     public let priceList: String?
-    public let deviceTime: RECDeviceTime?
+    public let deviceTime: RECDeviceTime? = .current
     /// Timestamp of event in seconds
     public let eventTime: Int?
     public let metrics: RECMetrics?
     public let activity: [RECActivity]
     
-    // MARK: Coding Keys
+    // MARK: Coding
     
     enum CodingKeys: String, CodingKey {
         case customerIdHash = "customer_id_hash"
@@ -37,29 +37,5 @@ public struct RECDeviceActivity: Encodable {
         case eventTime = "event_time"
         case metrics
         case activity
-    }
-    
-    // MARK: Init
-    
-    public init(
-        customerIdHash: String?,
-        store: String?,
-        currency: String?,
-        environment: String?,
-        priceList: String?,
-        deviceTime: RECDeviceTime? = .current,
-        eventTime: Int?,
-        metrics: RECMetrics?,
-        activity: [RECActivity]
-    ) {
-        self.customerIdHash = customerIdHash
-        self.store = store
-        self.currency = currency
-        self.environment = environment
-        self.priceList = priceList
-        self.deviceTime = deviceTime
-        self.eventTime = eventTime
-        self.metrics = metrics
-        self.activity = activity
     }
 }

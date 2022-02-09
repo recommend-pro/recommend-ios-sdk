@@ -13,16 +13,6 @@ public struct RECActivitySearchTerm: Encodable {
     
     public let type: TermType
     public let value: String
-    
-    // MARK: Init
-    
-    init(
-        type: TermType,
-        value: String
-    ) {
-        self.type = type
-        self.value = value
-    }
 }
 
 // MARK: - Search Term Type
@@ -30,8 +20,6 @@ public struct RECActivitySearchTerm: Encodable {
 public enum RECActivitySearchTermType: Encodable {
     case text
     case type(_ rawValue: String)
-    
-    // MARK: Init
     
     init(rawValue: String) {
         switch rawValue {
@@ -41,8 +29,6 @@ public enum RECActivitySearchTermType: Encodable {
             self = .type(rawValue)
         }
     }
-    
-    // MARK: Encode
     
     public func encode(to encoder: Encoder) throws {
         
