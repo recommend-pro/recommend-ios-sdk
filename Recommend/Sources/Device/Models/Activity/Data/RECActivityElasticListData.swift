@@ -12,8 +12,20 @@ public struct RECActivityElasticListData: Encodable {
     public let products: [RECActivityProduct]?
     public let elasticListId: String
     
+    // MARK: Coding Keys
+    
     enum CodingKeys: String, CodingKey {
         case products
         case elasticListId = "elastic_list_id"
+    }
+    
+    // MARK: Init
+    
+    public init(
+        products: [RECActivityProduct]?,
+        elasticListId: String
+    ) {
+        self.products = products
+        self.elasticListId = elasticListId
     }
 }

@@ -46,6 +46,30 @@ public struct RECActivityUpdateDeviceData: Encodable {
         case deviceCountry = "device_country"
         case location
     }
+    
+    // MARK: Init
+    
+    public init(
+        model: String?,
+        name: String?,
+        firstLaunch: Int?,
+        systemName: SystemName?,
+        systemVersion: String?,
+        appVersion: String?,
+        deviceLanguage: String?,
+        deviceCountry: String?,
+        location: Location?
+    ) {
+        self.model = model
+        self.name = name
+        self.firstLaunch = firstLaunch
+        self.systemName = systemName
+        self.systemVersion = systemVersion
+        self.appVersion = appVersion
+        self.deviceLanguage = deviceLanguage
+        self.deviceCountry = deviceCountry
+        self.location = location
+    }
 }
 
 extension RECActivityUpdateDeviceData {

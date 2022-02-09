@@ -15,7 +15,7 @@ public struct RECDeviceTime: Encodable {
     
     // MARK: Init
     
-    init(
+    public init(
         timezone: RECTimeZone,
         date: Date
     ) {

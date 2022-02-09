@@ -13,7 +13,9 @@ public struct RECDeviceLocation: Encodable {
     public let latitude: Double
     public let longtitude: Double
     
-    init(
+    // MARK: Init
+    
+    public init(
         latitude: Double,
         longtitude: Double
     ) {
@@ -21,7 +23,7 @@ public struct RECDeviceLocation: Encodable {
         self.longtitude = longtitude
     }
     
-    init(location: CLLocation) {
+    public init(location: CLLocation) {
         self.init(latitude: location.coordinate.latitude,
                   longtitude: location.coordinate.longitude)
     }

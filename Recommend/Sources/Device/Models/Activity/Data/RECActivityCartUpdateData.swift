@@ -12,8 +12,20 @@ public struct RECActivityCartUpdateData: Encodable {
     public let cartHash: String
     @RECNullEncodable public private(set) var requestId: String?
     
+    // MARK: Coding Keys
+    
     enum CodingKeys: String, CodingKey {
         case cartHash = "cart_hash"
         case requestId = "request_id"
+    }
+    
+    // MARK: Init
+    
+    public init(
+        cartHash: String,
+        requestId: String? = nil
+    ) {
+        self.cartHash = cartHash
+        self.requestId = requestId
     }
 }

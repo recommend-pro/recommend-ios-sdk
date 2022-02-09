@@ -14,12 +14,26 @@ public struct RECActivityPageViewData: Encodable {
     public let referrer: String?
     public let title: String?
     
-    // MARK: Coding
+    // MARK: Coding Keys
     
     enum CodingKeys: String, CodingKey {
         case url
         case pageType = "page_type"
         case referrer
         case title
+    }
+    
+    // MARK: Init
+    
+    public init(
+        url: String,
+        pageType: String?,
+        referrer: String?,
+        title: String?
+    ) {
+        self.url = url
+        self.pageType = pageType
+        self.referrer = referrer
+        self.title = title
     }
 }
