@@ -21,6 +21,7 @@ public struct RECAPIEndpoint {
         httpMethod: String
     ) {
         self.path = path
+        self.queryItems = queryItems
         self.httpMethod = httpMethod
     }
     
