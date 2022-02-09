@@ -13,8 +13,6 @@ public struct RECDeviceLocation: Encodable {
     public let latitude: Double
     public let longtitude: Double
     
-    // MARK: Init
-    
     init(
         latitude: Double,
         longtitude: Double

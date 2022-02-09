@@ -11,17 +11,9 @@ import Foundation
 public struct RECActivityCustomerRegistationData: Encodable {
     @RECNullEncodable public private(set) var requestId: String?
     
-    // MARK: Coding Keys
+    // MARK: Coding
     
     enum CodingKeys: String, CodingKey {
         case requestId = "request_id"
-    }
-    
-    // MARK: Init
-    
-    public init(
-        requestId: String? = nil
-    ) {
-        self.requestId = requestId
     }
 }
