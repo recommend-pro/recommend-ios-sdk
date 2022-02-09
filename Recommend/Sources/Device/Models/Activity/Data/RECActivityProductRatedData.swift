@@ -1,5 +1,5 @@
 //
-//  RECProductRatedActivityData.swift
+//  RECActivityProductRatedData.swift
 //  Recommend
 //
 //  Created by Dmytrii Golovanov on 08.12.2021.
@@ -8,28 +8,7 @@
 
 import Foundation
 
-public final class RECProductRatedActivity: RECActivity {
-    public typealias ActivityData = RECProductRatedActivityData
-    
-    public let data: ActivityData
-    
-    // MARK: Init
-    
-    public init(
-        sku: String,
-        rate: Int,
-        variationSKU: String?
-    ) {
-        self.data = ActivityData(sku: sku,
-                                 rate: rate,
-                                 variationSKU: variationSKU)
-        super.init(type: .productRated)
-    }
-}
-
-// MARK: - Data
-
-public struct RECProductRatedActivityData: Encodable {
+public struct RECActivityProductRatedData: Encodable {
     public let sku: String
     public let rate: Int
     public let variationSKU: String?
@@ -44,7 +23,7 @@ public struct RECProductRatedActivityData: Encodable {
     
     // MARK: Init
     
-    init(
+    public init(
         sku: String,
         rate: Int,
         variationSKU: String?
