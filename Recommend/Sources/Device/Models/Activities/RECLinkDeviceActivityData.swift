@@ -8,18 +8,14 @@
 
 import Foundation
 
-public final class RECLinkDeviceActivity: RECActivity {
-    public typealias ActivityData = RECLinkDeviceActivityData
-    
-    public let data: ActivityData
-    
-    // MARK: Init
-    
+public final class RECLinkDeviceActivity: RECDataActivity<RECLinkDeviceActivityData> {
     public init(
         deviceIdsToLink: [String]
     ) {
-        self.data = ActivityData(deviceIdsToLink: deviceIdsToLink)
-        super.init(type: .linkDevice)
+        let data = RECLinkDeviceActivityData(deviceIdsToLink: deviceIdsToLink)
+        super.init(
+            type: .linkDevice,
+            data: data)
     }
 }
 

@@ -8,24 +8,21 @@
 
 import Foundation
 
-public final class RECAddToCartActivity: RECActivity {
-    public typealias ActivityData = RECAddToCartActivityData
-    
-    public let data: ActivityData
-    
-    // MARK: - Init
-    
+public final class RECAddToCartActivity: RECDataActivity<RECAddToCartActivityData> {
     public init(
         cartHash: String,
         sku: String,
         variationSKU: String?,
         requestId: String? = nil
     ) {
-        self.data = ActivityData(cartHash: cartHash,
-                                 sku: sku,
-                                 variationSKU: variationSKU,
-                                 requestId: requestId)
-        super.init(type: .addToCart)
+        let data = RECAddToCartActivityData(
+            cartHash: cartHash,
+            sku: sku,
+            variationSKU: variationSKU,
+            requestId: requestId)
+        super.init(
+            type: .addToCart,
+            data: data)
     }
 }
 

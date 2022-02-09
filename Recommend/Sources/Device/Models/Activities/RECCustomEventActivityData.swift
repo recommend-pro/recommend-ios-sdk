@@ -8,18 +8,14 @@
 
 import Foundation
 
-public final class RECCustomEventActivity: RECActivity {
-    public typealias ActivityData = RECCustomEventActivityData
-    
-    public let data: ActivityData
-    
-    // MARK: Init
-    
+public final class RECCustomEventActivity: RECDataActivity<RECCustomEventActivityData> {
     public init(
         event: String
     ) {
-        self.data = ActivityData(event: event)
-        super.init(type: .customEvent)
+        let data = RECCustomEventActivityData(event: event)
+        super.init(
+            type: .customEvent,
+            data: data)
     }
 }
 

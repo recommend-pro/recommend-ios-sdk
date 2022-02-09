@@ -8,22 +8,19 @@
 
 import Foundation
 
-public final class RECPanelViewActivity: RECActivity {
-    public typealias ActivityData = RECPanelViewActivityData
-
-    public let data: ActivityData
-
-    // MARK: Init
-
+public final class RECPanelViewActivity: RECDataActivity<RECPanelViewActivityData> {
     public init(
         products: [RECActivityProduct]?,
         panelId: String,
         productsCount: Int
     ) {
-        self.data = ActivityData(products: products,
-                                 panelId: panelId,
-                                 productsCount: productsCount)
-        super.init(type: .panelView)
+        let data = RECPanelViewActivityData(
+            products: products,
+            panelId: panelId,
+            productsCount: productsCount)
+        super.init(
+            type: .panelView,
+            data: data)
     }
 }
 

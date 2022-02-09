@@ -8,20 +8,17 @@
 
 import Foundation
 
-public final class RECSubscribeActivity: RECActivity {
-    public typealias ActivityData = RECSubscribeActivityData
-    
-    public let data: ActivityData
-    
-    // MARK: Init
-    
+public final class RECSubscribeActivity: RECDataActivity<RECSubscribeActivityData> {
     public init(
         emailHash: String,
         requestId: String? = nil
     ) {
-        self.data = ActivityData(emailHash: emailHash,
-                                 requestId: requestId)
-        super.init(type: .subscribe)
+        let data = RECSubscribeActivityData(
+            emailHash: emailHash,
+            requestId: requestId)
+        super.init(
+            type: .subscribe,
+            data: data)
     }
 }
 

@@ -8,20 +8,17 @@
 
 import Foundation
 
-public final class RECSearchViewActivity: RECActivity {
-    public typealias ActivityData = RECSearchViewActivityData
-    
-    public let data: ActivityData
-    
-    // MARK: Init
-    
+public final class RECSearchViewActivity: RECDataActivity<RECSearchViewActivityData> {
     public init(
         products: [RECActivityProduct]?,
         term: RECActivitySearchTerm
     ) {
-        self.data = ActivityData(products: products,
-                                 term: term)
-        super.init(type: .searchView)
+        let data = RECSearchViewActivityData(
+            products: products,
+            term: term)
+        super.init(
+            type: .searchView,
+            data: data)
     }
 }
 

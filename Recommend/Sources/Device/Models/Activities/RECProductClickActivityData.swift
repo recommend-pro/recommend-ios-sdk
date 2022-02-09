@@ -8,23 +8,23 @@
 
 import Foundation
 
-public final class RECProductClickActivity: RECActivity {
-    public typealias ActivityData = RECProductClickActivityData
+public final class RECProductClickActivity: RECDataActivity<RECProductClickActivityData> {
     public typealias Source = RECProductClickActivitySource
-    
-    public let data: ActivityData
-    
+
     // MARK: Init
-    
+
     public init(
         sku: String,
         products: [RECActivityProduct]?,
         source: Source?
     ) {
-        self.data = ActivityData(sku: sku,
-                                 products: products,
-                                 source: source)
-        super.init(type: .productClick)
+        let data = RECProductClickActivityData(
+            sku: sku,
+            products: products,
+            source: source)
+        super.init(
+            type: .productClick,
+            data: data)
     }
 }
 

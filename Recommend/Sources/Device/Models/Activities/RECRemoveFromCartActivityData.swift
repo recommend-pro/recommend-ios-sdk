@@ -8,24 +8,21 @@
 
 import Foundation
 
-public final class RECRemoveFromCartActivity: RECActivity {
-    public typealias ActivityData = RECRemoveFromCartActivityData
-    
-    public let data: ActivityData
-    
-    // MARK: Init
-    
+public final class RECRemoveFromCartActivity: RECDataActivity<RECRemoveFromCartActivityData> {
     public init(
         cartHash: String,
         sku: String,
         variationSKU: String?,
         requestId: String? = nil
     ) {
-        self.data = ActivityData(cartHash: cartHash,
-                                 sku: sku,
-                                 variationSKU: variationSKU,
-                                 requestId: requestId)
-        super.init(type: .removeFromCart)
+        let data = RECRemoveFromCartActivityData(
+            cartHash: cartHash,
+            sku: sku,
+            variationSKU: variationSKU,
+            requestId: requestId)
+        super.init(
+            type: .removeFromCart,
+            data: data)
     }
 }
 
