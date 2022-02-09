@@ -16,12 +16,12 @@ public enum RECActivity: Encodable {
     // Wishlist
     case wishlistUpdate(_ data: RECActivityWishlistUpdateData)
     case addToWishlist(_ data: RECActivityAddToWishlistData)
-    case removeFromWishlist(_ data: RECActivityAddToWishlistData)
+    case removeFromWishlist(_ data: RECActivityRemoveFromWishlistData)
     
     // Cart
     case cartUpdate(_ data: RECActivityCartUpdateData)
     case addToCart(_ data: RECActivityAddToCartData)
-    case removeFromCart(_ data: RECActivityAddToCartData)
+    case removeFromCart(_ data: RECActivityRemoveFromCartData)
     
     // Page
     case pageView(_ data: RECActivityPageViewData)
