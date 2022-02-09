@@ -8,24 +8,21 @@
 
 import Foundation
 
-public final class RECRemoveFromWishlistActivity: RECActivity {
-    public typealias ActivityData = RECRemoveFromWishlistActivityData
-    
-    public let data: ActivityData
-    
-    // MARK: Init
-    
+public final class RECRemoveFromWishlistActivity: RECDataActivity<RECRemoveFromWishlistActivityData> {
     public init(
         wishlistHash: String,
         sku: String,
         variationSKU: String?,
         requestId: String? = nil
     ) {
-        self.data = ActivityData(wishlistHash: wishlistHash,
-                                 sku: sku,
-                                 variationSKU: variationSKU,
-                                 requestId: requestId)
-        super.init(type: .removeFromWishlist)
+        let data = RECRemoveFromWishlistActivityData(
+            wishlistHash: wishlistHash,
+            sku: sku,
+            variationSKU: variationSKU,
+            requestId: requestId)
+        super.init(
+            type: .removeFromWishlist,
+            data: data)
     }
 }
 

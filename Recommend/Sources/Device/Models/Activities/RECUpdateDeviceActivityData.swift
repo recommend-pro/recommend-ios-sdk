@@ -10,15 +10,12 @@ import Foundation
 import UIKit
 import CoreLocation
 
-public final class RECUpdateDeviceActivity: RECActivity {
-    public typealias ActivityData = RECUpdateDeviceActivityData
+public final class RECUpdateDeviceActivity: RECDataActivity<RECUpdateDeviceActivityData> {
     public typealias SystemName = RECDeviceSystemName
     public typealias Location = RECDeviceLocation
-    
-    public let data: ActivityData
-    
+
     // MARK: Init
-    
+
     public init(
         model: String?,
         name: String?,
@@ -30,16 +27,19 @@ public final class RECUpdateDeviceActivity: RECActivity {
         deviceCountry: String?,
         location: Location?
     ) {
-        self.data = ActivityData(model: model,
-                                 name: name,
-                                 firstLaunch: firstLaunch,
-                                 systemName: systemName,
-                                 systemVersion: systemVersion,
-                                 appVersion: appVersion,
-                                 deviceLanguage: deviceLanguage,
-                                 deviceCountry: deviceCountry,
-                                 location: location)
-        super.init(type: .updateDevice)
+        let data = RECUpdateDeviceActivityData(
+            model: model,
+            name: name,
+            firstLaunch: firstLaunch,
+            systemName: systemName,
+            systemVersion: systemVersion,
+            appVersion: appVersion,
+            deviceLanguage: deviceLanguage,
+            deviceCountry: deviceCountry,
+            location: location)
+        super.init(
+            type: .updateDevice,
+            data: data)
     }
     
     // MARK: Default

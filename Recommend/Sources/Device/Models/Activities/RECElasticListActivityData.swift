@@ -8,20 +8,17 @@
 
 import Foundation
 
-public final class RECElasticListActivity: RECActivity {
-    public typealias ActivityData = RECElasticListActivityData
-    
-    public let data: ActivityData
-    
-    // MARK: Init
-    
+public final class RECElasticListActivity: RECDataActivity<RECElasticListActivityData> {
     public init(
         products: [RECActivityProduct]?,
         elasticListId: String
     ) {
-        self.data = ActivityData(products: products,
-                                 elasticListId: elasticListId)
-        super.init(type: .elasticList)
+        let data = RECElasticListActivityData(
+            products: products,
+            elasticListId: elasticListId)
+        super.init(
+            type: .elasticList,
+            data: data)
     }
 }
 

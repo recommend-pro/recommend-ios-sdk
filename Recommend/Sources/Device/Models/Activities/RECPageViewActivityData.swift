@@ -8,24 +8,21 @@
 
 import Foundation
 
-public final class RECPageViewActivity: RECActivity {
-    public typealias ActivityData = RECPageViewActivityData
-    
-    public let data: ActivityData
-    
-    // MARK: Init
-    
+public final class RECPageViewActivity: RECDataActivity<RECPageViewActivityData> {
     public init(
         url: String,
         pageType: String?,
         referrer: String?,
         title: String?
     ) {
-        self.data = ActivityData(url: url,
-                                 pageType: pageType,
-                                 referrer: referrer,
-                                 title: title)
-        super.init(type: .pageView)
+        let data = RECPageViewActivityData(
+            url: url,
+            pageType: pageType,
+            referrer: referrer,
+            title: title)
+        super.init(
+            type: .pageView,
+            data: data)
     }
 }
 

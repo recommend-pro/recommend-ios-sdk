@@ -8,24 +8,21 @@
 
 import Foundation
 
-public final class RECAddToWishlistActivity: RECActivity {
-    public typealias ActivityData = RECAddToWishlistActivityData
-    
-    public let data: ActivityData
-    
-    // MARK: Init
-    
+public final class RECAddToWishlistActivity: RECDataActivity<RECAddToWishlistActivityData> {
     public init(
         wishlistHash: String,
         sku: String,
         variationSKU: String?,
         requestId: String? = nil
     ) {
-        self.data = ActivityData(wishlistHash: wishlistHash,
-                                 sku: sku,
-                                 variationSKU: variationSKU,
-                                 requestId: requestId)
-        super.init(type: .addToWishlist)
+        let data = RECAddToWishlistActivityData(
+            wishlistHash: wishlistHash,
+            sku: sku,
+            variationSKU: variationSKU,
+            requestId: requestId)
+        super.init(
+            type: .addToWishlist,
+            data: data)
     }
 }
 

@@ -8,18 +8,14 @@
 
 import Foundation
 
-public final class RECCustomerRegistationActivity: RECActivity {
-    public typealias ActivityData = RECCustomerRegistationActivityData
-    
-    public let data: ActivityData
-    
-    // MARK: Init
-    
+public final class RECCustomerRegistationActivity: RECDataActivity<RECCustomerRegistationActivityData> {
     public init(
         requestId: String? = nil
     ) {
-        self.data = ActivityData(requestId: requestId)
-        super.init(type: .customerRegistration)
+        let data = RECCustomerRegistationActivityData(requestId: requestId)
+        super.init(
+            type: .customerRegistration,
+            data: data)
     }
 }
 

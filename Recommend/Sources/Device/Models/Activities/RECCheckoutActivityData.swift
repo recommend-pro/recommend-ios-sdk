@@ -8,20 +8,17 @@
 
 import Foundation
 
-public final class RECCheckoutActivity: RECActivity {
-    public typealias ActivityData = RECCheckoutActivityData
-    
-    public let data: ActivityData
-    
-    // MARK: Init
-    
+public final class RECCheckoutActivity: RECDataActivity<RECCheckoutActivityData> {
     public init(
         step: String?,
         option: String?
     ) {
-        self.data = ActivityData(step: step,
-                                 option: option)
-        super.init(type: .checkout)
+        let data = RECCheckoutActivityData(
+            step: step,
+            option: option)
+        super.init(
+            type: .checkout,
+            data: data)
     }
 }
 

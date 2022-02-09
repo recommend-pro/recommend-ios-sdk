@@ -8,20 +8,17 @@
 
 import Foundation
 
-public final class RECProductViewActivity: RECActivity {
-    public typealias ActivityData = RECProductViewActivityData
-    
-    public let data: ActivityData
-    
-    // MARK: Init
-    
+public final class RECProductViewActivity: RECDataActivity<RECProductViewActivityData> {
     public init(
         sku: String,
         variationSKU: String?
     ) {
-        self.data = ActivityData(sku: sku,
-                                 variationSKU: variationSKU)
-        super.init(type: .productView)
+        let data = RECProductViewActivityData(
+            sku: sku,
+            variationSKU: variationSKU)
+        super.init(
+            type: .productView,
+            data: data)
     }
 }
 

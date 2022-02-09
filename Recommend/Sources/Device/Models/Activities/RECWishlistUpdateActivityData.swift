@@ -8,20 +8,17 @@
 
 import Foundation
 
-public final class RECWishlistUpdateActivity: RECActivity {
-    public typealias ActivityData = RECWishlistUpdateActivityData
-    
-    public let data: ActivityData
-    
-    // MARK: Init
-    
+public final class RECWishlistUpdateActivity: RECDataActivity<RECWishlistUpdateActivityData> {
     public init(
         wishlistHash: String,
         requestId: String? = nil
     ) {
-        self.data = ActivityData(wishlistHash: wishlistHash,
-                                 requestId: requestId)
-        super.init(type: .wishlistUpdate)
+        let data = RECWishlistUpdateActivityData(
+            wishlistHash: wishlistHash,
+            requestId: requestId)
+        super.init(
+            type: .wishlistUpdate,
+            data: data)
     }
 }
 
