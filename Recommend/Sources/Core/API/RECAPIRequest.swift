@@ -12,7 +12,6 @@ public let kRECAPIRequestDefaultAttemptsLimit: Int = 1
 
 public final class RECAPIRequest: NSObject {
     public let endpoint: RECAPIEndpoint
-    public var headers: [String: String]?
     public var httpBody: Data?
     
     // queue
@@ -52,7 +51,7 @@ public final class RECAPIRequest: NSObject {
         
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = endpoint.httpMethod
-        urlRequest.allHTTPHeaderFields = headers
+        urlRequest.allHTTPHeaderFields = endpoint.headers
         urlRequest.httpBody = httpBody
         return urlRequest
     }

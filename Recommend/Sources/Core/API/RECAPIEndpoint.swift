@@ -12,17 +12,20 @@ public struct RECAPIEndpoint {
     public let path: String
     public var queryItems: [URLQueryItem]?
     public let httpMethod: String
+    public let headers: [String: String]
     
     // MARK: Init
     
     public init(
         path: String,
         queryItems: [URLQueryItem]? = nil,
-        httpMethod: String
+        httpMethod: String,
+        headers: [String: String] = [:]
     ) {
         self.path = path
         self.queryItems = queryItems
         self.httpMethod = httpMethod
+        self.headers = headers
     }
     
     // MARK: URL
