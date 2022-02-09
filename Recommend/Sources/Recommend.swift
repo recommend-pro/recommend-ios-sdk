@@ -71,7 +71,8 @@ public final class Recommend: NSObject {
         
         if !(application.applicationState == .background && isRemoteNotification) {
             self.device.updateDevice()
-            self.device.trackDeviceActivity(activity: [.openApp])
+            let activity = RECOpenAppActivity()
+            self.device.trackDeviceActivity(activity: [activity])
         }
     }
 }

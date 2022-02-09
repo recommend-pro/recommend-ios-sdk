@@ -62,8 +62,7 @@ public final class RECDevice {
     
     public func updateDevice(completion: ((Error?) -> Void)? = nil) {
         let isFirstLaunch: Bool = config.isFirstLaunch ?? true
-        let activityData: RECActivityUpdateDeviceData = .default(firstLaunch: isFirstLaunch)
-        let activity: RECActivity = .updateDevice(activityData)
+        let activity: RECActivity = RECUpdateDeviceActivity.default(firstLaunch: isFirstLaunch)
         
         trackDeviceActivity(activity: [activity],
                             eventTime: Date(),
@@ -73,8 +72,7 @@ public final class RECDevice {
     // MARK: Link Device
     
     public func linkDevice(deviceIdsToLink: [String], completion: ((Error?) -> Void)? = nil) {
-        let activityData: RECActivityLinkDeviceData = .init(deviceIdsToLink: deviceIdsToLink)
-        let activity: RECActivity = .linkDevice(activityData)
+        let activity: RECActivity = RECLinkDeviceActivity(deviceIdsToLink: deviceIdsToLink)
         
         trackDeviceActivity(activity: [activity],
                             eventTime: Date(),
