@@ -9,6 +9,7 @@
 import Foundation
 
 public struct RECTimeZone: Encodable {
+    // Timezone identifier
     public let code: String
     /// The difference, in seconds, between a date in the UTC time zone, and the same date in the local time zone
     public let offset: Int
@@ -20,17 +21,14 @@ public struct RECTimeZone: Encodable {
         self.offset = offset
     }
     
-    public init?(timeZone: TimeZone) {
-        guard let code = timeZone.abbreviation() else {
-            return nil
-        }
-        self.init(code: code,
+    public init(timeZone: TimeZone) {
+        self.init(code: timeZone.identifier,
                   offset: timeZone.secondsFromGMT())
     }
     
     // MARK: Current
     
-    public static var current: RECTimeZone? {
+    public static var current: RECTimeZone {
         return RECTimeZone(timeZone: .current)
     }
 }
