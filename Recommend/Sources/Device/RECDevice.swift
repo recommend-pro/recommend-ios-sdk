@@ -69,4 +69,15 @@ public final class RECDevice {
                             eventTime: Date(),
                             completion: completion)
     }
+    
+    // MARK: Link Device
+    
+    public func linkDevice(deviceIdsToLink: [String], completion: ((Error?) -> Void)? = nil) {
+        let activityData: RECActivityLinkDeviceData = .init(deviceIdsToLink: deviceIdsToLink)
+        let activity: RECActivity = .linkDevice(activityData)
+        
+        trackDeviceActivity(activity: [activity],
+                            eventTime: Date(),
+                            completion: completion)
+    }
 }

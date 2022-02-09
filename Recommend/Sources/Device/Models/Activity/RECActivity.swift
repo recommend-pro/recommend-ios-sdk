@@ -16,12 +16,12 @@ public enum RECActivity: Encodable {
     // Wishlist
     case wishlistUpdate(_ data: RECActivityWishlistUpdateData)
     case addToWishlist(_ data: RECActivityAddToWishlistData)
-    case removeFromWishlist(_ data: RECActivityAddToWishlistData)
+    case removeFromWishlist(_ data: RECActivityRemoveFromWishlistData)
     
     // Cart
     case cartUpdate(_ data: RECActivityCartUpdateData)
     case addToCart(_ data: RECActivityAddToCartData)
-    case removeFromCart(_ data: RECActivityAddToCartData)
+    case removeFromCart(_ data: RECActivityRemoveFromCartData)
     
     // Page
     case pageView(_ data: RECActivityPageViewData)
@@ -56,6 +56,9 @@ public enum RECActivity: Encodable {
     
     // Custom
     case customEvent(_ data: RECActivityCustomEventData)
+    
+    // Link
+    case linkDevice(_ data: RECActivityLinkDeviceData)
     
     // MARK: Coding Keys
     
@@ -159,6 +162,10 @@ public enum RECActivity: Encodable {
         case .customEvent(let activityData):
             type = .customEvent
             data = try JSONEncoder().encode(activityData)
+            
+        case .linkDevice(let activityData):
+            type = .linkDevice
+            data = try JSONEncoder().encode(activityData)
         }
         
         var container = encoder.container(keyedBy: CodingKeys.self)
@@ -218,4 +225,7 @@ private enum RECActivityType: String, Encodable {
     
     // Custom
     case customEvent = "custom_event"
+    
+    // Link
+    case linkDevice = "link_device"
 }
