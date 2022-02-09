@@ -11,4 +11,14 @@ import Foundation
 public struct RECMetric: Encodable {
     public let code: String
     public let value: String
+    
+    // MARK: Init
+    
+    public init(
+        code: String,
+        value: String
+    ) {
+        self.code = code
+        self.value = value
+    }
 }
