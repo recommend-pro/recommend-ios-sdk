@@ -14,6 +14,8 @@ public enum RECAPIErrorResponseCode: Decodable {
     case notFound
     case unknown(String)
     
+    // MARK: Init
+    
     init(rawValue: String) {
         switch rawValue {
         case "invalid_data":
@@ -25,5 +27,13 @@ public enum RECAPIErrorResponseCode: Decodable {
         default:
             self = .unknown(rawValue)
         }
+    }
+    
+    // MARK: Decode
+    
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.singleValueContainer()
+        let rawValue = try container.decode(String.self)
+        self.init(rawValue: rawValue)
     }
 }
