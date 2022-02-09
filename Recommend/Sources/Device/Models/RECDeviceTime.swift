@@ -33,10 +33,8 @@ public struct RECDeviceTime: Encodable {
     // MARK: Current
     
     public static var current: RECDeviceTime? {
-        guard let timezone = RECTimeZone.current else {
-            return nil
-        }
-        let date = Date()
-        return RECDeviceTime(timezone: timezone, date: date)
+        return RECDeviceTime(
+            timezone: .current,
+            date: Date())
     }
 }
