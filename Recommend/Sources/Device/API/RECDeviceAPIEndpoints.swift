@@ -14,7 +14,10 @@ struct RECDeviceAPIEndpoints {
         deviceId: String
     ) -> RECAPIEndpoint {
         let path = "/v3/\(accountId)/device/\(deviceId)/activity"
+        let headers: [String: String] = ["Accept": "application/json",
+                                         "Content-Type": "application/json"]
         return RECAPIEndpoint(path: path,
-                              httpMethod: "POST")
+                              httpMethod: "POST",
+                              headers: headers)
     }
 }
