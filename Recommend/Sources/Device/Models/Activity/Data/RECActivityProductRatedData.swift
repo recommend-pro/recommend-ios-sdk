@@ -23,7 +23,7 @@ public struct RECActivityProductRatedData: Encodable {
     
     // MARK: Init
     
-    init(
+    public init(
         sku: String,
         rate: Int,
         variationSKU: String?

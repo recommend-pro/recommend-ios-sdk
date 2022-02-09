@@ -21,7 +21,7 @@ public struct RECActivityProductViewData: Encodable {
     
     // MARK: Init
     
-    init(
+    public init(
         sku: String,
         variationSKU: String?
     ) {

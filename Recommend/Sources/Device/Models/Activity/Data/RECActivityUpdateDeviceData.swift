@@ -49,7 +49,7 @@ public struct RECActivityUpdateDeviceData: Encodable {
     
     // MARK: Init
     
-    init(
+    public init(
         model: String?,
         name: String?,
         firstLaunch: Int?,

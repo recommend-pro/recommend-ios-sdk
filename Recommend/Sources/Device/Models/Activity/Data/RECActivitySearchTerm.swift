@@ -16,7 +16,7 @@ public struct RECActivitySearchTerm: Encodable {
     
     // MARK: Init
     
-    init(
+    public init(
         type: TermType,
         value: String
     ) {

@@ -21,7 +21,7 @@ public struct RECActivitySubscribeData: Encodable {
     
     // MARK: Init
     
-    init(
+    public init(
         emailHash: String,
         requestId: String? = nil
     ) {

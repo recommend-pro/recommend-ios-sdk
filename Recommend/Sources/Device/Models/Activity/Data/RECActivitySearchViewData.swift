@@ -15,7 +15,7 @@ public struct RECActivitySearchViewData: Encodable {
     
     // MARK: Init
     
-    init(
+    public init(
         products: [RECActivityProduct]?,
         term: RECActivitySearchTerm
     ) {

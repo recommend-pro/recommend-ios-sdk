@@ -21,7 +21,7 @@ public struct RECActivitySaleData: Encodable {
     
     // MARK: Init
     
-    init(
+    public init(
         orderIdHash: String,
         requestId: String? = nil
     ) {
