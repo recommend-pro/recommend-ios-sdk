@@ -61,8 +61,7 @@ public final class RECDevice {
     // MARK: Update Device
     
     public func updateDevice(completion: ((Error?) -> Void)? = nil) {
-        let isFirstLaunch: Bool = config.isFirstLaunch ?? true
-        let activity: RECActivity = RECUpdateDeviceActivity.default(firstLaunch: isFirstLaunch)
+        let activity: RECActivity = RECUpdateDeviceActivity.default(firstLaunch: config.isFirstLaunch)
         
         trackDeviceActivity(activity: [activity],
                             eventTime: Date(),
