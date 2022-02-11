@@ -25,9 +25,12 @@ public struct RECDeviceTimeZone: Encodable {
         self.init(code: timeZone.identifier,
                   offset: timeZone.secondsFromGMT())
     }
-    
-    // MARK: Current
-    
+}
+
+// MARK: - Current Device Time Zone
+
+extension RECDeviceTimeZone {
+    /// The time zone currently used by the system.
     public static var current: RECDeviceTimeZone {
         return RECDeviceTimeZone(timeZone: .current)
     }

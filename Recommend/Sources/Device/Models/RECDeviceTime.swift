@@ -30,9 +30,12 @@ public struct RECDeviceTime: Encodable {
         formatter.timeZone = timeZone
         self.date = formatter.string(from: date)
     }
-    
-    // MARK: Current
-    
+}
+
+// MARK: - Current Device Time
+
+extension RECDeviceTime {
+    /// The time currently used by the system.
     public static var current: RECDeviceTime? {
         return RECDeviceTime(
             timeZone: .current,
