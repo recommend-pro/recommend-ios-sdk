@@ -8,8 +8,8 @@
 
 import Foundation
 
-public struct RECTimeZone: Encodable {
-    // Timezone identifier
+public struct RECDeviceTimeZone: Encodable {
+    /// Time zone identifier
     public let code: String
     /// The difference, in seconds, between a date in the UTC time zone, and the same date in the local time zone
     public let offset: Int
@@ -28,7 +28,7 @@ public struct RECTimeZone: Encodable {
     
     // MARK: Current
     
-    public static var current: RECTimeZone {
-        return RECTimeZone(timeZone: .current)
+    public static var current: RECDeviceTimeZone {
+        return RECDeviceTimeZone(timeZone: .current)
     }
 }

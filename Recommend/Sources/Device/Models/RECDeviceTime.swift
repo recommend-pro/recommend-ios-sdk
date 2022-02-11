@@ -9,17 +9,17 @@
 import Foundation
 
 public struct RECDeviceTime: Encodable {
-    public let timezone: RECTimeZone
+    public let timezone: RECDeviceTimeZone
     /// Date in `ISO 8601` format. Example: `2021-07-30T11:33:04.862Z`.
     public let date: String
     
     // MARK: Init
     
     public init(
-        timezone: RECTimeZone,
+        timeZone: TimeZone,
         date: Date
     ) {
-        self.timezone = timezone
+        self.timezone = RECDeviceTimeZone(timeZone: timeZone)
         
         let formatter = ISO8601DateFormatter()
         formatter.formatOptions = [.withFullDate,
@@ -27,6 +27,7 @@ public struct RECDeviceTime: Encodable {
                                    .withFullTime,
                                    .withColonSeparatorInTime,
                                    .withFractionalSeconds]
+        formatter.timeZone = timeZone
         self.date = formatter.string(from: date)
     }
     
@@ -34,7 +35,7 @@ public struct RECDeviceTime: Encodable {
     
     public static var current: RECDeviceTime? {
         return RECDeviceTime(
-            timezone: .current,
+            timeZone: .current,
             date: Date())
     }
 }
