@@ -18,15 +18,12 @@ public final class RECConfig {
     public let urlSession: URLSession
     private let userDefaults: RECConfigUserDefaults
     
-    public var isFirstLaunch: Bool? {
+    public private(set) var isFirstLaunch: Bool? {
         get {
             return userDefaults.isFirstLaunch
         }
         set {
-            if (userDefaults.isFirstLaunch == nil && newValue == true) ||
-                (userDefaults.isFirstLaunch != nil && newValue == false) {
-                userDefaults.isFirstLaunch = newValue
-            }
+            userDefaults.isFirstLaunch = newValue
         }
     }
     
@@ -66,5 +63,18 @@ public final class RECConfig {
         self.apiHost = apiHost
         self.urlSession = URLSession.shared
         self.userDefaults = RECConfigUserDefaults()
+    }
+    
+    // MARK: Open App
+    
+    func appLaunched() {
+        switch (userDefaults.isFirstLaunch) {
+        case nil:
+            userDefaults.isFirstLaunch = true
+        case true:
+            userDefaults.isFirstLaunch = false
+        default:
+            break
+        }
     }
 }
