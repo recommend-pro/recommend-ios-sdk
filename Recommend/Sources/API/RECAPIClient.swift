@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class RECAPIClient: NSObject {
+public final class RECAPIClient: NSObject {
     private let host: String
     private var urlSession: URLSession
     
@@ -22,10 +22,26 @@ final class RECAPIClient: NSObject {
         self.urlSession = urlSession
     }
     
-    // MARK: Prepare methods
+    // MARK: Request
     
-    private func buildURLRequest(for request: RECAPIRequest) throws -> URLRequest {
-        return try request.buildURLRequest(host: self.host)
+    private func request(
+        with endpoint: RECAPIEndpoint,
+        httpBody: Data? = nil,
+        attemptsLimit: Int
+    ) throws -> RECAPIRequest {
+        guard let url = endpoint.url(withHost: self.host) else {
+            let error = RECAPIError.nilURL(
+                host: self.host,
+                endpoint: endpoint)
+            throw error
+        }
+        
+        return RECAPIRequest(
+            url: url,
+            httpMethod: endpoint.httpMethod,
+            httpBody: httpBody,
+            headers: endpoint.headers,
+            attemptsLimit: attemptsLimit)
     }
     
     // MARK: DataTask
@@ -78,21 +94,17 @@ final class RECAPIClient: NSObject {
         with request: RECAPIRequest,
         completion: @escaping (Result<Data, Error>) -> Void
     ) {
-        do {
-            let urlRequest = try self.buildURLRequest(for: request)
-            
-            let dataTask = self.dataTask(
-                with: urlRequest,
-                completion: completion)
-            
-            dataTask.resume()
-        } catch {
-            completion(.failure(error))
-        }
+        let dataTask = self.dataTask(
+            with: request.urlRequest,
+            completion: completion)
+        
+        dataTask.resume()
     }
     
-    private func process(
-        request: RECAPIRequest,
+    // MARK: Execute Request
+    
+    func executeRequest(
+        _ request: RECAPIRequest,
         completion: @escaping (Result<Data, Error>) -> Void
     ) {
         guard request.isAttemptsLimitExceeded == false else {
@@ -118,8 +130,8 @@ final class RECAPIClient: NSObject {
                         completion(.failure(error))
                         return
                     }
-                    self.process(
-                        request: request,
+                    self.executeRequest(
+                        request,
                         completion: completion)
                 }
             }
@@ -131,49 +143,73 @@ final class RECAPIClient: NSObject {
         }
     }
     
-    // MARK: Execute Request
-    
-    func execute(
-        request: RECAPIRequest,
+    public func executeRequest(
+        with endpoint: RECAPIEndpoint,
+        httpBody: Data? = nil,
+        attemptsLimit: Int = kRECAPIRequestDefaultAttemptsLimit,
         completion: @escaping (Error?) -> Void
     ) {
-        let waypointCompletion: (Result<Data, Error>) -> Void = { result in
-            do {
-                switch result {
-                case .success(let data):
-                    _ = try JSONDecoder().decode(RECAPISuccessResponse.self, from: data)
-                    completion(nil)
-                    
-                case .failure(let error):
-                    throw error
+        do {
+            let request = try self.request(
+                with: endpoint,
+                httpBody: httpBody,
+                attemptsLimit: attemptsLimit)
+            
+                let waypointCompletion: (Result<Data, Error>) -> Void = { result in
+                    do {
+                        switch result {
+                        case .success(let data):
+                            _ = try JSONDecoder().decode(RECAPISuccessResponse.self, from: data)
+                            completion(nil)
+                            
+                        case .failure(let error):
+                            throw error
+                        }
+                    } catch {
+                        completion(error)
+                    }
                 }
-            } catch {
-                completion(error)
-            }
+            
+            executeRequest(
+                request,
+                completion: waypointCompletion)
+        } catch {
+            completion(error)
         }
-        
-        process(request: request, completion: waypointCompletion)
     }
     
-    func execute<T>(
-        request: RECAPIRequest,
+    public func executeRequest<T>(
+        with endpoint: RECAPIEndpoint,
+        httpBody: Data? = nil,
+        attemptsLimit: Int = kRECAPIRequestDefaultAttemptsLimit,
         completion: @escaping (Result<T, Error>) -> Void
     ) where T : Decodable {
-        let waypointCompletion: (Result<Data, Error>) -> Void = { result in
-            do {
-                switch result {
-                case .success(let data):
-                    let successResponse = try JSONDecoder().decode(RECAPIDataSuccessResponse<T>.self, from: data)
-                    completion(.success(successResponse.result))
-                    
-                case .failure(let error):
+        do {
+            let request = try self.request(
+                with: endpoint,
+                httpBody: httpBody,
+                attemptsLimit: attemptsLimit)
+            
+            let waypointCompletion: (Result<Data, Error>) -> Void = { result in
+                do {
+                    switch result {
+                    case .success(let data):
+                        let successResponse = try JSONDecoder().decode(RECAPIDataSuccessResponse<T>.self, from: data)
+                        completion(.success(successResponse.result))
+                        
+                    case .failure(let error):
+                        completion(.failure(error))
+                    }
+                } catch {
                     completion(.failure(error))
                 }
-            } catch {
-                completion(.failure(error))
             }
+            
+            executeRequest(
+                request,
+                completion: waypointCompletion)
+        } catch {
+            completion(.failure(error))
         }
-        
-        process(request: request, completion: waypointCompletion)
     }
 }

@@ -13,7 +13,7 @@ private let RECAPIErrorDomain = "RECAPIErrorDomain"
 public enum RECAPIError: Error {
     public typealias ErrorCode = RECAPIErrorResponseCode
     
-    case nilURL(URLComponents)
+    case nilURL(host: String, endpoint: RECAPIEndpoint)
     case invalidURLResponse(URLResponse?)
     case nilData
     case errorResponse(errorCode: ErrorCode, errorMessage: String)
@@ -30,10 +30,10 @@ extension RECAPIError: CustomNSError {
         var userInfo: [String: Any] = [:]
         
         switch self {
-        case .nilURL(let urlComponents):
-            userInfo["host"] = urlComponents.host
-            userInfo["path"] = urlComponents.path
-            userInfo["query"] = urlComponents.query
+        case .nilURL(let host, let endpoint):
+            userInfo["host"] = host
+            userInfo["path"] = endpoint.path
+            userInfo["query"] = endpoint.queryItems
             
         case .invalidURLResponse(let urlResponse):
             userInfo["urlResponse"] = urlResponse
@@ -46,7 +46,7 @@ extension RECAPIError: CustomNSError {
             userInfo["statusCode"] = statusCode
             
         case .attemptsLimitExceed(let request, let lastAttemptError):
-            userInfo["path"] = request.endpoint.path
+            userInfo["url"] = request.urlRequest.url?.absoluteString
             userInfo["attemptsLimit"] = request.attemptsLimit
             if let nsError = lastAttemptError as? NSError {
                 nsError.userInfo.forEach({

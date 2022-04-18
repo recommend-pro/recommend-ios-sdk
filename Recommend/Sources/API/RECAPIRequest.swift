@@ -11,29 +11,41 @@ import Foundation
 public let kRECAPIRequestDefaultAttemptsLimit: Int = 1
 
 public final class RECAPIRequest: NSObject {
-    public let endpoint: RECAPIEndpoint
-    public var httpBody: Data?
-    
-    // queue
-    public let isQueueRequired: Bool
+    let urlRequest: URLRequest
+
     
     // multi-attempt
-    public let attemptsLimit: Int
-    public private(set) var attempt: Int = 0
-    public var isAttemptsLimitExceeded: Bool {
+    let attemptsLimit: Int
+    private(set) var attempt: Int = 0
+    var isAttemptsLimitExceeded: Bool {
         return attempt >= attemptsLimit
     }
     
     // MARK: Init
     
     public init(
-        endpoint: RECAPIEndpoint,
-        isQueueRequired: Bool = true,
-        attemptsLimit: Int = kRECAPIRequestDefaultAttemptsLimit
+        urlRequest: URLRequest,
+        attemptsLimit: Int
     ) {
-        self.endpoint = endpoint
-        self.isQueueRequired = isQueueRequired
+        self.urlRequest = urlRequest
         self.attemptsLimit = attemptsLimit
+    }
+    
+    public convenience init(
+        url: URL,
+        httpMethod: String,
+        httpBody: Data? = nil,
+        headers: [String: String]? = nil,
+        attemptsLimit: Int
+    ) {
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = httpMethod
+        urlRequest.httpBody = httpBody
+        urlRequest.allHTTPHeaderFields = headers
+        
+        self.init(
+            urlRequest: urlRequest,
+            attemptsLimit: attemptsLimit)
     }
     
     // MARK: Attempt
@@ -42,17 +54,5 @@ public final class RECAPIRequest: NSObject {
     func nextAttempt() -> Bool {
         attempt += 1
         return isAttemptsLimitExceeded
-    }
-    
-    // MARK: URLRequest
-    
-    func buildURLRequest(host: String) throws -> URLRequest {
-        let url = try endpoint.buildURL(host: host)
-        
-        var urlRequest = URLRequest(url: url)
-        urlRequest.httpMethod = endpoint.httpMethod
-        urlRequest.allHTTPHeaderFields = endpoint.headers
-        urlRequest.httpBody = httpBody
-        return urlRequest
     }
 }

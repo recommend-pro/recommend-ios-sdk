@@ -30,16 +30,12 @@ public struct RECAPIEndpoint {
     
     // MARK: URL
     
-    func buildURL(host: String) throws -> URL {
+    func url(withHost host: String) -> URL? {
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
         urlComponents.host = host
         urlComponents.path = path
         urlComponents.queryItems = queryItems
-        
-        guard let url = urlComponents.url else {
-            throw RECAPIError.nilURL(urlComponents)
-        }
-        return url
+        return urlComponents.url
     }
 }
