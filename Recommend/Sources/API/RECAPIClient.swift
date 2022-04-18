@@ -14,7 +14,7 @@ public final class RECAPIClient: NSObject {
     
     // MARK: Init
     
-    init(
+    public init(
         host: String,
         urlSession: URLSession = .shared
     ) {
