@@ -9,74 +9,125 @@
 import Foundation
 
 final class RECAPIClient: NSObject {
-    private let config: RECConfig
-    private var urlSession: URLSession {
-        return config.urlSession
-    }
-    private let queue: RECAPIQueue
+    private let host: String
+    private var urlSession: URLSession
     
     // MARK: Init
     
-    init(config: RECConfig) {
-        self.config = config
-        self.queue = RECAPIQueue()
+    init(
+        host: String,
+        urlSession: URLSession = .shared
+    ) {
+        self.host = host
+        self.urlSession = urlSession
     }
     
     // MARK: Prepare methods
     
     private func buildURLRequest(for request: RECAPIRequest) throws -> URLRequest {
-        return try request.buildURLRequest(host: self.config.apiHost)
+        return try request.buildURLRequest(host: self.host)
     }
     
     // MARK: DataTask
     
-    private func execute(task: RECAPIDataTask) {
-        task.resume()
-    }
-    
-    // MARK: Queue
-    
-    private func addToQueue(_ task: RECAPIDataTask) {
-        queue.add(task)
-        if queue.count == 1 {
-            executeNextTask()
+    private func dataTask(
+        with request: URLRequest,
+        completion: @escaping (Result<Data, Error>) -> Void
+    ) -> URLSessionDataTask {
+        return urlSession.dataTask(with: request) { data, urlResponse, error in
+            do {
+                if let error = error {
+                    throw error
+                }
+                
+                guard
+                    let urlResponse = urlResponse,
+                    let httpURLResponse = urlResponse as? HTTPURLResponse
+                else {
+                    throw RECAPIError.invalidURLResponse(urlResponse)
+                }
+                
+                let statusCode = httpURLResponse.statusCode
+                
+                switch statusCode {
+                case 200:
+                    guard let data = data else {
+                        throw RECAPIError.nilData
+                    }
+                    completion(.success(data))
+                    
+                default:
+                    guard let data = data else {
+                        throw RECAPIError.serverError(statusCode)
+                    }
+                    
+                    let errorResponse = try JSONDecoder().decode(
+                        RECAPIErrorResponse.self,
+                        from: data)
+                    throw RECAPIError.errorResponse(
+                        errorCode: errorResponse.errorCode,
+                        errorMessage: errorResponse.errorMessage)
+                }
+            } catch {
+                completion(.failure(error))
+            }
         }
     }
     
-    @discardableResult
-    private func executeNextTask() -> RECAPIDataTask? {
-        guard let task = queue.next() else {
-            return nil
+    private func resumeDataTask(
+        with request: RECAPIRequest,
+        completion: @escaping (Result<Data, Error>) -> Void
+    ) {
+        do {
+            let urlRequest = try self.buildURLRequest(for: request)
+            
+            let dataTask = self.dataTask(
+                with: urlRequest,
+                completion: completion)
+            
+            dataTask.resume()
+        } catch {
+            completion(.failure(error))
         }
-        execute(task: task)
-        return task
     }
     
     private func process(
         request: RECAPIRequest,
         completion: @escaping (Result<Data, Error>) -> Void
     ) {
-        do {
-            let urlRequest = try self.buildURLRequest(for: request)
-            
-            let waypointCompletion: (Result<Data, Error>) -> Void = { result in
-                if case .success = result, request.isAttemptsLimitExceeded == false {
-                    self.process(request: request, completion: completion)
-                    return
-                }
-                
-                completion(result)
-            }
-            
-            let task = self.dataTask(urlRequest: urlRequest, completion: waypointCompletion)
-            
-            if request.isQueueRequired {
-                addToQueue(task)
-            } else {
-                execute(task: task)
-            }
-        } catch {
+        guard request.isAttemptsLimitExceeded == false else {
+            let error = RECAPIError.attemptsLimitExceed(
+                request: request,
+                lastAttemptError: nil)
             completion(.failure(error))
+            return
+        }
+        
+        if request.attemptsLimit > 1 {
+            let dataTaskCompletion: (Result<Data, Error>) -> Void = { result in
+                switch result {
+                case .success:
+                    completion(result)
+                    
+                case .failure(let error):
+                    request.nextAttempt()
+                    guard request.isAttemptsLimitExceeded == false else {
+                        let error = RECAPIError.attemptsLimitExceed(
+                            request: request,
+                            lastAttemptError: error)
+                        completion(.failure(error))
+                        return
+                    }
+                    self.process(
+                        request: request,
+                        completion: completion)
+                }
+            }
+            resumeDataTask(with: request,
+                           completion: dataTaskCompletion)
+        } else {
+            resumeDataTask(with: request,
+                           completion: completion)
         }
     }
     
@@ -124,18 +175,5 @@ final class RECAPIClient: NSObject {
         }
         
         process(request: request, completion: waypointCompletion)
-    }
-}
-
-// MARK: - API DataTask
-
-private extension RECAPIClient {
-    func dataTask(
-        urlRequest: URLRequest,
-        completion: @escaping (Result<Data, Error>) -> Void
-    ) -> RECAPIDataTask {
-        return RECAPIDataTask(urlRequest: urlRequest,
-                              urlSession: self.urlSession,
-                              completion: completion)
     }
 }

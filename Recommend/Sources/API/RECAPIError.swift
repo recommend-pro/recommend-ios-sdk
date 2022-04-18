@@ -18,6 +18,7 @@ public enum RECAPIError: Error {
     case nilData
     case errorResponse(errorCode: ErrorCode, errorMessage: String)
     case serverError(_ statusCode: Int)
+    case attemptsLimitExceed(request: RECAPIRequest, lastAttemptError: Error? = nil)
 }
 
 extension RECAPIError: CustomNSError {
@@ -43,6 +44,16 @@ extension RECAPIError: CustomNSError {
             
         case .serverError(let statusCode):
             userInfo["statusCode"] = statusCode
+            
+        case .attemptsLimitExceed(let request, let lastAttemptError):
+            userInfo["path"] = request.endpoint.path
+            userInfo["attemptsLimit"] = request.attemptsLimit
+            if let nsError = lastAttemptError as? NSError {
+                nsError.userInfo.forEach({
+                    userInfo[$0.key] = $0.value
+                })
+            }
+            
             
         default:
             break
