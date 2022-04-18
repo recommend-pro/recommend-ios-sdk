@@ -21,7 +21,7 @@ public final class RECAPIRequest: NSObject {
     public let attemptsLimit: Int
     public private(set) var attempt: Int = 0
     public var isAttemptsLimitExceeded: Bool {
-        return attempt < attemptsLimit
+        return attempt >= attemptsLimit
     }
     
     // MARK: Init
