@@ -37,6 +37,7 @@ public final class Recommend: NSObject {
             accountId: accountId,
             applicationName: applicationName,
             apiHost: apiHost)
+        return self.shared
     }
     
     // MARK: Init
