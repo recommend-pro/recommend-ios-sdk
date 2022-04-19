@@ -12,6 +12,7 @@ import UIKit.UIApplication
 public final class Recommend: NSObject {
     private let core: RECCore
     private let device: RECDevice
+    private let recommendation: RECRecommendation
     
     public var deviceId: String? {
         return try? core.getDeviceId()
@@ -50,6 +51,7 @@ public final class Recommend: NSObject {
             device: .current,
             urlSession: .shared)
         self.device = RECDevice(core: core)
+        self.recommendation = RECRecommendation(core: core)
     }
     
     public convenience init(
@@ -85,5 +87,16 @@ public final class Recommend: NSObject {
         _ deviceActivity: RECDeviceActivity
     ) {
         device.trackDeviceActivity(deviceActivity)
+    }
+    
+    // MARK: Fetch Recommendation Panels
+    
+    private func fetchPanels(
+        with model: RECRecommendationPanelsFetchModel,
+        completion: @escaping (Result<[RECRecommendationPanel], Error>) -> Void
+    ) {
+        recommendation.fetchPanels(
+            with: model,
+            completion: completion)
     }
 }
