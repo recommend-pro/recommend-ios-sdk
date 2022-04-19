@@ -10,13 +10,12 @@ import Foundation
 import UIKit.UIApplication
 
 public final class Recommend: NSObject {
-    private let config: RECConfig
-    private let apiClient: RECAPIClient
+    private let core: RECCore
     
     public var deviceId: String? {
-        return try? config.getDeviceId()
+        return try? core.getDeviceId()
     }
-    
+     
     // MARK: Shared instance
     
     /// Shared instance. Call `initialize` before using.
@@ -37,23 +36,30 @@ public final class Recommend: NSObject {
             accountId: accountId,
             applicationName: applicationName,
             apiHost: apiHost)
+        return self.shared
     }
     
     // MARK: Init
     
     public init(
+        config: RECConfig
+    ) {
+        self.core = RECCore(
+            config: config,
+            device: .current,
+            urlSession: .shared)
+    }
+    
+    public convenience init(
         accountId: String,
         applicationName: String? = nil,
         apiHost: String = kRECDefaultAPIHost
     ) {
-        self.config = RECConfig(
+        let config = RECConfig(
             accountId: accountId,
             applicationName: applicationName,
             apiHost: apiHost)
-        
-        self.apiClient = RECAPIClient(
-            host: apiHost,
-            urlSession: .shared)
+        self.init(config: config)
     }
     
     // MARK: Application
@@ -65,7 +71,7 @@ public final class Recommend: NSObject {
         let isRemoteNotification = launchOptions?[.remoteNotification] as? [AnyHashable: Any] != nil
         
         if !(application.applicationState == .background && isRemoteNotification) {
-            self.config.appLaunched()
+            self.core.applicationLaunched()
         }
     }
 }

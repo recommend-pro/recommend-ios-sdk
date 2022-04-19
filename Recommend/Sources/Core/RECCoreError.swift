@@ -1,5 +1,5 @@
 //
-//  RECConfigError.swift
+//  RECCoreError.swift
 //  Recommend
 //
 //  Created by Dmytrii Golovanov on 24.01.2022.
@@ -8,14 +8,14 @@
 
 import Foundation
 
-private let RECConfigErrorDomain = "RECConfigErrorDomain"
+private let RECCoreErrorDomain = "RECCoreErrorDomain"
 
-public enum RECConfigError: Error {
+public enum RECCoreError: Error {
     case nilDeviceId
 }
 
-extension RECConfigError: CustomNSError {
+extension RECCoreError: CustomNSError {
     public static var errorDomain: String {
-        return RECConfigErrorDomain
+        return RECCoreErrorDomain
     }
 }
