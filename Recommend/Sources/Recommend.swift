@@ -17,6 +17,28 @@ public final class Recommend: NSObject {
         return try? config.getDeviceId()
     }
     
+    // MARK: Shared instance
+    
+    /// Shared instance. Call `initialize` before using.
+    public private(set) static var shared: Recommend!
+    
+    /// Initialize `shared` instance.
+    @discardableResult
+    public static func initialize(
+        accountId: String,
+        applicationName: String? = nil,
+        apiHost: String = kRECDefaultAPIHost
+    ) -> Recommend! {
+        guard self.shared == nil else {
+            return shared
+        }
+        
+        self.shared = Self.init(
+            accountId: accountId,
+            applicationName: applicationName,
+            apiHost: apiHost)
+    }
+    
     // MARK: Init
     
     public init(
