@@ -42,14 +42,14 @@ public struct RECDeviceActivity: Encodable {
     // MARK: Init
     
     public init(
-        customerIdHash: String?,
-        store: String?,
-        currency: String?,
-        environment: String?,
-        priceList: String?,
+        customerIdHash: String? = nil,
+        store: String? = nil,
+        currency: String? = nil,
+        environment: String? = nil,
+        priceList: String? = nil,
         deviceTime: RECDeviceTime? = .current,
-        eventTime: Int?,
-        metrics: RECMetrics?,
+        eventTime: Int? = nil,
+        metrics: RECMetrics? = nil,
         activity: [RECActivity]
     ) {
         self.customerIdHash = customerIdHash

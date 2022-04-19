@@ -11,6 +11,7 @@ import UIKit.UIApplication
 
 public final class Recommend: NSObject {
     private let core: RECCore
+    private let device: RECDevice
     
     public var deviceId: String? {
         return try? core.getDeviceId()
@@ -48,6 +49,7 @@ public final class Recommend: NSObject {
             config: config,
             device: .current,
             urlSession: .shared)
+        self.device = RECDevice(core: core)
     }
     
     public convenience init(
@@ -72,6 +74,16 @@ public final class Recommend: NSObject {
         
         if !(application.applicationState == .background && isRemoteNotification) {
             self.core.applicationLaunched()
+            self.device.trackUpdateDevice()
+            self.device.trackOpenApp()
         }
+    }
+    
+    // MARK: Device Activity
+    
+    private func trackDeviceActivity(
+        _ deviceActivity: RECDeviceActivity
+    ) {
+        device.trackDeviceActivity(deviceActivity)
     }
 }
