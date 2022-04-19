@@ -7,7 +7,65 @@
 //
 
 import Foundation
+import UIKit.UIApplication
 
 public final class Recommend: NSObject {
+    private let config: RECConfig
+    private let apiClient: RECAPIClient
     
+    public var deviceId: String? {
+        return try? config.getDeviceId()
+    }
+    
+    // MARK: Shared instance
+    
+    /// Shared instance. Call `initialize` before using.
+    public private(set) static var shared: Recommend!
+    
+    /// Initialize `shared` instance.
+    @discardableResult
+    public static func initialize(
+        accountId: String,
+        applicationName: String? = nil,
+        apiHost: String = kRECDefaultAPIHost
+    ) -> Recommend! {
+        guard self.shared == nil else {
+            return shared
+        }
+        
+        self.shared = Self.init(
+            accountId: accountId,
+            applicationName: applicationName,
+            apiHost: apiHost)
+    }
+    
+    // MARK: Init
+    
+    public init(
+        accountId: String,
+        applicationName: String? = nil,
+        apiHost: String = kRECDefaultAPIHost
+    ) {
+        self.config = RECConfig(
+            accountId: accountId,
+            applicationName: applicationName,
+            apiHost: apiHost)
+        
+        self.apiClient = RECAPIClient(
+            host: apiHost,
+            urlSession: .shared)
+    }
+    
+    // MARK: Application
+
+    public func application(
+        _ application: UIApplication,
+        didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
+    ) {
+        let isRemoteNotification = launchOptions?[.remoteNotification] as? [AnyHashable: Any] != nil
+        
+        if !(application.applicationState == .background && isRemoteNotification) {
+            self.config.appLaunched()
+        }
+    }
 }
