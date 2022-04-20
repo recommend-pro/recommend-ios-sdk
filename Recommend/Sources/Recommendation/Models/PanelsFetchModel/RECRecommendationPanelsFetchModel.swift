@@ -48,7 +48,7 @@ public struct RECRecommendationPanelsFetchModel: Encodable {
         customerIdHash: String? = nil,
         store: String,
         currency: String,
-        environemnt: String? = nil,
+        environment: String? = nil,
         priceList: RECPriceList,
         metrics: RECMetrics? = nil,
         pageType: String? = nil,
@@ -59,7 +59,7 @@ public struct RECRecommendationPanelsFetchModel: Encodable {
         self.customerIdHash = customerIdHash
         self.store = store
         self.currency = currency
-        self.environment = environemnt
+        self.environment = environment
         self.priceList = priceList
         self.metrics = metrics
         self.pageType = pageType
