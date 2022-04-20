@@ -66,14 +66,23 @@ public final class RECMessaging: NSObject {
     
     // MARK: Push Notification Subscription
     
-    public func subscribe() {
+    public func subscribeToPushNotifications() {
         subscriptionManager.setUserSubscription(true)
         updatePushNotificationsSubscription()
     }
     
-    public func unsubscribe() {
+    public func unsubscribeFromPushNotifications() {
         subscriptionManager.setUserSubscription(false)
-        // unsubscribeFromPushNotifications()
+//        subscriptionManager.getSettings { _ in
+//            self.apiService.unsubscribeFromPushNotifications { error in
+//                if let error = error {
+//                    debugPrint(error)
+//                    return
+//                }
+//            }
+//        }
+        
+        // Hot-fix
         updatePushNotificationsSubscription()
     }
     
@@ -93,17 +102,6 @@ public final class RECMessaging: NSObject {
                                                             subscriptionStatusChangeDate: settings.subscriptionStatusChangedDate,
                                                             firstSubscribedDate: settings.firstSubscribedDate)
             self.apiService.updatePushNotificationsSubscription(model: model) { error in
-                if let error = error {
-                    debugPrint(error)
-                    return
-                }
-            }
-        }
-    }
-    
-    private func unsubscribeFromPushNotifications() {
-        subscriptionManager.getSettings { _ in
-            self.apiService.unsubscribeFromPushNotifications { error in
                 if let error = error {
                     debugPrint(error)
                     return
@@ -139,26 +137,5 @@ public final class RECMessaging: NSObject {
                                              clicked: true) {
             trackPushNotificationEvent(event)
         }
-    }
-}
-
-// MARK: - UNUserNotificationCenterDelegate
-
-extension RECMessaging: UNUserNotificationCenterDelegate {
-    public func userNotificationCenter(
-        _ center: UNUserNotificationCenter,
-        willPresent notification: UNNotification,
-        withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void
-    ) {
-        completionHandler([.alert, .sound, .badge])
-    }
-    
-    public func userNotificationCenter(
-        _ center: UNUserNotificationCenter,
-        didReceive response: UNNotificationResponse,
-        withCompletionHandler completionHandler: @escaping () -> Void
-    ) {
-        userNotificationCenter(center, didReceive: response)
-        completionHandler()
     }
 }
