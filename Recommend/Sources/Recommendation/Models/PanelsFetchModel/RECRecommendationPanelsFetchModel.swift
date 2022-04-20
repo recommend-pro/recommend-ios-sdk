@@ -21,7 +21,7 @@ public struct RECRecommendationPanelsFetchModel: Encodable {
     public let priceList: RECPriceList
     public let metrics: RECMetrics?
     public let pageType: String?
-    public let contentType: ContentType
+    public let contentType: ContentType = .json
     public let panels: [Panel]?
     public let previewPanel: PreviewPanel?
     
@@ -39,5 +39,31 @@ public struct RECRecommendationPanelsFetchModel: Encodable {
         case contentType = "content_type"
         case panels
         case previewPanel = "preview_panel"
+    }
+    
+    // MARK: Init
+    
+    public init(
+        deviceId: String,
+        customerIdHash: String? = nil,
+        store: String,
+        currency: String,
+        environemnt: String? = nil,
+        priceList: RECPriceList,
+        metrics: RECMetrics? = nil,
+        pageType: String? = nil,
+        panels: [Panel]? = nil,
+        previewPanel: PreviewPanel? = nil
+    ) {
+        self.deviceId = deviceId
+        self.customerIdHash = customerIdHash
+        self.store = store
+        self.currency = currency
+        self.environment = environemnt
+        self.priceList = priceList
+        self.metrics = metrics
+        self.pageType = pageType
+        self.panels = panels
+        self.previewPanel = previewPanel
     }
 }
