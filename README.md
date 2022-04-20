@@ -234,6 +234,16 @@ let fetchModel = RECRecommendationPanelsFetchModel(
     pageType: "string",
     panels: panels,
     previewPanel: previewPanel)
+    
+            
+Recommend.shared.fetchPanels(with: fetchModel) { result in
+    switch result {
+    case .success(let recommendationPanels):
+        // handle recommendation panels
+    case .failure(let error):
+        // handle error
+    }
+}
 ```
 
 ## License
