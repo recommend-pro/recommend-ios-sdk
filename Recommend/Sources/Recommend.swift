@@ -13,6 +13,7 @@ public final class Recommend: NSObject {
     private let core: RECCore
     private let device: RECDevice
     private let recommendation: RECRecommendation
+    private let messaging: RECMessaging
     
     public var deviceId: String? {
         return try? core.getDeviceId()
@@ -52,6 +53,7 @@ public final class Recommend: NSObject {
             urlSession: .shared)
         self.device = RECDevice(core: core)
         self.recommendation = RECRecommendation(core: core)
+        self.messaging = RECMessaging(core: core)
     }
     
     public convenience init(
@@ -98,5 +100,40 @@ public final class Recommend: NSObject {
         recommendation.fetchPanels(
             with: model,
             completion: completion)
+    }
+    
+    // MARK: Messaging
+    
+    public func isRecommendNotification(_ userInfo: [AnyHashable: Any]) -> Bool {
+        return messaging.isRecommendNotification(userInfo)
+    }
+    
+    public func remoteNotificationOpenURL(_ userInfo: [AnyHashable: Any]) -> URL? {
+        return messaging.remoteNotificationOpenURL(userInfo)
+    }
+    
+    public func setDeviceToken(_ deviceToken: Data) {
+        messaging.setDeviceToken(deviceToken)
+    }
+    
+    public func subscribeToPushNotifications() {
+        messaging.subscribeToPushNotifications()
+    }
+    
+    public func unsubscribeFromPushNotifications() {
+        messaging.unsubscribeFromPushNotifications()
+    }
+    
+    public func applicationDidReceiveRemoteNotification(_ userInfo: [AnyHashable: Any]) {
+        messaging.applicationDidReceiveRemoteNotification(userInfo)
+    }
+    
+    // MARK: User Notifications
+    
+    public func userNotificationCenter(
+        _ center: UNUserNotificationCenter,
+        didReceive response: UNNotificationResponse
+    ) {
+        messaging.userNotificationCenter(center, didReceive: response)
     }
 }
