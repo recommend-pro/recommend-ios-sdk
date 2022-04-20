@@ -85,7 +85,7 @@ public final class Recommend: NSObject {
     
     // MARK: Device Activity
     
-    private func trackDeviceActivity(
+    public func trackDeviceActivity(
         _ deviceActivity: RECDeviceActivity
     ) {
         device.trackDeviceActivity(deviceActivity)
@@ -93,7 +93,7 @@ public final class Recommend: NSObject {
     
     // MARK: Fetch Recommendation Panels
     
-    private func fetchPanels(
+    public func fetchPanels(
         with model: RECRecommendationPanelsFetchModel,
         completion: @escaping (Result<[RECRecommendationPanel], Error>) -> Void
     ) {
