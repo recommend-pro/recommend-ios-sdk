@@ -17,7 +17,11 @@ let package = Package(
         .target(
             name: "Recommend",
             dependencies: [],
-            path: "Recommend/Sources"),
+            path: "Recommend/Sources",
+            linkerSettings: [.linkedFramework("UIKit", .when(platforms: [.iOS])),
+                             .linkedFramework("UserNotifications", .when(platforms: [.iOS]))
+            ]
+        ),
     ],
     swiftLanguageVersions: [.v5]
 )
