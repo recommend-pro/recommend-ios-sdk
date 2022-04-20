@@ -232,7 +232,6 @@ let fetchModel = RECRecommendationPanelsFetchModel(
     priceList: priceList,
     metrics: metrics,
     pageType: "string",
-    contentType: .json,
     panels: panels,
     previewPanel: previewPanel)
 ```
