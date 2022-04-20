@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit.UIApplication
+import UserNotifications
 
 public final class Recommend: NSObject {
     private let core: RECCore
