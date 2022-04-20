@@ -38,9 +38,10 @@ https://github.com/recommend-pro/recommend-ios-sdk
 
 ### Setup
 
-1. Setup AppDelegate
+1. Integrate SDK to project
+2. Setup AppDelegate
 
-AppDelegate.swift
+AppDelegate:
 ```swift
     func application(
         _ application: UIApplication,
@@ -65,7 +66,7 @@ AppDelegate.swift
 3. Request authorization
 4. Subscribe or unsubscribe depending on the user's choice
 
-Setup AppDelegate:
+AppDelegate:
 ```swift
     func application(
         _ application: UIApplication,
@@ -98,7 +99,7 @@ Setup AppDelegate:
     }
 ```
 
-Setup *UNUserNotificationCenterDelegate* (AppDelegate is example):
+*UNUserNotificationCenterDelegate* (AppDelegate is example):
 ```swift
 extension AppDelegate: UNUserNotificationCenterDelegate {
     func userNotificationCenter(
