@@ -12,11 +12,20 @@ let package = Package(
             targets: ["Recommend"]),
     ],
     dependencies: [
+        .package(
+            url: "https://github.com/dmytriigolovanov/webkit-user-agent",
+            .exact("2.0.1")
+        )
     ],
     targets: [
         .target(
             name: "Recommend",
-            dependencies: [],
+            dependencies: [
+                .product(
+                    name: "WebKitUserAgent",
+                    package: "webkit-user-agent"
+                )
+            ],
             path: "Recommend/Sources",
             linkerSettings: [.linkedFramework("UIKit", .when(platforms: [.iOS])),
                              .linkedFramework("UserNotifications", .when(platforms: [.iOS]))
