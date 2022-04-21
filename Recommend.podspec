@@ -7,7 +7,7 @@ Pod::Spec.new do |spec|
   spec.summary       = 'Personalisation and 360° Marketing Platform for eCommerce'
   spec.source        = { :git => 'https://github.com/recommend-pro/recommend-ios-sdk.git', :tag => 'v' + spec.version.to_s }
   spec.module_name   = 'Recommend'
-  spec.swift_version = '5.0'
+  spec.swift_version = '5.5'
 
   spec.ios.deployment_target  = '11.0'
 
