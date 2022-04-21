@@ -119,7 +119,7 @@ public final class RECAPIClient: NSObject {
         }
         
         group.notify(queue: DispatchQueue.global()) {
-            guard urlRequest.allHTTPHeaderFields?["User-Agent"] == nil else {
+            guard urlRequest.allHTTPHeaderFields?["User-Agent"] != nil else {
                 return
             }
             
