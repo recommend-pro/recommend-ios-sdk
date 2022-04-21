@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import WebKitUserAgent
 
 public final class RECAPIClient: NSObject {
     private let host: String
@@ -94,11 +95,40 @@ public final class RECAPIClient: NSObject {
         with request: RECAPIRequest,
         completion: @escaping (Result<Data, Error>) -> Void
     ) {
-        let dataTask = self.dataTask(
-            with: request.urlRequest,
-            completion: completion)
+        let group = DispatchGroup()
         
-        dataTask.resume()
+        var urlRequest: URLRequest = request.urlRequest
+        
+        if urlRequest.allHTTPHeaderFields?["User-Agent"] == nil {
+            group.enter()
+            
+            WKUserAgent.fetch { result in
+                switch result {
+                case .success(let userAgent):
+                    if urlRequest.allHTTPHeaderFields == nil {
+                        urlRequest.allHTTPHeaderFields = [:]
+                    }
+                    urlRequest.allHTTPHeaderFields?["User-Agent"] = userAgent
+                    group.leave()
+                    
+                case .failure(let error):
+                    completion(.failure(error))
+                    return
+                }
+            }
+        }
+        
+        group.notify(queue: DispatchQueue.global()) {
+            guard urlRequest.allHTTPHeaderFields?["User-Agent"] != nil else {
+                return
+            }
+            
+            let dataTask = self.dataTask(
+                with: urlRequest,
+                completion: completion)
+            
+            dataTask.resume()
+        }
     }
     
     // MARK: Execute Request
