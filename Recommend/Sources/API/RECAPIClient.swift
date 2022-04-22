@@ -13,6 +13,8 @@ public final class RECAPIClient: NSObject {
     private let host: String
     private var urlSession: URLSession
     
+    private var queue: Set<URLSessionDataTask> = []
+    
     // MARK: Init
     
     public init(
@@ -123,12 +125,31 @@ public final class RECAPIClient: NSObject {
                 return
             }
             
+            let queueCompletion: (Result<Data, Error>) -> Void = { result in
+                self.queue.removeFirst()
+                completion(result)
+            }
+            
             let dataTask = self.dataTask(
                 with: urlRequest,
-                completion: completion)
+                completion: queueCompletion)
             
-            dataTask.resume()
+            self.addToQueue(dataTask)
         }
+    }
+    
+    private func addToQueue(_ task: URLSessionDataTask) {
+        queue.insert(task)
+        if queue.count == 1 {
+            resumeNextFromQueue()
+        }
+    }
+    
+    private func resumeNextFromQueue() {
+        guard let task = self.queue.first else {
+            return
+        }
+        task.resume()
     }
     
     // MARK: Execute Request
