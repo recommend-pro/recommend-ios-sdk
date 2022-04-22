@@ -50,17 +50,13 @@ public final class RECDevice {
     
     // MARK: Open App
     
-    public func trackOpenApp() {
-        let activity: RECActivity = RECOpenAppActivity()
-        trackDeviceActivity(activity: [activity])
-    }
-    
-    // MARK: Update Device
-    
-    public func trackUpdateDevice() {
+    public func applicationLaunched() {
+        self.core.applicationLaunched()
         let firstLaunch = core.firstLaunchDate?.timeIntervalSince1970
-        let activity: RECActivity = RECUpdateDeviceActivity.default(firstLaunch: firstLaunch)
-        
-        trackDeviceActivity(activity: [activity])
+        let activity: [RECActivity] = [
+            RECUpdateDeviceActivity.default(firstLaunch: firstLaunch),
+            RECOpenAppActivity()
+        ]
+        trackDeviceActivity(activity: activity)
     }
 }

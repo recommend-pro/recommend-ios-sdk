@@ -78,9 +78,7 @@ public final class Recommend: NSObject {
         let isRemoteNotification = launchOptions?[.remoteNotification] as? [AnyHashable: Any] != nil
         
         if !(application.applicationState == .background && isRemoteNotification) {
-            self.core.applicationLaunched()
-            self.device.trackUpdateDevice()
-            self.device.trackOpenApp()
+            self.device.applicationLaunched()
         }
     }
     
