@@ -69,6 +69,17 @@ public final class Recommend: NSObject {
         self.init(config: config)
     }
     
+    public convenience init!(
+        withPlist fileName: String
+    ) {
+        do {
+            let config = try RECConfig(fromPlist: fileName)
+            self.init(config: config)
+        } catch {
+            return nil
+        }
+    }
+    
     // MARK: Application
 
     public func application(
