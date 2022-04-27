@@ -84,10 +84,6 @@ public final class Recommend: NSObject {
         }
     }
     
-    public func applicationWillResignActive() {
-        self.device.trackOpenApp()
-    }
-    
     // MARK: Device Activity
     
     public func trackDeviceActivity(
