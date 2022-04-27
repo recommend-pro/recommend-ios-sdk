@@ -8,8 +8,8 @@
 
 import Foundation
 
-public final class RECOpenAppActivity: RECActivity {
-    public init() {
+final class RECOpenAppActivity: RECActivity {
+    init() {
         super.init(type: .openApp)
     }
 }
