@@ -19,7 +19,7 @@ public final class RECUpdateDeviceActivity: RECDataActivity<RECUpdateDeviceActiv
     public init(
         model: String?,
         name: String?,
-        firstLaunch: Double?,
+        firstLaunch: Bool?,
         systemName: SystemName?,
         systemVersion: String?,
         appVersion: String?,
@@ -30,7 +30,7 @@ public final class RECUpdateDeviceActivity: RECDataActivity<RECUpdateDeviceActiv
         let data = RECUpdateDeviceActivityData(
             model: model,
             name: name,
-            firstLaunch: firstLaunch,
+            firstLaunch: firstLaunch == true ? true : nil,
             systemName: systemName,
             systemVersion: systemVersion,
             appVersion: appVersion,
@@ -44,7 +44,7 @@ public final class RECUpdateDeviceActivity: RECDataActivity<RECUpdateDeviceActiv
     
     // MARK: Default
     
-    static func `default`(firstLaunch: Double? = nil) -> RECUpdateDeviceActivity {
+    static func `default`(firstLaunch: Bool? = nil) -> RECUpdateDeviceActivity {
         let device = UIDevice.current
         let bundle = Bundle.main
         let locale = Locale.current
@@ -71,8 +71,8 @@ public struct RECUpdateDeviceActivityData: Encodable {
     public let model: String?
     /// Name of device
     public let name: String?
-    /// First launch of application. Timestamp in seconds UTC.
-    public var firstLaunch: Double?
+    /// First launch of application.
+    public let firstLaunch: Bool?
     /// System name of device
     public let systemName: SystemName?
     /// System version of device

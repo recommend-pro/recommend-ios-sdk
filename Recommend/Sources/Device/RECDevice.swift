@@ -58,7 +58,7 @@ public final class RECDevice {
     // MARK: Update Device
     
     public func trackUpdateDevice() {
-        let firstLaunch = core.firstLaunchDate?.timeIntervalSince1970
+        let firstLaunch = core.firstLaunch == nil
         let activity: RECActivity = RECUpdateDeviceActivity.default(firstLaunch: firstLaunch)
         
         trackDeviceActivity(activity: [activity])

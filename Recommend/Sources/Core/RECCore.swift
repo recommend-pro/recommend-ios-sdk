@@ -16,7 +16,7 @@ public final class RECCore: NSObject {
     
     private struct UserDefaultsKeys {
         static let deviceId = "device_id"
-        static let firstLaunchDate = "first_launch_date"
+        static let firstLaunch = "first_launch"
     }
     
     private lazy var userDefaults: UserDefaults! = {
@@ -44,16 +44,18 @@ public final class RECCore: NSObject {
         }
     }
     
-    public private(set) var firstLaunchDate: Date? {
+    public private(set) var firstLaunch: Bool? {
         get {
-            userDefaults?.value(forKey: UserDefaultsKeys.firstLaunchDate) as? Date
+            userDefaults?.value(forKey: UserDefaultsKeys.firstLaunch) as? Bool
         }
         set {
             userDefaults?.set(
                 newValue,
-                forKey: UserDefaultsKeys.firstLaunchDate)
+                forKey: UserDefaultsKeys.firstLaunch)
         }
     }
+    
+    private var applicationWasLaunchedInSession: Bool = false
     
     // MARK: Init
     
@@ -94,9 +96,15 @@ public final class RECCore: NSObject {
     // MARK: Application
     
     func applicationLaunched() {
-        guard self.firstLaunchDate == nil else {
+        guard applicationWasLaunchedInSession == false else {
             return
         }
-        self.firstLaunchDate = Date()
+        applicationWasLaunchedInSession = true
+        
+        if firstLaunch == nil {
+            self.firstLaunch = true
+        } else if firstLaunch == true {
+            self.firstLaunch = false
+        }
     }
 }
