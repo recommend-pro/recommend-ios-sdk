@@ -10,13 +10,13 @@ import Foundation
 import UIKit
 import CoreLocation
 
-public final class RECUpdateDeviceActivity: RECDataActivity<RECUpdateDeviceActivityData> {
-    public typealias SystemName = RECDeviceSystemName
-    public typealias Location = RECDeviceLocation
+final class RECUpdateDeviceActivity: RECDataActivity<RECUpdateDeviceActivityData> {
+    typealias SystemName = RECDeviceSystemName
+    typealias Location = RECDeviceLocation
 
     // MARK: Init
 
-    public init(
+    init(
         model: String?,
         name: String?,
         firstLaunch: Bool?,
@@ -63,28 +63,28 @@ public final class RECUpdateDeviceActivity: RECDataActivity<RECUpdateDeviceActiv
 
 // MARK: - Data
 
-public struct RECUpdateDeviceActivityData: Encodable {
-    public typealias SystemName = RECDeviceSystemName
-    public typealias Location = RECDeviceLocation
+struct RECUpdateDeviceActivityData: Encodable {
+    typealias SystemName = RECDeviceSystemName
+    typealias Location = RECDeviceLocation
     
     /// Model of device
-    public let model: String?
+    let model: String?
     /// Name of device
-    public let name: String?
+    let name: String?
     /// First launch of application.
-    public let firstLaunch: Bool?
+    let firstLaunch: Bool?
     /// System name of device
-    public let systemName: SystemName?
+    let systemName: SystemName?
     /// System version of device
-    public let systemVersion: String?
+    let systemVersion: String?
     /// Application version of device
-    public let appVersion: String?
+    let appVersion: String?
     /// Device language
-    public let deviceLanguage: String?
+    let deviceLanguage: String?
     /// Device country
-    public let deviceCountry: String?
+    let deviceCountry: String?
     /// Location of device
-    public let location: Location?
+    let location: Location?
     
     // MARK: Coding Keys
     
