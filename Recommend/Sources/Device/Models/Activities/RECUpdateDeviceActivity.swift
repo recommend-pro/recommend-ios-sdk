@@ -11,7 +11,6 @@ import UIKit
 import CoreLocation
 
 final class RECUpdateDeviceActivity: RECDataActivity<RECUpdateDeviceActivityData> {
-    typealias SystemName = RECDeviceSystemName
     typealias Location = RECDeviceLocation
 
     // MARK: Init
@@ -20,7 +19,6 @@ final class RECUpdateDeviceActivity: RECDataActivity<RECUpdateDeviceActivityData
         model: String?,
         name: String?,
         firstLaunch: Bool?,
-        systemName: SystemName?,
         systemVersion: String?,
         appVersion: String?,
         deviceLanguage: String?,
@@ -31,7 +29,6 @@ final class RECUpdateDeviceActivity: RECDataActivity<RECUpdateDeviceActivityData
             model: model,
             name: name,
             firstLaunch: firstLaunch == true ? true : nil,
-            systemName: systemName,
             systemVersion: systemVersion,
             appVersion: appVersion,
             deviceLanguage: deviceLanguage,
@@ -52,7 +49,6 @@ final class RECUpdateDeviceActivity: RECDataActivity<RECUpdateDeviceActivityData
         return .init(model: device.model,
                      name: device.name,
                      firstLaunch: firstLaunch,
-                     systemName: .iOS,
                      systemVersion: device.systemVersion,
                      appVersion: bundle.bundleShortVersionString,
                      deviceLanguage: locale.languageCode,
@@ -64,7 +60,6 @@ final class RECUpdateDeviceActivity: RECDataActivity<RECUpdateDeviceActivityData
 // MARK: - Data
 
 struct RECUpdateDeviceActivityData: Encodable {
-    typealias SystemName = RECDeviceSystemName
     typealias Location = RECDeviceLocation
     
     /// Model of device
@@ -74,7 +69,7 @@ struct RECUpdateDeviceActivityData: Encodable {
     /// First launch of application.
     let firstLaunch: Bool?
     /// System name of device
-    let systemName: SystemName?
+    let systemName: String? = "iOS"
     /// System version of device
     let systemVersion: String?
     /// Application version of device
