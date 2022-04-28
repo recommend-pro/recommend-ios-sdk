@@ -21,7 +21,7 @@ public final class RECPageViewActivity: RECDataActivity<RECPageViewActivityData>
             referrer: referrer,
             title: title)
         super.init(
-            type: .pageView,
+            type: "page_view",
             data: data)
     }
 }

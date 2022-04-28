@@ -17,7 +17,7 @@ public final class RECProductViewActivity: RECDataActivity<RECProductViewActivit
             sku: sku,
             variationSKU: variationSKU)
         super.init(
-            type: .productView,
+            type: "product_view",
             data: data)
     }
 }

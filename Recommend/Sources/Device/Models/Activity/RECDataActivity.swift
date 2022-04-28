@@ -9,7 +9,7 @@
 import Foundation
 
 public class RECDataActivity<T>: RECActivity where T : Encodable {
-    public let data: T
+    let data: T
     
     // MARK: Init
     
@@ -18,8 +18,7 @@ public class RECDataActivity<T>: RECActivity where T : Encodable {
         data: T
     ) {
         self.data = data
-        super.init(
-            type: type)
+        super.init(type: type)
     }
     
     // MARK: Encode

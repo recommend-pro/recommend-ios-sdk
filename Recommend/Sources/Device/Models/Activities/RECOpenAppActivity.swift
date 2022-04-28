@@ -10,6 +10,6 @@ import Foundation
 
 final class RECOpenAppActivity: RECActivity {
     init() {
-        super.init(type: .openApp)
+        super.init(type: "open_app")
     }
 }

@@ -17,7 +17,7 @@ public final class RECWishlistUpdateActivity: RECDataActivity<RECWishlistUpdateA
             wishlistHash: wishlistHash,
             requestId: requestId)
         super.init(
-            type: .wishlistUpdate,
+            type: "wishlist_update",
             data: data)
     }
 }

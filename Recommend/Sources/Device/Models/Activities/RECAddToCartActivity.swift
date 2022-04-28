@@ -21,7 +21,7 @@ public final class RECAddToCartActivity: RECDataActivity<RECAddToCartActivityDat
             variationSKU: variationSKU,
             requestId: requestId)
         super.init(
-            type: .addToCart,
+            type: "add_to_cart",
             data: data)
     }
 }

@@ -17,7 +17,7 @@ public final class RECCartUpdateActivity: RECDataActivity<RECCartUpdateActivityD
             cartHash: cartHash,
             requestId: requestId)
         super.init(
-            type: .cartUpdate,
+            type: "cart_update",
             data: data)
     }
 }

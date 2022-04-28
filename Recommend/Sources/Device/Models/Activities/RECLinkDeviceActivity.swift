@@ -14,7 +14,7 @@ public final class RECLinkDeviceActivity: RECDataActivity<RECLinkDeviceActivityD
     ) {
         let data = RECLinkDeviceActivityData(deviceIdsToLink: deviceIdsToLink)
         super.init(
-            type: .linkDevice,
+            type: "link_device",
             data: data)
     }
 }

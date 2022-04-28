@@ -21,7 +21,7 @@ public final class RECAddToWishlistActivity: RECDataActivity<RECAddToWishlistAct
             variationSKU: variationSKU,
             requestId: requestId)
         super.init(
-            type: .addToWishlist,
+            type: "add_to_wishlist",
             data: data)
     }
 }

@@ -21,7 +21,7 @@ public final class RECRemoveFromCartActivity: RECDataActivity<RECRemoveFromCartA
             variationSKU: variationSKU,
             requestId: requestId)
         super.init(
-            type: .removeFromCart,
+            type: "remove_from_cart",
             data: data)
     }
 }

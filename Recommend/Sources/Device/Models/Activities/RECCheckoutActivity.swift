@@ -17,7 +17,7 @@ public final class RECCheckoutActivity: RECDataActivity<RECCheckoutActivityData>
             step: step,
             option: option)
         super.init(
-            type: .checkout,
+            type: "checkout",
             data: data)
     }
 }

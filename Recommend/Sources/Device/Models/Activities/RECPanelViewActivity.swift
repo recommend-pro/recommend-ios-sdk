@@ -19,7 +19,7 @@ public final class RECPanelViewActivity: RECDataActivity<RECPanelViewActivityDat
             panelId: panelId,
             productsCount: productsCount)
         super.init(
-            type: .panelView,
+            type: "panel_view",
             data: data)
     }
 }

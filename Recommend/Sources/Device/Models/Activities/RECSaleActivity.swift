@@ -17,7 +17,7 @@ public final class RECSaleActivity: RECDataActivity<RECSaleActivityData> {
             orderIdHash: orderIdHash,
             requestId: requestId)
         super.init(
-            type: .sale,
+            type: "sale",
             data: data)
     }
 }

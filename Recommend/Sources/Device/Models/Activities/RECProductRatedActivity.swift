@@ -19,7 +19,7 @@ public final class RECProductRatedActivity: RECDataActivity<RECProductRatedActiv
             rate: rate,
             variationSKU: variationSKU)
         super.init(
-            type: .productRated,
+            type: "product_rated",
             data: data)
     }
 }

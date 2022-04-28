@@ -17,7 +17,7 @@ public final class RECElasticListActivity: RECDataActivity<RECElasticListActivit
             products: products,
             elasticListId: elasticListId)
         super.init(
-            type: .elasticList,
+            type: "elastic_list",
             data: data)
     }
 }

@@ -14,7 +14,7 @@ public final class RECCustomEventActivity: RECDataActivity<RECCustomEventActivit
     ) {
         let data = RECCustomEventActivityData(event: event)
         super.init(
-            type: .customEvent,
+            type: "custom_event",
             data: data)
     }
 }

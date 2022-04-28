@@ -17,7 +17,7 @@ public final class RECSubscribeActivity: RECDataActivity<RECSubscribeActivityDat
             emailHash: emailHash,
             requestId: requestId)
         super.init(
-            type: .subscribe,
+            type: "subscribe",
             data: data)
     }
 }

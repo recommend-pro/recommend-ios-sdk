@@ -35,7 +35,7 @@ final class RECUpdateDeviceActivity: RECDataActivity<RECUpdateDeviceActivityData
             deviceCountry: deviceCountry,
             location: location)
         super.init(
-            type: .updateDevice,
+            type: "update_device",
             data: data)
     }
 }

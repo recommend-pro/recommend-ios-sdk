@@ -17,7 +17,7 @@ public final class RECListViewActivity: RECDataActivity<RECListViewActivityData>
             products: products,
             listId: listId)
         super.init(
-            type: .listView,
+            type: "list_view",
             data: data)
     }
 }

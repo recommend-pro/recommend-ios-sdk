@@ -14,7 +14,7 @@ public final class RECCustomerRegistationActivity: RECDataActivity<RECCustomerRe
     ) {
         let data = RECCustomerRegistationActivityData(requestId: requestId)
         super.init(
-            type: .customerRegistration,
+            type: "customer_registration",
             data: data)
     }
 }

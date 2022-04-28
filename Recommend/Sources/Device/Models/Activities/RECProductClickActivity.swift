@@ -23,7 +23,7 @@ public final class RECProductClickActivity: RECDataActivity<RECProductClickActiv
             products: products,
             source: source)
         super.init(
-            type: .productClick,
+            type: "product_click",
             data: data)
     }
 }

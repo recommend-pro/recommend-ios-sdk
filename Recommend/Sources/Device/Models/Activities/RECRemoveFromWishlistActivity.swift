@@ -21,7 +21,7 @@ public final class RECRemoveFromWishlistActivity: RECDataActivity<RECRemoveFromW
             variationSKU: variationSKU,
             requestId: requestId)
         super.init(
-            type: .removeFromWishlist,
+            type: "remove_from_wishlist",
             data: data)
     }
 }

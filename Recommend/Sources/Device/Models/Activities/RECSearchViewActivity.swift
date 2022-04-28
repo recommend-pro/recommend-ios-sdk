@@ -17,7 +17,7 @@ public final class RECSearchViewActivity: RECDataActivity<RECSearchViewActivityD
             products: products,
             term: term)
         super.init(
-            type: .searchView,
+            type: "search_view",
             data: data)
     }
 }
