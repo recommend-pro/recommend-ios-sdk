@@ -8,25 +8,27 @@
 
 import Foundation
 
-public final class RECWishlistUpdateActivity: RECDataActivity<RECWishlistUpdateActivityData> {
+public final class RECWishlistUpdateActivity: RECActivity {
+    let data: RECWishlistUpdateActivityData
+    
+    // MARK: Init
+    
     public init(
         wishlistHash: String,
         requestId: String? = nil
     ) {
-        let data = RECWishlistUpdateActivityData(
+        self.data = RECWishlistUpdateActivityData(
             wishlistHash: wishlistHash,
             requestId: requestId)
-        super.init(
-            type: "wishlist_update",
-            data: data)
+        super.init(type: "wishlist_update")
     }
 }
 
 // MARK: - Data
 
-public struct RECWishlistUpdateActivityData: Encodable {
-    public let wishlistHash: String
-    @RECNullEncodable public private(set) var requestId: String?
+struct RECWishlistUpdateActivityData: Encodable {
+    let wishlistHash: String
+    @RECNullEncodable private(set) var requestId: String?
     
     // MARK: Coding Keys
     

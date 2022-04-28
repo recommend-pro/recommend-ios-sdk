@@ -8,31 +8,34 @@
 
 import Foundation
 
-public final class RECRemoveFromCartActivity: RECDataActivity<RECRemoveFromCartActivityData> {
+public final class RECRemoveFromCartActivity: RECActivity {
+    let data: RECRemoveFromCartActivityData
+    
+    // MARK: Init
+    
     public init(
         cartHash: String,
         sku: String,
         variationSKU: String?,
         requestId: String? = nil
     ) {
-        let data = RECRemoveFromCartActivityData(
+        self.data = RECRemoveFromCartActivityData(
             cartHash: cartHash,
             sku: sku,
             variationSKU: variationSKU,
             requestId: requestId)
         super.init(
-            type: "remove_from_cart",
-            data: data)
+            type: "remove_from_cart")
     }
 }
 
 // MARK: - Data
 
-public struct RECRemoveFromCartActivityData: Encodable {
-    public let cartHash: String
-    public let sku: String
-    public let variationSKU: String?
-    @RECNullEncodable public private(set) var requestId: String?
+struct RECRemoveFromCartActivityData: Encodable {
+    let cartHash: String
+    let sku: String
+    let variationSKU: String?
+    @RECNullEncodable private(set) var requestId: String?
     
     // MARK: Coding Keys
     

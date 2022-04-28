@@ -8,19 +8,22 @@
 
 import Foundation
 
-public final class RECCustomEventActivity: RECDataActivity<RECCustomEventActivityData> {
+public final class RECCustomEventActivity: RECActivity {
+    let data: RECCustomEventActivityData
+    
+    // MARK: Init
+    
     public init(
         event: String
     ) {
-        let data = RECCustomEventActivityData(event: event)
+        self.data = RECCustomEventActivityData(event: event)
         super.init(
-            type: "custom_event",
-            data: data)
+            type: "custom_event")
     }
 }
 
 // MARK: - Data
 
-public struct RECCustomEventActivityData: Encodable {
-    public let event: String
+struct RECCustomEventActivityData: Encodable {
+    let event: String
 }

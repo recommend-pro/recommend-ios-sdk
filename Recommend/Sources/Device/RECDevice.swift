@@ -58,7 +58,7 @@ public final class RECDevice {
     
     // MARK: Update Device
     
-    public func trackUpdateDevice() {
+    public func updateDevice() {
         DispatchQueue.main.async {
             let device = UIDevice.current
             let bundle = Bundle.main
@@ -78,5 +78,13 @@ public final class RECDevice {
                     location: .default)
             ])
         }
+    }
+    
+    // MARK: Link Device
+    
+    public func linkDevice(deviceIdsToLink: [String]) {
+        trackDeviceActivity(activity: [
+            RECLinkDeviceActivity(deviceIdsToLink: deviceIdsToLink)
+        ])
     }
 }

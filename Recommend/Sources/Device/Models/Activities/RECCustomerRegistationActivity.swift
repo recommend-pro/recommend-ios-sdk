@@ -8,21 +8,24 @@
 
 import Foundation
 
-public final class RECCustomerRegistationActivity: RECDataActivity<RECCustomerRegistationActivityData> {
+public final class RECCustomerRegistationActivity: RECActivity {
+    let data: RECCustomerRegistationActivityData
+    
+    // MARK: Init
+    
     public init(
         requestId: String? = nil
     ) {
-        let data = RECCustomerRegistationActivityData(requestId: requestId)
+        self.data = RECCustomerRegistationActivityData(requestId: requestId)
         super.init(
-            type: "customer_registration",
-            data: data)
+            type: "customer_registration")
     }
 }
 
 // MARK: - Data
 
-public struct RECCustomerRegistationActivityData: Encodable {
-    @RECNullEncodable public private(set) var requestId: String?
+struct RECCustomerRegistationActivityData: Encodable {
+    @RECNullEncodable private(set) var requestId: String?
     
     // MARK: Coding Keys
     

@@ -79,21 +79,25 @@ public final class Recommend: NSObject {
         
         if !(application.applicationState == .background && isRemoteNotification) {
             self.core.applicationLaunched()
-            self.device.trackUpdateDevice()
+            self.device.updateDevice()
             self.device.trackOpenApp()
         }
     }
     
-    public func applicationDidBecomeActive() {
+    public func applicationOpened() {
         self.device.trackOpenApp()
     }
     
-    // MARK: Device Activity
+    // MARK: Device
     
     public func trackDeviceActivity(
         _ deviceActivity: RECDeviceActivity
     ) {
         device.trackDeviceActivity(deviceActivity)
+    }
+    
+    public func linkDevice(deviceIdsToLink: [String]) {
+        device.linkDevice(deviceIdsToLink: deviceIdsToLink)
     }
     
     // MARK: Fetch Recommendation Panels

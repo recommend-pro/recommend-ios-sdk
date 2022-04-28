@@ -8,8 +8,12 @@
 
 import Foundation
 
-public final class RECProductClickActivity: RECDataActivity<RECProductClickActivityData> {
-    public typealias Source = RECProductClickActivitySource
+public final class RECProductClickActivity: RECActivity {
+    let data: RECProductClickActivityData
+    
+    // MARK: Init
+    
+    public typealias Source = RECProductClickSource
 
     // MARK: Init
 
@@ -18,20 +22,93 @@ public final class RECProductClickActivity: RECDataActivity<RECProductClickActiv
         products: [RECActivityProduct]?,
         source: Source?
     ) {
-        let data = RECProductClickActivityData(
+        self.data = RECProductClickActivityData(
             sku: sku,
             products: products,
             source: source)
         super.init(
-            type: "product_click",
-            data: data)
+            type: "product_click")
     }
 }
 
 // MARK: - Data
 
-public struct RECProductClickActivityData: Encodable {
-    public let sku: String
-    public let products: [RECActivityProduct]?
-    public let source: RECProductClickActivitySource?
+struct RECProductClickActivityData: Encodable {
+    let sku: String
+    let products: [RECActivityProduct]?
+    let source: RECProductClickSource?
+}
+
+// MARK: - Product Click Source
+
+public enum RECProductClickSource: Encodable {
+    case panel(panelId: String)
+    case list(listId: String)
+    case search(term: RECActivitySearchTerm)
+    
+    // MARK: Coding Keys
+    
+    enum CodingKeys: String, CodingKey {
+        case type
+        case data
+    }
+    
+    // MARK: Encode
+    
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        
+        switch self {
+        case .panel(let panelId):
+            let data = RECProductClickPanelSourceData(panelId: panelId)
+            try container.encode("panel", forKey: .type)
+            try container.encode(data, forKey: .data)
+            
+        case .list(let listId):
+            let data = RECProductClickListSourceData(listId: listId)
+            try container.encode("list", forKey: .type)
+            try container.encode(data, forKey: .data)
+            
+        case .search(let term):
+            let data = RECProductClickSearchSourceData(term: term)
+            try container.encode("search", forKey: .type)
+            try container.encode(data, forKey: .data)
+        }
+    }
+}
+
+// MARK: - Product Click Panel Source
+
+private struct RECProductClickPanelSourceData: Encodable {
+    let panelId: String
+    
+    // MARK: Coding Keys
+    
+    enum CodingKeys: String, CodingKey {
+        case panelId = "panel_id"
+    }
+}
+
+// MARK: - Product Click List Source
+
+private struct RECProductClickListSourceData: Encodable {
+    let listId: String
+    
+    // MARK: Coding Keys
+    
+    enum CodingKeys: String, CodingKey {
+        case listId = "list_id"
+    }
+}
+
+// MARK: - Product Click Search Source
+
+private struct RECProductClickSearchSourceData: Encodable {
+    let term: RECActivitySearchTerm
+    
+    // MARK: Coding Keys
+    
+    enum CodingKeys: String, CodingKey {
+        case term
+    }
 }

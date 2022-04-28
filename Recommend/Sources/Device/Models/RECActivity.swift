@@ -8,6 +8,8 @@
 
 import Foundation
 
+typealias RECActivityType = String
+
 public class RECActivity: Encodable {
     let type: RECActivityType
     

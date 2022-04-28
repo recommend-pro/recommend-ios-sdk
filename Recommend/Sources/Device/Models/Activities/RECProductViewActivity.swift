@@ -8,25 +8,28 @@
 
 import Foundation
 
-public final class RECProductViewActivity: RECDataActivity<RECProductViewActivityData> {
+public final class RECProductViewActivity: RECActivity {
+    let data: RECProductViewActivityData
+    
+    // MARK: Init
+    
     public init(
         sku: String,
         variationSKU: String?
     ) {
-        let data = RECProductViewActivityData(
+        self.data = RECProductViewActivityData(
             sku: sku,
             variationSKU: variationSKU)
         super.init(
-            type: "product_view",
-            data: data)
+            type: "product_view")
     }
 }
 
 // MARK: - Data
 
-public struct RECProductViewActivityData: Encodable {
-    public let sku: String
-    public let variationSKU: String?
+struct RECProductViewActivityData: Encodable {
+    let sku: String
+    let variationSKU: String?
     
     // MARK: Coding Keys
     

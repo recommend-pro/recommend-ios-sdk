@@ -8,24 +8,26 @@
 
 import Foundation
 
-public final class RECSearchViewActivity: RECDataActivity<RECSearchViewActivityData> {
+public final class RECSearchViewActivity: RECActivity {
+    let data: RECSearchViewActivityData
+    
+    // MARK: Init
+    
     public init(
         products: [RECActivityProduct]?,
         term: RECActivitySearchTerm
     ) {
-        let data = RECSearchViewActivityData(
+        self.data = RECSearchViewActivityData(
             products: products,
             term: term)
-        super.init(
-            type: "search_view",
-            data: data)
+        super.init(type: "search_view")
     }
 }
 
 // MARK: - Data
 
-public struct RECSearchViewActivityData: Encodable {
-    public let products: [RECActivityProduct]?
-    public let term: RECActivitySearchTerm
+struct RECSearchViewActivityData: Encodable {
+    let products: [RECActivityProduct]?
+    let term: RECActivitySearchTerm
 }
 

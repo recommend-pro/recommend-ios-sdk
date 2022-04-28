@@ -8,23 +8,26 @@
 
 import Foundation
 
-public final class RECCheckoutActivity: RECDataActivity<RECCheckoutActivityData> {
+public final class RECCheckoutActivity: RECActivity {
+    let data: RECCheckoutActivityData
+    
+    // MARK: Init
+    
     public init(
         step: String?,
         option: String?
     ) {
-        let data = RECCheckoutActivityData(
+        self.data = RECCheckoutActivityData(
             step: step,
             option: option)
         super.init(
-            type: "checkout",
-            data: data)
+            type: "checkout")
     }
 }
 
 // MARK: - Data
 
-public struct RECCheckoutActivityData: Encodable {
-    public let step: String?
-    public let option: String?
+struct RECCheckoutActivityData: Encodable {
+    let step: String?
+    let option: String?
 }
