@@ -38,23 +38,6 @@ final class RECUpdateDeviceActivity: RECDataActivity<RECUpdateDeviceActivityData
             type: .updateDevice,
             data: data)
     }
-    
-    // MARK: Default
-    
-    static func `default`(firstLaunch: Bool? = nil) -> RECUpdateDeviceActivity {
-        let device = UIDevice.current
-        let bundle = Bundle.main
-        let locale = Locale.current
-        
-        return .init(model: device.model,
-                     name: device.name,
-                     firstLaunch: firstLaunch,
-                     systemVersion: device.systemVersion,
-                     appVersion: bundle.bundleShortVersionString,
-                     deviceLanguage: locale.languageCode,
-                     deviceCountry: locale.regionCode,
-                     location: .default())
-    }
 }
 
 // MARK: - Data

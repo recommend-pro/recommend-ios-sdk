@@ -30,7 +30,7 @@ public struct RECDeviceLocation: Encodable {
 }
 
 extension RECDeviceLocation {
-    static func `default`() -> RECDeviceLocation? {
+    static var `default`: RECDeviceLocation? {
         let manager = CLLocationManager()
         
         var authorizationStatus: CLAuthorizationStatus!

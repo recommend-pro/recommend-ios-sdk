@@ -51,15 +51,32 @@ public final class RECDevice {
     // MARK: Open App
     
     public func trackOpenApp() {
-        let activity: RECActivity = RECOpenAppActivity()
-        trackDeviceActivity(activity: [activity])
+        trackDeviceActivity(activity: [
+            RECOpenAppActivity()
+        ])
     }
     
     // MARK: Update Device
     
     public func trackUpdateDevice() {
-        let activity: RECActivity = RECUpdateDeviceActivity.default(firstLaunch: core.firstLaunch)
-        
-        trackDeviceActivity(activity: [activity])
+        DispatchQueue.main.async {
+            let device = UIDevice.current
+            let bundle = Bundle.main
+            let locale = Locale.current
+            
+            let firstLaunch = self.core.firstLaunch == true ? true : nil
+            
+            self.trackDeviceActivity(activity: [
+                RECUpdateDeviceActivity(
+                    model: device.model,
+                    name: device.name,
+                    firstLaunch: firstLaunch,
+                    systemVersion: device.systemVersion,
+                    appVersion: bundle.bundleShortVersionString,
+                    deviceLanguage: locale.languageCode,
+                    deviceCountry: locale.regionCode,
+                    location: .default)
+            ])
+        }
     }
 }
