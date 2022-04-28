@@ -1,5 +1,5 @@
 //
-//  RECRemoveFromWishlistActivityData.swift
+//  RECAddToWishlistActivity.swift
 //  Recommend
 //
 //  Created by Dmytrii Golovanov on 08.12.2021.
@@ -8,27 +8,27 @@
 
 import Foundation
 
-public final class RECRemoveFromWishlistActivity: RECDataActivity<RECRemoveFromWishlistActivityData> {
+public final class RECAddToWishlistActivity: RECDataActivity<RECAddToWishlistActivityData> {
     public init(
         wishlistHash: String,
         sku: String,
         variationSKU: String?,
         requestId: String? = nil
     ) {
-        let data = RECRemoveFromWishlistActivityData(
+        let data = RECAddToWishlistActivityData(
             wishlistHash: wishlistHash,
             sku: sku,
             variationSKU: variationSKU,
             requestId: requestId)
         super.init(
-            type: .removeFromWishlist,
+            type: .addToWishlist,
             data: data)
     }
 }
 
 // MARK: - Data
 
-public struct RECRemoveFromWishlistActivityData: Encodable {
+public struct RECAddToWishlistActivityData: Encodable {
     public let wishlistHash: String
     public let sku: String
     public let variationSKU: String?

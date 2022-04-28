@@ -1,5 +1,5 @@
 //
-//  RECAddToCartActivityData.swift
+//  RECRemoveFromWishlistActivity.swift
 //  Recommend
 //
 //  Created by Dmytrii Golovanov on 08.12.2021.
@@ -8,28 +8,28 @@
 
 import Foundation
 
-public final class RECAddToCartActivity: RECDataActivity<RECAddToCartActivityData> {
+public final class RECRemoveFromWishlistActivity: RECDataActivity<RECRemoveFromWishlistActivityData> {
     public init(
-        cartHash: String,
+        wishlistHash: String,
         sku: String,
         variationSKU: String?,
         requestId: String? = nil
     ) {
-        let data = RECAddToCartActivityData(
-            cartHash: cartHash,
+        let data = RECRemoveFromWishlistActivityData(
+            wishlistHash: wishlistHash,
             sku: sku,
             variationSKU: variationSKU,
             requestId: requestId)
         super.init(
-            type: .addToCart,
+            type: .removeFromWishlist,
             data: data)
     }
 }
 
 // MARK: - Data
 
-public struct RECAddToCartActivityData: Encodable {
-    public let cartHash: String
+public struct RECRemoveFromWishlistActivityData: Encodable {
+    public let wishlistHash: String
     public let sku: String
     public let variationSKU: String?
     @RECNullEncodable public private(set) var requestId: String?
@@ -37,7 +37,7 @@ public struct RECAddToCartActivityData: Encodable {
     // MARK: Coding Keys
     
     enum CodingKeys: String, CodingKey {
-        case cartHash = "cart_hash"
+        case wishlistHash = "wishlist_hash"
         case sku
         case variationSKU = "variation_sku"
         case requestId = "request_id"

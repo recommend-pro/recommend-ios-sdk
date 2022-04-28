@@ -1,5 +1,5 @@
 //
-//  RECListViewActivityData.swift
+//  RECListViewActivity.swift
 //  Recommend
 //
 //  Created by Dmytrii Golovanov on 08.12.2021.
