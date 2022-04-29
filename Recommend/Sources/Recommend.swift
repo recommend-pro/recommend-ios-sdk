@@ -84,7 +84,7 @@ public final class Recommend: NSObject {
         }
     }
     
-    public func applicationOpened() {
+    public func applicationWillEnterForeground() {
         self.device.trackOpenApp()
     }
     
