@@ -15,3 +15,7 @@ Initial release.
 
 - [Changed] Fixed first launch parameter logic
 - [Changed] Reorganized device activity
+
+# v0.2.1
+
+- [Changed] Fixed activity data encoding
