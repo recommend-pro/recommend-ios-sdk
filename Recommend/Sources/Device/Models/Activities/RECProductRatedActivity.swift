@@ -1,5 +1,5 @@
 //
-//  RECProductRatedActivityData.swift
+//  RECProductRatedActivity.swift
 //  Recommend
 //
 //  Created by Dmytrii Golovanov on 08.12.2021.
@@ -8,28 +8,31 @@
 
 import Foundation
 
-public final class RECProductRatedActivity: RECDataActivity<RECProductRatedActivityData> {
+public final class RECProductRatedActivity: RECActivity {
+    let data: RECProductRatedActivityData
+    
+    // MARK: Init
+    
     public init(
         sku: String,
         rate: Int,
         variationSKU: String?
     ) {
-        let data = RECProductRatedActivityData(
+        self.data = RECProductRatedActivityData(
             sku: sku,
             rate: rate,
             variationSKU: variationSKU)
         super.init(
-            type: .productRated,
-            data: data)
+            type: "product_rated")
     }
 }
 
 // MARK: - Data
 
-public struct RECProductRatedActivityData: Encodable {
-    public let sku: String
-    public let rate: Int
-    public let variationSKU: String?
+struct RECProductRatedActivityData: Encodable {
+    let sku: String
+    let rate: Int
+    let variationSKU: String?
     
     // MARK: Coding Keys
     

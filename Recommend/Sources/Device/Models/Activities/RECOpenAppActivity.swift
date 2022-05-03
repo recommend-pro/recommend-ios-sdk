@@ -1,5 +1,5 @@
 //
-//  RECOpenAppActivityData.swift
+//  RECOpenAppActivity.swift
 //  Recommend
 //
 //  Created by Dmytrii Golovanov on 09.02.2022.
@@ -8,8 +8,8 @@
 
 import Foundation
 
-public final class RECOpenAppActivity: RECActivity {
-    public init() {
-        super.init(type: .openApp)
+final class RECOpenAppActivity: RECActivity {
+    init() {
+        super.init(type: "open_app")
     }
 }

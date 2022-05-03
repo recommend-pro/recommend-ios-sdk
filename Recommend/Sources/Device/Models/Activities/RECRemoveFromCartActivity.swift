@@ -1,5 +1,5 @@
 //
-//  RECAddToCartActivityData.swift
+//  RECRemoveFromCartActivity.swift
 //  Recommend
 //
 //  Created by Dmytrii Golovanov on 08.12.2021.
@@ -8,31 +8,34 @@
 
 import Foundation
 
-public final class RECAddToCartActivity: RECDataActivity<RECAddToCartActivityData> {
+public final class RECRemoveFromCartActivity: RECActivity {
+    let data: RECRemoveFromCartActivityData
+    
+    // MARK: Init
+    
     public init(
         cartHash: String,
         sku: String,
         variationSKU: String?,
         requestId: String? = nil
     ) {
-        let data = RECAddToCartActivityData(
+        self.data = RECRemoveFromCartActivityData(
             cartHash: cartHash,
             sku: sku,
             variationSKU: variationSKU,
             requestId: requestId)
         super.init(
-            type: .addToCart,
-            data: data)
+            type: "remove_from_cart")
     }
 }
 
 // MARK: - Data
 
-public struct RECAddToCartActivityData: Encodable {
-    public let cartHash: String
-    public let sku: String
-    public let variationSKU: String?
-    @RECNullEncodable public private(set) var requestId: String?
+struct RECRemoveFromCartActivityData: Encodable {
+    let cartHash: String
+    let sku: String
+    let variationSKU: String?
+    @RECNullEncodable private(set) var requestId: String?
     
     // MARK: Coding Keys
     

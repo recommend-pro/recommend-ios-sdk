@@ -57,6 +57,10 @@ AppDelegate:
             didFinishLaunchingWithOptions: launchOptions)
         return true
     }
+    
+    func applicationWillEnterForeground(_ application: UIApplication) {
+        Recommend.shared.applicationWillEnterForeground()
+    }
 ```
 
 ### Push Notifications

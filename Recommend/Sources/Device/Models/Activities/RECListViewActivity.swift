@@ -1,5 +1,5 @@
 //
-//  RECListViewActivityData.swift
+//  RECListViewActivity.swift
 //  Recommend
 //
 //  Created by Dmytrii Golovanov on 08.12.2021.
@@ -8,25 +8,28 @@
 
 import Foundation
 
-public final class RECListViewActivity: RECDataActivity<RECListViewActivityData> {
+public final class RECListViewActivity: RECActivity {
+    let data: RECListViewActivityData
+    
+    // MARK: Init
+    
     public init(
         products: [RECActivityProduct]?,
         listId: String
     ) {
-        let data = RECListViewActivityData(
+        self.data = RECListViewActivityData(
             products: products,
             listId: listId)
         super.init(
-            type: .listView,
-            data: data)
+            type: "list_view")
     }
 }
 
 // MARK: - Data
 
-public struct RECListViewActivityData: Encodable {
-    public let products: [RECActivityProduct]?
-    public let listId: String
+struct RECListViewActivityData: Encodable {
+    let products: [RECActivityProduct]?
+    let listId: String
     
     // MARK: Coding Keys
     

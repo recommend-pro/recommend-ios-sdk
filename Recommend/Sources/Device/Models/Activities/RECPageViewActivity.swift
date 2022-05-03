@@ -1,5 +1,5 @@
 //
-//  RECPageViewActivityData.swift
+//  RECPageViewActivity.swift
 //  Recommend
 //
 //  Created by Dmytrii Golovanov on 08.12.2021.
@@ -8,31 +8,34 @@
 
 import Foundation
 
-public final class RECPageViewActivity: RECDataActivity<RECPageViewActivityData> {
+public final class RECPageViewActivity: RECActivity {
+    let data: RECPageViewActivityData
+    
+    // MARK: Init
+    
     public init(
         url: String,
         pageType: String?,
         referrer: String?,
         title: String?
     ) {
-        let data = RECPageViewActivityData(
+        self.data = RECPageViewActivityData(
             url: url,
             pageType: pageType,
             referrer: referrer,
             title: title)
         super.init(
-            type: .pageView,
-            data: data)
+            type: "page_view")
     }
 }
 
 // MARK: - Data
 
-public struct RECPageViewActivityData: Encodable {
-    public let url: String
-    public let pageType: String?
-    public let referrer: String?
-    public let title: String?
+struct RECPageViewActivityData: Encodable {
+    let url: String
+    let pageType: String?
+    let referrer: String?
+    let title: String?
     
     // MARK: Coding Keys
     

@@ -1,5 +1,5 @@
 //
-//  RECPanelViewActivityData.swift
+//  RECPanelViewActivity.swift
 //  Recommend
 //
 //  Created by Dmytrii Golovanov on 08.12.2021.
@@ -8,28 +8,31 @@
 
 import Foundation
 
-public final class RECPanelViewActivity: RECDataActivity<RECPanelViewActivityData> {
+public final class RECPanelViewActivity: RECActivity {
+    let data: RECPanelViewActivityData
+    
+    // MARK: Init
+    
     public init(
         products: [RECActivityProduct]?,
         panelId: String,
         productsCount: Int
     ) {
-        let data = RECPanelViewActivityData(
+        self.data = RECPanelViewActivityData(
             products: products,
             panelId: panelId,
             productsCount: productsCount)
         super.init(
-            type: .panelView,
-            data: data)
+            type: "panel_view")
     }
 }
 
 // MARK: - Data
 
-public struct RECPanelViewActivityData: Encodable {
-    public let products: [RECActivityProduct]?
-    public let panelId: String
-    public let productsCount: Int
+struct RECPanelViewActivityData: Encodable {
+    let products: [RECActivityProduct]?
+    let panelId: String
+    let productsCount: Int
     
     // MARK: Coding Keys
     

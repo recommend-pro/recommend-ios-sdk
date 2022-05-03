@@ -8,25 +8,27 @@
 
 import Foundation
 
-public final class RECSubscribeActivity: RECDataActivity<RECSubscribeActivityData> {
+public final class RECSubscribeActivity: RECActivity {
+    let data: RECSubscribeActivityData
+    
+    // MARK: Init
+    
     public init(
         emailHash: String,
         requestId: String? = nil
     ) {
-        let data = RECSubscribeActivityData(
+        self.data = RECSubscribeActivityData(
             emailHash: emailHash,
             requestId: requestId)
-        super.init(
-            type: .subscribe,
-            data: data)
+        super.init(type: "subscribe")
     }
 }
 
 // MARK: - Data
 
-public struct RECSubscribeActivityData: Encodable {
-    public let emailHash: String
-    @RECNullEncodable public private(set) var requestId: String?
+struct RECSubscribeActivityData: Encodable {
+    let emailHash: String
+    @RECNullEncodable private(set) var requestId: String?
     
     // MARK: Coding Keys
     

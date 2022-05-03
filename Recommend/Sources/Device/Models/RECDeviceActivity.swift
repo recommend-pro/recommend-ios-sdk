@@ -19,7 +19,7 @@ public struct RECDeviceActivity: Encodable {
     public let environment: String?
     /// Price list code
     public let priceList: String?
-    public let deviceTime: RECDeviceTime?
+    public let deviceTime: RECDeviceTime? = .current
     /// Timestamp of event in seconds
     public let eventTime: Int?
     public let metrics: RECMetrics?
@@ -47,7 +47,6 @@ public struct RECDeviceActivity: Encodable {
         currency: String? = nil,
         environment: String? = nil,
         priceList: String? = nil,
-        deviceTime: RECDeviceTime? = .current,
         eventTime: Int? = nil,
         metrics: RECMetrics? = nil,
         activity: [RECActivity]
@@ -57,7 +56,6 @@ public struct RECDeviceActivity: Encodable {
         self.currency = currency
         self.environment = environment
         self.priceList = priceList
-        self.deviceTime = deviceTime
         self.eventTime = eventTime
         self.metrics = metrics
         self.activity = activity

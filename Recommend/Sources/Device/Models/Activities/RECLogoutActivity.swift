@@ -10,6 +10,6 @@ import Foundation
 
 public final class RECLoginActivity: RECActivity {
     public init() {
-        super.init(type: .logout)
+        super.init(type: "logout")
     }
 }

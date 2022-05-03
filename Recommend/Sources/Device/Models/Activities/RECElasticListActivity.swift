@@ -1,5 +1,5 @@
 //
-//  RECElasticListActivityData.swift
+//  RECElasticListActivity.swift
 //  Recommend
 //
 //  Created by Dmytrii Golovanov on 08.12.2021.
@@ -8,25 +8,28 @@
 
 import Foundation
 
-public final class RECElasticListActivity: RECDataActivity<RECElasticListActivityData> {
+public final class RECElasticListActivity: RECActivity {
+    let data: RECElasticListActivityData
+    
+    // MARK: Init
+    
     public init(
         products: [RECActivityProduct]?,
         elasticListId: String
     ) {
-        let data = RECElasticListActivityData(
+        self.data = RECElasticListActivityData(
             products: products,
             elasticListId: elasticListId)
         super.init(
-            type: .elasticList,
-            data: data)
+            type: "elastic_list")
     }
 }
 
 // MARK: - Data
 
-public struct RECElasticListActivityData: Encodable {
-    public let products: [RECActivityProduct]?
-    public let elasticListId: String
+struct RECElasticListActivityData: Encodable {
+    let products: [RECActivityProduct]?
+    let elasticListId: String
     
     // MARK: Coding Keys
     

@@ -1,5 +1,5 @@
 //
-//  RECCartUpdateActivityData.swift
+//  RECCartUpdateActivity.swift
 //  Recommend
 //
 //  Created by Dmytrii Golovanov on 08.12.2021.
@@ -8,25 +8,28 @@
 
 import Foundation
 
-public final class RECCartUpdateActivity: RECDataActivity<RECCartUpdateActivityData> {
+public final class RECCartUpdateActivity: RECActivity {
+    let data: RECCartUpdateActivityData
+    
+    // MARK: Init
+    
     public init(
         cartHash: String,
         requestId: String? = nil
     ) {
-        let data = RECCartUpdateActivityData(
+        self.data = RECCartUpdateActivityData(
             cartHash: cartHash,
             requestId: requestId)
         super.init(
-            type: .cartUpdate,
-            data: data)
+            type: "cart_update")
     }
 }
 
 // MARK: - Data
 
-public struct RECCartUpdateActivityData: Encodable {
-    public let cartHash: String
-    @RECNullEncodable public private(set) var requestId: String?
+struct RECCartUpdateActivityData: Encodable {
+    let cartHash: String
+    @RECNullEncodable private(set) var requestId: String?
     
     // MARK: Coding Keys
     
