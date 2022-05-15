@@ -30,7 +30,7 @@ final class RECUpdateDeviceActivity: RECActivity {
         self.data = RECUpdateDeviceActivityData(
             model: model,
             name: name,
-            firstLaunch: firstLaunch == true ? true : nil,
+            firstLaunch: firstLaunch == true ? 1 : nil,
             systemVersion: systemVersion,
             appVersion: appVersion,
             deviceLanguage: deviceLanguage,
@@ -61,8 +61,8 @@ struct RECUpdateDeviceActivityData: Encodable {
     let model: String?
     /// Name of device
     let name: String?
-    /// First launch of application.
-    let firstLaunch: Bool?
+    /// First launch of application. 0/1 boolean value
+    let firstLaunch: Int?
     /// System name of device
     let systemName: String? = "iOS"
     /// System version of device
