@@ -19,3 +19,7 @@ Initial release.
 # v0.2.1
 
 - [Changed] Fixed activity data encoding
+
+# v0.2.2
+
+- [Changed] Fixed update device activity
