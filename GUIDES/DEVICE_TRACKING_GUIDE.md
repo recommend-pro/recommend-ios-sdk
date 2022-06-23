@@ -1,6 +1,8 @@
 # Recommend Device Tracking
 
-## Usage
+## Device Activity Tracking
+
+### Usage
 
 1. Prepare device activity
 2. Prepare device tracking request

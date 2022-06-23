@@ -1,8 +1,8 @@
-# Recommend Recommendations
+# Recommendations
 
-## Usage
+## Recommendation Panels
 
-### Recommendation Panels
+### Usage
 
 1. Prepare recommendation panels request
 2. Fetch panels

@@ -1,6 +1,8 @@
 # Recommend Messaging
 
-## Usage
+## Push Notications
+
+### Setup
 
 1. Setup AppDelegate
 2. Setup UNUserNotificationCenterDelegate
