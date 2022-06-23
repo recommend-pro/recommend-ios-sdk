@@ -2,14 +2,14 @@
 
 ## Usage
 
-1. Prepare activity
-2. Prepare device activity
+1. Prepare device activity
+2. Prepare device tracking request
 3. Track device activity
 
 Exmaple:
 ```swift
-let activity: [RECActivity] = [
-    RECLoginActivity()
+let activity: [RECDeviceActivity] = [
+    RECDeviceLoginActivity()
 ]
 
 let metrics = RECMetrics(
@@ -18,7 +18,7 @@ let metrics = RECMetrics(
         "segment": "A"
     ])
 
-let deviceActivity = RECDeviceActivity(
+let requestModel = RECDeviceTrackingRequest(
     customerIdHash: "0a0a0a0a0a0a0a0a0a0a0a0",
     store: "default",
     currency: "GBP",
@@ -29,5 +29,5 @@ let deviceActivity = RECDeviceActivity(
     metrics: metrics,
     activity: activity)
 
-Recommend.shared.trackDeviceActivity(deviceActivity)
+Recommend.shared.trackDeviceActivity(requestModel)
 ```

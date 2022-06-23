@@ -4,7 +4,7 @@
 
 ### Recommendation Panels
 
-1. Prepare fetch model
+1. Prepare recommendation panels request
 2. Fetch panels
 
 ```swift
@@ -19,12 +19,12 @@ let metrics = RECMetrics(
         "segment": "A"
     ])
 
-let panels: [RECRecommendationPanelsFetchModel.Panel] = [
+let panels: [RECRecommendationPanelRequest] = [
     .init(
         id: "string",
-        context: RECRecommendationPanelRequest.Context(
+        context: RECRecommendationPanelRequestContext(
             searchTerm: "Shoes",
-            current: RECRecommendationPanelRequest.Context.CurrentContext(
+            current: RECRecommendationPanelRequestCurrentContext(
                 sku: "CSF-3",
                 listId: "6"),
             skus: [
@@ -36,7 +36,7 @@ let panels: [RECRecommendationPanelsFetchModel.Panel] = [
                 "10"
             ]),
         filters: [
-            RECRecommendationPanelRequest.Filter(
+            RECRecommendationPanelRequestFilter(
                 type: .product,
                 code: "sku",
                 operator: .ne,
@@ -45,7 +45,7 @@ let panels: [RECRecommendationPanelsFetchModel.Panel] = [
         attrsToInclude: [
             "gender"
         ],
-        variations: RECRecommendationPanelRequest.Variations(
+        variations: RECRecommendationPanelRequestVariations(
             include: true,
             attrsToInclude: [
                 "gender"
@@ -53,14 +53,14 @@ let panels: [RECRecommendationPanelsFetchModel.Panel] = [
     )
 ]
 
-let previewPanel = RECRecommendationPanelsFetchModel.PreviewPanel(
+let previewPanel = RECRecommendationPreviewPanelRequest(
     global: false,
     ids: [
         "panel-1",
         "panel-2"
     ])
 
-let fetchModel = RECRecommendationPanelsFetchModel(
+let requestModel = RECRecommendationPanelsRequest(
     deviceId: "0000000-0000-0000-00000000",
     customerIdHash: "0a0a0a0a0a0a0a0a0a0a0a0",
     store: "default",
@@ -73,7 +73,7 @@ let fetchModel = RECRecommendationPanelsFetchModel(
     previewPanel: previewPanel)
     
             
-Recommend.shared.fetchPanels(with: fetchModel) { result in
+Recommend.shared.fetchPanels(with: requestModel) { result in
     switch result {
     case .success(let recommendationPanels):
         // handle recommendation panels
