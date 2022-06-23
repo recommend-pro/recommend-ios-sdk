@@ -113,10 +113,6 @@ public final class Recommend: NSObject {
     
     // MARK: Messaging
     
-    public func isRecommendNotification(_ userInfo: [AnyHashable: Any]) -> Bool {
-        return messaging.isRecommendNotification(userInfo)
-    }
-    
     public func remoteNotificationOpenURL(_ userInfo: [AnyHashable: Any]) -> URL? {
         return messaging.remoteNotificationOpenURL(userInfo)
     }

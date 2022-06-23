@@ -45,10 +45,6 @@ public final class RECMessaging: NSObject {
     
     // MARK: Notification User Info
     
-    public func isRecommendNotification(_ userInfo: [AnyHashable: Any]) -> Bool {
-        return RECMessagingPushUserInfo(from: userInfo)?.isRecommendPushNotification ?? false
-    }
-    
     public func remoteNotificationOpenURL(_ userInfo: [AnyHashable: Any]) -> URL? {
         return RECMessagingPushUserInfo(from: userInfo)?.data?.openURL
     }

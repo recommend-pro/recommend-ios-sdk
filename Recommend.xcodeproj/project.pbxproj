@@ -10,6 +10,7 @@
 		5288DA3E2864EB6500153440 /* RECOMMENDATIONS_GUIDE.md in Resources */ = {isa = PBXBuildFile; fileRef = 5288DA3B2864EB6500153440 /* RECOMMENDATIONS_GUIDE.md */; };
 		5288DA3F2864EB6500153440 /* MESSAGING_GUIDE.md in Resources */ = {isa = PBXBuildFile; fileRef = 5288DA3C2864EB6500153440 /* MESSAGING_GUIDE.md */; };
 		5288DA402864EB6500153440 /* DEVICE_TRACKING_GUIDE.md in Resources */ = {isa = PBXBuildFile; fileRef = 5288DA3D2864EB6500153440 /* DEVICE_TRACKING_GUIDE.md */; };
+		5288DA502865096800153440 /* UNNotification+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5288DA4F2865096800153440 /* UNNotification+Extensions.swift */; };
 		529993FE2864CDB5004ED2E1 /* RECRecommendationPanelsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993942864CDB5004ED2E1 /* RECRecommendationPanelsRequest.swift */; };
 		529993FF2864CDB5004ED2E1 /* RECRecommendationPanelRequestVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993962864CDB5004ED2E1 /* RECRecommendationPanelRequestVariations.swift */; };
 		529994002864CDB5004ED2E1 /* RECRecommendationPanelRequestContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993982864CDB5004ED2E1 /* RECRecommendationPanelRequestContext.swift */; };
@@ -93,6 +94,7 @@
 		5299944E2864CDB5004ED2E1 /* RECMessagingSubscriptionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993FB2864CDB5004ED2E1 /* RECMessagingSubscriptionManager.swift */; };
 		5299944F2864CDB5004ED2E1 /* RECNullEncodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993FD2864CDB5004ED2E1 /* RECNullEncodable.swift */; };
 		529994542864CEEF004ED2E1 /* WebKitUserAgent in Frameworks */ = {isa = PBXBuildFile; productRef = 529994532864CEEF004ED2E1 /* WebKitUserAgent */; };
+		52DD9F22286510B200471CEA /* RECMessaging+Funcs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DD9F21286510B200471CEA /* RECMessaging+Funcs.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,6 +106,7 @@
 		5288DA3B2864EB6500153440 /* RECOMMENDATIONS_GUIDE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = RECOMMENDATIONS_GUIDE.md; path = GUIDES/RECOMMENDATIONS_GUIDE.md; sourceTree = "<group>"; };
 		5288DA3C2864EB6500153440 /* MESSAGING_GUIDE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = MESSAGING_GUIDE.md; path = GUIDES/MESSAGING_GUIDE.md; sourceTree = "<group>"; };
 		5288DA3D2864EB6500153440 /* DEVICE_TRACKING_GUIDE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = DEVICE_TRACKING_GUIDE.md; path = GUIDES/DEVICE_TRACKING_GUIDE.md; sourceTree = "<group>"; };
+		5288DA4F2865096800153440 /* UNNotification+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UNNotification+Extensions.swift"; sourceTree = "<group>"; };
 		529993862864CD86004ED2E1 /* Recommend.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Recommend.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		529993942864CDB5004ED2E1 /* RECRecommendationPanelsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECRecommendationPanelsRequest.swift; sourceTree = "<group>"; };
 		529993962864CDB5004ED2E1 /* RECRecommendationPanelRequestVariations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECRecommendationPanelRequestVariations.swift; sourceTree = "<group>"; };
@@ -187,6 +190,7 @@
 		529993FA2864CDB5004ED2E1 /* RECMessagingAPIEndpoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECMessagingAPIEndpoints.swift; sourceTree = "<group>"; };
 		529993FB2864CDB5004ED2E1 /* RECMessagingSubscriptionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECMessagingSubscriptionManager.swift; sourceTree = "<group>"; };
 		529993FD2864CDB5004ED2E1 /* RECNullEncodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECNullEncodable.swift; sourceTree = "<group>"; };
+		52DD9F21286510B200471CEA /* RECMessaging+Funcs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RECMessaging+Funcs.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -462,6 +466,7 @@
 				529993E92864CDB5004ED2E1 /* Models */,
 				529993F52864CDB5004ED2E1 /* RECMessaging.swift */,
 				529993FB2864CDB5004ED2E1 /* RECMessagingSubscriptionManager.swift */,
+				52DD9F21286510B200471CEA /* RECMessaging+Funcs.swift */,
 			);
 			path = Messaging;
 			sourceTree = "<group>";
@@ -508,6 +513,7 @@
 		529993F62864CDB5004ED2E1 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				5288DA4F2865096800153440 /* UNNotification+Extensions.swift */,
 				529993F72864CDB5004ED2E1 /* Date+Extensions.swift */,
 			);
 			path = Extensions;
@@ -664,7 +670,9 @@
 				5299944A2864CDB5004ED2E1 /* RECMessaging.swift in Sources */,
 				5299944C2864CDB5004ED2E1 /* RECMessagingAPIService.swift in Sources */,
 				529994462864CDB5004ED2E1 /* RECMessagingPushSubscriptionStatus.swift in Sources */,
+				52DD9F22286510B200471CEA /* RECMessaging+Funcs.swift in Sources */,
 				5299940B2864CDB5004ED2E1 /* RECRecommendationAPIEndpoints.swift in Sources */,
+				5288DA502865096800153440 /* UNNotification+Extensions.swift in Sources */,
 				5299942A2864CDB5004ED2E1 /* RECDeviceSearchViewActivity.swift in Sources */,
 				529994482864CDB5004ED2E1 /* RECMessagingPushUserInfoData.swift in Sources */,
 				529994102864CDB5004ED2E1 /* RECAttribute.swift in Sources */,
