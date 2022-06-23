@@ -1,5 +1,5 @@
 //
-//  RECMessagingPushEvent.swift
+//  RECMessagingPushEventRequest.swift
 //  Recommend
 //
 //  Created by Dmytrii Golovanov on 08.12.2021.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct RECMessagingPushEvent: Encodable {
+struct RECMessagingPushEventRequest: Encodable {
     let received: Bool?
     let clicked: Bool?
     let openURL: String?

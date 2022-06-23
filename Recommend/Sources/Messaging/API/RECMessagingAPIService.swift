@@ -69,14 +69,15 @@ final class RECMessagingAPIService {
     // MARK: Track Push Notification Event
     
     func trackPushNotificationEvent(
-        _ pushNotificationEvent: RECMessagingPushEventRequest,
+        _ request: RECMessagingPushEventRequest,
+        pushId: String,
         completion: @escaping (Error?) -> Void
     ) {
         do {
             let endpoint = APIEndpoints.trackPushNotificationsEvent(
                 accountId: config.accountId,
-                pushId: pushNotificationEvent.pushId)
-            let data = try JSONEncoder().encode(pushNotificationEvent.data)
+                pushId: pushId)
+            let data = try JSONEncoder().encode(request)
             
             self.apiClient.executeRequest(
                 with: endpoint,

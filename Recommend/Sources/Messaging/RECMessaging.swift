@@ -10,7 +10,6 @@ import Foundation
 import UserNotifications
 
 public final class RECMessaging: NSObject {
-    private typealias PushNotificationEvent = RECMessagingPushEventRequest
     
     private static let userDefaultsSuiteName = "pro.recommend.messaging"
     
@@ -51,8 +50,17 @@ public final class RECMessaging: NSObject {
     
     // MARK: Track Push Notification Event
     
-    private func trackPushNotificationEvent(_ event: PushNotificationEvent) {
-        apiService.trackPushNotificationEvent(event) { error in
+    private func trackPushNotificationEvent(_ event: RECMessagingPushEvent) {
+        let request = RECMessagingPushEventRequest(
+            received: true,
+            clicked: event.clicked,
+            openURL: event.openURLString,
+            eventTime: event.dateInSeconds
+        )
+        apiService.trackPushNotificationEvent(
+            request,
+            pushId: event.id
+        ) { error in
             if let error = error {
                 debugPrint(error)
                 return
@@ -114,10 +122,15 @@ public final class RECMessaging: NSObject {
     }
     
     public func applicationDidReceiveRemoteNotification(_ userInfo: [AnyHashable: Any]) {
-        if let event = PushNotificationEvent(userInfo: userInfo,
-                                             eventDate: Date()) {
-            trackPushNotificationEvent(event)
+        guard
+            let event = RECMessagingPushEvent(
+                userInfo: userInfo,
+                date: Date()
+            )
+        else {
+            return
         }
+        trackPushNotificationEvent(event)
     }
     
     // MARK: User Notifications
@@ -129,9 +142,15 @@ public final class RECMessaging: NSObject {
         guard center == userNotificationCenter else {
             return
         }
-        if let event = PushNotificationEvent(notification: response.notification,
-                                             clicked: true) {
-            trackPushNotificationEvent(event)
+        guard
+            let event = RECMessagingPushEvent(
+                userInfo: response.notification.request.content.userInfo,
+                clicked: true,
+                date: response.notification.date
+            )
+        else {
+            return
         }
+        trackPushNotificationEvent(event)
     }
 }
