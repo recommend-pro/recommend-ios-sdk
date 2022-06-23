@@ -1,5 +1,5 @@
 //
-//  RECMessagingPushNotificationEvent.swift
+//  RECMessagingPushEventRequest.swift
 //  Recommend
 //
 //  Created by Dmytrii Golovanov on 08.12.2021.
@@ -9,8 +9,8 @@
 import Foundation
 import UserNotifications
 
-struct RECMessagingPushNotificationEvent {
-    typealias EventData = RECMessagingPushNotificationEventData
+struct RECMessagingPushEventRequest {
+    typealias EventData = RECMessagingPushEvent
     
     let pushId: String
     let data: EventData
@@ -28,9 +28,9 @@ struct RECMessagingPushNotificationEvent {
 
 // MARK: - Extended init
 
-extension RECMessagingPushNotificationEvent {
+extension RECMessagingPushEventRequest {
     init?(
-        userInfo: RECMessagingUserInfo,
+        userInfo: RECMessagingPushUserInfo,
         clicked: Bool? = nil,
         eventDate: Date? = nil
     ) {
@@ -39,7 +39,7 @@ extension RECMessagingPushNotificationEvent {
         }
         
         self.pushId = pushId
-        self.data = RECMessagingPushNotificationEventData(received: true,
+        self.data = RECMessagingPushEvent(received: true,
                                                           clicked: clicked,
                                                           openURL: userInfo.data?.openURLString,
                                                           eventTime: eventDate?.secondsSince1970)
@@ -50,7 +50,7 @@ extension RECMessagingPushNotificationEvent {
         clicked: Bool? = nil,
         eventDate: Date?
     ) {
-        guard let userInfo = RECMessagingUserInfo(from: userInfo) else {
+        guard let userInfo = RECMessagingPushUserInfo(from: userInfo) else {
             return nil
         }
         self.init(userInfo: userInfo,

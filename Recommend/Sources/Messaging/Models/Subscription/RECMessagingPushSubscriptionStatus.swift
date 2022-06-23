@@ -1,5 +1,5 @@
 //
-//  RECMessagingSubscriptionStatus.swift
+//  RECMessagingPushSubscriptionStatus.swift
 //  Recommend
 //
 //  Created by Dmytrii Golovanov on 08.12.2021.
@@ -9,7 +9,7 @@
 import Foundation
 import UserNotifications
 
-enum RECMessagingSubscriptionStatus: String, Encodable {
+enum RECMessagingPushSubscriptionStatus: String, Encodable {
     case subscribed
     case unsubscribed
     case nonSubscribed = "non_subscribed"

@@ -75,14 +75,14 @@
 		5299943F2864CDB5004ED2E1 /* RECDeviceAPIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993E52864CDB5004ED2E1 /* RECDeviceAPIEndpoints.swift */; };
 		529994402864CDB5004ED2E1 /* RECDeviceAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993E62864CDB5004ED2E1 /* RECDeviceAPIService.swift */; };
 		529994412864CDB5004ED2E1 /* RECDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993E72864CDB5004ED2E1 /* RECDevice.swift */; };
-		529994422864CDB5004ED2E1 /* RECMessagingPushNotificationEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993EB2864CDB5004ED2E1 /* RECMessagingPushNotificationEvent.swift */; };
-		529994432864CDB5004ED2E1 /* RECMessagingPushNotificationEventData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993EC2864CDB5004ED2E1 /* RECMessagingPushNotificationEventData.swift */; };
-		529994442864CDB5004ED2E1 /* RECMessagingSubscriptionUpdateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993EE2864CDB5004ED2E1 /* RECMessagingSubscriptionUpdateModel.swift */; };
-		529994452864CDB5004ED2E1 /* RECMessagingSubscriptionSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993EF2864CDB5004ED2E1 /* RECMessagingSubscriptionSettings.swift */; };
-		529994462864CDB5004ED2E1 /* RECMessagingSubscriptionStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993F02864CDB5004ED2E1 /* RECMessagingSubscriptionStatus.swift */; };
-		529994472864CDB5004ED2E1 /* RECMessagingUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993F22864CDB5004ED2E1 /* RECMessagingUserInfo.swift */; };
-		529994482864CDB5004ED2E1 /* RECMessagingUserInfoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993F32864CDB5004ED2E1 /* RECMessagingUserInfoData.swift */; };
-		529994492864CDB5004ED2E1 /* RECMessagingToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993F42864CDB5004ED2E1 /* RECMessagingToken.swift */; };
+		529994422864CDB5004ED2E1 /* RECMessagingPushEventRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993EB2864CDB5004ED2E1 /* RECMessagingPushEventRequest.swift */; };
+		529994432864CDB5004ED2E1 /* RECMessagingPushEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993EC2864CDB5004ED2E1 /* RECMessagingPushEvent.swift */; };
+		529994442864CDB5004ED2E1 /* RECMessagingPushSubscriptionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993EE2864CDB5004ED2E1 /* RECMessagingPushSubscriptionRequest.swift */; };
+		529994452864CDB5004ED2E1 /* RECMessagingPushSubscriptionSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993EF2864CDB5004ED2E1 /* RECMessagingPushSubscriptionSettings.swift */; };
+		529994462864CDB5004ED2E1 /* RECMessagingPushSubscriptionStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993F02864CDB5004ED2E1 /* RECMessagingPushSubscriptionStatus.swift */; };
+		529994472864CDB5004ED2E1 /* RECMessagingPushUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993F22864CDB5004ED2E1 /* RECMessagingPushUserInfo.swift */; };
+		529994482864CDB5004ED2E1 /* RECMessagingPushUserInfoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993F32864CDB5004ED2E1 /* RECMessagingPushUserInfoData.swift */; };
+		529994492864CDB5004ED2E1 /* RECMessagingPushToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993F42864CDB5004ED2E1 /* RECMessagingPushToken.swift */; };
 		5299944A2864CDB5004ED2E1 /* RECMessaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993F52864CDB5004ED2E1 /* RECMessaging.swift */; };
 		5299944B2864CDB5004ED2E1 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993F72864CDB5004ED2E1 /* Date+Extensions.swift */; };
 		5299944C2864CDB5004ED2E1 /* RECMessagingAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993F92864CDB5004ED2E1 /* RECMessagingAPIService.swift */; };
@@ -167,14 +167,14 @@
 		529993E52864CDB5004ED2E1 /* RECDeviceAPIEndpoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECDeviceAPIEndpoints.swift; sourceTree = "<group>"; };
 		529993E62864CDB5004ED2E1 /* RECDeviceAPIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECDeviceAPIService.swift; sourceTree = "<group>"; };
 		529993E72864CDB5004ED2E1 /* RECDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECDevice.swift; sourceTree = "<group>"; };
-		529993EB2864CDB5004ED2E1 /* RECMessagingPushNotificationEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECMessagingPushNotificationEvent.swift; sourceTree = "<group>"; };
-		529993EC2864CDB5004ED2E1 /* RECMessagingPushNotificationEventData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECMessagingPushNotificationEventData.swift; sourceTree = "<group>"; };
-		529993EE2864CDB5004ED2E1 /* RECMessagingSubscriptionUpdateModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECMessagingSubscriptionUpdateModel.swift; sourceTree = "<group>"; };
-		529993EF2864CDB5004ED2E1 /* RECMessagingSubscriptionSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECMessagingSubscriptionSettings.swift; sourceTree = "<group>"; };
-		529993F02864CDB5004ED2E1 /* RECMessagingSubscriptionStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECMessagingSubscriptionStatus.swift; sourceTree = "<group>"; };
-		529993F22864CDB5004ED2E1 /* RECMessagingUserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECMessagingUserInfo.swift; sourceTree = "<group>"; };
-		529993F32864CDB5004ED2E1 /* RECMessagingUserInfoData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECMessagingUserInfoData.swift; sourceTree = "<group>"; };
-		529993F42864CDB5004ED2E1 /* RECMessagingToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECMessagingToken.swift; sourceTree = "<group>"; };
+		529993EB2864CDB5004ED2E1 /* RECMessagingPushEventRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECMessagingPushEventRequest.swift; sourceTree = "<group>"; };
+		529993EC2864CDB5004ED2E1 /* RECMessagingPushEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECMessagingPushEvent.swift; sourceTree = "<group>"; };
+		529993EE2864CDB5004ED2E1 /* RECMessagingPushSubscriptionRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECMessagingPushSubscriptionRequest.swift; sourceTree = "<group>"; };
+		529993EF2864CDB5004ED2E1 /* RECMessagingPushSubscriptionSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECMessagingPushSubscriptionSettings.swift; sourceTree = "<group>"; };
+		529993F02864CDB5004ED2E1 /* RECMessagingPushSubscriptionStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECMessagingPushSubscriptionStatus.swift; sourceTree = "<group>"; };
+		529993F22864CDB5004ED2E1 /* RECMessagingPushUserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECMessagingPushUserInfo.swift; sourceTree = "<group>"; };
+		529993F32864CDB5004ED2E1 /* RECMessagingPushUserInfoData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECMessagingPushUserInfoData.swift; sourceTree = "<group>"; };
+		529993F42864CDB5004ED2E1 /* RECMessagingPushToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECMessagingPushToken.swift; sourceTree = "<group>"; };
 		529993F52864CDB5004ED2E1 /* RECMessaging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECMessaging.swift; sourceTree = "<group>"; };
 		529993F72864CDB5004ED2E1 /* Date+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		529993F92864CDB5004ED2E1 /* RECMessagingAPIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECMessagingAPIService.swift; sourceTree = "<group>"; };
@@ -477,7 +477,7 @@
 			isa = PBXGroup;
 			children = (
 				529993EA2864CDB5004ED2E1 /* PushNotificationEvent */,
-				529993F42864CDB5004ED2E1 /* RECMessagingToken.swift */,
+				529993F42864CDB5004ED2E1 /* RECMessagingPushToken.swift */,
 				529993ED2864CDB5004ED2E1 /* Subscription */,
 				529993F12864CDB5004ED2E1 /* UserInfo */,
 			);
@@ -487,8 +487,8 @@
 		529993EA2864CDB5004ED2E1 /* PushNotificationEvent */ = {
 			isa = PBXGroup;
 			children = (
-				529993EB2864CDB5004ED2E1 /* RECMessagingPushNotificationEvent.swift */,
-				529993EC2864CDB5004ED2E1 /* RECMessagingPushNotificationEventData.swift */,
+				529993EB2864CDB5004ED2E1 /* RECMessagingPushEventRequest.swift */,
+				529993EC2864CDB5004ED2E1 /* RECMessagingPushEvent.swift */,
 			);
 			path = PushNotificationEvent;
 			sourceTree = "<group>";
@@ -496,9 +496,9 @@
 		529993ED2864CDB5004ED2E1 /* Subscription */ = {
 			isa = PBXGroup;
 			children = (
-				529993EF2864CDB5004ED2E1 /* RECMessagingSubscriptionSettings.swift */,
-				529993F02864CDB5004ED2E1 /* RECMessagingSubscriptionStatus.swift */,
-				529993EE2864CDB5004ED2E1 /* RECMessagingSubscriptionUpdateModel.swift */,
+				529993EF2864CDB5004ED2E1 /* RECMessagingPushSubscriptionSettings.swift */,
+				529993F02864CDB5004ED2E1 /* RECMessagingPushSubscriptionStatus.swift */,
+				529993EE2864CDB5004ED2E1 /* RECMessagingPushSubscriptionRequest.swift */,
 			);
 			path = Subscription;
 			sourceTree = "<group>";
@@ -506,8 +506,8 @@
 		529993F12864CDB5004ED2E1 /* UserInfo */ = {
 			isa = PBXGroup;
 			children = (
-				529993F22864CDB5004ED2E1 /* RECMessagingUserInfo.swift */,
-				529993F32864CDB5004ED2E1 /* RECMessagingUserInfoData.swift */,
+				529993F22864CDB5004ED2E1 /* RECMessagingPushUserInfo.swift */,
+				529993F32864CDB5004ED2E1 /* RECMessagingPushUserInfoData.swift */,
 			);
 			path = UserInfo;
 			sourceTree = "<group>";
@@ -659,16 +659,16 @@
 				529994192864CDB5004ED2E1 /* RECAPIErrorResponse.swift in Sources */,
 				529994012864CDB5004ED2E1 /* RECRecommendationPanelRequestCurrentContext.swift in Sources */,
 				529994062864CDB5004ED2E1 /* RECRecommendationPanelsFetchContentType.swift in Sources */,
-				529994472864CDB5004ED2E1 /* RECMessagingUserInfo.swift in Sources */,
+				529994472864CDB5004ED2E1 /* RECMessagingPushUserInfo.swift in Sources */,
 				5299943C2864CDB5004ED2E1 /* RECCartUpdateActivity.swift in Sources */,
 				529994302864CDB5004ED2E1 /* RECCheckoutActivity.swift in Sources */,
 				5299942C2864CDB5004ED2E1 /* RECAddToCartActivity.swift in Sources */,
 				5299944A2864CDB5004ED2E1 /* RECMessaging.swift in Sources */,
 				5299944C2864CDB5004ED2E1 /* RECMessagingAPIService.swift in Sources */,
-				529994462864CDB5004ED2E1 /* RECMessagingSubscriptionStatus.swift in Sources */,
+				529994462864CDB5004ED2E1 /* RECMessagingPushSubscriptionStatus.swift in Sources */,
 				5299940B2864CDB5004ED2E1 /* RECRecommendationAPIEndpoints.swift in Sources */,
 				5299942A2864CDB5004ED2E1 /* RECSearchViewActivity.swift in Sources */,
-				529994482864CDB5004ED2E1 /* RECMessagingUserInfoData.swift in Sources */,
+				529994482864CDB5004ED2E1 /* RECMessagingPushUserInfoData.swift in Sources */,
 				529994102864CDB5004ED2E1 /* RECAttribute.swift in Sources */,
 				5299944B2864CDB5004ED2E1 /* Date+Extensions.swift in Sources */,
 				529994342864CDB5004ED2E1 /* RECProductViewActivity.swift in Sources */,
@@ -679,7 +679,7 @@
 				529994242864CDB5004ED2E1 /* RECDeviceTime.swift in Sources */,
 				529994262864CDB5004ED2E1 /* RECElasticListActivity.swift in Sources */,
 				529994412864CDB5004ED2E1 /* RECDevice.swift in Sources */,
-				529994422864CDB5004ED2E1 /* RECMessagingPushNotificationEvent.swift in Sources */,
+				529994422864CDB5004ED2E1 /* RECMessagingPushEventRequest.swift in Sources */,
 				5299940A2864CDB5004ED2E1 /* RECRecommendationPanelDetails.swift in Sources */,
 				529994072864CDB5004ED2E1 /* RECRecommendationPanelsFetchPreviewPanel.swift in Sources */,
 				529994332864CDB5004ED2E1 /* RECRemoveFromWishlistActivity.swift in Sources */,
@@ -704,20 +704,20 @@
 				5299942E2864CDB5004ED2E1 /* RECPageViewActivity.swift in Sources */,
 				529993FE2864CDB5004ED2E1 /* RECRecommendationPanelsFetchModel.swift in Sources */,
 				529994322864CDB5004ED2E1 /* RECPanelViewActivity.swift in Sources */,
-				529994492864CDB5004ED2E1 /* RECMessagingToken.swift in Sources */,
-				529994432864CDB5004ED2E1 /* RECMessagingPushNotificationEventData.swift in Sources */,
+				529994492864CDB5004ED2E1 /* RECMessagingPushToken.swift in Sources */,
+				529994432864CDB5004ED2E1 /* RECMessagingPushEvent.swift in Sources */,
 				529994352864CDB5004ED2E1 /* RECLinkDeviceActivity.swift in Sources */,
 				529994142864CDB5004ED2E1 /* RECPriceList.swift in Sources */,
 				529994082864CDB5004ED2E1 /* RECRecommendationPanel.swift in Sources */,
 				529994282864CDB5004ED2E1 /* RECSaleActivity.swift in Sources */,
 				5299940C2864CDB5004ED2E1 /* RECRecommendationAPIService.swift in Sources */,
-				529994442864CDB5004ED2E1 /* RECMessagingSubscriptionUpdateModel.swift in Sources */,
+				529994442864CDB5004ED2E1 /* RECMessagingPushSubscriptionRequest.swift in Sources */,
 				529994392864CDB5004ED2E1 /* RECOpenAppActivity.swift in Sources */,
 				529994402864CDB5004ED2E1 /* RECDeviceAPIService.swift in Sources */,
 				529994382864CDB5004ED2E1 /* RECRemoveFromCartActivity.swift in Sources */,
 				529994312864CDB5004ED2E1 /* RECAddToWishlistActivity.swift in Sources */,
 				5299941C2864CDB5004ED2E1 /* RECAPIRequest.swift in Sources */,
-				529994452864CDB5004ED2E1 /* RECMessagingSubscriptionSettings.swift in Sources */,
+				529994452864CDB5004ED2E1 /* RECMessagingPushSubscriptionSettings.swift in Sources */,
 				529994222864CDB5004ED2E1 /* RECActivityProduct.swift in Sources */,
 				529994292864CDB5004ED2E1 /* RECListViewActivity.swift in Sources */,
 				5299941B2864CDB5004ED2E1 /* RECAPIClient.swift in Sources */,

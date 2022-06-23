@@ -1,5 +1,5 @@
 //
-//  RECMessagingSubscriptionSettings.swift
+//  RECMessagingPushSubscriptionSettings.swift
 //  Recommend
 //
 //  Created by Dmytrii Golovanov on 08.03.2022.
@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct RECMessagingSubscriptionSettings {
-    let subscriptionStatus: RECMessagingSubscriptionStatus
+struct RECMessagingPushSubscriptionSettings {
+    let subscriptionStatus: RECMessagingPushSubscriptionStatus
     let isUserSubscribed: Bool?
     let subscriptionStatusChangedDate: Date?
     let firstSubscribedDate: Date?

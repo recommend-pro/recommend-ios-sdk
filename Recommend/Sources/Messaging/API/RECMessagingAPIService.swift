@@ -28,7 +28,7 @@ final class RECMessagingAPIService {
     // MARK: Update Push Notifications Subscription
     
     func updatePushNotificationsSubscription(
-        model: RECMessagingSubscriptionUpdateModel,
+        model: RECMessagingPushSubscriptionRequest,
         completion: @escaping (Error?) -> Void
     ) {
         do {
@@ -69,7 +69,7 @@ final class RECMessagingAPIService {
     // MARK: Track Push Notification Event
     
     func trackPushNotificationEvent(
-        _ pushNotificationEvent: RECMessagingPushNotificationEvent,
+        _ pushNotificationEvent: RECMessagingPushEventRequest,
         completion: @escaping (Error?) -> Void
     ) {
         do {

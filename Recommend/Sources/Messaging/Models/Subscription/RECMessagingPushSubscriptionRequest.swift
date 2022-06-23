@@ -1,5 +1,5 @@
 //
-//  RECMessagingSubscriptionUpdateModel.swift
+//  RECMessagingPushSubscriptionRequest.swift
 //  Recommend
 //
 //  Created by Dmytrii Golovanov on 08.12.2021.
@@ -8,12 +8,12 @@
 
 import Foundation
 
-struct RECMessagingSubscriptionUpdateModel: Encodable {
+struct RECMessagingPushSubscriptionRequest: Encodable {
     /// Push token of device
-    let token: RECMessagingToken
+    let token: RECMessagingPushToken
     /// Name of push notification application integration
     let applicationName: String
-    let subscriptionStatus: RECMessagingSubscriptionStatus?
+    let subscriptionStatus: RECMessagingPushSubscriptionStatus?
     /// Timestamp in seconds
     let subscriptionStatusChangeDateInSeconds: Int?
     /// Timestamp in seconds
@@ -32,9 +32,9 @@ struct RECMessagingSubscriptionUpdateModel: Encodable {
     // MARK: Init
     
     init(
-        token: RECMessagingToken,
+        token: RECMessagingPushToken,
         applicationName: String,
-        subscriptionStatus: RECMessagingSubscriptionStatus? = nil,
+        subscriptionStatus: RECMessagingPushSubscriptionStatus? = nil,
         subscriptionStatusChangeDateInSeconds: Int? = nil,
         firstSubscribedDateInSeconds: Int? = nil
     ) {
@@ -48,11 +48,11 @@ struct RECMessagingSubscriptionUpdateModel: Encodable {
     init(
         deviceToken: Data,
         applicationName: String,
-        subscriptionStatus: RECMessagingSubscriptionStatus? = nil,
+        subscriptionStatus: RECMessagingPushSubscriptionStatus? = nil,
         subscriptionStatusChangeDate: Date? = nil,
         firstSubscribedDate: Date? = nil
     ) {
-        let token = RECMessagingToken(deviceToken: deviceToken)
+        let token = RECMessagingPushToken(deviceToken: deviceToken)
         
         self.init(token: token,
                   applicationName: applicationName,

@@ -1,5 +1,5 @@
 //
-//  RECMessagingUserInfoData.swift
+//  RECMessagingPushUserInfoData.swift
 //  Recommend
 //
 //  Created by Dmytrii Golovanov on 08.12.2021.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct RECMessagingUserInfoData: Decodable {
+struct RECMessagingPushUserInfoData: Decodable {
     let openURLString: String?
     let id: String?
     let recommendPushNotification: Bool?
