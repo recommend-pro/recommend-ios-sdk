@@ -556,7 +556,9 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
+				CLASSPREFIX = REC;
 				LastUpgradeCheck = 1340;
+				ORGANIZATIONNAME = Recommend;
 				TargetAttributes = {
 					529993852864CD86004ED2E1 = {
 						CreatedOnToolsVersion = 13.4.1;
@@ -833,7 +835,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = BA53S585CY;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -846,7 +848,7 @@
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.2.2;
-				PRODUCT_BUNDLE_IDENTIFIER = pro.recommend.Recommend;
+				PRODUCT_BUNDLE_IDENTIFIER = pro.recommend.sdk;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
@@ -862,7 +864,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = BA53S585CY;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -875,7 +877,7 @@
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.2.2;
-				PRODUCT_BUNDLE_IDENTIFIER = pro.recommend.Recommend;
+				PRODUCT_BUNDLE_IDENTIFIER = pro.recommend.sdk;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
