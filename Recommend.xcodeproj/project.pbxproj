@@ -7,11 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5288DA012864CFCD00153440 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 5288D9FC2864CFCD00153440 /* LICENSE */; };
-		5288DA022864CFCD00153440 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5288D9FD2864CFCD00153440 /* README.md */; };
-		5288DA032864CFCD00153440 /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = 5288D9FE2864CFCD00153440 /* CHANGELOG.md */; };
-		5288DA042864CFCD00153440 /* Recommend.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 5288D9FF2864CFCD00153440 /* Recommend.podspec */; };
-		5288DA052864CFCD00153440 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5288DA002864CFCD00153440 /* Package.swift */; };
 		529993FE2864CDB5004ED2E1 /* RECRecommendationPanelsFetchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993942864CDB5004ED2E1 /* RECRecommendationPanelsFetchModel.swift */; };
 		529993FF2864CDB5004ED2E1 /* RECRecommendationPanelRequestVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993962864CDB5004ED2E1 /* RECRecommendationPanelRequestVariations.swift */; };
 		529994002864CDB5004ED2E1 /* RECRecommendationPanelRequestContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993982864CDB5004ED2E1 /* RECRecommendationPanelRequestContext.swift */; };
@@ -617,10 +612,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5288DA022864CFCD00153440 /* README.md in Resources */,
-				5288DA032864CFCD00153440 /* CHANGELOG.md in Resources */,
-				5288DA012864CFCD00153440 /* LICENSE in Resources */,
-				5288DA042864CFCD00153440 /* Recommend.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -675,7 +666,6 @@
 				5299941F2864CDB5004ED2E1 /* RECActivity.swift in Sources */,
 				529994162864CDB5004ED2E1 /* RECMetrics.swift in Sources */,
 				5299943E2864CDB5004ED2E1 /* Bundle+RECDevice.swift in Sources */,
-				5288DA052864CFCD00153440 /* Package.swift in Sources */,
 				529994152864CDB5004ED2E1 /* RECMetric.swift in Sources */,
 				5299944F2864CDB5004ED2E1 /* RECNullEncodable.swift in Sources */,
 				529994272864CDB5004ED2E1 /* RECLogoutActivity.swift in Sources */,
