@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5288DA3E2864EB6500153440 /* RECOMMENDATIONS_GUIDE.md in Resources */ = {isa = PBXBuildFile; fileRef = 5288DA3B2864EB6500153440 /* RECOMMENDATIONS_GUIDE.md */; };
+		5288DA3F2864EB6500153440 /* MESSAGING_GUIDE.md in Resources */ = {isa = PBXBuildFile; fileRef = 5288DA3C2864EB6500153440 /* MESSAGING_GUIDE.md */; };
+		5288DA402864EB6500153440 /* DEVICE_TRACKING_GUIDE.md in Resources */ = {isa = PBXBuildFile; fileRef = 5288DA3D2864EB6500153440 /* DEVICE_TRACKING_GUIDE.md */; };
 		529993FE2864CDB5004ED2E1 /* RECRecommendationPanelsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993942864CDB5004ED2E1 /* RECRecommendationPanelsRequest.swift */; };
 		529993FF2864CDB5004ED2E1 /* RECRecommendationPanelRequestVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993962864CDB5004ED2E1 /* RECRecommendationPanelRequestVariations.swift */; };
 		529994002864CDB5004ED2E1 /* RECRecommendationPanelRequestContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993982864CDB5004ED2E1 /* RECRecommendationPanelRequestContext.swift */; };
@@ -98,6 +101,9 @@
 		5288D9FE2864CFCD00153440 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		5288D9FF2864CFCD00153440 /* Recommend.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Recommend.podspec; sourceTree = "<group>"; };
 		5288DA002864CFCD00153440 /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		5288DA3B2864EB6500153440 /* RECOMMENDATIONS_GUIDE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = RECOMMENDATIONS_GUIDE.md; path = GUIDES/RECOMMENDATIONS_GUIDE.md; sourceTree = "<group>"; };
+		5288DA3C2864EB6500153440 /* MESSAGING_GUIDE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = MESSAGING_GUIDE.md; path = GUIDES/MESSAGING_GUIDE.md; sourceTree = "<group>"; };
+		5288DA3D2864EB6500153440 /* DEVICE_TRACKING_GUIDE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = DEVICE_TRACKING_GUIDE.md; path = GUIDES/DEVICE_TRACKING_GUIDE.md; sourceTree = "<group>"; };
 		529993862864CD86004ED2E1 /* Recommend.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Recommend.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		529993942864CDB5004ED2E1 /* RECRecommendationPanelsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECRecommendationPanelsRequest.swift; sourceTree = "<group>"; };
 		529993962864CDB5004ED2E1 /* RECRecommendationPanelRequestVariations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECRecommendationPanelRequestVariations.swift; sourceTree = "<group>"; };
@@ -199,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				5288D9FE2864CFCD00153440 /* CHANGELOG.md */,
+				5288DA3A2864EB5600153440 /* Guides */,
 				5288D9FC2864CFCD00153440 /* LICENSE */,
 				5288DA002864CFCD00153440 /* Package.swift */,
 				5288D9FD2864CFCD00153440 /* README.md */,
@@ -222,6 +229,16 @@
 				529993A02864CDB5004ED2E1 /* RECRecommendationPreviewPanelRequest.swift */,
 			);
 			path = Request;
+			sourceTree = "<group>";
+		};
+		5288DA3A2864EB5600153440 /* Guides */ = {
+			isa = PBXGroup;
+			children = (
+				5288DA3D2864EB6500153440 /* DEVICE_TRACKING_GUIDE.md */,
+				5288DA3C2864EB6500153440 /* MESSAGING_GUIDE.md */,
+				5288DA3B2864EB6500153440 /* RECOMMENDATIONS_GUIDE.md */,
+			);
+			name = Guides;
 			sourceTree = "<group>";
 		};
 		5299937C2864CD86004ED2E1 = {
@@ -558,7 +575,7 @@
 				BuildIndependentTargetsInParallel = 1;
 				CLASSPREFIX = REC;
 				LastUpgradeCheck = 1340;
-				ORGANIZATIONNAME = Recommend;
+				ORGANIZATIONNAME = "Recommend OÜ";
 				TargetAttributes = {
 					529993852864CD86004ED2E1 = {
 						CreatedOnToolsVersion = 13.4.1;
@@ -591,6 +608,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5288DA402864EB6500153440 /* DEVICE_TRACKING_GUIDE.md in Resources */,
+				5288DA3F2864EB6500153440 /* MESSAGING_GUIDE.md in Resources */,
+				5288DA3E2864EB6500153440 /* RECOMMENDATIONS_GUIDE.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
