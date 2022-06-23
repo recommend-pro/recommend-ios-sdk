@@ -558,7 +558,7 @@
 				BuildIndependentTargetsInParallel = 1;
 				CLASSPREFIX = REC;
 				LastUpgradeCheck = 1340;
-				ORGANIZATIONNAME = Recommend;
+				ORGANIZATIONNAME = "Recommend OÜ";
 				TargetAttributes = {
 					529993852864CD86004ED2E1 = {
 						CreatedOnToolsVersion = 13.4.1;
