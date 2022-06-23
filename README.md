@@ -65,15 +65,15 @@ AppDelegate:
 
 ### Messaging
 
-Check the [Messaging Guide](https://github.com/recommend-pro/recommend-ios-sdk/blob/main/MESSAGING_GUIDE.md).
+Check the [Messaging Guide](https://github.com/recommend-pro/recommend-ios-sdk/blob/main/GUIDES/MESSAGING_GUIDE.md).
 
 ### Device Tracking
 
-Check the [Device Tracking Guide](https://github.com/recommend-pro/recommend-ios-sdk/blob/main/DEVICE_TRACKING_GUIDE.md).
+Check the [Device Tracking Guide](https://github.com/recommend-pro/recommend-ios-sdk/blob/main/GUIDES/DEVICE_TRACKING_GUIDE.md).
 
 ### Recommendations
 
-Check the [Recommendations Guide](https://github.com/recommend-pro/recommend-ios-sdk/blob/main/RECOMMENDATIONS_GUIDE.md).
+Check the [Recommendations Guide](https://github.com/recommend-pro/recommend-ios-sdk/blob/main/GUIDES/RECOMMENDATIONS_GUIDE.md).
 
 ## License
 
