@@ -1,5 +1,5 @@
 //
-//  RECRecommendationPanelsFetchContentType.swift
+//  RECRecommendationPanelsRequestContentType.swift
 //  Recommend
 //
 //  Created by Dmytrii Golovanov on 08.12.2021.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum RECRecommendationPanelsFetchContentType: String, Encodable {
+public enum RECRecommendationPanelsRequestContentType: String, Encodable {
     case json
     case html
 }

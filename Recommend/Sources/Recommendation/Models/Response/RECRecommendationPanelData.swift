@@ -1,5 +1,5 @@
 //
-//  RECRecommendationPanelDetails.swift
+//  RECRecommendationPanelData.swift
 //  Recommend
 //
 //  Created by Dmytrii Golovanov on 07.12.2021.
@@ -8,10 +8,10 @@
 
 import Foundation
 
-public struct RECRecommendationPanelDetails: Decodable {
+public struct RECRecommendationPanelData: Decodable {
     public let locale: String
     public let panelId: String?
-    public let products: [RECRecommendationProduct]
+    public let products: [RECRecommendationPanelProduct]
     public let requestCountry: String?
     
     // MARK: Coding Keys

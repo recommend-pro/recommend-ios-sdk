@@ -1,5 +1,5 @@
 //
-//  RECRecommendationProduct.swift
+//  RECRecommendationPanelProduct.swift
 //  Recommend
 //
 //  Created by Dmytrii Golovanov on 08.12.2021.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct RECRecommendationProduct: Decodable {
+public struct RECRecommendationPanelProduct: Decodable {
     public let name: String
     public let trimedName: String?
     public let sku: String

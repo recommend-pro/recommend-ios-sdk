@@ -9,12 +9,10 @@
 import Foundation
 
 public struct RECRecommendationPanel: Decodable {
-    public typealias Details = RECRecommendationPanelDetails
-    
     public let panelId: String
     public let slotId: String?
     public let html: String?
-    public let data: Details?
+    public let data: RECRecommendationPanelData?
     
     // MARK: Coding Keys
     

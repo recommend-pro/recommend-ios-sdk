@@ -24,7 +24,7 @@ public final class RECRecommendation {
     // MARK: Fetch Recommendation Panels
     
     public func fetchPanels(
-        with model: RECRecommendationPanelsFetchModel,
+        with model: RECRecommendationPanelsRequest,
         completion: @escaping (Result<[RECRecommendationPanel], Error>) -> Void
     ) {
         apiService.fetchPanels(

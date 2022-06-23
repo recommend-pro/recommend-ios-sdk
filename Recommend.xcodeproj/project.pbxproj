@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		529993FE2864CDB5004ED2E1 /* RECRecommendationPanelsFetchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993942864CDB5004ED2E1 /* RECRecommendationPanelsFetchModel.swift */; };
+		529993FE2864CDB5004ED2E1 /* RECRecommendationPanelsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993942864CDB5004ED2E1 /* RECRecommendationPanelsRequest.swift */; };
 		529993FF2864CDB5004ED2E1 /* RECRecommendationPanelRequestVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993962864CDB5004ED2E1 /* RECRecommendationPanelRequestVariations.swift */; };
 		529994002864CDB5004ED2E1 /* RECRecommendationPanelRequestContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993982864CDB5004ED2E1 /* RECRecommendationPanelRequestContext.swift */; };
 		529994012864CDB5004ED2E1 /* RECRecommendationPanelRequestCurrentContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993992864CDB5004ED2E1 /* RECRecommendationPanelRequestCurrentContext.swift */; };
@@ -15,11 +15,11 @@
 		529994032864CDB5004ED2E1 /* RECRecommendationPanelRequestFilterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5299939C2864CDB5004ED2E1 /* RECRecommendationPanelRequestFilterType.swift */; };
 		529994042864CDB5004ED2E1 /* RECRecommendationPanelRequestFilterOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5299939D2864CDB5004ED2E1 /* RECRecommendationPanelRequestFilterOperator.swift */; };
 		529994052864CDB5004ED2E1 /* RECRecommendationPanelRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5299939E2864CDB5004ED2E1 /* RECRecommendationPanelRequest.swift */; };
-		529994062864CDB5004ED2E1 /* RECRecommendationPanelsFetchContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5299939F2864CDB5004ED2E1 /* RECRecommendationPanelsFetchContentType.swift */; };
-		529994072864CDB5004ED2E1 /* RECRecommendationPanelsFetchPreviewPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993A02864CDB5004ED2E1 /* RECRecommendationPanelsFetchPreviewPanel.swift */; };
+		529994062864CDB5004ED2E1 /* RECRecommendationPanelsRequestContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5299939F2864CDB5004ED2E1 /* RECRecommendationPanelsRequestContentType.swift */; };
+		529994072864CDB5004ED2E1 /* RECRecommendationPreviewPanelRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993A02864CDB5004ED2E1 /* RECRecommendationPreviewPanelRequest.swift */; };
 		529994082864CDB5004ED2E1 /* RECRecommendationPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993A12864CDB5004ED2E1 /* RECRecommendationPanel.swift */; };
-		529994092864CDB5004ED2E1 /* RECRecommendationProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993A22864CDB5004ED2E1 /* RECRecommendationProduct.swift */; };
-		5299940A2864CDB5004ED2E1 /* RECRecommendationPanelDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993A32864CDB5004ED2E1 /* RECRecommendationPanelDetails.swift */; };
+		529994092864CDB5004ED2E1 /* RECRecommendationPanelProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993A22864CDB5004ED2E1 /* RECRecommendationPanelProduct.swift */; };
+		5299940A2864CDB5004ED2E1 /* RECRecommendationPanelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993A32864CDB5004ED2E1 /* RECRecommendationPanelData.swift */; };
 		5299940B2864CDB5004ED2E1 /* RECRecommendationAPIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993A52864CDB5004ED2E1 /* RECRecommendationAPIEndpoints.swift */; };
 		5299940C2864CDB5004ED2E1 /* RECRecommendationAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993A62864CDB5004ED2E1 /* RECRecommendationAPIService.swift */; };
 		5299940D2864CDB5004ED2E1 /* RECRecommendation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993A72864CDB5004ED2E1 /* RECRecommendation.swift */; };
@@ -99,7 +99,7 @@
 		5288D9FF2864CFCD00153440 /* Recommend.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Recommend.podspec; sourceTree = "<group>"; };
 		5288DA002864CFCD00153440 /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		529993862864CD86004ED2E1 /* Recommend.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Recommend.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		529993942864CDB5004ED2E1 /* RECRecommendationPanelsFetchModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECRecommendationPanelsFetchModel.swift; sourceTree = "<group>"; };
+		529993942864CDB5004ED2E1 /* RECRecommendationPanelsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECRecommendationPanelsRequest.swift; sourceTree = "<group>"; };
 		529993962864CDB5004ED2E1 /* RECRecommendationPanelRequestVariations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECRecommendationPanelRequestVariations.swift; sourceTree = "<group>"; };
 		529993982864CDB5004ED2E1 /* RECRecommendationPanelRequestContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECRecommendationPanelRequestContext.swift; sourceTree = "<group>"; };
 		529993992864CDB5004ED2E1 /* RECRecommendationPanelRequestCurrentContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECRecommendationPanelRequestCurrentContext.swift; sourceTree = "<group>"; };
@@ -107,11 +107,11 @@
 		5299939C2864CDB5004ED2E1 /* RECRecommendationPanelRequestFilterType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECRecommendationPanelRequestFilterType.swift; sourceTree = "<group>"; };
 		5299939D2864CDB5004ED2E1 /* RECRecommendationPanelRequestFilterOperator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECRecommendationPanelRequestFilterOperator.swift; sourceTree = "<group>"; };
 		5299939E2864CDB5004ED2E1 /* RECRecommendationPanelRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECRecommendationPanelRequest.swift; sourceTree = "<group>"; };
-		5299939F2864CDB5004ED2E1 /* RECRecommendationPanelsFetchContentType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECRecommendationPanelsFetchContentType.swift; sourceTree = "<group>"; };
-		529993A02864CDB5004ED2E1 /* RECRecommendationPanelsFetchPreviewPanel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECRecommendationPanelsFetchPreviewPanel.swift; sourceTree = "<group>"; };
+		5299939F2864CDB5004ED2E1 /* RECRecommendationPanelsRequestContentType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECRecommendationPanelsRequestContentType.swift; sourceTree = "<group>"; };
+		529993A02864CDB5004ED2E1 /* RECRecommendationPreviewPanelRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECRecommendationPreviewPanelRequest.swift; sourceTree = "<group>"; };
 		529993A12864CDB5004ED2E1 /* RECRecommendationPanel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECRecommendationPanel.swift; sourceTree = "<group>"; };
-		529993A22864CDB5004ED2E1 /* RECRecommendationProduct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECRecommendationProduct.swift; sourceTree = "<group>"; };
-		529993A32864CDB5004ED2E1 /* RECRecommendationPanelDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECRecommendationPanelDetails.swift; sourceTree = "<group>"; };
+		529993A22864CDB5004ED2E1 /* RECRecommendationPanelProduct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECRecommendationPanelProduct.swift; sourceTree = "<group>"; };
+		529993A32864CDB5004ED2E1 /* RECRecommendationPanelData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECRecommendationPanelData.swift; sourceTree = "<group>"; };
 		529993A52864CDB5004ED2E1 /* RECRecommendationAPIEndpoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECRecommendationAPIEndpoints.swift; sourceTree = "<group>"; };
 		529993A62864CDB5004ED2E1 /* RECRecommendationAPIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECRecommendationAPIService.swift; sourceTree = "<group>"; };
 		529993A72864CDB5004ED2E1 /* RECRecommendation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECRecommendation.swift; sourceTree = "<group>"; };
@@ -207,6 +207,23 @@
 			name = Metadata;
 			sourceTree = "<group>";
 		};
+		5288DA082864DBC600153440 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				5299939E2864CDB5004ED2E1 /* RECRecommendationPanelRequest.swift */,
+				529993982864CDB5004ED2E1 /* RECRecommendationPanelRequestContext.swift */,
+				529993992864CDB5004ED2E1 /* RECRecommendationPanelRequestCurrentContext.swift */,
+				5299939B2864CDB5004ED2E1 /* RECRecommendationPanelRequestFilter.swift */,
+				5299939D2864CDB5004ED2E1 /* RECRecommendationPanelRequestFilterOperator.swift */,
+				5299939C2864CDB5004ED2E1 /* RECRecommendationPanelRequestFilterType.swift */,
+				529993962864CDB5004ED2E1 /* RECRecommendationPanelRequestVariations.swift */,
+				529993942864CDB5004ED2E1 /* RECRecommendationPanelsRequest.swift */,
+				5299939F2864CDB5004ED2E1 /* RECRecommendationPanelsRequestContentType.swift */,
+				529993A02864CDB5004ED2E1 /* RECRecommendationPreviewPanelRequest.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
 		5299937C2864CD86004ED2E1 = {
 			isa = PBXGroup;
 			children = (
@@ -263,53 +280,20 @@
 		529993922864CDB5004ED2E1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				529993932864CDB5004ED2E1 /* PanelsFetchModel */,
-				529993A12864CDB5004ED2E1 /* RECRecommendationPanel.swift */,
-				529993A32864CDB5004ED2E1 /* RECRecommendationPanelDetails.swift */,
-				529993A22864CDB5004ED2E1 /* RECRecommendationProduct.swift */,
+				5288DA082864DBC600153440 /* Request */,
+				529993932864CDB5004ED2E1 /* Response */,
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		529993932864CDB5004ED2E1 /* PanelsFetchModel */ = {
+		529993932864CDB5004ED2E1 /* Response */ = {
 			isa = PBXGroup;
 			children = (
-				529993952864CDB5004ED2E1 /* PanelRequest */,
-				5299939F2864CDB5004ED2E1 /* RECRecommendationPanelsFetchContentType.swift */,
-				529993942864CDB5004ED2E1 /* RECRecommendationPanelsFetchModel.swift */,
-				529993A02864CDB5004ED2E1 /* RECRecommendationPanelsFetchPreviewPanel.swift */,
+				529993A12864CDB5004ED2E1 /* RECRecommendationPanel.swift */,
+				529993A32864CDB5004ED2E1 /* RECRecommendationPanelData.swift */,
+				529993A22864CDB5004ED2E1 /* RECRecommendationPanelProduct.swift */,
 			);
-			path = PanelsFetchModel;
-			sourceTree = "<group>";
-		};
-		529993952864CDB5004ED2E1 /* PanelRequest */ = {
-			isa = PBXGroup;
-			children = (
-				529993972864CDB5004ED2E1 /* Context */,
-				5299939A2864CDB5004ED2E1 /* Filter */,
-				5299939E2864CDB5004ED2E1 /* RECRecommendationPanelRequest.swift */,
-				529993962864CDB5004ED2E1 /* RECRecommendationPanelRequestVariations.swift */,
-			);
-			path = PanelRequest;
-			sourceTree = "<group>";
-		};
-		529993972864CDB5004ED2E1 /* Context */ = {
-			isa = PBXGroup;
-			children = (
-				529993982864CDB5004ED2E1 /* RECRecommendationPanelRequestContext.swift */,
-				529993992864CDB5004ED2E1 /* RECRecommendationPanelRequestCurrentContext.swift */,
-			);
-			path = Context;
-			sourceTree = "<group>";
-		};
-		5299939A2864CDB5004ED2E1 /* Filter */ = {
-			isa = PBXGroup;
-			children = (
-				5299939B2864CDB5004ED2E1 /* RECRecommendationPanelRequestFilter.swift */,
-				5299939D2864CDB5004ED2E1 /* RECRecommendationPanelRequestFilterOperator.swift */,
-				5299939C2864CDB5004ED2E1 /* RECRecommendationPanelRequestFilterType.swift */,
-			);
-			path = Filter;
+			path = Response;
 			sourceTree = "<group>";
 		};
 		529993A42864CDB5004ED2E1 /* API */ = {
@@ -658,7 +642,7 @@
 				529994372864CDB5004ED2E1 /* RECProductRatedActivity.swift in Sources */,
 				529994192864CDB5004ED2E1 /* RECAPIErrorResponse.swift in Sources */,
 				529994012864CDB5004ED2E1 /* RECRecommendationPanelRequestCurrentContext.swift in Sources */,
-				529994062864CDB5004ED2E1 /* RECRecommendationPanelsFetchContentType.swift in Sources */,
+				529994062864CDB5004ED2E1 /* RECRecommendationPanelsRequestContentType.swift in Sources */,
 				529994472864CDB5004ED2E1 /* RECMessagingPushUserInfo.swift in Sources */,
 				5299943C2864CDB5004ED2E1 /* RECCartUpdateActivity.swift in Sources */,
 				529994302864CDB5004ED2E1 /* RECCheckoutActivity.swift in Sources */,
@@ -680,8 +664,8 @@
 				529994262864CDB5004ED2E1 /* RECElasticListActivity.swift in Sources */,
 				529994412864CDB5004ED2E1 /* RECDevice.swift in Sources */,
 				529994422864CDB5004ED2E1 /* RECMessagingPushEventRequest.swift in Sources */,
-				5299940A2864CDB5004ED2E1 /* RECRecommendationPanelDetails.swift in Sources */,
-				529994072864CDB5004ED2E1 /* RECRecommendationPanelsFetchPreviewPanel.swift in Sources */,
+				5299940A2864CDB5004ED2E1 /* RECRecommendationPanelData.swift in Sources */,
+				529994072864CDB5004ED2E1 /* RECRecommendationPreviewPanelRequest.swift in Sources */,
 				529994332864CDB5004ED2E1 /* RECRemoveFromWishlistActivity.swift in Sources */,
 				529994032864CDB5004ED2E1 /* RECRecommendationPanelRequestFilterType.swift in Sources */,
 				5299940F2864CDB5004ED2E1 /* RECCoreError.swift in Sources */,
@@ -697,12 +681,12 @@
 				5299940E2864CDB5004ED2E1 /* RECCore.swift in Sources */,
 				529994182864CDB5004ED2E1 /* RECAPISuccessResponse.swift in Sources */,
 				529994362864CDB5004ED2E1 /* RECCustomEventActivity.swift in Sources */,
-				529994092864CDB5004ED2E1 /* RECRecommendationProduct.swift in Sources */,
+				529994092864CDB5004ED2E1 /* RECRecommendationPanelProduct.swift in Sources */,
 				529994202864CDB5004ED2E1 /* RECDeviceActivity.swift in Sources */,
 				5299942F2864CDB5004ED2E1 /* RECProductClickActivity.swift in Sources */,
 				529993FF2864CDB5004ED2E1 /* RECRecommendationPanelRequestVariations.swift in Sources */,
 				5299942E2864CDB5004ED2E1 /* RECPageViewActivity.swift in Sources */,
-				529993FE2864CDB5004ED2E1 /* RECRecommendationPanelsFetchModel.swift in Sources */,
+				529993FE2864CDB5004ED2E1 /* RECRecommendationPanelsRequest.swift in Sources */,
 				529994322864CDB5004ED2E1 /* RECPanelViewActivity.swift in Sources */,
 				529994492864CDB5004ED2E1 /* RECMessagingPushToken.swift in Sources */,
 				529994432864CDB5004ED2E1 /* RECMessagingPushEvent.swift in Sources */,

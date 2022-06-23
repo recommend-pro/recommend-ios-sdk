@@ -1,5 +1,5 @@
 //
-//  RECRecommendationPanelsFetchModel.swift
+//  RECRecommendationPanelsRequest.swift
 //  Recommend
 //
 //  Created by Dmytrii Golovanov on 08.12.2021.
@@ -8,10 +8,10 @@
 
 import Foundation
 
-public struct RECRecommendationPanelsFetchModel: Encodable {
-    public typealias ContentType = RECRecommendationPanelsFetchContentType
+public struct RECRecommendationPanelsRequest: Encodable {
+    public typealias ContentType = RECRecommendationPanelsRequestContentType
     public typealias Panel = RECRecommendationPanelRequest
-    public typealias PreviewPanel = RECRecommendationPanelsFetchPreviewPanel
+    public typealias PreviewPanel = RECRecommendationPreviewPanelRequest
     
     public let deviceId: String
     public let customerIdHash: String?
