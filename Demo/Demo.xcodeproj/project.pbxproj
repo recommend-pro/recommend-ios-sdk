@@ -12,6 +12,7 @@
 		5288DA252864E6D200153440 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5288DA232864E6D200153440 /* Main.storyboard */; };
 		5288DA272864E6D400153440 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5288DA262864E6D400153440 /* Assets.xcassets */; };
 		5288DA2A2864E6D400153440 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5288DA282864E6D400153440 /* LaunchScreen.storyboard */; };
+		5288DA392864E89900153440 /* Recommend in Frameworks */ = {isa = PBXBuildFile; productRef = 5288DA382864E89900153440 /* Recommend */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5288DA392864E89900153440 /* Recommend in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,6 +130,9 @@
 			dependencies = (
 			);
 			name = Demo;
+			packageProductDependencies = (
+				5288DA382864E89900153440 /* Recommend */,
+			);
 			productName = Demo;
 			productReference = 5288DA1A2864E6D200153440 /* Demo.app */;
 			productType = "com.apple.product-type.application";
@@ -157,6 +162,9 @@
 				Base,
 			);
 			mainGroup = 5288DA112864E6D200153440;
+			packageReferences = (
+				5288DA372864E89900153440 /* XCRemoteSwiftPackageReference "recommend-ios-sdk" */,
+			);
 			productRefGroup = 5288DA1B2864E6D200153440 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -401,6 +409,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5288DA372864E89900153440 /* XCRemoteSwiftPackageReference "recommend-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/recommend-pro/recommend-ios-sdk";
+			requirement = {
+				kind = exactVersion;
+				version = 0.2.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5288DA382864E89900153440 /* Recommend */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5288DA372864E89900153440 /* XCRemoteSwiftPackageReference "recommend-ios-sdk" */;
+			productName = Recommend;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5288DA122864E6D200153440 /* Project object */;
 }
