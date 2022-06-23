@@ -461,8 +461,8 @@
 				529993F62864CDB5004ED2E1 /* Extensions */,
 				529993E92864CDB5004ED2E1 /* Models */,
 				529993F52864CDB5004ED2E1 /* RECMessaging.swift */,
-				529993FB2864CDB5004ED2E1 /* RECMessagingSubscriptionManager.swift */,
 				52DD9F21286510B200471CEA /* RECMessaging+Funcs.swift */,
+				529993FB2864CDB5004ED2E1 /* RECMessagingSubscriptionManager.swift */,
 			);
 			path = Messaging;
 			sourceTree = "<group>";
@@ -473,21 +473,11 @@
 				529993F22864CDB5004ED2E1 /* RECMessagingPushEvent.swift */,
 				529993EC2864CDB5004ED2E1 /* RECMessagingPushEventRequest.swift */,
 				529993F42864CDB5004ED2E1 /* RECMessagingPushToken.swift */,
-				529993ED2864CDB5004ED2E1 /* Subscription */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		529993ED2864CDB5004ED2E1 /* Subscription */ = {
-			isa = PBXGroup;
-			children = (
 				529993EF2864CDB5004ED2E1 /* RECMessagingPushSubscriptionSettings.swift */,
 				529993F02864CDB5004ED2E1 /* RECMessagingPushSubscriptionStatus.swift */,
 				529993EE2864CDB5004ED2E1 /* RECMessagingPushSubscriptionRequest.swift */,
 			);
-			path = Subscription;
-			sourceTree = "<group>";
-		};
+			path = Models;
 			sourceTree = "<group>";
 		};
 		529993F62864CDB5004ED2E1 /* Extensions */ = {

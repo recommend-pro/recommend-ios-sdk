@@ -28,4 +28,3 @@ struct RECMessagingPushToken: Encodable {
         return deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
     }
 }
-
