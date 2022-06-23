@@ -113,10 +113,6 @@ public final class Recommend: NSObject {
     
     // MARK: Messaging
     
-    public func remoteNotificationOpenURL(_ userInfo: [AnyHashable: Any]) -> URL? {
-        return messaging.remoteNotificationOpenURL(userInfo)
-    }
-    
     public func setDeviceToken(_ deviceToken: Data) {
         messaging.setDeviceToken(deviceToken)
     }

@@ -11,8 +11,9 @@ import Foundation
 public func isRecommendNotification(
     _ userInfo: [AnyHashable: Any]
 ) -> Bool {
-    guard let pushUserInfo =  RECMessagingPushUserInfo(from: userInfo) else {
-        return false
-    }
-    return pushUserInfo.isRecommendPushNotification
+    RECMessagingPushEvent(userInfo: userInfo) != nil
+}
+
+public func recommendOpenURL(fromNotification userInfo: [AnyHashable: Any]) -> URL? {
+    RECMessagingPushEvent(userInfo: userInfo)?.openURL
 }

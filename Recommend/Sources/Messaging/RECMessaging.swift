@@ -42,12 +42,6 @@ public final class RECMessaging: NSObject {
             userDefaults: self.userDefaults)
     }
     
-    // MARK: Notification User Info
-    
-    public func remoteNotificationOpenURL(_ userInfo: [AnyHashable: Any]) -> URL? {
-        return RECMessagingPushUserInfo(from: userInfo)?.data?.openURL
-    }
-    
     // MARK: Track Push Notification Event
     
     private func trackPushNotificationEvent(_ event: RECMessagingPushEvent) {
