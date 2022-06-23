@@ -1,0 +1,943 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5288DA012864CFCD00153440 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 5288D9FC2864CFCD00153440 /* LICENSE */; };
+		5288DA022864CFCD00153440 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5288D9FD2864CFCD00153440 /* README.md */; };
+		5288DA032864CFCD00153440 /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = 5288D9FE2864CFCD00153440 /* CHANGELOG.md */; };
+		5288DA042864CFCD00153440 /* Recommend.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 5288D9FF2864CFCD00153440 /* Recommend.podspec */; };
+		5288DA052864CFCD00153440 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5288DA002864CFCD00153440 /* Package.swift */; };
+		529993FE2864CDB5004ED2E1 /* RECRecommendationPanelsFetchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993942864CDB5004ED2E1 /* RECRecommendationPanelsFetchModel.swift */; };
+		529993FF2864CDB5004ED2E1 /* RECRecommendationPanelRequestVariations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993962864CDB5004ED2E1 /* RECRecommendationPanelRequestVariations.swift */; };
+		529994002864CDB5004ED2E1 /* RECRecommendationPanelRequestContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993982864CDB5004ED2E1 /* RECRecommendationPanelRequestContext.swift */; };
+		529994012864CDB5004ED2E1 /* RECRecommendationPanelRequestCurrentContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993992864CDB5004ED2E1 /* RECRecommendationPanelRequestCurrentContext.swift */; };
+		529994022864CDB5004ED2E1 /* RECRecommendationPanelRequestFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5299939B2864CDB5004ED2E1 /* RECRecommendationPanelRequestFilter.swift */; };
+		529994032864CDB5004ED2E1 /* RECRecommendationPanelRequestFilterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5299939C2864CDB5004ED2E1 /* RECRecommendationPanelRequestFilterType.swift */; };
+		529994042864CDB5004ED2E1 /* RECRecommendationPanelRequestFilterOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5299939D2864CDB5004ED2E1 /* RECRecommendationPanelRequestFilterOperator.swift */; };
+		529994052864CDB5004ED2E1 /* RECRecommendationPanelRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5299939E2864CDB5004ED2E1 /* RECRecommendationPanelRequest.swift */; };
+		529994062864CDB5004ED2E1 /* RECRecommendationPanelsFetchContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5299939F2864CDB5004ED2E1 /* RECRecommendationPanelsFetchContentType.swift */; };
+		529994072864CDB5004ED2E1 /* RECRecommendationPanelsFetchPreviewPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993A02864CDB5004ED2E1 /* RECRecommendationPanelsFetchPreviewPanel.swift */; };
+		529994082864CDB5004ED2E1 /* RECRecommendationPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993A12864CDB5004ED2E1 /* RECRecommendationPanel.swift */; };
+		529994092864CDB5004ED2E1 /* RECRecommendationProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993A22864CDB5004ED2E1 /* RECRecommendationProduct.swift */; };
+		5299940A2864CDB5004ED2E1 /* RECRecommendationPanelDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993A32864CDB5004ED2E1 /* RECRecommendationPanelDetails.swift */; };
+		5299940B2864CDB5004ED2E1 /* RECRecommendationAPIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993A52864CDB5004ED2E1 /* RECRecommendationAPIEndpoints.swift */; };
+		5299940C2864CDB5004ED2E1 /* RECRecommendationAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993A62864CDB5004ED2E1 /* RECRecommendationAPIService.swift */; };
+		5299940D2864CDB5004ED2E1 /* RECRecommendation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993A72864CDB5004ED2E1 /* RECRecommendation.swift */; };
+		5299940E2864CDB5004ED2E1 /* RECCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993A92864CDB5004ED2E1 /* RECCore.swift */; };
+		5299940F2864CDB5004ED2E1 /* RECCoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993AA2864CDB5004ED2E1 /* RECCoreError.swift */; };
+		529994102864CDB5004ED2E1 /* RECAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993AC2864CDB5004ED2E1 /* RECAttribute.swift */; };
+		529994112864CDB5004ED2E1 /* Recommend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993AD2864CDB5004ED2E1 /* Recommend.swift */; };
+		529994122864CDB5004ED2E1 /* RECConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993AF2864CDB5004ED2E1 /* RECConfig.swift */; };
+		529994132864CDB5004ED2E1 /* Recommend.h in Headers */ = {isa = PBXBuildFile; fileRef = 529993B02864CDB5004ED2E1 /* Recommend.h */; };
+		529994142864CDB5004ED2E1 /* RECPriceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993B22864CDB5004ED2E1 /* RECPriceList.swift */; };
+		529994152864CDB5004ED2E1 /* RECMetric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993B32864CDB5004ED2E1 /* RECMetric.swift */; };
+		529994162864CDB5004ED2E1 /* RECMetrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993B42864CDB5004ED2E1 /* RECMetrics.swift */; };
+		529994172864CDB5004ED2E1 /* RECAPIErrorResponseCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993B72864CDB5004ED2E1 /* RECAPIErrorResponseCode.swift */; };
+		529994182864CDB5004ED2E1 /* RECAPISuccessResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993B82864CDB5004ED2E1 /* RECAPISuccessResponse.swift */; };
+		529994192864CDB5004ED2E1 /* RECAPIErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993B92864CDB5004ED2E1 /* RECAPIErrorResponse.swift */; };
+		5299941A2864CDB5004ED2E1 /* RECAPIDataSuccessResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993BA2864CDB5004ED2E1 /* RECAPIDataSuccessResponse.swift */; };
+		5299941B2864CDB5004ED2E1 /* RECAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993BB2864CDB5004ED2E1 /* RECAPIClient.swift */; };
+		5299941C2864CDB5004ED2E1 /* RECAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993BC2864CDB5004ED2E1 /* RECAPIRequest.swift */; };
+		5299941D2864CDB5004ED2E1 /* RECAPIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993BD2864CDB5004ED2E1 /* RECAPIEndpoint.swift */; };
+		5299941E2864CDB5004ED2E1 /* RECAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993BE2864CDB5004ED2E1 /* RECAPIError.swift */; };
+		5299941F2864CDB5004ED2E1 /* RECActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993C12864CDB5004ED2E1 /* RECActivity.swift */; };
+		529994202864CDB5004ED2E1 /* RECDeviceActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993C22864CDB5004ED2E1 /* RECDeviceActivity.swift */; };
+		529994212864CDB5004ED2E1 /* RECActivitySearchTerm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993C42864CDB5004ED2E1 /* RECActivitySearchTerm.swift */; };
+		529994222864CDB5004ED2E1 /* RECActivityProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993C52864CDB5004ED2E1 /* RECActivityProduct.swift */; };
+		529994232864CDB5004ED2E1 /* RECDeviceLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993C62864CDB5004ED2E1 /* RECDeviceLocation.swift */; };
+		529994242864CDB5004ED2E1 /* RECDeviceTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993C72864CDB5004ED2E1 /* RECDeviceTime.swift */; };
+		529994252864CDB5004ED2E1 /* RECSubscribeActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993C92864CDB5004ED2E1 /* RECSubscribeActivity.swift */; };
+		529994262864CDB5004ED2E1 /* RECElasticListActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993CA2864CDB5004ED2E1 /* RECElasticListActivity.swift */; };
+		529994272864CDB5004ED2E1 /* RECLogoutActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993CB2864CDB5004ED2E1 /* RECLogoutActivity.swift */; };
+		529994282864CDB5004ED2E1 /* RECSaleActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993CC2864CDB5004ED2E1 /* RECSaleActivity.swift */; };
+		529994292864CDB5004ED2E1 /* RECListViewActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993CD2864CDB5004ED2E1 /* RECListViewActivity.swift */; };
+		5299942A2864CDB5004ED2E1 /* RECSearchViewActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993CE2864CDB5004ED2E1 /* RECSearchViewActivity.swift */; };
+		5299942B2864CDB5004ED2E1 /* RECLoginActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993CF2864CDB5004ED2E1 /* RECLoginActivity.swift */; };
+		5299942C2864CDB5004ED2E1 /* RECAddToCartActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993D02864CDB5004ED2E1 /* RECAddToCartActivity.swift */; };
+		5299942D2864CDB5004ED2E1 /* RECWishlistUpdateActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993D12864CDB5004ED2E1 /* RECWishlistUpdateActivity.swift */; };
+		5299942E2864CDB5004ED2E1 /* RECPageViewActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993D22864CDB5004ED2E1 /* RECPageViewActivity.swift */; };
+		5299942F2864CDB5004ED2E1 /* RECProductClickActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993D32864CDB5004ED2E1 /* RECProductClickActivity.swift */; };
+		529994302864CDB5004ED2E1 /* RECCheckoutActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993D42864CDB5004ED2E1 /* RECCheckoutActivity.swift */; };
+		529994312864CDB5004ED2E1 /* RECAddToWishlistActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993D52864CDB5004ED2E1 /* RECAddToWishlistActivity.swift */; };
+		529994322864CDB5004ED2E1 /* RECPanelViewActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993D62864CDB5004ED2E1 /* RECPanelViewActivity.swift */; };
+		529994332864CDB5004ED2E1 /* RECRemoveFromWishlistActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993D72864CDB5004ED2E1 /* RECRemoveFromWishlistActivity.swift */; };
+		529994342864CDB5004ED2E1 /* RECProductViewActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993D82864CDB5004ED2E1 /* RECProductViewActivity.swift */; };
+		529994352864CDB5004ED2E1 /* RECLinkDeviceActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993D92864CDB5004ED2E1 /* RECLinkDeviceActivity.swift */; };
+		529994362864CDB5004ED2E1 /* RECCustomEventActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993DA2864CDB5004ED2E1 /* RECCustomEventActivity.swift */; };
+		529994372864CDB5004ED2E1 /* RECProductRatedActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993DB2864CDB5004ED2E1 /* RECProductRatedActivity.swift */; };
+		529994382864CDB5004ED2E1 /* RECRemoveFromCartActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993DC2864CDB5004ED2E1 /* RECRemoveFromCartActivity.swift */; };
+		529994392864CDB5004ED2E1 /* RECOpenAppActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993DD2864CDB5004ED2E1 /* RECOpenAppActivity.swift */; };
+		5299943A2864CDB5004ED2E1 /* RECCustomerRegistationActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993DE2864CDB5004ED2E1 /* RECCustomerRegistationActivity.swift */; };
+		5299943B2864CDB5004ED2E1 /* RECUpdateDeviceActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993DF2864CDB5004ED2E1 /* RECUpdateDeviceActivity.swift */; };
+		5299943C2864CDB5004ED2E1 /* RECCartUpdateActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993E02864CDB5004ED2E1 /* RECCartUpdateActivity.swift */; };
+		5299943D2864CDB5004ED2E1 /* RECDeviceTimeZone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993E12864CDB5004ED2E1 /* RECDeviceTimeZone.swift */; };
+		5299943E2864CDB5004ED2E1 /* Bundle+RECDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993E32864CDB5004ED2E1 /* Bundle+RECDevice.swift */; };
+		5299943F2864CDB5004ED2E1 /* RECDeviceAPIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993E52864CDB5004ED2E1 /* RECDeviceAPIEndpoints.swift */; };
+		529994402864CDB5004ED2E1 /* RECDeviceAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993E62864CDB5004ED2E1 /* RECDeviceAPIService.swift */; };
+		529994412864CDB5004ED2E1 /* RECDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993E72864CDB5004ED2E1 /* RECDevice.swift */; };
+		529994422864CDB5004ED2E1 /* RECMessagingPushNotificationEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993EB2864CDB5004ED2E1 /* RECMessagingPushNotificationEvent.swift */; };
+		529994432864CDB5004ED2E1 /* RECMessagingPushNotificationEventData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993EC2864CDB5004ED2E1 /* RECMessagingPushNotificationEventData.swift */; };
+		529994442864CDB5004ED2E1 /* RECMessagingSubscriptionUpdateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993EE2864CDB5004ED2E1 /* RECMessagingSubscriptionUpdateModel.swift */; };
+		529994452864CDB5004ED2E1 /* RECMessagingSubscriptionSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993EF2864CDB5004ED2E1 /* RECMessagingSubscriptionSettings.swift */; };
+		529994462864CDB5004ED2E1 /* RECMessagingSubscriptionStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993F02864CDB5004ED2E1 /* RECMessagingSubscriptionStatus.swift */; };
+		529994472864CDB5004ED2E1 /* RECMessagingUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993F22864CDB5004ED2E1 /* RECMessagingUserInfo.swift */; };
+		529994482864CDB5004ED2E1 /* RECMessagingUserInfoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993F32864CDB5004ED2E1 /* RECMessagingUserInfoData.swift */; };
+		529994492864CDB5004ED2E1 /* RECMessagingToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993F42864CDB5004ED2E1 /* RECMessagingToken.swift */; };
+		5299944A2864CDB5004ED2E1 /* RECMessaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993F52864CDB5004ED2E1 /* RECMessaging.swift */; };
+		5299944B2864CDB5004ED2E1 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993F72864CDB5004ED2E1 /* Date+Extensions.swift */; };
+		5299944C2864CDB5004ED2E1 /* RECMessagingAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993F92864CDB5004ED2E1 /* RECMessagingAPIService.swift */; };
+		5299944D2864CDB5004ED2E1 /* RECMessagingAPIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993FA2864CDB5004ED2E1 /* RECMessagingAPIEndpoints.swift */; };
+		5299944E2864CDB5004ED2E1 /* RECMessagingSubscriptionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993FB2864CDB5004ED2E1 /* RECMessagingSubscriptionManager.swift */; };
+		5299944F2864CDB5004ED2E1 /* RECNullEncodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529993FD2864CDB5004ED2E1 /* RECNullEncodable.swift */; };
+		529994542864CEEF004ED2E1 /* WebKitUserAgent in Frameworks */ = {isa = PBXBuildFile; productRef = 529994532864CEEF004ED2E1 /* WebKitUserAgent */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5288D9FC2864CFCD00153440 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		5288D9FD2864CFCD00153440 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		5288D9FE2864CFCD00153440 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
+		5288D9FF2864CFCD00153440 /* Recommend.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Recommend.podspec; sourceTree = "<group>"; };
+		5288DA002864CFCD00153440 /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		529993862864CD86004ED2E1 /* Recommend.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Recommend.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		529993942864CDB5004ED2E1 /* RECRecommendationPanelsFetchModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECRecommendationPanelsFetchModel.swift; sourceTree = "<group>"; };
+		529993962864CDB5004ED2E1 /* RECRecommendationPanelRequestVariations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECRecommendationPanelRequestVariations.swift; sourceTree = "<group>"; };
+		529993982864CDB5004ED2E1 /* RECRecommendationPanelRequestContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECRecommendationPanelRequestContext.swift; sourceTree = "<group>"; };
+		529993992864CDB5004ED2E1 /* RECRecommendationPanelRequestCurrentContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECRecommendationPanelRequestCurrentContext.swift; sourceTree = "<group>"; };
+		5299939B2864CDB5004ED2E1 /* RECRecommendationPanelRequestFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECRecommendationPanelRequestFilter.swift; sourceTree = "<group>"; };
+		5299939C2864CDB5004ED2E1 /* RECRecommendationPanelRequestFilterType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECRecommendationPanelRequestFilterType.swift; sourceTree = "<group>"; };
+		5299939D2864CDB5004ED2E1 /* RECRecommendationPanelRequestFilterOperator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECRecommendationPanelRequestFilterOperator.swift; sourceTree = "<group>"; };
+		5299939E2864CDB5004ED2E1 /* RECRecommendationPanelRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECRecommendationPanelRequest.swift; sourceTree = "<group>"; };
+		5299939F2864CDB5004ED2E1 /* RECRecommendationPanelsFetchContentType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECRecommendationPanelsFetchContentType.swift; sourceTree = "<group>"; };
+		529993A02864CDB5004ED2E1 /* RECRecommendationPanelsFetchPreviewPanel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECRecommendationPanelsFetchPreviewPanel.swift; sourceTree = "<group>"; };
+		529993A12864CDB5004ED2E1 /* RECRecommendationPanel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECRecommendationPanel.swift; sourceTree = "<group>"; };
+		529993A22864CDB5004ED2E1 /* RECRecommendationProduct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECRecommendationProduct.swift; sourceTree = "<group>"; };
+		529993A32864CDB5004ED2E1 /* RECRecommendationPanelDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECRecommendationPanelDetails.swift; sourceTree = "<group>"; };
+		529993A52864CDB5004ED2E1 /* RECRecommendationAPIEndpoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECRecommendationAPIEndpoints.swift; sourceTree = "<group>"; };
+		529993A62864CDB5004ED2E1 /* RECRecommendationAPIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECRecommendationAPIService.swift; sourceTree = "<group>"; };
+		529993A72864CDB5004ED2E1 /* RECRecommendation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECRecommendation.swift; sourceTree = "<group>"; };
+		529993A92864CDB5004ED2E1 /* RECCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECCore.swift; sourceTree = "<group>"; };
+		529993AA2864CDB5004ED2E1 /* RECCoreError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECCoreError.swift; sourceTree = "<group>"; };
+		529993AC2864CDB5004ED2E1 /* RECAttribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECAttribute.swift; sourceTree = "<group>"; };
+		529993AD2864CDB5004ED2E1 /* Recommend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recommend.swift; sourceTree = "<group>"; };
+		529993AF2864CDB5004ED2E1 /* RECConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECConfig.swift; sourceTree = "<group>"; };
+		529993B02864CDB5004ED2E1 /* Recommend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Recommend.h; sourceTree = "<group>"; };
+		529993B22864CDB5004ED2E1 /* RECPriceList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECPriceList.swift; sourceTree = "<group>"; };
+		529993B32864CDB5004ED2E1 /* RECMetric.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECMetric.swift; sourceTree = "<group>"; };
+		529993B42864CDB5004ED2E1 /* RECMetrics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECMetrics.swift; sourceTree = "<group>"; };
+		529993B72864CDB5004ED2E1 /* RECAPIErrorResponseCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECAPIErrorResponseCode.swift; sourceTree = "<group>"; };
+		529993B82864CDB5004ED2E1 /* RECAPISuccessResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECAPISuccessResponse.swift; sourceTree = "<group>"; };
+		529993B92864CDB5004ED2E1 /* RECAPIErrorResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECAPIErrorResponse.swift; sourceTree = "<group>"; };
+		529993BA2864CDB5004ED2E1 /* RECAPIDataSuccessResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECAPIDataSuccessResponse.swift; sourceTree = "<group>"; };
+		529993BB2864CDB5004ED2E1 /* RECAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECAPIClient.swift; sourceTree = "<group>"; };
+		529993BC2864CDB5004ED2E1 /* RECAPIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECAPIRequest.swift; sourceTree = "<group>"; };
+		529993BD2864CDB5004ED2E1 /* RECAPIEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECAPIEndpoint.swift; sourceTree = "<group>"; };
+		529993BE2864CDB5004ED2E1 /* RECAPIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECAPIError.swift; sourceTree = "<group>"; };
+		529993C12864CDB5004ED2E1 /* RECActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECActivity.swift; sourceTree = "<group>"; };
+		529993C22864CDB5004ED2E1 /* RECDeviceActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECDeviceActivity.swift; sourceTree = "<group>"; };
+		529993C42864CDB5004ED2E1 /* RECActivitySearchTerm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECActivitySearchTerm.swift; sourceTree = "<group>"; };
+		529993C52864CDB5004ED2E1 /* RECActivityProduct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECActivityProduct.swift; sourceTree = "<group>"; };
+		529993C62864CDB5004ED2E1 /* RECDeviceLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECDeviceLocation.swift; sourceTree = "<group>"; };
+		529993C72864CDB5004ED2E1 /* RECDeviceTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECDeviceTime.swift; sourceTree = "<group>"; };
+		529993C92864CDB5004ED2E1 /* RECSubscribeActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECSubscribeActivity.swift; sourceTree = "<group>"; };
+		529993CA2864CDB5004ED2E1 /* RECElasticListActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECElasticListActivity.swift; sourceTree = "<group>"; };
+		529993CB2864CDB5004ED2E1 /* RECLogoutActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECLogoutActivity.swift; sourceTree = "<group>"; };
+		529993CC2864CDB5004ED2E1 /* RECSaleActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECSaleActivity.swift; sourceTree = "<group>"; };
+		529993CD2864CDB5004ED2E1 /* RECListViewActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECListViewActivity.swift; sourceTree = "<group>"; };
+		529993CE2864CDB5004ED2E1 /* RECSearchViewActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECSearchViewActivity.swift; sourceTree = "<group>"; };
+		529993CF2864CDB5004ED2E1 /* RECLoginActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECLoginActivity.swift; sourceTree = "<group>"; };
+		529993D02864CDB5004ED2E1 /* RECAddToCartActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECAddToCartActivity.swift; sourceTree = "<group>"; };
+		529993D12864CDB5004ED2E1 /* RECWishlistUpdateActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECWishlistUpdateActivity.swift; sourceTree = "<group>"; };
+		529993D22864CDB5004ED2E1 /* RECPageViewActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECPageViewActivity.swift; sourceTree = "<group>"; };
+		529993D32864CDB5004ED2E1 /* RECProductClickActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECProductClickActivity.swift; sourceTree = "<group>"; };
+		529993D42864CDB5004ED2E1 /* RECCheckoutActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECCheckoutActivity.swift; sourceTree = "<group>"; };
+		529993D52864CDB5004ED2E1 /* RECAddToWishlistActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECAddToWishlistActivity.swift; sourceTree = "<group>"; };
+		529993D62864CDB5004ED2E1 /* RECPanelViewActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECPanelViewActivity.swift; sourceTree = "<group>"; };
+		529993D72864CDB5004ED2E1 /* RECRemoveFromWishlistActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECRemoveFromWishlistActivity.swift; sourceTree = "<group>"; };
+		529993D82864CDB5004ED2E1 /* RECProductViewActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECProductViewActivity.swift; sourceTree = "<group>"; };
+		529993D92864CDB5004ED2E1 /* RECLinkDeviceActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECLinkDeviceActivity.swift; sourceTree = "<group>"; };
+		529993DA2864CDB5004ED2E1 /* RECCustomEventActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECCustomEventActivity.swift; sourceTree = "<group>"; };
+		529993DB2864CDB5004ED2E1 /* RECProductRatedActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECProductRatedActivity.swift; sourceTree = "<group>"; };
+		529993DC2864CDB5004ED2E1 /* RECRemoveFromCartActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECRemoveFromCartActivity.swift; sourceTree = "<group>"; };
+		529993DD2864CDB5004ED2E1 /* RECOpenAppActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECOpenAppActivity.swift; sourceTree = "<group>"; };
+		529993DE2864CDB5004ED2E1 /* RECCustomerRegistationActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECCustomerRegistationActivity.swift; sourceTree = "<group>"; };
+		529993DF2864CDB5004ED2E1 /* RECUpdateDeviceActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECUpdateDeviceActivity.swift; sourceTree = "<group>"; };
+		529993E02864CDB5004ED2E1 /* RECCartUpdateActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECCartUpdateActivity.swift; sourceTree = "<group>"; };
+		529993E12864CDB5004ED2E1 /* RECDeviceTimeZone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECDeviceTimeZone.swift; sourceTree = "<group>"; };
+		529993E32864CDB5004ED2E1 /* Bundle+RECDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+RECDevice.swift"; sourceTree = "<group>"; };
+		529993E52864CDB5004ED2E1 /* RECDeviceAPIEndpoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECDeviceAPIEndpoints.swift; sourceTree = "<group>"; };
+		529993E62864CDB5004ED2E1 /* RECDeviceAPIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECDeviceAPIService.swift; sourceTree = "<group>"; };
+		529993E72864CDB5004ED2E1 /* RECDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECDevice.swift; sourceTree = "<group>"; };
+		529993EB2864CDB5004ED2E1 /* RECMessagingPushNotificationEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECMessagingPushNotificationEvent.swift; sourceTree = "<group>"; };
+		529993EC2864CDB5004ED2E1 /* RECMessagingPushNotificationEventData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECMessagingPushNotificationEventData.swift; sourceTree = "<group>"; };
+		529993EE2864CDB5004ED2E1 /* RECMessagingSubscriptionUpdateModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECMessagingSubscriptionUpdateModel.swift; sourceTree = "<group>"; };
+		529993EF2864CDB5004ED2E1 /* RECMessagingSubscriptionSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECMessagingSubscriptionSettings.swift; sourceTree = "<group>"; };
+		529993F02864CDB5004ED2E1 /* RECMessagingSubscriptionStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECMessagingSubscriptionStatus.swift; sourceTree = "<group>"; };
+		529993F22864CDB5004ED2E1 /* RECMessagingUserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECMessagingUserInfo.swift; sourceTree = "<group>"; };
+		529993F32864CDB5004ED2E1 /* RECMessagingUserInfoData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECMessagingUserInfoData.swift; sourceTree = "<group>"; };
+		529993F42864CDB5004ED2E1 /* RECMessagingToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECMessagingToken.swift; sourceTree = "<group>"; };
+		529993F52864CDB5004ED2E1 /* RECMessaging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECMessaging.swift; sourceTree = "<group>"; };
+		529993F72864CDB5004ED2E1 /* Date+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		529993F92864CDB5004ED2E1 /* RECMessagingAPIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECMessagingAPIService.swift; sourceTree = "<group>"; };
+		529993FA2864CDB5004ED2E1 /* RECMessagingAPIEndpoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECMessagingAPIEndpoints.swift; sourceTree = "<group>"; };
+		529993FB2864CDB5004ED2E1 /* RECMessagingSubscriptionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECMessagingSubscriptionManager.swift; sourceTree = "<group>"; };
+		529993FD2864CDB5004ED2E1 /* RECNullEncodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECNullEncodable.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		529993832864CD86004ED2E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				529994542864CEEF004ED2E1 /* WebKitUserAgent in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5288D9FB2864CFB200153440 /* Metadata */ = {
+			isa = PBXGroup;
+			children = (
+				5288D9FE2864CFCD00153440 /* CHANGELOG.md */,
+				5288D9FC2864CFCD00153440 /* LICENSE */,
+				5288DA002864CFCD00153440 /* Package.swift */,
+				5288D9FD2864CFCD00153440 /* README.md */,
+				5288D9FF2864CFCD00153440 /* Recommend.podspec */,
+			);
+			name = Metadata;
+			sourceTree = "<group>";
+		};
+		5299937C2864CD86004ED2E1 = {
+			isa = PBXGroup;
+			children = (
+				5288D9FB2864CFB200153440 /* Metadata */,
+				529993882864CD86004ED2E1 /* Recommend */,
+				529993872864CD86004ED2E1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		529993872864CD86004ED2E1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				529993862864CD86004ED2E1 /* Recommend.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		529993882864CD86004ED2E1 /* Recommend */ = {
+			isa = PBXGroup;
+			children = (
+				529993902864CDB5004ED2E1 /* Sources */,
+			);
+			path = Recommend;
+			sourceTree = "<group>";
+		};
+		529993902864CDB5004ED2E1 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				529993B52864CDB5004ED2E1 /* API */,
+				529993AB2864CDB5004ED2E1 /* Attribute */,
+				529993AE2864CDB5004ED2E1 /* Config */,
+				529993A82864CDB5004ED2E1 /* Core */,
+				529993BF2864CDB5004ED2E1 /* Device */,
+				529993B12864CDB5004ED2E1 /* Environment */,
+				529993FC2864CDB5004ED2E1 /* Helpers */,
+				529993E82864CDB5004ED2E1 /* Messaging */,
+				529993B02864CDB5004ED2E1 /* Recommend.h */,
+				529993AD2864CDB5004ED2E1 /* Recommend.swift */,
+				529993912864CDB5004ED2E1 /* Recommendation */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		529993912864CDB5004ED2E1 /* Recommendation */ = {
+			isa = PBXGroup;
+			children = (
+				529993A42864CDB5004ED2E1 /* API */,
+				529993922864CDB5004ED2E1 /* Models */,
+				529993A72864CDB5004ED2E1 /* RECRecommendation.swift */,
+			);
+			path = Recommendation;
+			sourceTree = "<group>";
+		};
+		529993922864CDB5004ED2E1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				529993932864CDB5004ED2E1 /* PanelsFetchModel */,
+				529993A12864CDB5004ED2E1 /* RECRecommendationPanel.swift */,
+				529993A32864CDB5004ED2E1 /* RECRecommendationPanelDetails.swift */,
+				529993A22864CDB5004ED2E1 /* RECRecommendationProduct.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		529993932864CDB5004ED2E1 /* PanelsFetchModel */ = {
+			isa = PBXGroup;
+			children = (
+				529993952864CDB5004ED2E1 /* PanelRequest */,
+				5299939F2864CDB5004ED2E1 /* RECRecommendationPanelsFetchContentType.swift */,
+				529993942864CDB5004ED2E1 /* RECRecommendationPanelsFetchModel.swift */,
+				529993A02864CDB5004ED2E1 /* RECRecommendationPanelsFetchPreviewPanel.swift */,
+			);
+			path = PanelsFetchModel;
+			sourceTree = "<group>";
+		};
+		529993952864CDB5004ED2E1 /* PanelRequest */ = {
+			isa = PBXGroup;
+			children = (
+				529993972864CDB5004ED2E1 /* Context */,
+				5299939A2864CDB5004ED2E1 /* Filter */,
+				5299939E2864CDB5004ED2E1 /* RECRecommendationPanelRequest.swift */,
+				529993962864CDB5004ED2E1 /* RECRecommendationPanelRequestVariations.swift */,
+			);
+			path = PanelRequest;
+			sourceTree = "<group>";
+		};
+		529993972864CDB5004ED2E1 /* Context */ = {
+			isa = PBXGroup;
+			children = (
+				529993982864CDB5004ED2E1 /* RECRecommendationPanelRequestContext.swift */,
+				529993992864CDB5004ED2E1 /* RECRecommendationPanelRequestCurrentContext.swift */,
+			);
+			path = Context;
+			sourceTree = "<group>";
+		};
+		5299939A2864CDB5004ED2E1 /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				5299939B2864CDB5004ED2E1 /* RECRecommendationPanelRequestFilter.swift */,
+				5299939D2864CDB5004ED2E1 /* RECRecommendationPanelRequestFilterOperator.swift */,
+				5299939C2864CDB5004ED2E1 /* RECRecommendationPanelRequestFilterType.swift */,
+			);
+			path = Filter;
+			sourceTree = "<group>";
+		};
+		529993A42864CDB5004ED2E1 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				529993A52864CDB5004ED2E1 /* RECRecommendationAPIEndpoints.swift */,
+				529993A62864CDB5004ED2E1 /* RECRecommendationAPIService.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		529993A82864CDB5004ED2E1 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				529993A92864CDB5004ED2E1 /* RECCore.swift */,
+				529993AA2864CDB5004ED2E1 /* RECCoreError.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		529993AB2864CDB5004ED2E1 /* Attribute */ = {
+			isa = PBXGroup;
+			children = (
+				529993AC2864CDB5004ED2E1 /* RECAttribute.swift */,
+			);
+			path = Attribute;
+			sourceTree = "<group>";
+		};
+		529993AE2864CDB5004ED2E1 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				529993AF2864CDB5004ED2E1 /* RECConfig.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		529993B12864CDB5004ED2E1 /* Environment */ = {
+			isa = PBXGroup;
+			children = (
+				529993B32864CDB5004ED2E1 /* RECMetric.swift */,
+				529993B42864CDB5004ED2E1 /* RECMetrics.swift */,
+				529993B22864CDB5004ED2E1 /* RECPriceList.swift */,
+			);
+			path = Environment;
+			sourceTree = "<group>";
+		};
+		529993B52864CDB5004ED2E1 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				529993BB2864CDB5004ED2E1 /* RECAPIClient.swift */,
+				529993BD2864CDB5004ED2E1 /* RECAPIEndpoint.swift */,
+				529993BE2864CDB5004ED2E1 /* RECAPIError.swift */,
+				529993BC2864CDB5004ED2E1 /* RECAPIRequest.swift */,
+				529993B62864CDB5004ED2E1 /* Responses */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		529993B62864CDB5004ED2E1 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				529993BA2864CDB5004ED2E1 /* RECAPIDataSuccessResponse.swift */,
+				529993B92864CDB5004ED2E1 /* RECAPIErrorResponse.swift */,
+				529993B72864CDB5004ED2E1 /* RECAPIErrorResponseCode.swift */,
+				529993B82864CDB5004ED2E1 /* RECAPISuccessResponse.swift */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
+		529993BF2864CDB5004ED2E1 /* Device */ = {
+			isa = PBXGroup;
+			children = (
+				529993E42864CDB5004ED2E1 /* API */,
+				529993E22864CDB5004ED2E1 /* Extensions */,
+				529993C02864CDB5004ED2E1 /* Models */,
+				529993E72864CDB5004ED2E1 /* RECDevice.swift */,
+			);
+			path = Device;
+			sourceTree = "<group>";
+		};
+		529993C02864CDB5004ED2E1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				529993C82864CDB5004ED2E1 /* Activities */,
+				529993C32864CDB5004ED2E1 /* Common */,
+				529993C12864CDB5004ED2E1 /* RECActivity.swift */,
+				529993C22864CDB5004ED2E1 /* RECDeviceActivity.swift */,
+				529993C62864CDB5004ED2E1 /* RECDeviceLocation.swift */,
+				529993C72864CDB5004ED2E1 /* RECDeviceTime.swift */,
+				529993E12864CDB5004ED2E1 /* RECDeviceTimeZone.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		529993C32864CDB5004ED2E1 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				529993C52864CDB5004ED2E1 /* RECActivityProduct.swift */,
+				529993C42864CDB5004ED2E1 /* RECActivitySearchTerm.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		529993C82864CDB5004ED2E1 /* Activities */ = {
+			isa = PBXGroup;
+			children = (
+				529993D02864CDB5004ED2E1 /* RECAddToCartActivity.swift */,
+				529993D52864CDB5004ED2E1 /* RECAddToWishlistActivity.swift */,
+				529993E02864CDB5004ED2E1 /* RECCartUpdateActivity.swift */,
+				529993D42864CDB5004ED2E1 /* RECCheckoutActivity.swift */,
+				529993DE2864CDB5004ED2E1 /* RECCustomerRegistationActivity.swift */,
+				529993DA2864CDB5004ED2E1 /* RECCustomEventActivity.swift */,
+				529993CA2864CDB5004ED2E1 /* RECElasticListActivity.swift */,
+				529993D92864CDB5004ED2E1 /* RECLinkDeviceActivity.swift */,
+				529993CD2864CDB5004ED2E1 /* RECListViewActivity.swift */,
+				529993CF2864CDB5004ED2E1 /* RECLoginActivity.swift */,
+				529993CB2864CDB5004ED2E1 /* RECLogoutActivity.swift */,
+				529993DD2864CDB5004ED2E1 /* RECOpenAppActivity.swift */,
+				529993D22864CDB5004ED2E1 /* RECPageViewActivity.swift */,
+				529993D62864CDB5004ED2E1 /* RECPanelViewActivity.swift */,
+				529993D32864CDB5004ED2E1 /* RECProductClickActivity.swift */,
+				529993DB2864CDB5004ED2E1 /* RECProductRatedActivity.swift */,
+				529993D82864CDB5004ED2E1 /* RECProductViewActivity.swift */,
+				529993DC2864CDB5004ED2E1 /* RECRemoveFromCartActivity.swift */,
+				529993D72864CDB5004ED2E1 /* RECRemoveFromWishlistActivity.swift */,
+				529993CC2864CDB5004ED2E1 /* RECSaleActivity.swift */,
+				529993CE2864CDB5004ED2E1 /* RECSearchViewActivity.swift */,
+				529993C92864CDB5004ED2E1 /* RECSubscribeActivity.swift */,
+				529993DF2864CDB5004ED2E1 /* RECUpdateDeviceActivity.swift */,
+				529993D12864CDB5004ED2E1 /* RECWishlistUpdateActivity.swift */,
+			);
+			path = Activities;
+			sourceTree = "<group>";
+		};
+		529993E22864CDB5004ED2E1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				529993E32864CDB5004ED2E1 /* Bundle+RECDevice.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		529993E42864CDB5004ED2E1 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				529993E52864CDB5004ED2E1 /* RECDeviceAPIEndpoints.swift */,
+				529993E62864CDB5004ED2E1 /* RECDeviceAPIService.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		529993E82864CDB5004ED2E1 /* Messaging */ = {
+			isa = PBXGroup;
+			children = (
+				529993F82864CDB5004ED2E1 /* API */,
+				529993F62864CDB5004ED2E1 /* Extensions */,
+				529993E92864CDB5004ED2E1 /* Models */,
+				529993F52864CDB5004ED2E1 /* RECMessaging.swift */,
+				529993FB2864CDB5004ED2E1 /* RECMessagingSubscriptionManager.swift */,
+			);
+			path = Messaging;
+			sourceTree = "<group>";
+		};
+		529993E92864CDB5004ED2E1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				529993EA2864CDB5004ED2E1 /* PushNotificationEvent */,
+				529993F42864CDB5004ED2E1 /* RECMessagingToken.swift */,
+				529993ED2864CDB5004ED2E1 /* Subscription */,
+				529993F12864CDB5004ED2E1 /* UserInfo */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		529993EA2864CDB5004ED2E1 /* PushNotificationEvent */ = {
+			isa = PBXGroup;
+			children = (
+				529993EB2864CDB5004ED2E1 /* RECMessagingPushNotificationEvent.swift */,
+				529993EC2864CDB5004ED2E1 /* RECMessagingPushNotificationEventData.swift */,
+			);
+			path = PushNotificationEvent;
+			sourceTree = "<group>";
+		};
+		529993ED2864CDB5004ED2E1 /* Subscription */ = {
+			isa = PBXGroup;
+			children = (
+				529993EF2864CDB5004ED2E1 /* RECMessagingSubscriptionSettings.swift */,
+				529993F02864CDB5004ED2E1 /* RECMessagingSubscriptionStatus.swift */,
+				529993EE2864CDB5004ED2E1 /* RECMessagingSubscriptionUpdateModel.swift */,
+			);
+			path = Subscription;
+			sourceTree = "<group>";
+		};
+		529993F12864CDB5004ED2E1 /* UserInfo */ = {
+			isa = PBXGroup;
+			children = (
+				529993F22864CDB5004ED2E1 /* RECMessagingUserInfo.swift */,
+				529993F32864CDB5004ED2E1 /* RECMessagingUserInfoData.swift */,
+			);
+			path = UserInfo;
+			sourceTree = "<group>";
+		};
+		529993F62864CDB5004ED2E1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				529993F72864CDB5004ED2E1 /* Date+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		529993F82864CDB5004ED2E1 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				529993FA2864CDB5004ED2E1 /* RECMessagingAPIEndpoints.swift */,
+				529993F92864CDB5004ED2E1 /* RECMessagingAPIService.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		529993FC2864CDB5004ED2E1 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				529993FD2864CDB5004ED2E1 /* RECNullEncodable.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		529993812864CD86004ED2E1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				529994132864CDB5004ED2E1 /* Recommend.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		529993852864CD86004ED2E1 /* Recommend */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5299938D2864CD86004ED2E1 /* Build configuration list for PBXNativeTarget "Recommend" */;
+			buildPhases = (
+				529993812864CD86004ED2E1 /* Headers */,
+				529993822864CD86004ED2E1 /* Sources */,
+				529993832864CD86004ED2E1 /* Frameworks */,
+				529993842864CD86004ED2E1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Recommend;
+			packageProductDependencies = (
+				529994532864CEEF004ED2E1 /* WebKitUserAgent */,
+			);
+			productName = Recommend;
+			productReference = 529993862864CD86004ED2E1 /* Recommend.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5299937D2864CD86004ED2E1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					529993852864CD86004ED2E1 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+				};
+			};
+			buildConfigurationList = 529993802864CD86004ED2E1 /* Build configuration list for PBXProject "Recommend" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5299937C2864CD86004ED2E1;
+			packageReferences = (
+				529994522864CEEF004ED2E1 /* XCRemoteSwiftPackageReference "webkit-user-agent" */,
+			);
+			productRefGroup = 529993872864CD86004ED2E1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				529993852864CD86004ED2E1 /* Recommend */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		529993842864CD86004ED2E1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5288DA022864CFCD00153440 /* README.md in Resources */,
+				5288DA032864CFCD00153440 /* CHANGELOG.md in Resources */,
+				5288DA012864CFCD00153440 /* LICENSE in Resources */,
+				5288DA042864CFCD00153440 /* Recommend.podspec in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		529993822864CD86004ED2E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5299942D2864CDB5004ED2E1 /* RECWishlistUpdateActivity.swift in Sources */,
+				529994232864CDB5004ED2E1 /* RECDeviceLocation.swift in Sources */,
+				529994122864CDB5004ED2E1 /* RECConfig.swift in Sources */,
+				5299943F2864CDB5004ED2E1 /* RECDeviceAPIEndpoints.swift in Sources */,
+				529994112864CDB5004ED2E1 /* Recommend.swift in Sources */,
+				5299942B2864CDB5004ED2E1 /* RECLoginActivity.swift in Sources */,
+				529994022864CDB5004ED2E1 /* RECRecommendationPanelRequestFilter.swift in Sources */,
+				5299944D2864CDB5004ED2E1 /* RECMessagingAPIEndpoints.swift in Sources */,
+				5299944E2864CDB5004ED2E1 /* RECMessagingSubscriptionManager.swift in Sources */,
+				5299940D2864CDB5004ED2E1 /* RECRecommendation.swift in Sources */,
+				529994212864CDB5004ED2E1 /* RECActivitySearchTerm.swift in Sources */,
+				529994372864CDB5004ED2E1 /* RECProductRatedActivity.swift in Sources */,
+				529994192864CDB5004ED2E1 /* RECAPIErrorResponse.swift in Sources */,
+				529994012864CDB5004ED2E1 /* RECRecommendationPanelRequestCurrentContext.swift in Sources */,
+				529994062864CDB5004ED2E1 /* RECRecommendationPanelsFetchContentType.swift in Sources */,
+				529994472864CDB5004ED2E1 /* RECMessagingUserInfo.swift in Sources */,
+				5299943C2864CDB5004ED2E1 /* RECCartUpdateActivity.swift in Sources */,
+				529994302864CDB5004ED2E1 /* RECCheckoutActivity.swift in Sources */,
+				5299942C2864CDB5004ED2E1 /* RECAddToCartActivity.swift in Sources */,
+				5299944A2864CDB5004ED2E1 /* RECMessaging.swift in Sources */,
+				5299944C2864CDB5004ED2E1 /* RECMessagingAPIService.swift in Sources */,
+				529994462864CDB5004ED2E1 /* RECMessagingSubscriptionStatus.swift in Sources */,
+				5299940B2864CDB5004ED2E1 /* RECRecommendationAPIEndpoints.swift in Sources */,
+				5299942A2864CDB5004ED2E1 /* RECSearchViewActivity.swift in Sources */,
+				529994482864CDB5004ED2E1 /* RECMessagingUserInfoData.swift in Sources */,
+				529994102864CDB5004ED2E1 /* RECAttribute.swift in Sources */,
+				5299944B2864CDB5004ED2E1 /* Date+Extensions.swift in Sources */,
+				529994342864CDB5004ED2E1 /* RECProductViewActivity.swift in Sources */,
+				5299941D2864CDB5004ED2E1 /* RECAPIEndpoint.swift in Sources */,
+				5299941E2864CDB5004ED2E1 /* RECAPIError.swift in Sources */,
+				529994252864CDB5004ED2E1 /* RECSubscribeActivity.swift in Sources */,
+				5299943A2864CDB5004ED2E1 /* RECCustomerRegistationActivity.swift in Sources */,
+				529994242864CDB5004ED2E1 /* RECDeviceTime.swift in Sources */,
+				529994262864CDB5004ED2E1 /* RECElasticListActivity.swift in Sources */,
+				529994412864CDB5004ED2E1 /* RECDevice.swift in Sources */,
+				529994422864CDB5004ED2E1 /* RECMessagingPushNotificationEvent.swift in Sources */,
+				5299940A2864CDB5004ED2E1 /* RECRecommendationPanelDetails.swift in Sources */,
+				529994072864CDB5004ED2E1 /* RECRecommendationPanelsFetchPreviewPanel.swift in Sources */,
+				529994332864CDB5004ED2E1 /* RECRemoveFromWishlistActivity.swift in Sources */,
+				529994032864CDB5004ED2E1 /* RECRecommendationPanelRequestFilterType.swift in Sources */,
+				5299940F2864CDB5004ED2E1 /* RECCoreError.swift in Sources */,
+				5299941F2864CDB5004ED2E1 /* RECActivity.swift in Sources */,
+				529994162864CDB5004ED2E1 /* RECMetrics.swift in Sources */,
+				5299943E2864CDB5004ED2E1 /* Bundle+RECDevice.swift in Sources */,
+				5288DA052864CFCD00153440 /* Package.swift in Sources */,
+				529994152864CDB5004ED2E1 /* RECMetric.swift in Sources */,
+				5299944F2864CDB5004ED2E1 /* RECNullEncodable.swift in Sources */,
+				529994272864CDB5004ED2E1 /* RECLogoutActivity.swift in Sources */,
+				529994172864CDB5004ED2E1 /* RECAPIErrorResponseCode.swift in Sources */,
+				5299943B2864CDB5004ED2E1 /* RECUpdateDeviceActivity.swift in Sources */,
+				5299941A2864CDB5004ED2E1 /* RECAPIDataSuccessResponse.swift in Sources */,
+				5299940E2864CDB5004ED2E1 /* RECCore.swift in Sources */,
+				529994182864CDB5004ED2E1 /* RECAPISuccessResponse.swift in Sources */,
+				529994362864CDB5004ED2E1 /* RECCustomEventActivity.swift in Sources */,
+				529994092864CDB5004ED2E1 /* RECRecommendationProduct.swift in Sources */,
+				529994202864CDB5004ED2E1 /* RECDeviceActivity.swift in Sources */,
+				5299942F2864CDB5004ED2E1 /* RECProductClickActivity.swift in Sources */,
+				529993FF2864CDB5004ED2E1 /* RECRecommendationPanelRequestVariations.swift in Sources */,
+				5299942E2864CDB5004ED2E1 /* RECPageViewActivity.swift in Sources */,
+				529993FE2864CDB5004ED2E1 /* RECRecommendationPanelsFetchModel.swift in Sources */,
+				529994322864CDB5004ED2E1 /* RECPanelViewActivity.swift in Sources */,
+				529994492864CDB5004ED2E1 /* RECMessagingToken.swift in Sources */,
+				529994432864CDB5004ED2E1 /* RECMessagingPushNotificationEventData.swift in Sources */,
+				529994352864CDB5004ED2E1 /* RECLinkDeviceActivity.swift in Sources */,
+				529994142864CDB5004ED2E1 /* RECPriceList.swift in Sources */,
+				529994082864CDB5004ED2E1 /* RECRecommendationPanel.swift in Sources */,
+				529994282864CDB5004ED2E1 /* RECSaleActivity.swift in Sources */,
+				5299940C2864CDB5004ED2E1 /* RECRecommendationAPIService.swift in Sources */,
+				529994442864CDB5004ED2E1 /* RECMessagingSubscriptionUpdateModel.swift in Sources */,
+				529994392864CDB5004ED2E1 /* RECOpenAppActivity.swift in Sources */,
+				529994402864CDB5004ED2E1 /* RECDeviceAPIService.swift in Sources */,
+				529994382864CDB5004ED2E1 /* RECRemoveFromCartActivity.swift in Sources */,
+				529994312864CDB5004ED2E1 /* RECAddToWishlistActivity.swift in Sources */,
+				5299941C2864CDB5004ED2E1 /* RECAPIRequest.swift in Sources */,
+				529994452864CDB5004ED2E1 /* RECMessagingSubscriptionSettings.swift in Sources */,
+				529994222864CDB5004ED2E1 /* RECActivityProduct.swift in Sources */,
+				529994292864CDB5004ED2E1 /* RECListViewActivity.swift in Sources */,
+				5299941B2864CDB5004ED2E1 /* RECAPIClient.swift in Sources */,
+				5299943D2864CDB5004ED2E1 /* RECDeviceTimeZone.swift in Sources */,
+				529994002864CDB5004ED2E1 /* RECRecommendationPanelRequestContext.swift in Sources */,
+				529994052864CDB5004ED2E1 /* RECRecommendationPanelRequest.swift in Sources */,
+				529994042864CDB5004ED2E1 /* RECRecommendationPanelRequestFilterOperator.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		5299938B2864CD86004ED2E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		5299938C2864CD86004ED2E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		5299938E2864CD86004ED2E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = BA53S585CY;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.2.2;
+				PRODUCT_BUNDLE_IDENTIFIER = pro.recommend.Recommend;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5299938F2864CD86004ED2E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = BA53S585CY;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.2.2;
+				PRODUCT_BUNDLE_IDENTIFIER = pro.recommend.Recommend;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		529993802864CD86004ED2E1 /* Build configuration list for PBXProject "Recommend" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5299938B2864CD86004ED2E1 /* Debug */,
+				5299938C2864CD86004ED2E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5299938D2864CD86004ED2E1 /* Build configuration list for PBXNativeTarget "Recommend" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5299938E2864CD86004ED2E1 /* Debug */,
+				5299938F2864CD86004ED2E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		529994522864CEEF004ED2E1 /* XCRemoteSwiftPackageReference "webkit-user-agent" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dmytriigolovanov/webkit-user-agent";
+			requirement = {
+				kind = exactVersion;
+				version = 2.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		529994532864CEEF004ED2E1 /* WebKitUserAgent */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 529994522864CEEF004ED2E1 /* XCRemoteSwiftPackageReference "webkit-user-agent" */;
+			productName = WebKitUserAgent;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 5299937D2864CD86004ED2E1 /* Project object */;
+}
