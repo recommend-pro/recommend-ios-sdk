@@ -1,5 +1,5 @@
 //
-//  RECPageViewActivity.swift
+//  RECDevicePageViewActivity.swift
 //  Recommend
 //
 //  Created by Dmytrii Golovanov on 08.12.2021.
@@ -8,8 +8,8 @@
 
 import Foundation
 
-public final class RECPageViewActivity: RECActivity {
-    let data: RECPageViewActivityData
+public final class RECDevicePageViewActivity: RECDeviceActivity {
+    let data: RECDevicePageViewActivityData
     
     // MARK: Init
     
@@ -19,7 +19,7 @@ public final class RECPageViewActivity: RECActivity {
         referrer: String?,
         title: String?
     ) {
-        self.data = RECPageViewActivityData(
+        self.data = RECDevicePageViewActivityData(
             url: url,
             pageType: pageType,
             referrer: referrer,
@@ -43,7 +43,7 @@ public final class RECPageViewActivity: RECActivity {
 
 // MARK: - Data
 
-struct RECPageViewActivityData: Encodable {
+struct RECDevicePageViewActivityData: Encodable {
     let url: String
     let pageType: String?
     let referrer: String?

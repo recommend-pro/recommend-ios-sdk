@@ -1,5 +1,5 @@
 //
-//  RECLogoutActivity.swift
+//  RECDeviceLogoutActivity.swift
 //  Recommend
 //
 //  Created by Dmytrii Golovanov on 09.02.2022.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public final class RECLogoutActivity: RECActivity {
+public final class RECDeviceLogoutActivity: RECDeviceActivity {
     public init() {
         super.init(type: "login")
     }

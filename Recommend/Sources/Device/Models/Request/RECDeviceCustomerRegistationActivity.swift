@@ -1,5 +1,5 @@
 //
-//  RECProductViewActivity.swift
+//  RECActivityCustomerRegistrationData.swift
 //  Recommend
 //
 //  Created by Dmytrii Golovanov on 08.12.2021.
@@ -8,20 +8,17 @@
 
 import Foundation
 
-public final class RECProductViewActivity: RECActivity {
-    let data: RECProductViewActivityData
+public final class RECDeviceCustomerRegistationActivity: RECDeviceActivity {
+    let data: RECDeviceCustomerRegistationActivityData
     
     // MARK: Init
     
     public init(
-        sku: String,
-        variationSKU: String?
+        requestId: String? = nil
     ) {
-        self.data = RECProductViewActivityData(
-            sku: sku,
-            variationSKU: variationSKU)
+        self.data = RECDeviceCustomerRegistationActivityData(requestId: requestId)
         super.init(
-            type: "product_view")
+            type: "customer_registration")
     }
     
     // MARK: Encoding
@@ -39,14 +36,12 @@ public final class RECProductViewActivity: RECActivity {
 
 // MARK: - Data
 
-struct RECProductViewActivityData: Encodable {
-    let sku: String
-    let variationSKU: String?
+struct RECDeviceCustomerRegistationActivityData: Encodable {
+    @RECNullEncodable private(set) var requestId: String?
     
     // MARK: Coding Keys
     
     enum CodingKeys: String, CodingKey {
-        case sku
-        case variationSKU = "variation_sku"
+        case requestId = "request_id"
     }
 }

@@ -1,5 +1,5 @@
 //
-//  RECActivityCustomerRegistrationData.swift
+//  RECDeviceRemoveFromWishlistActivity.swift
 //  Recommend
 //
 //  Created by Dmytrii Golovanov on 08.12.2021.
@@ -8,17 +8,24 @@
 
 import Foundation
 
-public final class RECCustomerRegistationActivity: RECActivity {
-    let data: RECCustomerRegistationActivityData
+public final class RECDeviceRemoveFromWishlistActivity: RECDeviceActivity {
+    let data: RECDeviceRemoveFromWishlistActivityData
     
     // MARK: Init
     
     public init(
+        wishlistHash: String,
+        sku: String,
+        variationSKU: String?,
         requestId: String? = nil
     ) {
-        self.data = RECCustomerRegistationActivityData(requestId: requestId)
+        self.data = RECDeviceRemoveFromWishlistActivityData(
+            wishlistHash: wishlistHash,
+            sku: sku,
+            variationSKU: variationSKU,
+            requestId: requestId)
         super.init(
-            type: "customer_registration")
+            type: "remove_from_wishlist")
     }
     
     // MARK: Encoding
@@ -36,12 +43,18 @@ public final class RECCustomerRegistationActivity: RECActivity {
 
 // MARK: - Data
 
-struct RECCustomerRegistationActivityData: Encodable {
+struct RECDeviceRemoveFromWishlistActivityData: Encodable {
+    let wishlistHash: String
+    let sku: String
+    let variationSKU: String?
     @RECNullEncodable private(set) var requestId: String?
     
     // MARK: Coding Keys
     
     enum CodingKeys: String, CodingKey {
+        case wishlistHash = "wishlist_hash"
+        case sku
+        case variationSKU = "variation_sku"
         case requestId = "request_id"
     }
 }

@@ -1,5 +1,5 @@
 //
-//  RECOpenAppActivity.swift
+//  RECDeviceLoginActivity.swift
 //  Recommend
 //
 //  Created by Dmytrii Golovanov on 09.02.2022.
@@ -8,8 +8,8 @@
 
 import Foundation
 
-final class RECOpenAppActivity: RECActivity {
-    init() {
-        super.init(type: "open_app")
+public final class RECDeviceLoginActivity: RECDeviceActivity {
+    public init() {
+        super.init(type: "logout")
     }
 }

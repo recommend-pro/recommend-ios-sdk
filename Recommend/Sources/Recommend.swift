@@ -91,7 +91,7 @@ public final class Recommend: NSObject {
     // MARK: Device
     
     public func trackDeviceActivity(
-        _ deviceActivity: RECDeviceActivity
+        _ deviceActivity: RECDeviceTrackingRequest
     ) {
         device.trackDeviceActivity(deviceActivity)
     }

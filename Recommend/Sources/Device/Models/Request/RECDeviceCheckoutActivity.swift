@@ -1,5 +1,5 @@
 //
-//  RECSearchViewActivity.swift
+//  RECDeviceCheckoutActivity.swift
 //  Recommend
 //
 //  Created by Dmytrii Golovanov on 08.12.2021.
@@ -8,19 +8,20 @@
 
 import Foundation
 
-public final class RECSearchViewActivity: RECActivity {
-    let data: RECSearchViewActivityData
+public final class RECDeviceCheckoutActivity: RECDeviceActivity {
+    let data: RECDeviceCheckoutActivityData
     
     // MARK: Init
     
     public init(
-        products: [RECActivityProduct]?,
-        term: RECActivitySearchTerm
+        step: String?,
+        option: String?
     ) {
-        self.data = RECSearchViewActivityData(
-            products: products,
-            term: term)
-        super.init(type: "search_view")
+        self.data = RECDeviceCheckoutActivityData(
+            step: step,
+            option: option)
+        super.init(
+            type: "checkout")
     }
     
     // MARK: Encoding
@@ -38,8 +39,7 @@ public final class RECSearchViewActivity: RECActivity {
 
 // MARK: - Data
 
-struct RECSearchViewActivityData: Encodable {
-    let products: [RECActivityProduct]?
-    let term: RECActivitySearchTerm
+struct RECDeviceCheckoutActivityData: Encodable {
+    let step: String?
+    let option: String?
 }
-

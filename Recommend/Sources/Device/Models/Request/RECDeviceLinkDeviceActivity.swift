@@ -8,15 +8,15 @@
 
 import Foundation
 
-final class RECLinkDeviceActivity: RECActivity {
-    let data: RECLinkDeviceActivityData
+final class RECDeviceLinkDeviceActivity: RECDeviceActivity {
+    let data: RECDeviceLinkDeviceActivityData
     
     // MARK: Init
     
     init(
         deviceIdsToLink: [String]
     ) {
-        self.data = RECLinkDeviceActivityData(deviceIdsToLink: deviceIdsToLink)
+        self.data = RECDeviceLinkDeviceActivityData(deviceIdsToLink: deviceIdsToLink)
         super.init(
             type: "link_device")
     }
@@ -36,7 +36,7 @@ final class RECLinkDeviceActivity: RECActivity {
 
 // MARK: - Data
 
-struct RECLinkDeviceActivityData: Encodable {
+struct RECDeviceLinkDeviceActivityData: Encodable {
     let deviceIdsToLink: [String]
     
     // MARK: Coding Keys

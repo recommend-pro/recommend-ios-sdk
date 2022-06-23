@@ -1,5 +1,5 @@
 //
-//  RECAddToCartActivity.swift
+//  RECDeviceProductViewActivity.swift
 //  Recommend
 //
 //  Created by Dmytrii Golovanov on 08.12.2021.
@@ -8,24 +8,20 @@
 
 import Foundation
 
-public final class RECAddToCartActivity: RECActivity {
-    let data: RECAddToCartActivityData
+public final class RECDeviceProductViewActivity: RECDeviceActivity {
+    let data: RECDeviceProductViewActivityData
     
     // MARK: Init
     
     public init(
-        cartHash: String,
         sku: String,
-        variationSKU: String?,
-        requestId: String? = nil
+        variationSKU: String?
     ) {
-        self.data = RECAddToCartActivityData(
-            cartHash: cartHash,
+        self.data = RECDeviceProductViewActivityData(
             sku: sku,
-            variationSKU: variationSKU,
-            requestId: requestId)
+            variationSKU: variationSKU)
         super.init(
-            type: "add_to_cart")
+            type: "product_view")
     }
     
     // MARK: Encoding
@@ -43,18 +39,14 @@ public final class RECAddToCartActivity: RECActivity {
 
 // MARK: - Data
 
-struct RECAddToCartActivityData: Encodable {
-    let cartHash: String
+struct RECDeviceProductViewActivityData: Encodable {
     let sku: String
     let variationSKU: String?
-    @RECNullEncodable private(set) var requestId: String?
     
     // MARK: Coding Keys
     
     enum CodingKeys: String, CodingKey {
-        case cartHash = "cart_hash"
         case sku
         case variationSKU = "variation_sku"
-        case requestId = "request_id"
     }
 }

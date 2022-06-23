@@ -1,5 +1,5 @@
 //
-//  RECListViewActivity.swift
+//  RECDeviceCustomEventActivity.swift
 //  Recommend
 //
 //  Created by Dmytrii Golovanov on 08.12.2021.
@@ -8,20 +8,17 @@
 
 import Foundation
 
-public final class RECListViewActivity: RECActivity {
-    let data: RECListViewActivityData
+public final class RECDeviceCustomEventActivity: RECDeviceActivity {
+    let data: RECDeviceCustomEventActivityData
     
     // MARK: Init
     
     public init(
-        products: [RECActivityProduct]?,
-        listId: String
+        event: String
     ) {
-        self.data = RECListViewActivityData(
-            products: products,
-            listId: listId)
+        self.data = RECDeviceCustomEventActivityData(event: event)
         super.init(
-            type: "list_view")
+            type: "custom_event")
     }
     
     // MARK: Encoding
@@ -39,14 +36,6 @@ public final class RECListViewActivity: RECActivity {
 
 // MARK: - Data
 
-struct RECListViewActivityData: Encodable {
-    let products: [RECActivityProduct]?
-    let listId: String
-    
-    // MARK: Coding Keys
-    
-    enum CodingKeys: String, CodingKey {
-        case products
-        case listId = "list_id"
-    }
+struct RECDeviceCustomEventActivityData: Encodable {
+    let event: String
 }

@@ -1,5 +1,5 @@
 //
-//  RECAddToWishlistActivity.swift
+//  RECDeviceProductRatedActivity.swift
 //  Recommend
 //
 //  Created by Dmytrii Golovanov on 08.12.2021.
@@ -8,24 +8,22 @@
 
 import Foundation
 
-public final class RECAddToWishlistActivity: RECActivity {
-    let data: RECAddToWishlistActivityData
+public final class RECDeviceProductRatedActivity: RECDeviceActivity {
+    let data: RECDeviceProductRatedActivityData
     
     // MARK: Init
     
     public init(
-        wishlistHash: String,
         sku: String,
-        variationSKU: String?,
-        requestId: String? = nil
+        rate: Int,
+        variationSKU: String?
     ) {
-        self.data = RECAddToWishlistActivityData(
-            wishlistHash: wishlistHash,
+        self.data = RECDeviceProductRatedActivityData(
             sku: sku,
-            variationSKU: variationSKU,
-            requestId: requestId)
+            rate: rate,
+            variationSKU: variationSKU)
         super.init(
-            type: "add_to_wishlist")
+            type: "product_rated")
     }
     
     // MARK: Encoding
@@ -43,18 +41,34 @@ public final class RECAddToWishlistActivity: RECActivity {
 
 // MARK: - Data
 
-struct RECAddToWishlistActivityData: Encodable {
-    let wishlistHash: String
+struct RECDeviceProductRatedActivityData: Encodable {
     let sku: String
+    let rate: Int
     let variationSKU: String?
-    @RECNullEncodable private(set) var requestId: String?
     
     // MARK: Coding Keys
     
     enum CodingKeys: String, CodingKey {
-        case wishlistHash = "wishlist_hash"
         case sku
+        case rate
         case variationSKU = "variation_sku"
-        case requestId = "request_id"
+    }
+    
+    // MARK: Init
+    
+    init(
+        sku: String,
+        rate: Int,
+        variationSKU: String?
+    ) {
+        self.sku = sku
+        if rate < 0 {
+            self.rate = 0
+        } else if rate > 1 {
+            self.rate = 1
+        } else {
+            self.rate = rate
+        }
+        self.variationSKU = variationSKU
     }
 }

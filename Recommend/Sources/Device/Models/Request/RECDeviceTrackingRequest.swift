@@ -1,5 +1,5 @@
 //
-//  RECDeviceActivity.swift
+//  RECDeviceTrackingRequest.swift
 //  Recommend
 //
 //  Created by Dmytrii Golovanov on 08.12.2021.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct RECDeviceActivity: Encodable {
+public struct RECDeviceTrackingRequest: Encodable {
     /// Hash of identifier of customer
     @RECNullEncodable public private(set) var customerIdHash: String?
     /// Store code
@@ -23,7 +23,7 @@ public struct RECDeviceActivity: Encodable {
     /// Timestamp of event in seconds
     public let eventTime: Int?
     public let metrics: RECMetrics?
-    public let activity: [RECActivity]
+    public let activity: [RECDeviceActivity]
     
     // MARK: Coding Keys
     
@@ -49,7 +49,7 @@ public struct RECDeviceActivity: Encodable {
         priceList: String? = nil,
         eventTime: Int? = nil,
         metrics: RECMetrics? = nil,
-        activity: [RECActivity]
+        activity: [RECDeviceActivity]
     ) {
         self.customerIdHash = customerIdHash
         self.store = store

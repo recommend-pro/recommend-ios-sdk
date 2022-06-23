@@ -10,10 +10,10 @@ import Foundation
 import UIKit
 import CoreLocation
 
-final class RECUpdateDeviceActivity: RECActivity {
+final class RECDeviceUpdateDeviceActivity: RECDeviceActivity {
     typealias Location = RECDeviceLocation
     
-    let data: RECUpdateDeviceActivityData
+    let data: RECDeviceUpdateDeviceActivityData
 
     // MARK: Init
 
@@ -27,7 +27,7 @@ final class RECUpdateDeviceActivity: RECActivity {
         deviceCountry: String?,
         location: Location?
     ) {
-        self.data = RECUpdateDeviceActivityData(
+        self.data = RECDeviceUpdateDeviceActivityData(
             model: model,
             name: name,
             firstLaunch: firstLaunch == true ? 1 : nil,
@@ -54,7 +54,7 @@ final class RECUpdateDeviceActivity: RECActivity {
 
 // MARK: - Data
 
-struct RECUpdateDeviceActivityData: Encodable {
+struct RECDeviceUpdateDeviceActivityData: Encodable {
     typealias Location = RECDeviceLocation
     
     /// Model of device

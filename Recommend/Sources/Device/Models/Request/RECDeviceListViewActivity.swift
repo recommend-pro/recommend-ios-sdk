@@ -1,5 +1,5 @@
 //
-//  RECActivitySuscribeData.swift
+//  RECDeviceListViewActivity.swift
 //  Recommend
 //
 //  Created by Dmytrii Golovanov on 08.12.2021.
@@ -8,19 +8,20 @@
 
 import Foundation
 
-public final class RECSubscribeActivity: RECActivity {
-    let data: RECSubscribeActivityData
+public final class RECDeviceListViewActivity: RECDeviceActivity {
+    let data: RECDeviceListViewActivityData
     
     // MARK: Init
     
     public init(
-        emailHash: String,
-        requestId: String? = nil
+        products: [RECDeviceActivityProduct]?,
+        listId: String
     ) {
-        self.data = RECSubscribeActivityData(
-            emailHash: emailHash,
-            requestId: requestId)
-        super.init(type: "subscribe")
+        self.data = RECDeviceListViewActivityData(
+            products: products,
+            listId: listId)
+        super.init(
+            type: "list_view")
     }
     
     // MARK: Encoding
@@ -38,14 +39,14 @@ public final class RECSubscribeActivity: RECActivity {
 
 // MARK: - Data
 
-struct RECSubscribeActivityData: Encodable {
-    let emailHash: String
-    @RECNullEncodable private(set) var requestId: String?
+struct RECDeviceListViewActivityData: Encodable {
+    let products: [RECDeviceActivityProduct]?
+    let listId: String
     
     // MARK: Coding Keys
     
     enum CodingKeys: String, CodingKey {
-        case emailHash = "email_hash"
-        case requestId = "request_id"
+        case products
+        case listId = "list_id"
     }
 }

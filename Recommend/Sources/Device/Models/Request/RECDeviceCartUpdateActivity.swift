@@ -1,5 +1,5 @@
 //
-//  RECPanelViewActivity.swift
+//  RECDeviceCartUpdateActivity.swift
 //  Recommend
 //
 //  Created by Dmytrii Golovanov on 08.12.2021.
@@ -8,22 +8,20 @@
 
 import Foundation
 
-public final class RECPanelViewActivity: RECActivity {
-    let data: RECPanelViewActivityData
+public final class RECDeviceCartUpdateActivity: RECDeviceActivity {
+    let data: RECDeviceCartUpdateActivityData
     
     // MARK: Init
     
     public init(
-        products: [RECActivityProduct]?,
-        panelId: String,
-        productsCount: Int
+        cartHash: String,
+        requestId: String? = nil
     ) {
-        self.data = RECPanelViewActivityData(
-            products: products,
-            panelId: panelId,
-            productsCount: productsCount)
+        self.data = RECDeviceCartUpdateActivityData(
+            cartHash: cartHash,
+            requestId: requestId)
         super.init(
-            type: "panel_view")
+            type: "cart_update")
     }
     
     // MARK: Encoding
@@ -41,16 +39,14 @@ public final class RECPanelViewActivity: RECActivity {
 
 // MARK: - Data
 
-struct RECPanelViewActivityData: Encodable {
-    let products: [RECActivityProduct]?
-    let panelId: String
-    let productsCount: Int
+struct RECDeviceCartUpdateActivityData: Encodable {
+    let cartHash: String
+    @RECNullEncodable private(set) var requestId: String?
     
     // MARK: Coding Keys
     
     enum CodingKeys: String, CodingKey {
-        case products
-        case panelId = "panel_id"
-        case productsCount = "products_count"
+        case cartHash = "cart_hash"
+        case requestId = "request_id"
     }
 }

@@ -1,5 +1,5 @@
 //
-//  RECActivitySearchTerm.swift
+//  RECDeviceActivitySearchTerm.swift
 //  Recommend
 //
 //  Created by Dmytrii Golovanov on 08.12.2021.
@@ -8,8 +8,8 @@
 
 import Foundation
 
-public struct RECActivitySearchTerm: Encodable {
-    public typealias TermType = RECActivitySearchTermType
+public struct RECDeviceActivitySearchTerm: Encodable {
+    public typealias TermType = RECDeviceActivitySearchTermType
     
     public let type: TermType
     public let value: String
@@ -27,7 +27,7 @@ public struct RECActivitySearchTerm: Encodable {
 
 // MARK: - Search Term Type
 
-public enum RECActivitySearchTermType: Encodable {
+public enum RECDeviceActivitySearchTermType: Encodable {
     case text
     case type(_ rawValue: String)
     

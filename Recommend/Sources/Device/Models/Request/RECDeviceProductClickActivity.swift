@@ -1,5 +1,5 @@
 //
-//  RECProductClickActivity.swift
+//  RECDeviceProductClickActivity.swift
 //  Recommend
 //
 //  Created by Dmytrii Golovanov on 08.12.2021.
@@ -8,21 +8,21 @@
 
 import Foundation
 
-public final class RECProductClickActivity: RECActivity {
-    let data: RECProductClickActivityData
+public final class RECDeviceProductClickActivity: RECDeviceActivity {
+    let data: RECDeviceProductClickActivityData
     
     // MARK: Init
     
-    public typealias Source = RECProductClickSource
+    public typealias Source = RECDeviceProductClickActivitySource
 
     // MARK: Init
 
     public init(
         sku: String,
-        products: [RECActivityProduct]?,
+        products: [RECDeviceActivityProduct]?,
         source: Source?
     ) {
-        self.data = RECProductClickActivityData(
+        self.data = RECDeviceProductClickActivityData(
             sku: sku,
             products: products,
             source: source)
@@ -45,18 +45,18 @@ public final class RECProductClickActivity: RECActivity {
 
 // MARK: - Data
 
-struct RECProductClickActivityData: Encodable {
+struct RECDeviceProductClickActivityData: Encodable {
     let sku: String
-    let products: [RECActivityProduct]?
-    let source: RECProductClickSource?
+    let products: [RECDeviceActivityProduct]?
+    let source: RECDeviceProductClickActivitySource?
 }
 
 // MARK: - Product Click Source
 
-public enum RECProductClickSource: Encodable {
+public enum RECDeviceProductClickActivitySource: Encodable {
     case panel(panelId: String)
     case list(listId: String)
-    case search(term: RECActivitySearchTerm)
+    case search(term: RECDeviceActivitySearchTerm)
     
     // MARK: Coding Keys
     
@@ -72,17 +72,17 @@ public enum RECProductClickSource: Encodable {
         
         switch self {
         case .panel(let panelId):
-            let data = RECProductClickPanelSourceData(panelId: panelId)
+            let data = RECDeviceProductClickActivityPanelSourceData(panelId: panelId)
             try container.encode("panel", forKey: .type)
             try container.encode(data, forKey: .data)
             
         case .list(let listId):
-            let data = RECProductClickListSourceData(listId: listId)
+            let data = RECDeviceProductClickActivityListSourceData(listId: listId)
             try container.encode("list", forKey: .type)
             try container.encode(data, forKey: .data)
             
         case .search(let term):
-            let data = RECProductClickSearchSourceData(term: term)
+            let data = RECDeviceProductClickActivitySearchSourceData(term: term)
             try container.encode("search", forKey: .type)
             try container.encode(data, forKey: .data)
         }
@@ -91,7 +91,7 @@ public enum RECProductClickSource: Encodable {
 
 // MARK: - Product Click Panel Source
 
-private struct RECProductClickPanelSourceData: Encodable {
+private struct RECDeviceProductClickActivityPanelSourceData: Encodable {
     let panelId: String
     
     // MARK: Coding Keys
@@ -103,7 +103,7 @@ private struct RECProductClickPanelSourceData: Encodable {
 
 // MARK: - Product Click List Source
 
-private struct RECProductClickListSourceData: Encodable {
+private struct RECDeviceProductClickActivityListSourceData: Encodable {
     let listId: String
     
     // MARK: Coding Keys
@@ -115,8 +115,8 @@ private struct RECProductClickListSourceData: Encodable {
 
 // MARK: - Product Click Search Source
 
-private struct RECProductClickSearchSourceData: Encodable {
-    let term: RECActivitySearchTerm
+private struct RECDeviceProductClickActivitySearchSourceData: Encodable {
+    let term: RECDeviceActivitySearchTerm
     
     // MARK: Coding Keys
     

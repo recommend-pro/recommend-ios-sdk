@@ -27,7 +27,7 @@ public final class RECDevice {
     // MARK: Track Device Activity
     
     public func trackDeviceActivity(
-        _ deviceActivity: RECDeviceActivity,
+        _ deviceActivity: RECDeviceTrackingRequest,
         completion: ((Error?) -> Void)? = nil
     ) {
         apiService.trackDeviceActivity(deviceActivity) { error in
@@ -37,10 +37,10 @@ public final class RECDevice {
     
     private func trackDeviceActivity(
         eventTime: Date = Date(),
-        activity: [RECActivity],
+        activity: [RECDeviceActivity],
         completion: ((Error?) -> Void)? = nil
     ) {
-        let deviceActivity = RECDeviceActivity(
+        let deviceActivity = RECDeviceTrackingRequest(
             eventTime: Int(eventTime.timeIntervalSince1970),
             activity: activity)
         trackDeviceActivity(
@@ -52,7 +52,7 @@ public final class RECDevice {
     
     public func trackOpenApp() {
         trackDeviceActivity(activity: [
-            RECOpenAppActivity()
+            RECDeviceOpenAppActivity()
         ])
     }
     
@@ -67,7 +67,7 @@ public final class RECDevice {
             let firstLaunch = self.core.firstLaunch == true ? true : nil
             
             self.trackDeviceActivity(activity: [
-                RECUpdateDeviceActivity(
+                RECDeviceUpdateDeviceActivity(
                     model: device.model,
                     name: device.name,
                     firstLaunch: firstLaunch,
@@ -84,7 +84,7 @@ public final class RECDevice {
     
     public func linkDevice(deviceIdsToLink: [String]) {
         trackDeviceActivity(activity: [
-            RECLinkDeviceActivity(deviceIdsToLink: deviceIdsToLink)
+            RECDeviceLinkDeviceActivity(deviceIdsToLink: deviceIdsToLink)
         ])
     }
 }

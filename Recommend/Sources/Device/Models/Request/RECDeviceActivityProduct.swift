@@ -1,5 +1,5 @@
 //
-//  RECActivityProduct.swift
+//  RECDeviceActivityProduct.swift
 //  Recommend
 //
 //  Created by Dmytrii Golovanov on 08.12.2021.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct RECActivityProduct: Encodable {
+public struct RECDeviceActivityProduct: Encodable {
     public let sku: String
     public let variationSKU: String?
     public let position: Int?

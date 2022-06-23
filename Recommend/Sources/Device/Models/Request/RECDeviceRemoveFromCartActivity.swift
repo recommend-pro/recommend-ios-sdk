@@ -1,5 +1,5 @@
 //
-//  RECCartUpdateActivity.swift
+//  RECDeviceRemoveFromCartActivity.swift
 //  Recommend
 //
 //  Created by Dmytrii Golovanov on 08.12.2021.
@@ -8,20 +8,24 @@
 
 import Foundation
 
-public final class RECCartUpdateActivity: RECActivity {
-    let data: RECCartUpdateActivityData
+public final class RECDeviceRemoveFromCartActivity: RECDeviceActivity {
+    let data: RECDeviceRemoveFromCartActivityData
     
     // MARK: Init
     
     public init(
         cartHash: String,
+        sku: String,
+        variationSKU: String?,
         requestId: String? = nil
     ) {
-        self.data = RECCartUpdateActivityData(
+        self.data = RECDeviceRemoveFromCartActivityData(
             cartHash: cartHash,
+            sku: sku,
+            variationSKU: variationSKU,
             requestId: requestId)
         super.init(
-            type: "cart_update")
+            type: "remove_from_cart")
     }
     
     // MARK: Encoding
@@ -39,14 +43,18 @@ public final class RECCartUpdateActivity: RECActivity {
 
 // MARK: - Data
 
-struct RECCartUpdateActivityData: Encodable {
+struct RECDeviceRemoveFromCartActivityData: Encodable {
     let cartHash: String
+    let sku: String
+    let variationSKU: String?
     @RECNullEncodable private(set) var requestId: String?
     
     // MARK: Coding Keys
     
     enum CodingKeys: String, CodingKey {
         case cartHash = "cart_hash"
+        case sku
+        case variationSKU = "variation_sku"
         case requestId = "request_id"
     }
 }

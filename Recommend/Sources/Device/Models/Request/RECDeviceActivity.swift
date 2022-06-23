@@ -1,5 +1,5 @@
 //
-//  RECActivity.swift
+//  RECDeviceActivity.swift
 //  Recommend
 //
 //  Created by Dmytrii Golovanov on 08.12.2021.
@@ -8,14 +8,14 @@
 
 import Foundation
 
-typealias RECActivityType = String
+typealias RECDeviceActivityType = String
 
-public class RECActivity: Encodable {
-    let type: RECActivityType
+public class RECDeviceActivity: Encodable {
+    let type: RECDeviceActivityType
     
     // MARK: Init
     
-    init(type: RECActivityType) {
+    init(type: RECDeviceActivityType) {
         self.type = type
     }
 }

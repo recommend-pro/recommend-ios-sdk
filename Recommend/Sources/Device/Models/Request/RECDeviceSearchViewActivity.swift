@@ -1,5 +1,5 @@
 //
-//  RECCustomEventActivity.swift
+//  RECDeviceSearchViewActivity.swift
 //  Recommend
 //
 //  Created by Dmytrii Golovanov on 08.12.2021.
@@ -8,17 +8,19 @@
 
 import Foundation
 
-public final class RECCustomEventActivity: RECActivity {
-    let data: RECCustomEventActivityData
+public final class RECDeviceSearchViewActivity: RECDeviceActivity {
+    let data: RECDeviceSearchViewActivityData
     
     // MARK: Init
     
     public init(
-        event: String
+        products: [RECDeviceActivityProduct]?,
+        term: RECDeviceActivitySearchTerm
     ) {
-        self.data = RECCustomEventActivityData(event: event)
-        super.init(
-            type: "custom_event")
+        self.data = RECDeviceSearchViewActivityData(
+            products: products,
+            term: term)
+        super.init(type: "search_view")
     }
     
     // MARK: Encoding
@@ -36,6 +38,8 @@ public final class RECCustomEventActivity: RECActivity {
 
 // MARK: - Data
 
-struct RECCustomEventActivityData: Encodable {
-    let event: String
+struct RECDeviceSearchViewActivityData: Encodable {
+    let products: [RECDeviceActivityProduct]?
+    let term: RECDeviceActivitySearchTerm
 }
+

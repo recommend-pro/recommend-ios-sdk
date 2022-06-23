@@ -1,5 +1,5 @@
 //
-//  RECWishlistUpdateActivity.swift
+//  RECDeviceWishlistUpdateActivity.swift
 //  Recommend
 //
 //  Created by Dmytrii Golovanov on 08.12.2021.
@@ -8,8 +8,8 @@
 
 import Foundation
 
-public final class RECWishlistUpdateActivity: RECActivity {
-    let data: RECWishlistUpdateActivityData
+public final class RECDeviceWishlistUpdateActivity: RECDeviceActivity {
+    let data: RECDeviceWishlistUpdateActivityData
     
     // MARK: Init
     
@@ -17,7 +17,7 @@ public final class RECWishlistUpdateActivity: RECActivity {
         wishlistHash: String,
         requestId: String? = nil
     ) {
-        self.data = RECWishlistUpdateActivityData(
+        self.data = RECDeviceWishlistUpdateActivityData(
             wishlistHash: wishlistHash,
             requestId: requestId)
         super.init(type: "wishlist_update")
@@ -38,7 +38,7 @@ public final class RECWishlistUpdateActivity: RECActivity {
 
 // MARK: - Data
 
-struct RECWishlistUpdateActivityData: Encodable {
+struct RECDeviceWishlistUpdateActivityData: Encodable {
     let wishlistHash: String
     @RECNullEncodable private(set) var requestId: String?
     

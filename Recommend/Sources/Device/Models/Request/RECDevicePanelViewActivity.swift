@@ -1,5 +1,5 @@
 //
-//  RECElasticListActivity.swift
+//  RECDevicePanelViewActivity.swift
 //  Recommend
 //
 //  Created by Dmytrii Golovanov on 08.12.2021.
@@ -8,20 +8,22 @@
 
 import Foundation
 
-public final class RECElasticListActivity: RECActivity {
-    let data: RECElasticListActivityData
+public final class RECDevicePanelViewActivity: RECDeviceActivity {
+    let data: RECDevicePanelViewActivityData
     
     // MARK: Init
     
     public init(
-        products: [RECActivityProduct]?,
-        elasticListId: String
+        products: [RECDeviceActivityProduct]?,
+        panelId: String,
+        productsCount: Int
     ) {
-        self.data = RECElasticListActivityData(
+        self.data = RECDevicePanelViewActivityData(
             products: products,
-            elasticListId: elasticListId)
+            panelId: panelId,
+            productsCount: productsCount)
         super.init(
-            type: "elastic_list")
+            type: "panel_view")
     }
     
     // MARK: Encoding
@@ -39,14 +41,16 @@ public final class RECElasticListActivity: RECActivity {
 
 // MARK: - Data
 
-struct RECElasticListActivityData: Encodable {
-    let products: [RECActivityProduct]?
-    let elasticListId: String
+struct RECDevicePanelViewActivityData: Encodable {
+    let products: [RECDeviceActivityProduct]?
+    let panelId: String
+    let productsCount: Int
     
     // MARK: Coding Keys
     
     enum CodingKeys: String, CodingKey {
         case products
-        case elasticListId = "elastic_list_id"
+        case panelId = "panel_id"
+        case productsCount = "products_count"
     }
 }

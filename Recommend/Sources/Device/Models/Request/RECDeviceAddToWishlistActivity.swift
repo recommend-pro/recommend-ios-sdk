@@ -1,5 +1,5 @@
 //
-//  RECProductRatedActivity.swift
+//  RECDeviceAddToWishlistActivity.swift
 //  Recommend
 //
 //  Created by Dmytrii Golovanov on 08.12.2021.
@@ -8,22 +8,24 @@
 
 import Foundation
 
-public final class RECProductRatedActivity: RECActivity {
-    let data: RECProductRatedActivityData
+public final class RECDeviceAddToWishlistActivity: RECDeviceActivity {
+    let data: RECDeviceAddToWishlistActivityData
     
     // MARK: Init
     
     public init(
+        wishlistHash: String,
         sku: String,
-        rate: Int,
-        variationSKU: String?
+        variationSKU: String?,
+        requestId: String? = nil
     ) {
-        self.data = RECProductRatedActivityData(
+        self.data = RECDeviceAddToWishlistActivityData(
+            wishlistHash: wishlistHash,
             sku: sku,
-            rate: rate,
-            variationSKU: variationSKU)
+            variationSKU: variationSKU,
+            requestId: requestId)
         super.init(
-            type: "product_rated")
+            type: "add_to_wishlist")
     }
     
     // MARK: Encoding
@@ -41,34 +43,18 @@ public final class RECProductRatedActivity: RECActivity {
 
 // MARK: - Data
 
-struct RECProductRatedActivityData: Encodable {
+struct RECDeviceAddToWishlistActivityData: Encodable {
+    let wishlistHash: String
     let sku: String
-    let rate: Int
     let variationSKU: String?
+    @RECNullEncodable private(set) var requestId: String?
     
     // MARK: Coding Keys
     
     enum CodingKeys: String, CodingKey {
+        case wishlistHash = "wishlist_hash"
         case sku
-        case rate
         case variationSKU = "variation_sku"
-    }
-    
-    // MARK: Init
-    
-    init(
-        sku: String,
-        rate: Int,
-        variationSKU: String?
-    ) {
-        self.sku = sku
-        if rate < 0 {
-            self.rate = 0
-        } else if rate > 1 {
-            self.rate = 1
-        } else {
-            self.rate = rate
-        }
-        self.variationSKU = variationSKU
+        case requestId = "request_id"
     }
 }
