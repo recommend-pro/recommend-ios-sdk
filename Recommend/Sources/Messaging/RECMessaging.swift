@@ -10,7 +10,7 @@ import Foundation
 import UserNotifications
 
 public final class RECMessaging: NSObject {
-    private typealias PushNotificationEvent = RECMessagingPushNotificationEvent
+    private typealias PushNotificationEvent = RECMessagingPushEventRequest
     
     private static let userDefaultsSuiteName = "pro.recommend.messaging"
     
@@ -46,11 +46,11 @@ public final class RECMessaging: NSObject {
     // MARK: Notification User Info
     
     public func isRecommendNotification(_ userInfo: [AnyHashable: Any]) -> Bool {
-        return RECMessagingUserInfo(from: userInfo)?.isRecommendPushNotification ?? false
+        return RECMessagingPushUserInfo(from: userInfo)?.isRecommendPushNotification ?? false
     }
     
     public func remoteNotificationOpenURL(_ userInfo: [AnyHashable: Any]) -> URL? {
-        return RECMessagingUserInfo(from: userInfo)?.data?.openURL
+        return RECMessagingPushUserInfo(from: userInfo)?.data?.openURL
     }
     
     // MARK: Track Push Notification Event
@@ -96,7 +96,7 @@ public final class RECMessaging: NSObject {
         }
         
         subscriptionManager.getSettings { settings in
-            let model = RECMessagingSubscriptionUpdateModel(deviceToken: deviceToken,
+            let model = RECMessagingPushSubscriptionRequest(deviceToken: deviceToken,
                                                             applicationName: applicationName,
                                                             subscriptionStatus: settings.subscriptionStatus,
                                                             subscriptionStatusChangeDate: settings.subscriptionStatusChangedDate,

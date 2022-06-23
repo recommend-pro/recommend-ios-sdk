@@ -27,7 +27,7 @@ final class RECMessagingSubscriptionManager {
             userDefaults?.set(isUserSubscribed, forKey: UserDefaultsKeys.isUserSubscribed)
         }
     }
-    private(set) var subscriptionStatus: RECMessagingSubscriptionStatus {
+    private(set) var subscriptionStatus: RECMessagingPushSubscriptionStatus {
         didSet {
             if subscriptionStatus != oldValue {
                 subscriptionStatusChangedDate = Date()
@@ -69,7 +69,7 @@ final class RECMessagingSubscriptionManager {
         
         self.isUserSubscribed = userDefaults.value(forKey: UserDefaultsKeys.isUserSubscribed) as? Bool
         if let rawValue = userDefaults.string(forKey: UserDefaultsKeys.subscriptionStatus),
-            let subscriptionStatus = RECMessagingSubscriptionStatus(rawValue: rawValue) {
+            let subscriptionStatus = RECMessagingPushSubscriptionStatus(rawValue: rawValue) {
             self.subscriptionStatus = subscriptionStatus
         } else {
             self.subscriptionStatus = .nonSubscribed
@@ -98,7 +98,7 @@ final class RECMessagingSubscriptionManager {
                 return
             }
             
-            self.subscriptionStatus = RECMessagingSubscriptionStatus(authorizationStatus: notificationSettings.authorizationStatus,
+            self.subscriptionStatus = RECMessagingPushSubscriptionStatus(authorizationStatus: notificationSettings.authorizationStatus,
                                                                      isUserSubscribed: self.isUserSubscribed)
             self.updateCompletions.forEach({ $0() })
             self.updateCompletions.removeAll()
@@ -108,9 +108,9 @@ final class RECMessagingSubscriptionManager {
     
     // MARK: Settings
     
-    func getSettings(completion: @escaping (RECMessagingSubscriptionSettings) -> Void) {
+    func getSettings(completion: @escaping (RECMessagingPushSubscriptionSettings) -> Void) {
         updateSubscriptionStatus {
-            let settings = RECMessagingSubscriptionSettings(subscriptionStatus: self.subscriptionStatus,
+            let settings = RECMessagingPushSubscriptionSettings(subscriptionStatus: self.subscriptionStatus,
                                                             isUserSubscribed: self.isUserSubscribed,
                                                             subscriptionStatusChangedDate: self.subscriptionStatusChangedDate,
                                                             firstSubscribedDate: self.firstSubscribedDate)

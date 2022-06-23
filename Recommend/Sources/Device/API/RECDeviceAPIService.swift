@@ -28,7 +28,7 @@ final class RECDeviceAPIService {
     // MARK: Track Device Activity
     
     func trackDeviceActivity(
-        _ deviceActivity: RECDeviceActivity,
+        _ deviceActivity: RECDeviceTrackingRequest,
         completion: @escaping (Error?) -> Void
     ) {
         do {
