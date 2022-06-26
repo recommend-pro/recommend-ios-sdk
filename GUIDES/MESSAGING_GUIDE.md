@@ -2,6 +2,19 @@
 
 ## Push Notications
 
+### Subscription status
+
+**User Subscription** - is user subscribed for notifications receiving.
+
+**[UNAuthorizationStatus](https://developer.apple.com/documentation/usernotifications/unauthorizationstatus)** | **User Subscribed** | **Subscription**
+--- | --- | --- 
+[`notDetermined`](https://developer.apple.com/documentation/usernotifications/unauthorizationstatus/notdetermined) |   | ![non subscribed](https://img.shields.io/badge/-non%20subscribed-yellow)
+|   | `nil` | ![non subscribed](https://img.shields.io/badge/-non%20subscribed-yellow)
+[`authorized`](), [`provisional`](https://developer.apple.com/documentation/usernotifications/unauthorizationstatus/provisional), [`ephemeral`](https://developer.apple.com/documentation/usernotifications/unauthorizationstatus/ephemeral) | `true` | ![subscribed](https://img.shields.io/badge/-subscribed-brightgreen)
+[`authorized`](), [`provisional`](https://developer.apple.com/documentation/usernotifications/unauthorizationstatus/provisional), [`ephemeral`](https://developer.apple.com/documentation/usernotifications/unauthorizationstatus/ephemeral) | `false` | ![unsubscribed](https://img.shields.io/badge/-unsubscribed-red) 
+[`denied`](https://developer.apple.com/documentation/usernotifications/unauthorizationstatus/denied) | `true` | ![unsubscribed](https://img.shields.io/badge/-unsubscribed-red)
+[`denied`](https://developer.apple.com/documentation/usernotifications/unauthorizationstatus/denied) | `false` | ![unsubscribed](https://img.shields.io/badge/-unsubscribed-red)
+
 ### Setup
 
 1. Setup AppDelegate
