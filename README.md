@@ -1,3 +1,7 @@
+[![Version](https://img.shields.io/cocoapods/v/Recommend.svg?style=flat)](https://cocoapods.org/pods/Recommend)
+[![License](https://img.shields.io/cocoapods/l/Recommend.svg?style=flat)](https://cocoapods.org/pods/Recommend)
+[![Platform](https://img.shields.io/cocoapods/p/Recommend.svg?style=flat)](https://cocoapods.org/pods/Recommend)
+
 # Recommend iOS SDK
 
 ## Requirements
