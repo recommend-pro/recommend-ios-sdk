@@ -7,19 +7,52 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		520D630B291DB4D5008418BD /* WebKitUserAgent in Frameworks */ = {isa = PBXBuildFile; productRef = 520D630A291DB4D5008418BD /* WebKitUserAgent */; };
+		520D6312291DBFF0008418BD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 520D6311291DBFF0008418BD /* UIKit.framework */; };
+		520D6314291DBFF6008418BD /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 520D6313291DBFF6008418BD /* UserNotifications.framework */; };
 		5216F0E429183FD1001ABAA7 /* Recommend.h in Headers */ = {isa = PBXBuildFile; fileRef = 5216F0E229183FD1001ABAA7 /* Recommend.h */; };
 		5216F0E62918405C001ABAA7 /* Recommend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5216F0E52918405C001ABAA7 /* Recommend.swift */; };
+		526D8B84291944A90083BD5A /* RECCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526D8B83291944A90083BD5A /* RECCore.swift */; };
+		526D8B86291944FA0083BD5A /* RECConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526D8B85291944FA0083BD5A /* RECConfiguration.swift */; };
+		526D8B8B291947210083BD5A /* RECError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526D8B8A291947210083BD5A /* RECError.swift */; };
+		526D8B8D291947990083BD5A /* RECCoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526D8B8C291947990083BD5A /* RECCoreError.swift */; };
+		526FBCAF29216CAF002A7654 /* RECInvalidAccountIdError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526FBCAE29216CAF002A7654 /* RECInvalidAccountIdError.swift */; };
+		526FBCB129216D3C002A7654 /* RECCoreErrorCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526FBCB029216D3C002A7654 /* RECCoreErrorCodes.swift */; };
+		526FBCB92921B527002A7654 /* RECInvalidInfoPlistError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526FBCB82921B527002A7654 /* RECInvalidInfoPlistError.swift */; };
+		526FBCBB2921B7C9002A7654 /* RECInvalidUserDefaultsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526FBCBA2921B7C9002A7654 /* RECInvalidUserDefaultsError.swift */; };
+		526FBCC32921B896002A7654 /* RECPriceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526FBCBF2921B896002A7654 /* RECPriceList.swift */; };
+		526FBCC42921B896002A7654 /* RECMetric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526FBCC02921B896002A7654 /* RECMetric.swift */; };
+		526FBCC52921B896002A7654 /* RECMetrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526FBCC12921B896002A7654 /* RECMetrics.swift */; };
+		526FBCC62921B896002A7654 /* RECCustomerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526FBCC22921B896002A7654 /* RECCustomerInfo.swift */; };
+		526FBCCD2921CA39002A7654 /* RECInvalidDeviceIdError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526FBCCC2921CA39002A7654 /* RECInvalidDeviceIdError.swift */; };
+		B49C272D291A945D00F69653 /* Date+Recommend.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49C272C291A945D00F69653 /* Date+Recommend.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		520D6311291DBFF0008418BD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		520D6313291DBFF6008418BD /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		5216F0E229183FD1001ABAA7 /* Recommend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Recommend.h; sourceTree = "<group>"; };
 		5216F0E52918405C001ABAA7 /* Recommend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recommend.swift; sourceTree = "<group>"; };
+		526D8B83291944A90083BD5A /* RECCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RECCore.swift; sourceTree = "<group>"; };
+		526D8B85291944FA0083BD5A /* RECConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RECConfiguration.swift; sourceTree = "<group>"; };
+		526D8B8A291947210083BD5A /* RECError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RECError.swift; sourceTree = "<group>"; };
+		526D8B8C291947990083BD5A /* RECCoreError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RECCoreError.swift; sourceTree = "<group>"; };
+		526FBCAE29216CAF002A7654 /* RECInvalidAccountIdError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RECInvalidAccountIdError.swift; sourceTree = "<group>"; };
+		526FBCB029216D3C002A7654 /* RECCoreErrorCodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RECCoreErrorCodes.swift; sourceTree = "<group>"; };
+		526FBCB82921B527002A7654 /* RECInvalidInfoPlistError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RECInvalidInfoPlistError.swift; sourceTree = "<group>"; };
+		526FBCBA2921B7C9002A7654 /* RECInvalidUserDefaultsError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECInvalidUserDefaultsError.swift; sourceTree = "<group>"; };
+		526FBCBF2921B896002A7654 /* RECPriceList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECPriceList.swift; sourceTree = "<group>"; };
+		526FBCC02921B896002A7654 /* RECMetric.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECMetric.swift; sourceTree = "<group>"; };
+		526FBCC12921B896002A7654 /* RECMetrics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECMetrics.swift; sourceTree = "<group>"; };
+		526FBCC22921B896002A7654 /* RECCustomerInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECCustomerInfo.swift; sourceTree = "<group>"; };
+		526FBCCC2921CA39002A7654 /* RECInvalidDeviceIdError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECInvalidDeviceIdError.swift; sourceTree = "<group>"; };
 		5288D9FC2864CFCD00153440 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		5288D9FD2864CFCD00153440 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5288D9FE2864CFCD00153440 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		5288D9FF2864CFCD00153440 /* Recommend.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Recommend.podspec; sourceTree = "<group>"; };
 		5288DA002864CFCD00153440 /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		529993862864CD86004ED2E1 /* Recommend.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Recommend.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B49C272C291A945D00F69653 /* Date+Recommend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Recommend.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,27 +60,77 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				520D6314291DBFF6008418BD /* UserNotifications.framework in Frameworks */,
+				520D6312291DBFF0008418BD /* UIKit.framework in Frameworks */,
+				520D630B291DB4D5008418BD /* WebKitUserAgent in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		520D6310291DBFF0008418BD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				520D6313291DBFF6008418BD /* UserNotifications.framework */,
+				520D6311291DBFF0008418BD /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5216F0E029183FD1001ABAA7 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				5216F0E729184077001ABAA7 /* Headers */,
+				526D8B7A291942DF0083BD5A /* Core */,
+				526FBCB729219F39002A7654 /* Headers */,
 				5216F0E52918405C001ABAA7 /* Recommend.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
 		};
-		5216F0E729184077001ABAA7 /* Headers */ = {
+		526D8B7A291942DF0083BD5A /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				526FBCBE2921B896002A7654 /* CustomerInfo */,
+				526D8B89291947170083BD5A /* Errors */,
+				B49C272B291A944100F69653 /* Extensions */,
+				526D8B85291944FA0083BD5A /* RECConfiguration.swift */,
+				526D8B83291944A90083BD5A /* RECCore.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		526D8B89291947170083BD5A /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				526D8B8C291947990083BD5A /* RECCoreError.swift */,
+				526FBCB029216D3C002A7654 /* RECCoreErrorCodes.swift */,
+				526D8B8A291947210083BD5A /* RECError.swift */,
+				526FBCAE29216CAF002A7654 /* RECInvalidAccountIdError.swift */,
+				526FBCCC2921CA39002A7654 /* RECInvalidDeviceIdError.swift */,
+				526FBCB82921B527002A7654 /* RECInvalidInfoPlistError.swift */,
+				526FBCBA2921B7C9002A7654 /* RECInvalidUserDefaultsError.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
+		526FBCB729219F39002A7654 /* Headers */ = {
 			isa = PBXGroup;
 			children = (
 				5216F0E229183FD1001ABAA7 /* Recommend.h */,
 			);
 			path = Headers;
+			sourceTree = "<group>";
+		};
+		526FBCBE2921B896002A7654 /* CustomerInfo */ = {
+			isa = PBXGroup;
+			children = (
+				526FBCC22921B896002A7654 /* RECCustomerInfo.swift */,
+				526FBCC02921B896002A7654 /* RECMetric.swift */,
+				526FBCC12921B896002A7654 /* RECMetrics.swift */,
+				526FBCBF2921B896002A7654 /* RECPriceList.swift */,
+			);
+			path = CustomerInfo;
 			sourceTree = "<group>";
 		};
 		5288D9FB2864CFB200153440 /* Metadata */ = {
@@ -68,6 +151,7 @@
 				5288D9FB2864CFB200153440 /* Metadata */,
 				529993882864CD86004ED2E1 /* Recommend */,
 				529993872864CD86004ED2E1 /* Products */,
+				520D6310291DBFF0008418BD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -85,6 +169,14 @@
 				5216F0E029183FD1001ABAA7 /* Sources */,
 			);
 			path = Recommend;
+			sourceTree = "<group>";
+		};
+		B49C272B291A944100F69653 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B49C272C291A945D00F69653 /* Date+Recommend.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -117,6 +209,7 @@
 			);
 			name = Recommend;
 			packageProductDependencies = (
+				520D630A291DB4D5008418BD /* WebKitUserAgent */,
 			);
 			productName = Recommend;
 			productReference = 529993862864CD86004ED2E1 /* Recommend.framework */;
@@ -149,6 +242,7 @@
 			);
 			mainGroup = 5299937C2864CD86004ED2E1;
 			packageReferences = (
+				520D6309291DB4D5008418BD /* XCRemoteSwiftPackageReference "webkit-user-agent" */,
 			);
 			productRefGroup = 529993872864CD86004ED2E1 /* Products */;
 			projectDirPath = "";
@@ -195,7 +289,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				526FBCCD2921CA39002A7654 /* RECInvalidDeviceIdError.swift in Sources */,
+				526FBCAF29216CAF002A7654 /* RECInvalidAccountIdError.swift in Sources */,
+				526D8B8D291947990083BD5A /* RECCoreError.swift in Sources */,
+				526FBCC52921B896002A7654 /* RECMetrics.swift in Sources */,
+				526FBCC32921B896002A7654 /* RECPriceList.swift in Sources */,
+				526D8B84291944A90083BD5A /* RECCore.swift in Sources */,
+				526D8B8B291947210083BD5A /* RECError.swift in Sources */,
+				526FBCBB2921B7C9002A7654 /* RECInvalidUserDefaultsError.swift in Sources */,
 				5216F0E62918405C001ABAA7 /* Recommend.swift in Sources */,
+				526FBCB92921B527002A7654 /* RECInvalidInfoPlistError.swift in Sources */,
+				526FBCC62921B896002A7654 /* RECCustomerInfo.swift in Sources */,
+				526FBCB129216D3C002A7654 /* RECCoreErrorCodes.swift in Sources */,
+				526FBCC42921B896002A7654 /* RECMetric.swift in Sources */,
+				B49C272D291A945D00F69653 /* Date+Recommend.swift in Sources */,
+				526D8B86291944FA0083BD5A /* RECConfiguration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +513,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		520D6309291DB4D5008418BD /* XCRemoteSwiftPackageReference "webkit-user-agent" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dmytriigolovanov/webkit-user-agent";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		520D630A291DB4D5008418BD /* WebKitUserAgent */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 520D6309291DB4D5008418BD /* XCRemoteSwiftPackageReference "webkit-user-agent" */;
+			productName = WebKitUserAgent;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5299937D2864CD86004ED2E1 /* Project object */;
 }

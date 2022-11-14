@@ -8,6 +8,8 @@ Pod::Spec.new do |spec|
   spec.source        = { :git => 'https://github.com/recommend-pro/recommend-ios-sdk.git', :tag => 'v' + spec.version.to_s }
   spec.module_name   = 'Recommend'
   spec.swift_version = '5.3'
+  
   spec.ios.deployment_target = "11.0"
+  
   spec.source_files   = 'Recommend/Sources/**/*'
 end

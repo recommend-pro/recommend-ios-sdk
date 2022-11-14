@@ -11,13 +11,13 @@ let package = Package(
             name: "Recommend",
             targets: ["Recommend"]),
     ],
-    dependencies: [
-    ],
+    dependencies: [],
     targets: [
         .target(
             name: "Recommend",
             dependencies: [],
-            path: "Recommend/Sources"),
+            path: "Recommend/Sources",
+        ),
     ],
     swiftLanguageVersions: [.v5]
 )
