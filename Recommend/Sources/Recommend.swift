@@ -20,6 +20,10 @@ public final class Recommend {
         core?.customerInfo
     }
     
+    public var deviceId: String! {
+        try? core?.getDeviceId()
+    }
+    
     // MARK: Shared instance
     
     public static let shared = {
