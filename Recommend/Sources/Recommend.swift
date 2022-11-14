@@ -117,7 +117,7 @@ public final class Recommend {
     
     // MARK: Recommendation
     
-    public func fetchProductRecommendationsPanels(
+    public func fetchRecommendationPanels(
         panels: [RECRecommendationPanelRequest]? = nil,
         previewPanel: RECRecommendationPreviewPanelRequest? = nil,
         pageType: String? = nil,
