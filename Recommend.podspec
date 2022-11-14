@@ -12,4 +12,9 @@ Pod::Spec.new do |spec|
   spec.ios.deployment_target = "11.0"
   
   spec.source_files   = 'Recommend/Sources/**/*'
+
+  spec.ios.framework  = 'UIKit'
+  spec.ios.framework  = 'UserNotifications'
+  
+  spec.dependency 'WebKitUserAgent', '>= 3.0.0', '< 4.0.0'
 end
