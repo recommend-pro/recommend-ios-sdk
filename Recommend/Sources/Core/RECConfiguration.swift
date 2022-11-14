@@ -13,15 +13,18 @@ public let kRECInfoPlistName: String = "Recommend-Info"
 
 struct RECConfiguration {
     let accountId: String
+    let applicationName: String?
     let apiHost: String
     
     // MARK: Init
     
     init(
         accountId: String,
+        applicationName: String?,
         apiHost: String
     ) {
         self.accountId = accountId
+        self.applicationName = applicationName
         self.apiHost = apiHost
     }
 }
@@ -44,5 +47,11 @@ extension RECConfiguration: Decodable {
         } catch {
             throw RECInvalidInfoPlistError(error: error)
         }
+    }
+    
+    private enum CodingKeys: String, CodingKey {
+        case accountId = "ACCOUNT_ID"
+        case applicationName = "APP_NAME"
+        case apiHost = "API_HOST"
     }
 }

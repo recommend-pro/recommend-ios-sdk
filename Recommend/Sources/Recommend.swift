@@ -13,6 +13,7 @@ public final class Recommend {
     private var isConfigured: Bool = false
     private var core: RECCore!
     private var device: RECDevice!
+    private var messaging: RECMessaging!
     
     public var customerInfo: RECCustomerInfo! {
         core?.customerInfo
@@ -30,11 +31,13 @@ public final class Recommend {
     
     public convenience init(
         accountId: String,
+        applicationName: String? = nil,
         apiHost: String = kRECAPIDefaultHost
     ) {
         self.init()
         let configuration = RECConfiguration(
             accountId: accountId,
+            applicationName: applicationName,
             apiHost: apiHost)
         configure(with: configuration)
     }
@@ -48,6 +51,11 @@ public final class Recommend {
         isConfigured = true
         self.core = RECCore(configuration: configuration)
         self.device = RECDevice(core: core)
+        
+        let messagingConfiguration = RECMessagingConfiguration(applicationName: configuration.applicationName)
+        self.messaging = RECMessaging(
+            core: core,
+            configuration: messagingConfiguration)
     }
     
     public static func configure() {
@@ -61,10 +69,12 @@ public final class Recommend {
     
     public static func configure(
         accountId: String,
+        applicationName: String? = nil,
         apiHost: String = kRECAPIDefaultHost
     ) {
         let configuration = RECConfiguration(
             accountId: accountId,
+            applicationName: applicationName,
             apiHost: apiHost)
         shared.configure(with: configuration)
     }
@@ -84,6 +94,24 @@ public final class Recommend {
         device.linkDevice(ids: deviceIdsToLink)
     }
     
+    // MARK: Messaging
+    
+    public static func isRecommendNotification(_ userInfo: [AnyHashable: Any]) -> Bool {
+        RECMessagingPushManager.isRecommendNotification(userInfo)
+    }
+    
+    public func isRecommendNotification(_ userInfo: [AnyHashable: Any]) -> Bool {
+        Self.isRecommendNotification(userInfo)
+    }
+    
+    public func subscribeToPushMessaging() {
+        messaging?.subscribeToPush()
+    }
+    
+    public func unsubscribeFromPushMessaging() {
+        messaging?.unsubscribeFromPush()
+    }
+    
     // MARK: Application
     
     public func application(
@@ -95,5 +123,34 @@ public final class Recommend {
         if !(application.applicationState == .background && isRemoteNotification) {
             device?.applicationDidFinishLaunching()
         }
+    }
+    
+    public func application(
+        _ application: UIKit.UIApplication,
+        didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data
+    ) {
+        messaging?.application(
+            application,
+            didRegisterForRemoteNotificationsWithDeviceToken: deviceToken)
+    }
+    
+    public func application(
+        _ application: UIKit.UIApplication,
+        didReceiveRemoteNotification userInfo: [AnyHashable: Any]
+    ) {
+        messaging?.application(
+            application,
+            didReceiveRemoteNotification: userInfo)
+    }
+    
+    // MARK: User Notifications
+    
+    public func userNotificationCenter(
+        _ center: UNUserNotificationCenter,
+        didReceive response: UNNotificationResponse
+    ) {
+        messaging?.userNotificationCenter(
+            center,
+            didReceive: response)
     }
 }
