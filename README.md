@@ -87,6 +87,8 @@ Filename: `Recommend-Info.plist`
 | Field | Type | Required | Description |
 | :----: | :----: | :----: | :----: |
 | `ACCOUND_ID` | String | + | Accound id. Check it on [control.recommend.pro](https://control.recommend.pro/) |
+| `APP_NAME` | String | - | Application Name. Check it on [control.recommend.pro](https://control.recommend.pro/) |
+| `API_HOST` | String | - | API host. Default is **api.recommend.pro** |
 
 ## License
 

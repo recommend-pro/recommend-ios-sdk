@@ -54,4 +54,11 @@ extension RECConfiguration: Decodable {
         case applicationName = "APP_NAME"
         case apiHost = "API_HOST"
     }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.accountId = try container.decode(String.self, forKey: .accountId)
+        self.applicationName = try container.decodeIfPresent(String.self, forKey: .applicationName)
+        self.apiHost = (try container.decodeIfPresent(String.self, forKey: .apiHost)) ?? kRECAPIDefaultHost
+    }
 }
