@@ -16,5 +16,5 @@ Pod::Spec.new do |spec|
   spec.ios.framework  = 'UIKit'
   spec.ios.framework  = 'UserNotifications'
   
-  spec.dependency 'WebKitUserAgent', '>= 3.0.0', '< 4.0.0'
+  spec.dependency 'WebKitUserAgent', '>= 4.0.0', '< 5.0.0'
 end

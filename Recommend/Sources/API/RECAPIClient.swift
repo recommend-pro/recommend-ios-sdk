@@ -129,23 +129,27 @@ final class RECAPIClient: NSObject {
         with body: Data? = nil,
         completionHandler: @escaping RequestProcessingCompletion
     ) {
-        do {
-            let request = try RECAPIRequest(
-                host: host,
-                endpoint: endpoint,
-                body: body)
-            
-            guard let userAgent = WKUserAgent.default else {
-                throw RECAPINilUserAgentError()
+        
+        WKUserAgent.fetchDefault { userAgent in
+            do {
+                let request = try RECAPIRequest(
+                    host: self.host,
+                    endpoint: endpoint,
+                    body: body)
+                
+                guard let userAgent = userAgent else {
+                    throw RECAPINilUserAgentError()
+                }
+                
+                request.setUserAgent(userAgent)
+                
+                let queueItem = RECAPIQueueItem(
+                    request: request,
+                    completionHandler: completionHandler)
+                self.addQueueItem(queueItem)
+            } catch {
+                completionHandler(.failure(error))
             }
-            request.setUserAgent(userAgent)
-            
-            let queueItem = RECAPIQueueItem(
-                request: request,
-                completionHandler: completionHandler)
-            self.addQueueItem(queueItem)
-        } catch {
-            completionHandler(.failure(error))
         }
     }
     

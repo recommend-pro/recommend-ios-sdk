@@ -14,7 +14,7 @@ let package = Package(
     dependencies: [
         .package(
             url: "https://github.com/dmytriigolovanov/webkit-user-agent",
-            "3.0.0" ..< "4.0.0"
+            "4.0.0" ..< "5.0.0"
         )
     ],
     targets: [
