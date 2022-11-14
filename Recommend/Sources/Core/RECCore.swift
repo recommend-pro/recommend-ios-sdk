@@ -64,7 +64,7 @@ final class RECCore {
     
     // MARK: First Launch
     
-    private lazy var isFirstLaunch: Bool = {
+    private(set) lazy var isFirstLaunch: Bool = {
         var isFirstLaunch: Bool!
         var newValue: Bool?
         

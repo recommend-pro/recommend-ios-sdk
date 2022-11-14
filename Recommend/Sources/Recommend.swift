@@ -12,6 +12,7 @@ import UIKit.UIApplication
 public final class Recommend {
     private var isConfigured: Bool = false
     private var core: RECCore!
+    private var device: RECDevice!
     
     public var customerInfo: RECCustomerInfo! {
         core?.customerInfo
@@ -46,6 +47,7 @@ public final class Recommend {
         }
         isConfigured = true
         self.core = RECCore(configuration: configuration)
+        self.device = RECDevice(core: core)
     }
     
     public static func configure() {
@@ -65,5 +67,33 @@ public final class Recommend {
             accountId: accountId,
             apiHost: apiHost)
         shared.configure(with: configuration)
+    }
+    
+    // MARK: Device
+    
+    public func trackDeviceActivity(
+        _ activity: [RECDeviceActivity],
+        completionHandler: ((Error?) -> Void)? = nil
+    ) {
+        device.trackActivity(
+            activity,
+            completionHandler: completionHandler)
+    }
+    
+    public func linkDevice(ids deviceIdsToLink: [String]) {
+        device.linkDevice(ids: deviceIdsToLink)
+    }
+    
+    // MARK: Application
+    
+    public func application(
+        _ application: UIKit.UIApplication,
+        didFinishLaunchingWithOptions launchOptions: [UIKit.UIApplication.LaunchOptionsKey: Any]?
+    ) {
+        let isRemoteNotification = launchOptions?[.remoteNotification] as? [AnyHashable: Any] != nil
+        
+        if !(application.applicationState == .background && isRemoteNotification) {
+            device?.applicationDidFinishLaunching()
+        }
     }
 }
