@@ -46,6 +46,10 @@
 		526FBCFA2921CBDF002A7654 /* RECAPIURLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526FBCE62921CBDF002A7654 /* RECAPIURLBuilder.swift */; };
 		526FBCFB2921CBDF002A7654 /* RECHTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526FBCE72921CBDF002A7654 /* RECHTTPMethod.swift */; };
 		526FBCFD2921CD5D002A7654 /* RECAPIInvalidHostError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526FBCFC2921CD5D002A7654 /* RECAPIInvalidHostError.swift */; };
+		526FBD032921CE24002A7654 /* RECAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526FBCFF2921CE24002A7654 /* RECAttribute.swift */; };
+		526FBD042921CE24002A7654 /* RECAttributeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526FBD012921CE24002A7654 /* RECAttributeError.swift */; };
+		526FBD052921CE24002A7654 /* RECAttributeUnexpectedValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526FBD022921CE24002A7654 /* RECAttributeUnexpectedValue.swift */; };
+		526FBD072921CE3D002A7654 /* RECAttributeErrorCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526FBD062921CE3D002A7654 /* RECAttributeErrorCodes.swift */; };
 		B49C272D291A945D00F69653 /* Date+Recommend.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49C272C291A945D00F69653 /* Date+Recommend.swift */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +92,10 @@
 		526FBCE62921CBDF002A7654 /* RECAPIURLBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECAPIURLBuilder.swift; sourceTree = "<group>"; };
 		526FBCE72921CBDF002A7654 /* RECHTTPMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECHTTPMethod.swift; sourceTree = "<group>"; };
 		526FBCFC2921CD5D002A7654 /* RECAPIInvalidHostError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RECAPIInvalidHostError.swift; sourceTree = "<group>"; };
+		526FBCFF2921CE24002A7654 /* RECAttribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECAttribute.swift; sourceTree = "<group>"; };
+		526FBD012921CE24002A7654 /* RECAttributeError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECAttributeError.swift; sourceTree = "<group>"; };
+		526FBD022921CE24002A7654 /* RECAttributeUnexpectedValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECAttributeUnexpectedValue.swift; sourceTree = "<group>"; };
+		526FBD062921CE3D002A7654 /* RECAttributeErrorCodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RECAttributeErrorCodes.swift; sourceTree = "<group>"; };
 		5288D9FC2864CFCD00153440 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		5288D9FD2864CFCD00153440 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5288D9FE2864CFCD00153440 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
@@ -124,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				526FBCCE2921CBDF002A7654 /* API */,
+				526FBCFE2921CE24002A7654 /* Attribute */,
 				526D8B7A291942DF0083BD5A /* Core */,
 				526FBCB729219F39002A7654 /* Headers */,
 				5216F0E52918405C001ABAA7 /* Recommend.swift */,
@@ -242,6 +251,25 @@
 				526FBCE72921CBDF002A7654 /* RECHTTPMethod.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		526FBCFE2921CE24002A7654 /* Attribute */ = {
+			isa = PBXGroup;
+			children = (
+				526FBD002921CE24002A7654 /* Errors */,
+				526FBCFF2921CE24002A7654 /* RECAttribute.swift */,
+			);
+			path = Attribute;
+			sourceTree = "<group>";
+		};
+		526FBD002921CE24002A7654 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				526FBD012921CE24002A7654 /* RECAttributeError.swift */,
+				526FBD062921CE3D002A7654 /* RECAttributeErrorCodes.swift */,
+				526FBD022921CE24002A7654 /* RECAttributeUnexpectedValue.swift */,
+			);
+			path = Errors;
 			sourceTree = "<group>";
 		};
 		5288D9FB2864CFB200153440 /* Metadata */ = {
@@ -402,17 +430,20 @@
 			files = (
 				526FBCF42921CBDF002A7654 /* RECAPIUnexpectedResponseError.swift in Sources */,
 				526FBCE82921CBDF002A7654 /* RECAPIDataResponse.swift in Sources */,
+				526FBD042921CE24002A7654 /* RECAttributeError.swift in Sources */,
 				526FBCE92921CBDF002A7654 /* RECAPIErrorResponseCode.swift in Sources */,
 				526FBCEF2921CBDF002A7654 /* RECAPIQueue.swift in Sources */,
 				526FBCCD2921CA39002A7654 /* RECInvalidDeviceIdError.swift in Sources */,
 				526FBCF22921CBDF002A7654 /* RECAPIErrorResponseError.swift in Sources */,
 				526FBCFD2921CD5D002A7654 /* RECAPIInvalidHostError.swift in Sources */,
 				526FBCF12921CBDF002A7654 /* RECAPIEndpoint.swift in Sources */,
+				526FBD032921CE24002A7654 /* RECAttribute.swift in Sources */,
 				526FBCAF29216CAF002A7654 /* RECInvalidAccountIdError.swift in Sources */,
 				526D8B8D291947990083BD5A /* RECCoreError.swift in Sources */,
 				526FBCC52921B896002A7654 /* RECMetrics.swift in Sources */,
 				526FBCF82921CBDF002A7654 /* RECAPIError.swift in Sources */,
 				526FBCEE2921CBDF002A7654 /* RECAPIQueueItem.swift in Sources */,
+				526FBD052921CE24002A7654 /* RECAttributeUnexpectedValue.swift in Sources */,
 				526FBCC32921B896002A7654 /* RECPriceList.swift in Sources */,
 				526D8B84291944A90083BD5A /* RECCore.swift in Sources */,
 				526FBCFB2921CBDF002A7654 /* RECHTTPMethod.swift in Sources */,
@@ -426,6 +457,7 @@
 				526FBCC62921B896002A7654 /* RECCustomerInfo.swift in Sources */,
 				526FBCEB2921CBDF002A7654 /* RECAPIErrorResponse.swift in Sources */,
 				526FBCB129216D3C002A7654 /* RECCoreErrorCodes.swift in Sources */,
+				526FBD072921CE3D002A7654 /* RECAttributeErrorCodes.swift in Sources */,
 				526FBCEC2921CBDF002A7654 /* RECAPIConfiguration.swift in Sources */,
 				526FBCFA2921CBDF002A7654 /* RECAPIURLBuilder.swift in Sources */,
 				526FBCF02921CBDF002A7654 /* RECAPIRequest.swift in Sources */,
