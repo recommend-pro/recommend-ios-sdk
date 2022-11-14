@@ -14,6 +14,7 @@ public final class Recommend {
     private var core: RECCore!
     private var device: RECDevice!
     private var messaging: RECMessaging!
+    private var recommendation: RECRecommendation!
     
     public var customerInfo: RECCustomerInfo! {
         core?.customerInfo
@@ -56,6 +57,8 @@ public final class Recommend {
         self.messaging = RECMessaging(
             core: core,
             configuration: messagingConfiguration)
+        
+        self.recommendation = RECRecommendation(core: core)
     }
     
     public static func configure() {
@@ -110,6 +113,25 @@ public final class Recommend {
     
     public func unsubscribeFromPushMessaging() {
         messaging?.unsubscribeFromPush()
+    }
+    
+    // MARK: Recommendation
+    
+    public func fetchProductRecommendationsPanels(
+        panels: [RECRecommendationPanelRequest]? = nil,
+        previewPanel: RECRecommendationPreviewPanelRequest? = nil,
+        pageType: String? = nil,
+        completionHandler: @escaping (Result<[RECRecommendationPanel], Error>) -> Void
+    ) {
+        guard let recommendation = self.recommendation else {
+            completionHandler(.success([]))
+            return
+        }
+        recommendation.fetchPanels(
+            panels: panels,
+            previewPanel: previewPanel,
+            pageType: pageType,
+            completionHandler: completionHandler)
     }
     
     // MARK: Application
