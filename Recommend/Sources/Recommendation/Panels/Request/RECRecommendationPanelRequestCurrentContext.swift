@@ -9,14 +9,14 @@
 import Foundation
 
 public struct RECRecommendationPanelRequestCurrentContext: Encodable {
-    public let sku: String
-    public let listId: String
+    public let sku: String?
+    public let listId: String?
     
     // MARK: Init
     
     public init(
-        sku: String,
-        listId: String
+        sku: String?,
+        listId: String?
     ) {
         self.sku = sku
         self.listId = listId
@@ -27,5 +27,11 @@ public struct RECRecommendationPanelRequestCurrentContext: Encodable {
     private enum CodingKeys: String, CodingKey {
         case sku
         case listId = "list_id"
+    }
+    
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encodeIfPresent(sku, forKey: .sku)
+        try container.encodeIfPresent(listId, forKey: .listId)
     }
 }

@@ -44,4 +44,13 @@ public struct RECRecommendationPanelRequest: Encodable {
         case attrsToInclude = "attrs_to_include"
         case variations
     }
+    
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(id, forKey: .id)
+        try container.encodeIfPresent(context, forKey: .context)
+        try container.encodeIfPresent(filters, forKey: .filters)
+        try container.encodeIfPresent(attrsToInclude, forKey: .attrsToInclude)
+        try container.encodeIfPresent(variations, forKey: .variations)
+    }
 }

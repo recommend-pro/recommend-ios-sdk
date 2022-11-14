@@ -37,4 +37,12 @@ public struct RECRecommendationPanelRequestFilter: Encodable {
         self.operator = `operator`
         self.value = value
     }
+    
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encodeIfPresent(type, forKey: .type)
+        try container.encode(code, forKey: .code)
+        try container.encode(`operator`, forKey: .operator)
+        try container.encode(value, forKey: .value)
+    }
 }

@@ -11,11 +11,13 @@ import Foundation
 public final class RECDeviceWishlistUpdateActivity: RECDeviceActivityWithData {
     public init(
         wishlistHash: String,
-        requestId: String? = nil
+        requestId: String? = nil,
+        versionId: String? = nil
     ) {
         let data = RECDeviceWishlistUpdateActivityData(
             wishlistHash: wishlistHash,
-            requestId: requestId)
+            requestId: requestId,
+            versionId: versionId)
         super.init(
             type: "wishlist_update",
             data: data)
@@ -25,10 +27,12 @@ public final class RECDeviceWishlistUpdateActivity: RECDeviceActivityWithData {
 extension RECDeviceActivity {
     public static func wishlistUpdate(
         wishlistHash: String,
-        requestId: String? = nil
+        requestId: String? = nil,
+        versionId: String? = nil
     ) -> RECDeviceActivity {
         RECDeviceWishlistUpdateActivity(
             wishlistHash: wishlistHash,
-            requestId: requestId)
+            requestId: requestId,
+            versionId: versionId)
     }
 }

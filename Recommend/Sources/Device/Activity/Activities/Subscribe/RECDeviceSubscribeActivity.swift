@@ -11,11 +11,13 @@ import Foundation
 public final class RECDeviceSubscribeActivity: RECDeviceActivityWithData {
     public init(
         emailHash: String,
-        requestId: String? = nil
+        requestId: String? = nil,
+        versionId: String? = nil
     ) {
         let data = RECDeviceSubscribeActivityData(
             emailHash: emailHash,
-            requestId: requestId)
+            requestId: requestId,
+            versionId: versionId)
         super.init(
             type: "subscribe",
             data: data)
@@ -25,10 +27,12 @@ public final class RECDeviceSubscribeActivity: RECDeviceActivityWithData {
 extension RECDeviceActivity {
     public static func subscribe(
         emailHash: String,
-        requestId: String? = nil
+        requestId: String? = nil,
+        versionId: String? = nil
     ) -> RECDeviceActivity {
         RECDeviceSubscribeActivity(
             emailHash: emailHash,
-            requestId: requestId)
+            requestId: requestId,
+            versionId: versionId)
     }
 }

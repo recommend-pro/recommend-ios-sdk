@@ -12,6 +12,7 @@ public enum RECDeviceProductClickActivitySource: Encodable {
     case panel(panelId: String)
     case list(listId: String)
     case search(term: RECDeviceActivitySearchTerm)
+    case custom(typeId: String)
     
     // MARK: Coding
     
@@ -37,6 +38,11 @@ public enum RECDeviceProductClickActivitySource: Encodable {
         case .search(let term):
             let data = RECDeviceProductClickActivitySearchSourceData(term: term)
             try container.encode("search", forKey: .type)
+            try container.encode(data, forKey: .data)
+            
+        case .custom(let typeId):
+            let data = RECDeviceProductClickActivityCustomSourceData(typeId: typeId)
+            try container.encode("custom", forKey: .type)
             try container.encode(data, forKey: .data)
         }
     }
@@ -75,5 +81,16 @@ private struct RECDeviceProductClickActivitySearchSourceData: Encodable {
     
     enum CodingKeys: String, CodingKey {
         case term
+    }
+}
+// MARK: - Product Click Custom Source
+
+private struct RECDeviceProductClickActivityCustomSourceData: Encodable {
+    let typeId: String
+    
+    // MARK: Coding Keys
+    
+    enum CodingKeys: String, CodingKey {
+        case typeId = "type_id"
     }
 }

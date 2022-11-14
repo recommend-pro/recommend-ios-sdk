@@ -13,13 +13,15 @@ public final class RECDeviceRemoveFromCartActivity: RECDeviceActivityWithData {
         cartHash: String,
         sku: String,
         variationSKU: String? = nil,
-        requestId: String? = nil
+        requestId: String? = nil,
+        versionId: String? = nil
     ) {
         let data = RECDeviceRemoveFromCartActivityData(
             cartHash: cartHash,
             sku: sku,
             variationSKU: variationSKU,
-            requestId: requestId)
+            requestId: requestId,
+            versionId: versionId)
         super.init(
             type: "remove_from_cart",
             data: data)
@@ -31,12 +33,14 @@ extension RECDeviceActivity {
         cartHash: String,
         sku: String,
         variationSKU: String? = nil,
-        requestId: String? = nil
+        requestId: String? = nil,
+        versionId: String? = nil
     ) -> RECDeviceActivity {
         RECDeviceRemoveFromCartActivity(
             cartHash: cartHash,
             sku: sku,
             variationSKU: variationSKU,
-            requestId: requestId)
+            requestId: requestId,
+            versionId: versionId)
     }
 }

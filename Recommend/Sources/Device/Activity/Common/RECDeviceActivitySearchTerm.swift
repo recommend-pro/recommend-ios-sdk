@@ -9,17 +9,30 @@
 import Foundation
 
 public struct RECDeviceActivitySearchTerm: Encodable {
-    public let type: SearchTermType
-    public let value: String
+    public let type: SearchTermType?
+    public let value: String?
     
     // MARK: Init
     
     public init(
-        type: SearchTermType,
-        value: String
+        type: SearchTermType?,
+        value: String?
     ) {
         self.type = type
         self.value = value
+    }
+    
+    // MARK: Coding
+    
+    private enum CodingKeys: String, CodingKey {
+        case type
+        case value
+    }
+    
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encodeIfPresent(type, forKey: .type)
+        try container.encodeIfPresent(value, forKey: .value)
     }
     
     // MARK: TermType

@@ -37,7 +37,7 @@ final class RECDevicePanelViewActivityData: RECDeviceActivityData {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encodeIfPresent(products, forKey: .products)
         try container.encode(panelId, forKey: .panelId)
-        try container.encode(products, forKey: .productsCount)
+        try container.encode(productsCount, forKey: .productsCount)
         try super.encode(to: encoder)
     }
 }

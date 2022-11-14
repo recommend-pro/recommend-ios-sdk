@@ -11,11 +11,13 @@ import Foundation
 public final class RECDeviceCartUpdateActivity: RECDeviceActivityWithData {
     public init(
         cartHash: String,
-        requestId: String? = nil
+        requestId: String? = nil,
+        versionId: String? = nil
     ) {
         let data = RECDeviceCartUpdateActivityData(
             cartHash: cartHash,
-            requestId: requestId)
+            requestId: requestId,
+            versionId: versionId)
         super.init(
             type: "cart_update",
             data: data)
@@ -25,10 +27,12 @@ public final class RECDeviceCartUpdateActivity: RECDeviceActivityWithData {
 extension RECDeviceActivity {
     public static func cartUpdate(
         cartHash: String,
-        requestId: String? = nil
+        requestId: String? = nil,
+        versionId: String? = nil
     ) -> RECDeviceActivity {
         RECDeviceCartUpdateActivity(
             cartHash: cartHash,
-            requestId: requestId)
+            requestId: requestId,
+            versionId: versionId)
     }
 }

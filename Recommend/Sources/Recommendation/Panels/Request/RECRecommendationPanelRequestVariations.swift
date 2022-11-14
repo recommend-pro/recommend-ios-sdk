@@ -28,4 +28,10 @@ public struct RECRecommendationPanelRequestVariations: Encodable {
         case include
         case attrsToInclude = "attrs_to_include"
     }
+    
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(include, forKey: .include)
+        try container.encodeIfPresent(attrsToInclude, forKey: .attrsToInclude)
+    }
 }

@@ -11,15 +11,18 @@ import Foundation
 final class RECDeviceSaleActivityData: RECDeviceActivityData {
     let orderIdHash: String
     let requestId: String?
+    let versionId: String?
     
     // MARK: Init
     
     init(
         orderIdHash: String,
-        requestId: String?
+        requestId: String?,
+        versionId: String?
     ) {
         self.orderIdHash = orderIdHash
         self.requestId = requestId
+        self.versionId = versionId
     }
     
     // MARK: Coding
@@ -27,12 +30,14 @@ final class RECDeviceSaleActivityData: RECDeviceActivityData {
     enum CodingKeys: String, CodingKey {
         case orderIdHash = "order_id_hash"
         case requestId = "request_id"
+        case versionId = "version_id"
     }
     
     override func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(orderIdHash, forKey: .orderIdHash)
-        try container.encode(requestId, forKey: .requestId)
+        try container.encodeIfPresent(requestId, forKey: .requestId)
+        try container.encodeIfPresent(versionId, forKey: .versionId)
         try super.encode(to: encoder)
     }
 }

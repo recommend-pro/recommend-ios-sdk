@@ -32,7 +32,7 @@ final class RECDeviceProductViewActivityData: RECDeviceActivityData {
     override func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(sku, forKey: .sku)
-        try container.encode(variationSKU, forKey: .variationSKU)
+        try container.encodeIfPresent(variationSKU, forKey: .variationSKU)
         try super.encode(to: encoder)
     }
 }

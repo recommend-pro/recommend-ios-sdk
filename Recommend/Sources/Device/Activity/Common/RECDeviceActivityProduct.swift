@@ -32,4 +32,11 @@ public struct RECDeviceActivityProduct: Encodable {
         self.variationSKU = variationSKU
         self.position = position
     }
+    
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(sku, forKey: .sku)
+        try container.encodeIfPresent(variationSKU, forKey: .variationSKU)
+        try container.encodeIfPresent(position, forKey: .position)
+    }
 }

@@ -42,4 +42,20 @@ struct RECRecommendationPanelsFetchRequest: Encodable {
         case panels
         case previewPanel = "preview_panel"
     }
+    
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(deviceId, forKey: .deviceId)
+        try container.encodeIfPresent(customerIdHash, forKey: .customerIdHash)
+        try container.encodeIfPresent(emailHash, forKey: .emailHash)
+        try container.encode(store, forKey: .store)
+        try container.encode(currency, forKey: .currency)
+        try container.encodeIfPresent(environment, forKey: .environment)
+        try container.encode(priceList, forKey: .priceList)
+        try container.encodeIfPresent(metrics, forKey: .metrics)
+        try container.encodeIfPresent(pageType, forKey: .pageType)
+        try container.encode(contentType, forKey: .contentType)
+        try container.encodeIfPresent(panels, forKey: .panels)
+        try container.encodeIfPresent(previewPanel, forKey: .previewPanel)
+    }
 }

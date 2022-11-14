@@ -13,13 +13,15 @@ public final class RECDeviceRemoveFromWishlistActivity: RECDeviceActivityWithDat
         wishlistHash: String,
         sku: String,
         variationSKU: String? = nil,
-        requestId: String? = nil
+        requestId: String? = nil,
+        versionId: String? = nil
     ) {
         let data = RECDeviceRemoveFromWishlistActivityData(
             wishlistHash: wishlistHash,
             sku: sku,
             variationSKU: variationSKU,
-            requestId: requestId)
+            requestId: requestId,
+            versionId: versionId)
         super.init(
             type: "remove_from_wishlist",
             data: data)
@@ -31,12 +33,14 @@ extension RECDeviceActivity {
         wishlistHash: String,
         sku: String,
         variationSKU: String? = nil,
-        requestId: String? = nil
+        requestId: String? = nil,
+        versionId: String? = nil
     ) -> RECDeviceActivity {
         RECDeviceRemoveFromWishlistActivity(
             wishlistHash: wishlistHash,
             sku: sku,
             variationSKU: variationSKU,
-            requestId: requestId)
+            requestId: requestId,
+            versionId: versionId)
     }
 }

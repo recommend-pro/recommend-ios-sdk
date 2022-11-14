@@ -13,6 +13,7 @@ final class RECDeviceAddToWishlistActivityData: RECDeviceActivityData {
     let sku: String
     let variationSKU: String?
     let requestId: String?
+    let versionId: String?
     
     // MARK: Init
     
@@ -20,12 +21,14 @@ final class RECDeviceAddToWishlistActivityData: RECDeviceActivityData {
         wishlistHash: String,
         sku: String,
         variationSKU: String?,
-        requestId: String?
+        requestId: String?,
+        versionId: String?
     ) {
         self.wishlistHash = wishlistHash
         self.sku = sku
         self.variationSKU = variationSKU
         self.requestId = requestId
+        self.versionId = versionId
     }
     
     // MARK: Coding
@@ -35,13 +38,15 @@ final class RECDeviceAddToWishlistActivityData: RECDeviceActivityData {
         case sku
         case variationSKU = "variation_sku"
         case requestId = "request_id"
+        case versionId = "version_id"
     }
     
     override func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(wishlistHash, forKey: .wishlistHash)
-        try container.encodeIfPresent(sku, forKey: .sku)
+        try container.encode(sku, forKey: .sku)
         try container.encodeIfPresent(variationSKU, forKey: .variationSKU)
-        try container.encode(requestId, forKey: .requestId)
+        try container.encodeIfPresent(requestId, forKey: .requestId)
+        try container.encodeIfPresent(versionId, forKey: .requestId)
     }
 }

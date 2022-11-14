@@ -11,18 +11,18 @@ import Foundation
 public struct RECRecommendationPanelRequestContext: Encodable {
     public typealias CurrentContext = RECRecommendationPanelRequestCurrentContext
     
-    public let searchTerm: String
-    public let current: CurrentContext
-    public let skus: [String]
-    public let listIds: [String]
+    public let searchTerm: String?
+    public let current: CurrentContext?
+    public let skus: [String]?
+    public let listIds: [String]?
     
     // MARK: Init
     
     public init(
-        searchTerm: String,
-        current: CurrentContext,
-        skus: [String],
-        listIds: [String]
+        searchTerm: String?,
+        current: CurrentContext?,
+        skus: [String]?,
+        listIds: [String]?
     ) {
         self.searchTerm = searchTerm
         self.current = current
@@ -37,5 +37,13 @@ public struct RECRecommendationPanelRequestContext: Encodable {
         case current
         case skus
         case listIds = "list_ids"
+    }
+    
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encodeIfPresent(searchTerm, forKey: .searchTerm)
+        try container.encodeIfPresent(current, forKey: .current)
+        try container.encodeIfPresent(skus, forKey: .skus)
+        try container.encodeIfPresent(listIds, forKey: .listIds)
     }
 }

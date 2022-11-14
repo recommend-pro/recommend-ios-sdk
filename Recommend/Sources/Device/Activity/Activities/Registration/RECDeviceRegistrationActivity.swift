@@ -1,5 +1,5 @@
 //
-//  RECActivitySalewData.swift
+//  RECActivityCustomerRegistrationData.swift
 //  Recommend
 //
 //  Created by Dmytrii Golovanov on 08.12.2021.
@@ -8,30 +8,26 @@
 
 import Foundation
 
-public final class RECDeviceSaleActivity: RECDeviceActivityWithData {
+public final class RECDeviceRegistrationActivity: RECDeviceActivityWithData {
     public init(
-        orderIdHash: String,
         requestId: String? = nil,
         versionId: String? = nil
     ) {
-        let data = RECDeviceSaleActivityData(
-            orderIdHash: orderIdHash,
+        let data = RECDeviceRegistrationActivityData(
             requestId: requestId,
             versionId: versionId)
         super.init(
-            type: "sale",
+            type: "customer_registration",
             data: data)
     }
 }
 
 extension RECDeviceActivity {
-    public static func sale(
-        orderIdHash: String,
+    public static func customerRegistration(
         requestId: String? = nil,
         versionId: String? = nil
     ) -> RECDeviceActivity {
-        RECDeviceSaleActivity(
-            orderIdHash: orderIdHash,
+        RECDeviceRegistrationActivity(
             requestId: requestId,
             versionId: versionId)
     }
