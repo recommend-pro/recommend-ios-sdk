@@ -25,6 +25,27 @@
 		526FBCC52921B896002A7654 /* RECMetrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526FBCC12921B896002A7654 /* RECMetrics.swift */; };
 		526FBCC62921B896002A7654 /* RECCustomerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526FBCC22921B896002A7654 /* RECCustomerInfo.swift */; };
 		526FBCCD2921CA39002A7654 /* RECInvalidDeviceIdError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526FBCCC2921CA39002A7654 /* RECInvalidDeviceIdError.swift */; };
+		526FBCE82921CBDF002A7654 /* RECAPIDataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526FBCD02921CBDF002A7654 /* RECAPIDataResponse.swift */; };
+		526FBCE92921CBDF002A7654 /* RECAPIErrorResponseCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526FBCD12921CBDF002A7654 /* RECAPIErrorResponseCode.swift */; };
+		526FBCEA2921CBDF002A7654 /* RECAPIBaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526FBCD22921CBDF002A7654 /* RECAPIBaseResponse.swift */; };
+		526FBCEB2921CBDF002A7654 /* RECAPIErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526FBCD32921CBDF002A7654 /* RECAPIErrorResponse.swift */; };
+		526FBCEC2921CBDF002A7654 /* RECAPIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526FBCD42921CBDF002A7654 /* RECAPIConfiguration.swift */; };
+		526FBCED2921CBDF002A7654 /* RECAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526FBCD52921CBDF002A7654 /* RECAPIClient.swift */; };
+		526FBCEE2921CBDF002A7654 /* RECAPIQueueItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526FBCD72921CBDF002A7654 /* RECAPIQueueItem.swift */; };
+		526FBCEF2921CBDF002A7654 /* RECAPIQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526FBCD82921CBDF002A7654 /* RECAPIQueue.swift */; };
+		526FBCF02921CBDF002A7654 /* RECAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526FBCDA2921CBDF002A7654 /* RECAPIRequest.swift */; };
+		526FBCF12921CBDF002A7654 /* RECAPIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526FBCDB2921CBDF002A7654 /* RECAPIEndpoint.swift */; };
+		526FBCF22921CBDF002A7654 /* RECAPIErrorResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526FBCDD2921CBDF002A7654 /* RECAPIErrorResponseError.swift */; };
+		526FBCF32921CBDF002A7654 /* RECAPINilUserAgentError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526FBCDE2921CBDF002A7654 /* RECAPINilUserAgentError.swift */; };
+		526FBCF42921CBDF002A7654 /* RECAPIUnexpectedResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526FBCDF2921CBDF002A7654 /* RECAPIUnexpectedResponseError.swift */; };
+		526FBCF52921CBDF002A7654 /* RECAPIInvalidEndpointURLError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526FBCE02921CBDF002A7654 /* RECAPIInvalidEndpointURLError.swift */; };
+		526FBCF62921CBDF002A7654 /* RECAPIInvalidResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526FBCE12921CBDF002A7654 /* RECAPIInvalidResponseError.swift */; };
+		526FBCF72921CBDF002A7654 /* RECAPIRequestAttemptsLimitExceededError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526FBCE22921CBDF002A7654 /* RECAPIRequestAttemptsLimitExceededError.swift */; };
+		526FBCF82921CBDF002A7654 /* RECAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526FBCE32921CBDF002A7654 /* RECAPIError.swift */; };
+		526FBCF92921CBDF002A7654 /* RECAPIErrorCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526FBCE42921CBDF002A7654 /* RECAPIErrorCodes.swift */; };
+		526FBCFA2921CBDF002A7654 /* RECAPIURLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526FBCE62921CBDF002A7654 /* RECAPIURLBuilder.swift */; };
+		526FBCFB2921CBDF002A7654 /* RECHTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526FBCE72921CBDF002A7654 /* RECHTTPMethod.swift */; };
+		526FBCFD2921CD5D002A7654 /* RECAPIInvalidHostError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526FBCFC2921CD5D002A7654 /* RECAPIInvalidHostError.swift */; };
 		B49C272D291A945D00F69653 /* Date+Recommend.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49C272C291A945D00F69653 /* Date+Recommend.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +67,27 @@
 		526FBCC12921B896002A7654 /* RECMetrics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECMetrics.swift; sourceTree = "<group>"; };
 		526FBCC22921B896002A7654 /* RECCustomerInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECCustomerInfo.swift; sourceTree = "<group>"; };
 		526FBCCC2921CA39002A7654 /* RECInvalidDeviceIdError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECInvalidDeviceIdError.swift; sourceTree = "<group>"; };
+		526FBCD02921CBDF002A7654 /* RECAPIDataResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECAPIDataResponse.swift; sourceTree = "<group>"; };
+		526FBCD12921CBDF002A7654 /* RECAPIErrorResponseCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECAPIErrorResponseCode.swift; sourceTree = "<group>"; };
+		526FBCD22921CBDF002A7654 /* RECAPIBaseResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECAPIBaseResponse.swift; sourceTree = "<group>"; };
+		526FBCD32921CBDF002A7654 /* RECAPIErrorResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECAPIErrorResponse.swift; sourceTree = "<group>"; };
+		526FBCD42921CBDF002A7654 /* RECAPIConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECAPIConfiguration.swift; sourceTree = "<group>"; };
+		526FBCD52921CBDF002A7654 /* RECAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECAPIClient.swift; sourceTree = "<group>"; };
+		526FBCD72921CBDF002A7654 /* RECAPIQueueItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECAPIQueueItem.swift; sourceTree = "<group>"; };
+		526FBCD82921CBDF002A7654 /* RECAPIQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECAPIQueue.swift; sourceTree = "<group>"; };
+		526FBCDA2921CBDF002A7654 /* RECAPIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECAPIRequest.swift; sourceTree = "<group>"; };
+		526FBCDB2921CBDF002A7654 /* RECAPIEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECAPIEndpoint.swift; sourceTree = "<group>"; };
+		526FBCDD2921CBDF002A7654 /* RECAPIErrorResponseError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECAPIErrorResponseError.swift; sourceTree = "<group>"; };
+		526FBCDE2921CBDF002A7654 /* RECAPINilUserAgentError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECAPINilUserAgentError.swift; sourceTree = "<group>"; };
+		526FBCDF2921CBDF002A7654 /* RECAPIUnexpectedResponseError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECAPIUnexpectedResponseError.swift; sourceTree = "<group>"; };
+		526FBCE02921CBDF002A7654 /* RECAPIInvalidEndpointURLError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECAPIInvalidEndpointURLError.swift; sourceTree = "<group>"; };
+		526FBCE12921CBDF002A7654 /* RECAPIInvalidResponseError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECAPIInvalidResponseError.swift; sourceTree = "<group>"; };
+		526FBCE22921CBDF002A7654 /* RECAPIRequestAttemptsLimitExceededError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECAPIRequestAttemptsLimitExceededError.swift; sourceTree = "<group>"; };
+		526FBCE32921CBDF002A7654 /* RECAPIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECAPIError.swift; sourceTree = "<group>"; };
+		526FBCE42921CBDF002A7654 /* RECAPIErrorCodes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECAPIErrorCodes.swift; sourceTree = "<group>"; };
+		526FBCE62921CBDF002A7654 /* RECAPIURLBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECAPIURLBuilder.swift; sourceTree = "<group>"; };
+		526FBCE72921CBDF002A7654 /* RECHTTPMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECHTTPMethod.swift; sourceTree = "<group>"; };
+		526FBCFC2921CD5D002A7654 /* RECAPIInvalidHostError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RECAPIInvalidHostError.swift; sourceTree = "<group>"; };
 		5288D9FC2864CFCD00153440 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		5288D9FD2864CFCD00153440 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5288D9FE2864CFCD00153440 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
@@ -81,6 +123,7 @@
 		5216F0E029183FD1001ABAA7 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				526FBCCE2921CBDF002A7654 /* API */,
 				526D8B7A291942DF0083BD5A /* Core */,
 				526FBCB729219F39002A7654 /* Headers */,
 				5216F0E52918405C001ABAA7 /* Recommend.swift */,
@@ -131,6 +174,74 @@
 				526FBCBF2921B896002A7654 /* RECPriceList.swift */,
 			);
 			path = CustomerInfo;
+			sourceTree = "<group>";
+		};
+		526FBCCE2921CBDF002A7654 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				526FBCDC2921CBDF002A7654 /* Errors */,
+				526FBCE52921CBDF002A7654 /* Helpers */,
+				526FBCD62921CBDF002A7654 /* Queue */,
+				526FBCD52921CBDF002A7654 /* RECAPIClient.swift */,
+				526FBCD42921CBDF002A7654 /* RECAPIConfiguration.swift */,
+				526FBCD92921CBDF002A7654 /* Request */,
+				526FBCCF2921CBDF002A7654 /* Response */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		526FBCCF2921CBDF002A7654 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				526FBCD22921CBDF002A7654 /* RECAPIBaseResponse.swift */,
+				526FBCD02921CBDF002A7654 /* RECAPIDataResponse.swift */,
+				526FBCD32921CBDF002A7654 /* RECAPIErrorResponse.swift */,
+				526FBCD12921CBDF002A7654 /* RECAPIErrorResponseCode.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		526FBCD62921CBDF002A7654 /* Queue */ = {
+			isa = PBXGroup;
+			children = (
+				526FBCD82921CBDF002A7654 /* RECAPIQueue.swift */,
+				526FBCD72921CBDF002A7654 /* RECAPIQueueItem.swift */,
+			);
+			path = Queue;
+			sourceTree = "<group>";
+		};
+		526FBCD92921CBDF002A7654 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				526FBCDB2921CBDF002A7654 /* RECAPIEndpoint.swift */,
+				526FBCDA2921CBDF002A7654 /* RECAPIRequest.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		526FBCDC2921CBDF002A7654 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				526FBCE32921CBDF002A7654 /* RECAPIError.swift */,
+				526FBCE42921CBDF002A7654 /* RECAPIErrorCodes.swift */,
+				526FBCDD2921CBDF002A7654 /* RECAPIErrorResponseError.swift */,
+				526FBCE02921CBDF002A7654 /* RECAPIInvalidEndpointURLError.swift */,
+				526FBCFC2921CD5D002A7654 /* RECAPIInvalidHostError.swift */,
+				526FBCE12921CBDF002A7654 /* RECAPIInvalidResponseError.swift */,
+				526FBCDE2921CBDF002A7654 /* RECAPINilUserAgentError.swift */,
+				526FBCE22921CBDF002A7654 /* RECAPIRequestAttemptsLimitExceededError.swift */,
+				526FBCDF2921CBDF002A7654 /* RECAPIUnexpectedResponseError.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
+		526FBCE52921CBDF002A7654 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				526FBCE62921CBDF002A7654 /* RECAPIURLBuilder.swift */,
+				526FBCE72921CBDF002A7654 /* RECHTTPMethod.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		5288D9FB2864CFB200153440 /* Metadata */ = {
@@ -289,21 +400,42 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				526FBCF42921CBDF002A7654 /* RECAPIUnexpectedResponseError.swift in Sources */,
+				526FBCE82921CBDF002A7654 /* RECAPIDataResponse.swift in Sources */,
+				526FBCE92921CBDF002A7654 /* RECAPIErrorResponseCode.swift in Sources */,
+				526FBCEF2921CBDF002A7654 /* RECAPIQueue.swift in Sources */,
 				526FBCCD2921CA39002A7654 /* RECInvalidDeviceIdError.swift in Sources */,
+				526FBCF22921CBDF002A7654 /* RECAPIErrorResponseError.swift in Sources */,
+				526FBCFD2921CD5D002A7654 /* RECAPIInvalidHostError.swift in Sources */,
+				526FBCF12921CBDF002A7654 /* RECAPIEndpoint.swift in Sources */,
 				526FBCAF29216CAF002A7654 /* RECInvalidAccountIdError.swift in Sources */,
 				526D8B8D291947990083BD5A /* RECCoreError.swift in Sources */,
 				526FBCC52921B896002A7654 /* RECMetrics.swift in Sources */,
+				526FBCF82921CBDF002A7654 /* RECAPIError.swift in Sources */,
+				526FBCEE2921CBDF002A7654 /* RECAPIQueueItem.swift in Sources */,
 				526FBCC32921B896002A7654 /* RECPriceList.swift in Sources */,
 				526D8B84291944A90083BD5A /* RECCore.swift in Sources */,
+				526FBCFB2921CBDF002A7654 /* RECHTTPMethod.swift in Sources */,
+				526FBCF72921CBDF002A7654 /* RECAPIRequestAttemptsLimitExceededError.swift in Sources */,
 				526D8B8B291947210083BD5A /* RECError.swift in Sources */,
 				526FBCBB2921B7C9002A7654 /* RECInvalidUserDefaultsError.swift in Sources */,
 				5216F0E62918405C001ABAA7 /* Recommend.swift in Sources */,
+				526FBCEA2921CBDF002A7654 /* RECAPIBaseResponse.swift in Sources */,
 				526FBCB92921B527002A7654 /* RECInvalidInfoPlistError.swift in Sources */,
+				526FBCF32921CBDF002A7654 /* RECAPINilUserAgentError.swift in Sources */,
 				526FBCC62921B896002A7654 /* RECCustomerInfo.swift in Sources */,
+				526FBCEB2921CBDF002A7654 /* RECAPIErrorResponse.swift in Sources */,
 				526FBCB129216D3C002A7654 /* RECCoreErrorCodes.swift in Sources */,
+				526FBCEC2921CBDF002A7654 /* RECAPIConfiguration.swift in Sources */,
+				526FBCFA2921CBDF002A7654 /* RECAPIURLBuilder.swift in Sources */,
+				526FBCF02921CBDF002A7654 /* RECAPIRequest.swift in Sources */,
+				526FBCF62921CBDF002A7654 /* RECAPIInvalidResponseError.swift in Sources */,
 				526FBCC42921B896002A7654 /* RECMetric.swift in Sources */,
+				526FBCF52921CBDF002A7654 /* RECAPIInvalidEndpointURLError.swift in Sources */,
 				B49C272D291A945D00F69653 /* Date+Recommend.swift in Sources */,
+				526FBCED2921CBDF002A7654 /* RECAPIClient.swift in Sources */,
 				526D8B86291944FA0083BD5A /* RECConfiguration.swift in Sources */,
+				526FBCF92921CBDF002A7654 /* RECAPIErrorCodes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

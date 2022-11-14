@@ -27,9 +27,14 @@ public final class Recommend {
     
     private init() { }
     
-    public convenience init(accountId: String) {
+    public convenience init(
+        accountId: String,
+        apiHost: String = kRECAPIDefaultHost
+    ) {
         self.init()
-        let configuration = RECConfiguration(accountId: accountId)
+        let configuration = RECConfiguration(
+            accountId: accountId,
+            apiHost: apiHost)
         configure(with: configuration)
     }
     
@@ -52,8 +57,13 @@ public final class Recommend {
         }
     }
     
-    public static func configure(accountId: String) {
-        let configuration = RECConfiguration(accountId: accountId)
+    public static func configure(
+        accountId: String,
+        apiHost: String = kRECAPIDefaultHost
+    ) {
+        let configuration = RECConfiguration(
+            accountId: accountId,
+            apiHost: apiHost)
         shared.configure(with: configuration)
     }
 }

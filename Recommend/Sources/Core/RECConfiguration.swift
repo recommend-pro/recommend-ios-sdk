@@ -13,11 +13,16 @@ public let kRECInfoPlistName: String = "Recommend-Info"
 
 struct RECConfiguration {
     let accountId: String
+    let apiHost: String
     
     // MARK: Init
     
-    init(accountId: String) {
+    init(
+        accountId: String,
+        apiHost: String
+    ) {
         self.accountId = accountId
+        self.apiHost = apiHost
     }
 }
 

@@ -14,6 +14,7 @@ final class RECCore {
     let accountId: String
     let userDefaults: UserDefaults
     let customerInfo: RECCustomerInfo
+    let apiClient: RECAPIClient
     
     // MARK: Init
     
@@ -30,6 +31,9 @@ final class RECCore {
             self.userDefaults = userDefaults
             
             self.customerInfo = RECCustomerInfo(userDefaults: userDefaults)
+            
+            let apiConfiguration = RECAPIConfiguration(host: configuration.apiHost)
+            self.apiClient = RECAPIClient(configuration: apiConfiguration)
         } catch {
             fatalError(error.localizedDescription)
         }
