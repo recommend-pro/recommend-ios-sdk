@@ -24,6 +24,15 @@ public final class Recommend {
         try? core?.getDeviceId()
     }
     
+    public var pushNotificationOpenURLHandler: ((URL) -> Void)? {
+        get {
+            messaging?.pushNotificationOpenURLHandler
+        }
+        set {
+            messaging?.pushNotificationOpenURLHandler = newValue
+        }
+    }
+    
     // MARK: Shared instance
     
     public static let shared = {
