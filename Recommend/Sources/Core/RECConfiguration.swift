@@ -13,7 +13,7 @@ public let kRECInfoPlistName: String = "Recommend-Info"
 
 struct RECConfiguration {
     let accountId: String
-    let applicationName: String?
+    let pushApplicationName: String?
     let apiHost: String
     
     // MARK: Init
@@ -24,7 +24,7 @@ struct RECConfiguration {
         apiHost: String
     ) {
         self.accountId = accountId
-        self.applicationName = applicationName
+        self.pushApplicationName = applicationName
         self.apiHost = apiHost
     }
 }
@@ -51,14 +51,19 @@ extension RECConfiguration: Decodable {
     
     private enum CodingKeys: String, CodingKey {
         case accountId = "ACCOUNT_ID"
-        case applicationName = "APP_NAME"
+        case pushApplicationNameProd = "PUSH_APPLICATION_NAME_PROD"
+        case pushApplicationNameDev = "PUSH_APPLICATION_NAME_DEV"
         case apiHost = "API_HOST"
     }
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.accountId = try container.decode(String.self, forKey: .accountId)
-        self.applicationName = try container.decodeIfPresent(String.self, forKey: .applicationName)
+        #if DEBUG
+        self.pushApplicationName = try container.decodeIfPresent(String.self, forKey: .pushApplicationNameDev)
+        #else
+        self.pushApplicationName = try container.decodeIfPresent(String.self, forKey: .pushApplicationNameProd)
+        #endif
         self.apiHost = (try container.decodeIfPresent(String.self, forKey: .apiHost)) ?? kRECAPIDefaultHost
     }
 }

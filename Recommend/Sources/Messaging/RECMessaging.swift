@@ -37,7 +37,7 @@ final class RECMessaging: NSObject {
         configuration: RECMessagingConfiguration
     ) {
         self.apiService = RECMessagingAPIService(core: core)
-        if let applicationName = configuration.applicationName {
+        if let applicationName = configuration.pushApplicationName {
             self.pushManager = RECMessagingPushManager(
                 apiService: apiService,
                 userDefaults: core.userDefaults,

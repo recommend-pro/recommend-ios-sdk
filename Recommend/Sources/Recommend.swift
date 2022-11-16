@@ -66,7 +66,7 @@ public final class Recommend {
         self.core = RECCore(configuration: configuration)
         self.device = RECDevice(core: core)
         
-        let messagingConfiguration = RECMessagingConfiguration(applicationName: configuration.applicationName)
+        let messagingConfiguration = RECMessagingConfiguration(pushApplicationName: configuration.pushApplicationName)
         self.messaging = RECMessaging(
             core: core,
             configuration: messagingConfiguration)

@@ -9,5 +9,5 @@
 import Foundation
 
 struct RECMessagingConfiguration {
-    let applicationName: String?
+    let pushApplicationName: String?
 }
