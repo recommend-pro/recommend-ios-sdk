@@ -39,6 +39,12 @@ final class RECCore {
         }
     }
     
+    // MARK: Customer Info
+    
+    func clearCustomerInfo() {
+        customerInfo.clear()
+    }
+    
     // MARK: Device Id
     
     func getDeviceId() throws -> String {

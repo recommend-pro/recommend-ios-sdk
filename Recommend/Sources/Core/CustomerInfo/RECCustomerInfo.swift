@@ -46,6 +46,18 @@ public final class RECCustomerInfo {
         self.priceList = userDefaults.customerPriceList
         self.metrics = userDefaults.customerMetrics
     }
+    
+    // MARK: Clear
+    
+    func clear() {
+        self.idHash = nil
+        self.emailHash = nil
+        self.store = nil
+        self.currency = nil
+        self.environment = nil
+        self.priceList = nil
+        self.metrics = nil
+    }
 }
 
 // MARK: - UserDefaults

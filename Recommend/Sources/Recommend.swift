@@ -95,6 +95,12 @@ public final class Recommend {
         shared.configure(with: configuration)
     }
     
+    // MARK: Customer Info
+    
+    public func clearCustomerInfo() {
+        core?.clearCustomerInfo()
+    }
+    
     // MARK: Device
     
     public func trackDeviceActivity(
