@@ -58,12 +58,23 @@ extension RECConfiguration: Decodable {
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
+        
         self.accountId = try container.decode(String.self, forKey: .accountId)
+        
         #if DEBUG
         self.pushApplicationName = try container.decodeIfPresent(String.self, forKey: .pushApplicationNameDev)
         #else
         self.pushApplicationName = try container.decodeIfPresent(String.self, forKey: .pushApplicationNameProd)
         #endif
-        self.apiHost = (try container.decodeIfPresent(String.self, forKey: .apiHost)) ?? kRECAPIDefaultHost
+        
+        if
+            let apiHost = try container.decodeIfPresent(String.self, forKey: .apiHost),
+            apiHost.isEmpty == false
+        {
+            self.apiHost = apiHost
+        } else {
+            self.apiHost = kRECAPIDefaultHost
+        }
+        
     }
 }
