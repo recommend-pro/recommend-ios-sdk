@@ -111,7 +111,7 @@ final class RECMessagingPushManager {
         let failedEvents = self.failedEvents
         
         userNotificationCenter.getDeliveredNotifications { deliveredNotifications in
-            var events: [RECMessagingPushEvent] = deliveredNotifications.compactMap({ notification in
+            let events: [RECMessagingPushEvent] = deliveredNotifications.compactMap({ notification in
                 RECMessagingPushEvent(
                     userInfo: notification.request.content.userInfo,
                     eventTime: notification.date.secondsSince1970)

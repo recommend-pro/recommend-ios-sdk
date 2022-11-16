@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ACCOUNT_ID</key>
+	<string>e0xa1mp2le3</string>
+	<key>PUSH_APPLICATION_NAME_PROD</key>
+	<string>Example-Apple-iOS-Prod</string>
+	<key>PUSH_APPLICATION_NAME_DEV</key>
+	<string>Example-Apple-iOS-Dev</string>
+	<key>API_HOST</key>
+	<string>api.recommend.pro</string>
+</dict>
+</plist>

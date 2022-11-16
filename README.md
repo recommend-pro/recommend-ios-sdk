@@ -81,14 +81,16 @@ let recommend = Recommend(accoundId: "0e1x2a3m4p5l")
 ### Plist creation
 
 Unless plist is not auto-generation, it can be created manually following instructions.
+All information is in access on [control.recommend.pro](https://control.recommend.pro/)
 
-Filename: `Recommend-Info.plist`
+Example file provided in repo -> [Recommend-Info.plist](https://github.com/recommend-pro/recommend-ios-sdk/blob/main/Recommend-Info.plist)
 
 | Field | Type | Required | Description |
-| :----: | :----: | :----: | :----: |
-| `ACCOUND_ID` | String | + | Accound id. Check it on [control.recommend.pro](https://control.recommend.pro/) |
-| `APP_NAME` | String | - | Application Name. Check it on [control.recommend.pro](https://control.recommend.pro/) |
-| `API_HOST` | String | - | API host. Default is **api.recommend.pro** |
+| ---- | :----: | :----: | ---- |
+| `ACCOUNT_ID` | String | + | Account id |
+| `PUSH_APPLICATION_NAME_PROD` | String | - | Apple-iOS-Prod Push integration Application Name. Uses for release builds, usually from Xcode. |
+| `PUSH_APPLICATION_NAME_DEV` | String | - | Apple-iOS-Dev Push integration Application Name. Uses for debug builds, usually from App Store Connect / TestFlight. |
+| `API_HOST` | String | - | API host (domain). Can be empty. By default: `api.recommend.pro`. |
 
 ## License
 

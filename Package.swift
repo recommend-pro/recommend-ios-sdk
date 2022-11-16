@@ -27,6 +27,9 @@ let package = Package(
                 )
             ],
             path: "Recommend/Sources",
+            exclude: [
+                "Recommend.podspec"
+            ],
             linkerSettings: [
                 .linkedFramework("UIKit", .when(platforms: [.iOS])),
                 .linkedFramework("UserNotifications", .when(platforms: [.iOS]))

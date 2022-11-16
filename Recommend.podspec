@@ -12,6 +12,12 @@ Pod::Spec.new do |spec|
   spec.ios.deployment_target = "11.0"
   
   spec.source_files   = 'Recommend/Sources/**/*'
+  
+  spec.preserve_paths = [
+    "CHANGELOG.md",
+    "README.md",
+    "LICENSE"
+  ]
 
   spec.ios.framework  = 'UIKit'
   spec.ios.framework  = 'UserNotifications'
