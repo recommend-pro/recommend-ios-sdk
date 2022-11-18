@@ -1,3 +1,7 @@
+### v1.1.1 (2022-11-18)
+
+- [fixed] Fixed Customer Info storing issue
+
 ## v1.1.0 (2022-11-16)
 
 - [changed] Updated Push Messaging configuration logic. Added Push Application Name providing for Debug builds.
