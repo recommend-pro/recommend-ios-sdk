@@ -102,11 +102,12 @@ fileprivate extension UserDefaults {
             return try? PropertyListDecoder().decode(RECPriceList.self, from: data)
         }
         set {
-            guard let newValue = newValue else {
-                setNilValueForKey(Self.customerPriceListKey)
-                return
+            var data: Data?
+            
+            if let newValue = newValue {
+                data = try? PropertyListEncoder().encode(newValue)
             }
-            let data = try? PropertyListEncoder().encode(newValue)
+            
             set(data, forKey: Self.customerPriceListKey)
         }
     }
@@ -120,11 +121,12 @@ fileprivate extension UserDefaults {
             return try? PropertyListDecoder().decode(RECMetrics.self, from: data)
         }
         set {
-            guard let newValue = newValue else {
-                setNilValueForKey(Self.customerMetricsKey)
-                return
+            var data: Data?
+            
+            if let newValue = newValue {
+                data = try? PropertyListEncoder().encode(newValue)
             }
-            let data = try? PropertyListEncoder().encode(newValue)
+            
             set(data, forKey: Self.customerMetricsKey)
         }
     }
