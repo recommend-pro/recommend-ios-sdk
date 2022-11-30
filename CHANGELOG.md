@@ -1,3 +1,8 @@
+## v1.2.0 (2022-11-30)
+
+- [changed] Registration Device activity renamed to CustomerRegisration
+- [fixed] Fixed PageView Device activity public shortcut-init
+
 ### v1.1.1 (2022-11-18)
 
 - [fixed] Fixed Customer Info storing issue
