@@ -8,12 +8,12 @@
 
 import Foundation
 
-public final class RECDeviceRegistrationActivity: RECDeviceActivityWithData {
+public final class RECDeviceCustomerRegistrationActivity: RECDeviceActivityWithData {
     public init(
         requestId: String? = nil,
         versionId: String? = nil
     ) {
-        let data = RECDeviceRegistrationActivityData(
+        let data = RECDeviceCustomerRegistrationActivityData(
             requestId: requestId,
             versionId: versionId)
         super.init(
@@ -27,7 +27,7 @@ extension RECDeviceActivity {
         requestId: String? = nil,
         versionId: String? = nil
     ) -> RECDeviceActivity {
-        RECDeviceRegistrationActivity(
+        RECDeviceCustomerRegistrationActivity(
             requestId: requestId,
             versionId: versionId)
     }

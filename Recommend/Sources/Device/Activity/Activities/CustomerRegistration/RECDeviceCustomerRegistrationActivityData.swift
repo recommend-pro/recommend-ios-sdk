@@ -1,5 +1,5 @@
 //
-//  RECDeviceRegistrationActivityData.swift
+//  RECDeviceCustomerRegistrationActivityData.swift
 //  Recommend
 //
 //  Created by Dmytrii Golovanov on 08.11.2022.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class RECDeviceRegistrationActivityData: RECDeviceActivityData {
+final class RECDeviceCustomerRegistrationActivityData: RECDeviceActivityData {
     let requestId: String?
     let versionId: String?
     

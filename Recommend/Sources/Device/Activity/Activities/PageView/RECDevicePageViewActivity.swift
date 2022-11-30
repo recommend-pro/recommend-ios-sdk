@@ -27,7 +27,7 @@ public final class RECDevicePageViewActivity: RECDeviceActivityWithData {
 }
 
 extension RECDeviceActivity {
-    public static func productView(
+    public static func pageView(
         url: String,
         pageType: String? = nil,
         referrer: String? = nil,
