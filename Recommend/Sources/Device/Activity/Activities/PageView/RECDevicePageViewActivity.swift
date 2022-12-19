@@ -21,7 +21,7 @@ public final class RECDevicePageViewActivity: RECDeviceActivityWithData {
             referrer: referrer,
             title: title)
         super.init(
-            type: "page_view",
+            type: "pageview",
             data: data)
     }
 }
