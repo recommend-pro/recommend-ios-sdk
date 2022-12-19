@@ -1,3 +1,7 @@
+### v1.2.1 (2022-12-19)
+
+- [fixed] Fixed PageView device activity coding
+
 ## v1.2.0 (2022-11-30)
 
 - [changed] Registration Device activity renamed to CustomerRegisration
