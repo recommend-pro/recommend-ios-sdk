@@ -1,5 +1,9 @@
 ### v1.2.1 (2022-12-19)
 
+- [fixed] Fixed Messaging Push notification user info parsing
+
+### v1.2.1 (2022-12-19)
+
 - [fixed] Fixed PageView device activity coding
 
 ## v1.2.0 (2022-11-30)
