@@ -16,7 +16,7 @@ struct RECMessagingPushData: Decodable {
     // MARK: Coding
     
     enum CodingKeys: String, CodingKey {
-        case id = "_rec_mid"
+        case id = "__rec__mid"
         case openURL = "open-url"
         case isRecommendPushNotification = "recommend_push_notification"
     }
