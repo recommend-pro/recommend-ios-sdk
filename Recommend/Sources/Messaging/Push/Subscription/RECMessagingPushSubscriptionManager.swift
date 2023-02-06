@@ -17,6 +17,10 @@ final class RECMessagingPushSubscriptionManager {
     private var autoUpdateTimer: Timer!
     private var oneTimeForceUpdateFlag: Bool = false
     
+    var isSubscribed: Bool {
+        subscription.isSubscribed
+    }
+    
     // MARK: Init
     
     init(

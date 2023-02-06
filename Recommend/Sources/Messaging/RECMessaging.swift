@@ -30,6 +30,10 @@ final class RECMessaging: NSObject {
         }
     }
     
+    var isSubscribedToPushNotifications: Bool {
+        wrappedPushManager?.isSubscribed ?? false
+    }
+    
     // MARK: Init
     
     init(
@@ -49,12 +53,13 @@ final class RECMessaging: NSObject {
     
     // MARK: Push Messaging
     
-    func subscribeToPush() {
-        wrappedPushManager?.subscribe()
-    }
-    
-    func unsubscribeFromPush() {
-        wrappedPushManager?.unsubscribe()
+    func setUserSubscriptionToPushNotifications(
+        _ isUserSubscribed: Bool,
+        completionHandler: ((Bool) -> Void)? = nil
+    ) {
+        wrappedPushManager?.setUserSubscription(
+            isUserSubscribed,
+            completionHandler: completionHandler)
     }
     
     func application(

@@ -22,6 +22,10 @@ final class RECMessagingPushManager {
         set { failedEventsStorage.events = newValue }
     }
     
+    var isSubscribed: Bool {
+        subscriptionManager.isSubscribed
+    }
+    
     var openURLHandler: ((URL) -> Void)?
     
     // MARK: Init
@@ -67,19 +71,16 @@ final class RECMessagingPushManager {
         }
     }
     
-    private func setUserSubscription(_ isUserSubscribed: Bool) {
-        subscriptionManager.setUserSubscription(true) { result in
-            guard result.isUpdated else { return }
-            self.trackSubscriptionUpdate(result.subscription)
+    func setUserSubscription(
+        _ isUserSubscribed: Bool,
+        completionHandler: ((Bool) -> Void)? = nil
+    ) {
+        subscriptionManager.setUserSubscription(isUserSubscribed) { result in
+            if result.isUpdated {
+                self.trackSubscriptionUpdate(result.subscription)
+            }
+            completionHandler?(result.subscription.isSubscribed)
         }
-    }
-    
-    func subscribe() {
-        setUserSubscription(true)
-    }
-    
-    func unsubscribe() {
-        setUserSubscription(false)
     }
     
     // MARK: Token

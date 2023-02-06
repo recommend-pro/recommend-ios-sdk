@@ -25,6 +25,10 @@ final class RECMessagingPushSubscription {
     private(set) var statusChangedDate: Date?
     private(set) var firstSubscribedDate: Date?
     
+    var isSubscribed: Bool {
+        status == .subscribed
+    }
+    
     // MARK: Init
     
     private init(

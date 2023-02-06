@@ -33,6 +33,10 @@ public final class Recommend {
         }
     }
     
+    public var isSubscribedToPushNotifications: Bool {
+        messaging?.isSubscribedToPushNotifications ?? false
+    }
+    
     // MARK: Shared instance
     
     public static let shared = {
@@ -126,12 +130,23 @@ public final class Recommend {
         Self.isRecommendNotification(userInfo)
     }
     
-    public func subscribeToPushMessaging() {
-        messaging?.subscribeToPush()
+    public func setUserSubscriptionToPushNotifications(
+        _ isUserSubscribed: Bool,
+        completionHandler: ((Bool) -> Void)? = nil
+    ) {
+        messaging?.setUserSubscriptionToPushNotifications(
+            isUserSubscribed,
+            completionHandler: completionHandler)
     }
     
+    @available(*, deprecated, renamed: "setUserSubscriptionToPushNotifications")
+    public func subscribeToPushMessaging() {
+        messaging?.setUserSubscriptionToPushNotifications(true)
+    }
+    
+    @available(*, deprecated, renamed: "setUserSubscriptionToPushNotifications")
     public func unsubscribeFromPushMessaging() {
-        messaging?.unsubscribeFromPush()
+        messaging?.setUserSubscriptionToPushNotifications(false)
     }
     
     // MARK: Recommendation
