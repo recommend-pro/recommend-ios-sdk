@@ -1,4 +1,8 @@
-### v1.2.1 (2022-12-19)
+## v1.3.0 (2023-02-06)
+
+- [changed] Updated Messaging push notifications subscription logic
+
+### v1.2.2 (2023-01-25)
 
 - [fixed] Fixed Messaging Push notification user info parsing
 
