@@ -11,11 +11,12 @@ import Foundation
 public struct RECRecommendationPanelRequestFilter: Encodable {
     public typealias FilterType = RECRecommendationPanelRequestFilterType
     public typealias Operator = RECRecommendationPanelRequestFilterOperator
+    public typealias Value = RECRecommendationPanelRequestFilterValue
     
     public let type: FilterType?
     public let code: String
     public let `operator`: Operator
-    public let value: String
+    public let value: Value
     
     enum CodingKeys: String, CodingKey {
         case type
@@ -30,7 +31,7 @@ public struct RECRecommendationPanelRequestFilter: Encodable {
         type: FilterType?,
         code: String,
         `operator`: Operator,
-        value: String
+        value: Value
     ) {
         self.type = type
         self.code = code

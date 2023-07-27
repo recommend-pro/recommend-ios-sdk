@@ -146,6 +146,7 @@
 		526FBE7D2921D782002A7654 /* RECRecommendationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526FBE682921D782002A7654 /* RECRecommendationError.swift */; };
 		526FBE7E2921D782002A7654 /* RECRecommendationErrorCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526FBE692921D782002A7654 /* RECRecommendationErrorCodes.swift */; };
 		526FBE7F2921D782002A7654 /* RECRecommendationNilPriceListError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526FBE6A2921D782002A7654 /* RECRecommendationNilPriceListError.swift */; };
+		63F3496C2A72B33E003979A6 /* RECRecommendationPanelRequestFilterValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F3496B2A72B33E003979A6 /* RECRecommendationPanelRequestFilterValue.swift */; };
 		B49C272D291A945D00F69653 /* Date+Recommend.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49C272C291A945D00F69653 /* Date+Recommend.swift */; };
 /* End PBXBuildFile section */
 
@@ -294,6 +295,7 @@
 		5288D9FF2864CFCD00153440 /* Recommend.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Recommend.podspec; sourceTree = "<group>"; };
 		5288DA002864CFCD00153440 /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		529993862864CD86004ED2E1 /* Recommend.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Recommend.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		63F3496B2A72B33E003979A6 /* RECRecommendationPanelRequestFilterValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RECRecommendationPanelRequestFilterValue.swift; sourceTree = "<group>"; };
 		B49C272C291A945D00F69653 /* Date+Recommend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Recommend.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -851,6 +853,7 @@
 				526FBE572921D782002A7654 /* RECRecommendationPanelRequestFilter.swift */,
 				526FBE5F2921D782002A7654 /* RECRecommendationPanelRequestFilterOperator.swift */,
 				526FBE5C2921D782002A7654 /* RECRecommendationPanelRequestFilterType.swift */,
+				63F3496B2A72B33E003979A6 /* RECRecommendationPanelRequestFilterValue.swift */,
 				526FBE582921D782002A7654 /* RECRecommendationPanelRequestVariations.swift */,
 				526FBE5D2921D782002A7654 /* RECRecommendationPanelsFetchRequest.swift */,
 				526FBE592921D782002A7654 /* RECRecommendationPanelsFetchRequestContentType.swift */,
@@ -1105,6 +1108,7 @@
 				526FBE752921D782002A7654 /* RECRecommendationPanelRequestCurrentContext.swift in Sources */,
 				526FBDFF2921D01C002A7654 /* RECDeviceProductClickActivityData.swift in Sources */,
 				526FBCFB2921CBDF002A7654 /* RECHTTPMethod.swift in Sources */,
+				63F3496C2A72B33E003979A6 /* RECRecommendationPanelRequestFilterValue.swift in Sources */,
 				526FBCF72921CBDF002A7654 /* RECAPIRequestAttemptsLimitExceededError.swift in Sources */,
 				526FBE762921D782002A7654 /* RECRecommendationPanelRequestFilterOperator.swift in Sources */,
 				526D8B8B291947210083BD5A /* RECError.swift in Sources */,
