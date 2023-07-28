@@ -1,3 +1,7 @@
+### v1.3.1 (2023-07-27)
+
+- [changed] Updated type of PanelRequestFilter.value with Codable RECRecommendationPanelRequestFilterValue type
+
 ## v1.3.0 (2023-02-06)
 
 - [changed] Updated Messaging push notifications subscription logic
