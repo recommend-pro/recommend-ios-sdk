@@ -1,3 +1,7 @@
+### v1.3.2 (2023-12-14)
+
+- [fixed] Added thread safety in RECAPIQueue using NSLock
+
 ### v1.3.1 (2023-07-27)
 
 - [changed] Updated type of PanelRequestFilter.value with Codable RECRecommendationPanelRequestFilterValue type

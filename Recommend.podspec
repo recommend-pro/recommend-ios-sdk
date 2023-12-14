@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name          = 'Recommend'
-  spec.version       = '1.3.1'
+  spec.version       = '1.3.2'
   spec.license       = { :type => 'MIT', :file => 'LICENSE' }
   spec.homepage      = 'https://github.com/recommend-pro/recommend-ios-sdk'
   spec.authors       = "Recommend OÜ"
